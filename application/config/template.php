@@ -71,7 +71,7 @@ $config['layout'] = 'default.html';
 |
 */
 
-$config['theme'] = 'glosoft';
+$config['theme'] = 'default';
 
 /*
 |--------------------------------------------------------------------------
@@ -84,4 +84,4 @@ $config['theme'] = 'glosoft';
 |
 */
 
-$config['theme_locations'] = array(FCPATH.'assets/themes/glosoft' => FCPATH.'assets/themes/glosoft' );
+$config['theme_locations'] = array(FCPATH.'assets/themes/' => FCPATH.'assets/themes/' );

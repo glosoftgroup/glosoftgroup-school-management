@@ -129,6 +129,7 @@ class Worker
                 ini_set('max_execution_time', 0);
                 if ($buffers)
                 {
+                    return '';
                         echo $this->fetch_str();
                         echo '<div id="closure" style="width:500px; margin: 100px auto; ">
                                 <div id="progress"></div>

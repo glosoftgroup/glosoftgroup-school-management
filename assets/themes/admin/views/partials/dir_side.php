@@ -1,13 +1,13 @@
 <div class="navigation hidden-print">
     <ul class="main" >
-        <li><a 
+        <li><a
             <?php
             if (
                          preg_match('/^(admin)$/i', $this->uri->uri_string()))
                     echo 'class="active"';
             ?> href="<?php echo base_url('admin'); ?>" class="<?php if (preg_match('/^(admin)$/i', $this->uri->uri_string())) echo 'active'; ?>">
                 <span class="icom-screen"></span><span class="text">Dashboard</span></a></li>
-        <li><a 
+        <li><a
             <?php
             if (
                          preg_match('/^(admin\/admission)/i', $this->uri->uri_string()))
@@ -16,7 +16,7 @@
                 <span class="icom-user"></span><span class="text"> Students</span></a>
         </li>
         <li>
-            <a href="#ui" 
+            <a href="#ui"
             <?php
             if (
                          preg_match('/^(admin\/students_placement)/i', $this->uri->uri_string()) ||
@@ -54,13 +54,13 @@
             ?>><span class = "icom-stats-up"></span><span class = "text">Reports</span></a>
         </li>
     </ul>
-    <div class="control"></div>        
+    <div class="control"></div>
     <div class="submain">
         <div id="default">
             <div class="widget-fluid userInfo clearfix">
                 <div class="image" >
                     <img style="padding:1px;"src="<?php echo base_url('assets/themes/admin/img/us.jpg'); ?>" width="60" height="60" />
-                </div>              
+                </div>
                 <div class="name"><?php
                     $user = $this->ion_auth->get_user();
                     echo trim($user->first_name);
@@ -69,7 +69,7 @@
                     <li><strong>Email:</strong> <?php echo $this->user->email; ?></li>
                     <li><strong>Phone:</strong><?php echo $this->user->phone; ?></li>
                     <li><a href="<?php echo base_url('admin/sms'); ?>"><span class="glyphicon glyphicon-comment"></span> Messaging</a></li>
-                    <li><a href="<?php echo base_url('admin/logout'); ?>"><span class="glyphicon glyphicon-share-alt"></span> Logout</a></li>                        
+                    <li><a href="<?php echo base_url('admin/logout'); ?>"><span class="glyphicon glyphicon-share-alt"></span> Logout</a></li>
                 </ul>
                 <div class="text">
                     Welcome back!: <?php echo $this->ion_auth->get_user()->last_login ? date('d M Y H:i', $this->ion_auth->get_user()->last_login) : ''; ?>
@@ -86,7 +86,7 @@
                         $count = $this->ion_auth->count_teachers();
                         echo $count;
                         ?></span>
-                </li> 
+                </li>
                 <li>
                     <a href="<?php echo base_url('admin/meetings'); ?>">All Meetings </a>
                     <span class="caption blue"><?php echo $this->ion_auth->count_meetings(); ?></span>
@@ -94,12 +94,12 @@
             </ul>
             <div class="dr"><span></span></div>
         </div>
-        <div id="ui">                
+        <div id="ui">
             <div class="menu">
                 <a  <?php if (preg_match('/^(admin\/exams)/i', $this->uri->uri_string())) echo 'class="active"'; ?> href="<?php echo base_url('admin/exams'); ?>"><span class="glyphicon glyphicon-folder-open "></span> Exams Management</a>
                 <a  <?php if (preg_match('/^(admin\/reports\/exam)/i', $this->uri->uri_string())) echo 'class="active"'; ?> href="<?php echo base_url('admin/reports/exam'); ?>"><span class="glyphicon glyphicon-calendar "></span> Class Performance</a>
                 <div class="dr"><span></span></div>
-            </div>    
+            </div>
             <div class="dr"><span></span></div>
             <ul class="fmenu">
                 <li>
@@ -115,7 +115,7 @@
                         $count = $this->ion_auth->count_classes();
                         echo $count;
                         ?></span>
-                </li> 
+                </li>
                 <li>
                     <a href="<?php echo base_url('admin/subjects'); ?>">All Subjects</a>
                     <span class="caption blue"><?php
@@ -124,14 +124,14 @@
                         ?></span>
                 </li>
             </ul>
-        </div>           
-        <!--******************************COMM MENU******************************************-->		
+        </div>
+        <!--******************************COMM MENU******************************************-->
         <div id="media">
             <div class="menu">
                 <a  <?php if (preg_match('/^(admin\/fee_payment\/paid)/i', $this->uri->uri_string())) echo 'class="active"'; ?> href="<?php echo base_url('admin/fee_payment/paid'); ?>"><span class="glyphicon glyphicon-calendar"></span> Fee Payments</a>
                 <a  <?php if (preg_match('/^(admin\/expenses)/i', $this->uri->uri_string())) echo 'class="active"'; ?> href="<?php echo base_url('admin/expenses'); ?>"><span class="glyphicon glyphicon-bullhorn"></span> Expenses</a>
                 <a  <?php if (preg_match('/^(admin\/expenses\/requisitions)/i', $this->uri->uri_string())) echo 'class="active"'; ?> href="<?php echo base_url('admin/expenses/requisitions'); ?>"><span class="glyphicon glyphicon-bullhorn"></span> Requisitions</a>
-            </div>                                                              
+            </div>
             <div class="dr"><span></span></div>
             <ul class="fmenu">
                 <li>
@@ -139,44 +139,44 @@
                     <span class="caption blue"><?php echo $this->ion_auth->count_meetings(); ?></span>
                 </li>
             </ul>
-            <div class="dr"><span></span></div> 
+            <div class="dr"><span></span></div>
         </div>
         <div id="reports">
             <div class="menu">
-                <a href="<?php echo base_url('admin/reports/student_report'); ?>" 
+                <a href="<?php echo base_url('admin/reports/student_report'); ?>"
                    <?php echo (preg_match('/^(admin\/reports\/student_report)/i', $this->uri->uri_string())) ? 'class="active"' : ' ' ?> >
                     <span class="glyphicon glyphicon-folder-open"></span> Student History Report</a>
-                <a href="<?php echo base_url('admin/reports/fee'); ?>" 
+                <a href="<?php echo base_url('admin/reports/fee'); ?>"
                    <?php echo (preg_match('/^(admin\/reports\/fee)/i', $this->uri->uri_string())) ? 'class="active"' : ' ' ?> >
                     <span class="glyphicon glyphicon-list-alt"></span> Fee Payment Summary</a>
-                <a href="<?php echo base_url('admin/reports/admission'); ?>" 
+                <a href="<?php echo base_url('admin/reports/admission'); ?>"
                    <?php echo (preg_match('/^(admin\/reports\/admission)/i', $this->uri->uri_string())) ? 'class="active"' : ' ' ?> >
-                    <span class="glyphicon glyphicon-user"></span> Admission Report</a>   
-                <a href="<?php echo base_url('admin/reports/fee_status'); ?>" 
+                    <span class="glyphicon glyphicon-user"></span> Admission Report</a>
+                <a href="<?php echo base_url('admin/reports/fee_status'); ?>"
                    <?php echo (preg_match('/^(admin\/reports\/fee_status)/i', $this->uri->uri_string())) ? 'class="active"' : ' ' ?> >
-                    <span class="glyphicon glyphicon-briefcase"></span> Fee Status Report</a>   
-                <a href="<?php echo base_url('admin/reports/arrears'); ?>" 
+                    <span class="glyphicon glyphicon-briefcase"></span> Fee Status Report</a>
+                <a href="<?php echo base_url('admin/reports/arrears'); ?>"
                    <?php echo (preg_match('/^(admin\/reports\/arrears)/i', $this->uri->uri_string())) ? 'class="active"' : ' ' ?> >
-                    <span class="glyphicon glyphicon-question-sign"></span> Arrears Report</a> 
-                <a href="<?php echo base_url('admin/reports/fee_extras'); ?>" 
+                    <span class="glyphicon glyphicon-question-sign"></span> Arrears Report</a>
+                <a href="<?php echo base_url('admin/reports/fee_extras'); ?>"
                    <?php echo (preg_match('/^(admin\/reports\/fee_extras)/i', $this->uri->uri_string())) ? 'class="active"' : ' ' ?> >
-                    <span class="glyphicon glyphicon-signal"></span> Fee Extras Report</a>   
-                <a href="<?php echo base_url('admin/reports/paid'); ?>" 
+                    <span class="glyphicon glyphicon-signal"></span> Fee Extras Report</a>
+                <a href="<?php echo base_url('admin/reports/paid'); ?>"
                    <?php echo (preg_match('/^(admin\/reports\/paid)/i', $this->uri->uri_string())) ? 'class="active"' : ' ' ?> >
-                    <span class="glyphicon glyphicon-list"></span> Fee Payments Report</a>   
-                <a href="<?php echo base_url('admin/reports/exam'); ?>" 
+                    <span class="glyphicon glyphicon-list"></span> Fee Payments Report</a>
+                <a href="<?php echo base_url('admin/reports/exam'); ?>"
                    <?php echo (preg_match('/^(admin\/reports\/exam)/i', $this->uri->uri_string())) ? 'class="active"' : ' ' ?> >
-                    <span class="glyphicon glyphicon-star"></span> Exam Results Report</a> 
-                <a href="<?php echo base_url('admin/reports/expenses'); ?>" 
+                    <span class="glyphicon glyphicon-star"></span> Exam Results Report</a>
+                <a href="<?php echo base_url('admin/reports/expenses'); ?>"
                    <?php echo (preg_match('/^(admin\/reports\/expenses)/i', $this->uri->uri_string())) ? 'class="active"' : ' ' ?> >
-                    <span class="glyphicon glyphicon-indent-left"></span> Expenses Summary Report</a> 
-                <a href="<?php echo base_url('admin/reports/expense_trend'); ?>" 
+                    <span class="glyphicon glyphicon-indent-left"></span> Expenses Summary Report</a>
+                <a href="<?php echo base_url('admin/reports/expense_trend'); ?>"
                    <?php echo (preg_match('/^(admin\/reports\/expense_trend)/i', $this->uri->uri_string())) ? 'class="active"' : ' ' ?> >
-                    <span class="glyphicon glyphicon-indent-left"></span> Detailed  Expenses Report</a> 
-                <a href="<?php echo base_url('admin/reports/wages'); ?>" 
+                    <span class="glyphicon glyphicon-indent-left"></span> Detailed  Expenses Report</a>
+                <a href="<?php echo base_url('admin/reports/wages'); ?>"
                    <?php echo (preg_match('/^(admin\/reports\/wages)/i', $this->uri->uri_string())) ? 'class="active"' : ' ' ?> >
-                    <span class="glyphicon glyphicon-barcode"></span> Wages Report</a>               
-            </div>                
+                    <span class="glyphicon glyphicon-barcode"></span> Wages Report</a>
+            </div>
             <div class="dr"><span></span></div>
         </div>
     </div>
