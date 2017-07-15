@@ -100,6 +100,8 @@
               {
                    $this->template
                                 ->title('Dashboard')
+                                ->set_partial('alerts', 'partials/alerts.php')
+                                ->set_partial('quick_links', 'partials/quick_links.php')
                                 ->build('admin/index', $data);
               }
          }

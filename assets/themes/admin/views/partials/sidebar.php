@@ -1,5 +1,5 @@
 <!-- Main sidebar -->
-			<div class="sidebar sidebar-main sidebar-primary sidebarfixed">
+			<div class="sidebar sidebar-main sidebar-primary sidebar-fixed">
 				<div class="sidebar-content ">
 
 					<!-- Main navigation -->
@@ -42,7 +42,7 @@
                        echo 'class="active"';
                     ?>
                   href="#">
-                    <i class="icon-stack"></i>
+                    <i class="icon-bookmark"></i>
                     <span>Academics</span>
                   </a>
 									<ul>
@@ -60,7 +60,7 @@
                   <!--******************************ADMINISTRATION MENU******************************************-->
                   <li>
               		<a href="#">
-                    <i class="icon-stack"></i>
+                    <i class="icon-office"></i>
                     <span>Administration</span>
                   </a>
               		<ul>
@@ -124,7 +124,7 @@
                             echo 'class="active"';
                     ?> >
       					 <a href="#">
-                   <i class="icon-stack"></i>
+                   <i class="icon-coins"></i>
                    <span>Accounts</span></a>
           					<ul>
           						<li><a <?php if (preg_match('/^(admin\/fee_payment\/statement)/i', $this->uri->uri_string()) || preg_match('/^(admin\/fee_payment)$/i', $this->uri->uri_string()) || preg_match('/^(admin\/fee_payment\/view)/i', $this->uri->uri_string())) echo 'class="active"'; ?> href="<?php echo base_url('admin/fee_payment'); ?>">Fee Payment Status</a></li>
