@@ -63,7 +63,7 @@ class Admin extends Admin_Controller
                         );
                         $ok = $this->teachers_m->create($tt_data);
 
-                        if ($ok) 
+                        if ($ok)
                         {
                                 $this->session->set_flashdata('message', array('type' => 'success', 'text' => lang('web_create_success')));
                         }
@@ -203,21 +203,25 @@ class Admin extends Admin_Controller
                         //$this->data['message'] = (validation_errors() ? validation_errors() : ($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
                         $this->data['first_name'] = array('name' => 'first_name',
                             'id' => 'first_name',
+                            'class'=>'form-control',
                             'type' => 'text',
                             'value' => $this->input->post('first_name') ? $this->input->post('first_name') : $the_user->first_name,
                         );
                         $this->data['last_name'] = array('name' => 'last_name',
                             'id' => 'last_name',
+                            'class'=>'form-control',
                             'type' => 'text',
                             'value' => $this->input->post('last_name') ? $this->input->post('last_name') : $the_user->last_name,
                         );
                         $this->data['email'] = array('name' => 'email',
                             'id' => 'email',
+                            'class'=>'form-control',
                             'type' => 'text',
                             'value' => $this->input->post('email') ? $this->input->post('email') : $the_user->email,
                         );
                         $this->data['phone'] = array('name' => 'phone',
                             'id' => 'phone',
+                            'class'=>'form-control',
                             'type' => 'text',
                             'value' => $this->input->post('phone') ? $this->input->post('phone') : $the_user->phone,
                         );
@@ -225,11 +229,13 @@ class Admin extends Admin_Controller
 
                         $this->data['password'] = array('name' => 'password',
                             'id' => 'password',
+                            'class'=>'form-control',
                             'type' => 'password',
                             'value' => $this->form_validation->set_value('password'),
                         );
                         $this->data['password_confirm'] = array('name' => 'password_confirm',
                             'id' => 'password_confirm',
+                            'class'=>'form-control',
                             'type' => 'password',
                             'value' => $this->form_validation->set_value('password_confirm'),
                         );
@@ -241,7 +247,7 @@ class Admin extends Admin_Controller
 
         /**
          * Get Datatable
-         * 
+         *
          */
         public function get_table()
         {
@@ -306,7 +312,7 @@ class Admin extends Admin_Controller
 
                         $done = $this->teachers_m->update_attributes($id, $form_data);
 
-                        
+
                         if ($done)
                         {
                                 $this->session->set_flashdata('message', array('type' => 'success', 'text' => lang('web_edit_success')));

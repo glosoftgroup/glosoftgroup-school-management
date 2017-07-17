@@ -1,29 +1,37 @@
-<div class="head"> 
-    <div class="icon"><span class="icosg-target1"></span> </div>
-    <h2>  All Classes  </h2>
-    <div class="right">  
-        <?php echo anchor('admin/class_groups/promotion', '<i class="glyphicon glyphicon-thumbs-up">
-                </i> Promote Students to next class', 'class="btn btn-warning"'); ?> 
+<div class="panel panel-flat">
+    <div class="panel-heading">
+      <h5 class="panel-title">All Classes</h5>
+      <div class="heading-elements">
+        <div class="heading-btn">
+
+		     <?php echo anchor('admin/class_groups/promotion', '<i class="glyphicon glyphicon-thumbs-up">
+                </i> Promote Students to next class', 'class="btn heading-btn btn-warning"'); ?>
+
+        </div>
+      </div>
     </div>
+    <div class="panel-body">
+		<div class="row">
+		  <table class='table datatable-showall' id="fee_bal" width="100%">
+			<thead>
+			 <tr>
+				<th>#</th>
+				<th>Class </th>
+				<th>Class Teacher</th>
+				<th>No. of Students</th>
+				<th>Status</th>
+				<th width="20%"><?php echo lang('web_options'); ?></th>
+			 </tr>
+			</thead>
+			<tbody>
+			</tbody>
+			<tfoot>
+			</tfoot>
+      </table>
+		</div>
+	</div>
 </div>
 
-<div class="block-fluid">
-    <table id="fee_bal" cellpadding="0" cellspacing="0" width="100%">
-        <thead>
-        <th>#</th>
-        <th>Class </th>
-        <th>Class Teacher</th>
-        <th>No. of Students</th>
-        <th>Status</th>
-        <th width="20%"><?php echo lang('web_options'); ?></th>
-        </thead>
-        <tbody>
-        </tbody>
-        <tfoot>
-        </tfoot>
-
-    </table> 
-</div>
 
 <script type="text/javascript">
         $(document).ready(function () {

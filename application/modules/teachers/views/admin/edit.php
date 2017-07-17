@@ -1,18 +1,18 @@
-<div class="col-md-12">
-<div class="head">
-    <div class="icon"><span class="icosg-target1"></span></div>
-    <h2>Teachers</h2> 
-    <div class="right">                            
+<!-- Pager -->
+<div class="panel panel-white">
+	<div class="panel-heading">
+		<h6 class="panel-title">Teachers</h6>
+		<div class="heading-elements">
+			<div class="heading-btn">
+			   <?php echo anchor('admin/teachers/create/', '<i class="glyphicon glyphicon-plus"></i>' . lang('web_add_t', array(':name' => 'New Teacher')), 'class="btn  heading-btn btn-primary"'); ?>
+               <?php echo anchor('admin/teachers/', '<i class="glyphicon glyphicon-list">
+                </i> List All Teachers', 'class="btn  heading-btn btn-primary"'); ?>
+			</div>
+		</div>
+	</div>
 
-        <?php echo anchor('admin/teachers/create/', '<i class="glyphicon glyphicon-plus"></i>' . lang('web_add_t', array(':name' => 'New Teacher')), 'class="btn btn-primary"'); ?>
-        <?php echo anchor('admin/teachers/', '<i class="glyphicon glyphicon-list">
-                </i> List All Teachers', 'class="btn btn-primary"'); ?>
-     </div>    					
-</div>
-
-<div class="block-fluid">
-
-    <?php
+	<div class="panel-body">
+		  <?php
     $attributes = array('class' => 'form-horizontal', 'id' => '');
     echo form_open_multipart(current_url(), $attributes);
     ?>
@@ -38,12 +38,12 @@
             <?php echo form_error('email', '<p class="required">', '</p>'); ?>
         </div>
     </div>
-	
+
         <div class='form-group'>
             <div class="col-md-3" for='phone'>Phone </div><div class="col-md-4">
                  <?php echo form_input($phone); ?>
 				<?php echo form_error('phone', '<p class="required">', '</p>'); ?>
-             
+
             </div>
         </div>
   <div class='form-group'>
@@ -54,13 +54,13 @@
         </div>
 	  <div class='form-group'>
             <div class="col-md-3" for='status'>Status <span class='required'>*</span></div>
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <?php
                 $items = array('' => 'Select Status',
                     "0" => "Active",
                     "1" => "Inactive",
                 );
-                echo form_dropdown('status', $items, (isset($result->status)) ? $result->status : '', ' class="select" data-placeholder="Select Options..." ');
+                echo form_dropdown('status', $items, (isset($result->status)) ? $result->status : '', ' class="form-control select" data-placeholder="Select Options..." ');
                 echo form_error('status');
                 ?>
             </div></div>
@@ -72,6 +72,7 @@
     </div>
     <div class='form-group'>
         <div class='col-md-3' for='password_confirm'>Confirm Password<br> (if changing password)  </div><div class="col-md-4">
+
             <?php echo form_input($password_confirm); ?>
             <?php echo form_error('password_confirm', '<p class="required">', '</p>'); ?>
         </div>
@@ -80,17 +81,20 @@
     <div class='form-group' style="display:none">
         <div class='col-md-3' for='groups'>Groups  </div>
         <div class="col-md-4">
-            <?php echo form_dropdown('groups[]', $groups_list, $selected, '  class="select"'); ?>
+            <?php echo form_dropdown('groups[]', $groups_list, $selected, '  class="from-control select"'); ?>
         </div>
-    </div> 
+    </div>
 
-    <div class='form-group'><div class="control-div"></div><div class="col-md-4">
-             <?php echo form_submit('submit', 'Update', "id='submit' class='btn btn-primary'"); ?> 
+    <div class='form-group'><div class="control-div"></div>
+    <div class="col-md-12 text-right">
+             <?php echo form_submit('submit', 'Update', "id='submit' class='btn btn-primary'"); ?>
             <?php echo anchor('admin/users', 'Cancel', 'class="btn  btn-default"'); ?>
         </div></div>
 
 
     <?php echo form_close(); ?>
     <div class="clearfix"></div>
+
+	</div>
 </div>
-</div>
+<!-- /pager -->

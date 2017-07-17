@@ -1,20 +1,22 @@
 <div class="col-md-12">
-    <div class="head"> 
-        <div class="icon"><span class="icosg-target1"></span></div>		
-        <h2>  Employees Attendance  </h2>
-        <div class="right"> 
-            <?php echo anchor('admin/employees_attendance/create', '<i class="glyphicon glyphicon-plus">
-                </i> ' . lang('web_add_t', array(':name' => 'Employees Attendance')), 'class="btn btn-primary"'); ?> 
-            <?php echo anchor('admin/employees_attendance', '<i class="glyphicon glyphicon-list">
-                </i> ' . lang('web_list_all', array(':name' => 'Employees Attendance')), 'class="btn btn-primary"'); ?> 
+    <!-- Pager -->
+<div class="panel panel-indigo">
+	<div class="panel-heading">
+		<h6 class="panel-title">Employees Attendance</h6>
+		<div class="heading-elements">
+			<ul class="pager pager-sm">
+				<li>
+				 <?php echo anchor('admin/employees_attendance/create', '<i class="glyphicon glyphicon-plus">
+                </i> ' . lang('web_add_t', array(':name' => 'Employees Attendance')), 'class="btn btn-primary"'); ?>
+				</li>
+				<li><?php echo anchor('admin/employees_attendance', '<i class="glyphicon glyphicon-list">
+                </i> ' . lang('web_list_all', array(':name' => 'Employees Attendance')), 'class="btn btn-primary"'); ?></li>
+			</ul>
+		</div>
+	</div>
 
-        </div>
-    </div>
-
-
-    <div class="block-fluid">
-
-        <?php
+	<div class="panel-body">
+		<?php
         $attributes = array('class' => 'form-horizontal', 'id' => '');
         echo form_open_multipart(current_url(), $attributes);
         ?>
@@ -35,7 +37,7 @@
 
             <div id="entry1" class="clonedInput">
 
-                <table cellpadding="0" cellspacing="0" width="100%">  
+                <table class='table' cellpadding="0" cellspacing="0" width="100%">
                     <tbody>
 
                         <tr >
@@ -50,13 +52,13 @@
                             <td width="40%">
                                 <?php
                                 $staff = $this->ion_auth->list_staff();
-                                echo form_dropdown('employee[]', array('' => 'Select Employee') + $staff, (isset($result->employee)) ? $result->employee : '', ' class="col-md-12 employee select_ttl" id="employee" style=""');
+                                echo form_dropdown('employee[]', array('' => 'Select Employee') + $staff, (isset($result->employee)) ? $result->employee : '', ' class="form-control col-md-12 employee select_ttl" id="employee" style=""');
                                 echo form_error('employee');
                                 ?>
-                            </td> 
+                            </td>
 
                             <td width="20%">
-                                <input type="text" name="time_in[]" id="time_in" class="time_in col-md-12 input_ed timepicker" value="<?php
+                                <input type="text" name="time_in[]" id="time_in" class="form-control time_in col-md-12 input_ed timepicker" value="<?php
                                 if (!empty($result->time_in))
                                 {
                                         echo $result->time_in;
@@ -65,7 +67,7 @@
                                        <?php echo form_error('time_in'); ?>
                             </td>
                             <td width="20%">
-                                <input type="text" name="time_out[]" id="time_out" class="time_out   col-md-12 input_ed timepicker" value="<?php
+                                <input type="text" name="time_out[]" id="time_out" class="form-control time_out   col-md-12 input_ed timepicker" value="<?php
                                 if (!empty($result->time_out))
                                 {
                                         echo $result->time_out;
@@ -84,7 +86,7 @@
 
 
             <div class="actions">
-                <a href="#" id="btnAdd" class="btn btn-success clone">Add New Line</a> 
+                <a href="#" id="btnAdd" class="btn btn-success clone">Add New Line</a>
                 <a href="#" id="btnDel" class="btn btn-danger remove">Remove</a>
             </div>
         </div>
@@ -102,9 +104,26 @@
 
         <?php echo form_close(); ?>
         <div class="clearfix"></div>
-    </div>
+	</div>
+</div>
+<!-- /pager -->
+
+
+
+
+
 </div>
 
+<?php echo core_js('core/js/bootstrap-datepicker.min.js'); ?>
+<?php echo core_js('core/js/jquery.timepicker.js'); ?>
+
+<script src="<?php echo plugin_path('bootstrap.daterangepicker/moment.js'); ?>" ></script>
+<script src="<?php echo plugin_path('bootstrap.daterangepicker/daterangepicker.js'); ?>" ></script>
+<script src="<?php echo plugin_path('bootstrap.datetimepicker/bootstrap-datetimepicker.min.js'); ?>"></script>
+<link rel="stylesheet" href="//jonthornton.github.io/jquery-timepicker/jquery.timepicker.css">
+
+        <!-- Updated JavaScript url -->
+        <script src="//jonthornton.github.io/jquery-timepicker/jquery.timepicker.js"></script>
 
 <script type="text/javascript">
 
@@ -185,4 +204,4 @@
         });
 
 
-</script> 
+</script>

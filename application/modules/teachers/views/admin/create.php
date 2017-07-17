@@ -1,17 +1,20 @@
 <div class="col-md-8">
-    <div class="head"> 
-        <div class="icon"><span class="icosg-target1"></span></div>		
-        <h2>  Teachers  </h2>
-        <div class="right"> 
-            <?php echo anchor('admin/teachers/create', '<i class="glyphicon glyphicon-plus">
-                </i> ' . lang('web_add_t', array(':name' => 'Teachers')), 'class="btn btn-primary"'); ?> 
-            <?php echo anchor('admin/teachers', '<i class="glyphicon glyphicon-list">
-                </i> ' . lang('web_list_all', array(':name' => 'Teachers')), 'class="btn btn-primary"'); ?> 
-        </div>
-    </div>
+<!-- Pager -->
+<div class="panel panel-white">
+	<div class="panel-heading">
+		<h6 class="panel-title">Teachers</h6>
+		<div class="heading-elements">
+			<div class="heading-btn">
+				 <?php echo anchor('admin/teachers/create', '<i class="glyphicon glyphicon-plus">
+                </i> ' . lang('web_add_t', array(':name' => 'Teachers')), 'class="btn heading-btn btn-primary"'); ?>
+              <?php echo anchor('admin/teachers', '<i class="glyphicon glyphicon-list">
+                </i> ' . lang('web_list_all', array(':name' => 'Teachers')), 'class="btn heading-btn btn-primary"'); ?>
+			</div>
+		</div>
+	</div>
 
-    <div class="block-fluid">
-        <?php
+	<div class="panel-body">
+		 <?php
         $attributes = array('class' => 'form-horizontal', 'id' => '');
         echo form_open_multipart(current_url(), $attributes);
         ?>
@@ -51,7 +54,7 @@
                     1 => "Active",
                     0 => "Inactive",
                 );
-                echo form_dropdown('status', $items, (isset($result->status)) ? $result->status : '', ' class="select" data-placeholder="Select Options..." ');
+                echo form_dropdown('status', $items, (isset($result->status)) ? $result->status : '', ' class="form-control select" data-placeholder="Select Options..." ');
                 echo form_error('status');
                 ?>
             </div></div>
@@ -72,4 +75,6 @@
         <?php echo form_close(); ?>
         <div class="clearfix"></div>
     </div>
+</div>
+<!-- /pager -->
 </div>

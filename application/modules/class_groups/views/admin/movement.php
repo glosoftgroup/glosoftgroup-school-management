@@ -13,17 +13,24 @@
     }
 ?>
 <div class="col-md-8">
-    <div class="head">
-        <div class="icon"><span class="icosg-target1"></span></div>
-        <h2>Edit Student Classes</h2>
-        <div class="right">             
-             <?php echo anchor('admin/class_groups/', '<i class="glyphicon glyphicon-list">
+
+    <!-- Pager -->
+<div class="panel panel-white">
+	<div class="panel-heading">
+		<h6 class="panel-title">Edit Student Classes</h6>
+		<div class="heading-elements">
+			<ul class="pager pager-sm">
+				<li>
+				   <?php echo anchor('admin/class_groups/', '<i class="glyphicon glyphicon-list">
                 </i> List All', 'class="btn btn-primary"'); ?>
-        </div>    					
-    </div>
-    <div class="block-fluid">
-         <?php echo form_open(current_url(), 'class="form-inline" id="fextra"'); ?>
-        <table cellpadding="0" cellspacing="0" border="0" class='hover' id="adm_table" width="100%">
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="panel-body">
+		<?php echo form_open(current_url(), 'class="form-inline" id="fextra"'); ?>
+        <table cellpadding="0" cellspacing="0" border="0" class='table table-hover' id="adm_table" width="100%">
             <thead>
                 <tr>
                     <th width="5%">#</th>
@@ -37,8 +44,7 @@
             <tbody></tbody>
             <tfoot></tfoot>
         </table>
-
-        <?php echo form_error('sids', '<p class="error" style="width:200px; margin: 15px auto;" >', '</p>'); ?>
+		<?php echo form_error('sids', '<p class="error" style="width:200px; margin: 15px auto;" >', '</p>'); ?>
         <div class='col-md-12 '>
             <div class="col-md-6">
                  <?php
@@ -52,38 +58,53 @@
             </div>
         </div>
         <?php echo form_close(); ?>
-    </div>
+	</div>
+</div>
+<!-- /pager -->
+
+
 </div>
 
 <div class="col-md-4">
-    <div class="widget">
-        <div class="head dark">
-            <div class="icon"><span class="icosg-newtab"></span></div>
-            <h2>Class</h2>
-        </div>
+ <div class="panel panel-primary">
+   <div class="panel-heading">
+		<h6 class="panel-title">Class</h6>
+		<div class="heading-elements">
 
-        <div class="block-fluid">
-            <ul class="list tickets">
-                 <?php
-                     $i = 0;
-                     foreach ($this->classlist as $cid => $cl)
-                     {
-                          $i++;
-                          $cc = (object) $cl;
-                          $cll = $sel == $cid ? 'sel' : '';
-                          ?> 
-                         <li class = "<?php echo $cll; ?> clearfix" >
-                             <div class = "title">
-                                 <a href = "<?php echo current_url() . '?sw=' . $cid; ?>"><?php echo $cc->name; ?></a>
-                                 <p><?php echo $cc->size; ?> Students</p>
-                             </div>
-                         </li>
-                    <?php } ?>
-            </ul>
-        </div>
-    </div>
+		</div>
+	</div>
+	<ul class="media-list media-list-linked">
+
+		<?php
+			 $i = 0;
+			 foreach ($this->classlist as $cid => $cl)
+			 {
+				  $i++;
+				  $cc = (object) $cl;
+				  $cll = $sel == $cid ? 'sel' : '';
+		 ?>
+
+		<li class="media">
+			<a href="<?php echo current_url() . '?sw=' . $cid; ?>" class="media-link">
+				<div class="media-left"><img src="assets/images/demo/users/face1.jpg" class="img-circle" alt=""></div>
+				<div class="media-body">
+					<div class="media-heading text-semibold"><?php echo $cc->name; ?></div>
+					<span class="text-muted"></span>
+				</div>
+				<div class="media-right media-middle">
+					<span class="label label-primary"><?php echo $cc->size; ?> Students</span>
+				</div>
+			</a>
+		</li>
+		 <?php } ?>
+	</ul>
+	</div>
+ </div>
 
 </div>
+<?php echo core_js('core/js/plugins/forms/selects/select2.min.js'); ?>
+
+<?php echo theme_js('plugins/pnotify/jquery.pnotify.min.js'); ?>
 
 <script type = "text/javascript">
      $(document).ready(function ()
@@ -135,4 +156,4 @@
                notify('Select', 'Value changed: ' + e.val);
           });
      });
-</script>  
+</script>

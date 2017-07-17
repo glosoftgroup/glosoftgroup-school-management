@@ -1,26 +1,27 @@
-<div class="head"> 
-    <div class="icon"><span class="icosg-target1"></span> </div>
-    <h2>  Classes  </h2>
-    <div class="right"> 
-        <?php echo anchor('admin/class_groups/create', '<i class="glyphicon glyphicon-plus">
-                </i> ' . lang('web_add_t', array(':name' => 'Class')), 'class="btn btn-primary"'); ?> 
-        <?php echo anchor('admin/class_groups', '<i class="glyphicon glyphicon-list">
-                </i> ' . lang('web_list_all', array(':name' => 'Classes')), 'class="btn btn-primary"'); ?> 
+<!-- Pager -->
+<div class="panel panel-white">
+	<div class="panel-heading">
+		<h6 class="panel-title">Classes</h6>
+		<div class="heading-elements">
+			<div class="heading-btn">
+				 <?php echo anchor('admin/class_groups/create', '<i class="glyphicon glyphicon-plus">
+                </i> ' . lang('web_add_t', array(':name' => 'Class')), 'class="btn heading-btn btn-primary"'); ?>
+                <?php echo anchor('admin/class_groups', '<i class="glyphicon glyphicon-list">
+                </i> ' . lang('web_list_all', array(':name' => 'Classes')), 'class="btn heading-btn btn-primary"'); ?>
 
-    </div>
-
-</div>
-
-<?php if ($class_groups): ?>
-        <div class="block-fluid">
-            <table class="stable" cellpadding="0" cellspacing="0" width="100%">
+			</div>
+		</div>
+	</div>
+	<?php if ($class_groups): ?>
+	<div class="panel-body">
+		<table class="stable table" cellpadding="0" cellspacing="0" width="100%">
                 <thead>
                 <th>#</th>
                 <th>Name</th>
                 <th>Total Students</th>
                 <th>Streams</th>
-                <th>Status</th>	
-                <th>Description</th>	
+                <th>Status</th>
+                <th>Description</th>
                 <th width='30%'><?php echo lang('web_options'); ?></th>
                 </thead>
                 <tbody>
@@ -35,13 +36,13 @@
                             $i++;
                             ?>
                             <tr>
-                                <td><?php echo $i . '.'; ?></td>					
+                                <td><?php echo $i . '.'; ?></td>
                                 <td><?php echo $p->name; ?></td>
                                 <td><?php echo $p->size; ?></td>
                                 <td><?php
                                     foreach ($p->streams as $st)
                                     {
-                                            ?> 
+                                            ?>
                                             <span class="label label-info">  <?php echo $st; ?></span>
                                     <?php } ?>
                                 </td>
@@ -54,7 +55,9 @@
                                 <td><?php echo $p->description; ?></td>
 
                                 <td>
+                                  
                                     <div class="btn-group">
+
                                         <button class="btn dropdown-toggle" data-toggle="dropdown">Action <i class="glyphicon glyphicon-caret-down"></i></button>
                                         <ul class="dropdown-menu pull-right">
 
@@ -82,9 +85,9 @@
                 </tbody>
 
             </table>
-
-        </div>
-
-<?php else: ?>
-        <p class='text'><?php echo lang('web_no_elements'); ?></p>
-                                                                                     <?php endif; 
+	</div>
+	<?php else: ?>
+        <p class='alert alert-warning'><?php echo lang('web_no_elements'); ?></p>
+    <?php endif; ?>
+</div>
+<!-- /pager -->

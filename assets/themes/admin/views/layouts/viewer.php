@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>        
+    <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 
         <!--[if gt IE 8]>
             <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <![endif]-->        
+        <![endif]-->
 
         <title><?php echo $template['title']; ?></title>
 
-        <?php echo theme_css('stylesheets.css'); ?>     
+        <?php echo theme_css('stylesheets.css'); ?>
         <?php echo theme_css('select2/select2.css'); ?>
         <?php echo theme_css('themes/default.css'); ?>
-        <?php echo theme_css('custom.css'); ?>   
-        <?php echo theme_css('fancybox/global.css'); ?>   
-        <?php echo theme_css('fancybox/jquery.fancybox.css'); ?>   
+        <?php echo theme_css('custom.css'); ?>
+        <?php echo theme_css('fancybox/global.css'); ?>
+        <?php echo theme_css('fancybox/jquery.fancybox.css'); ?>
 
         <link rel="stylesheet" href="<?php echo plugin_path('uploadify/uploadify.css'); ?>" type="text/css" />
         <!--[if lt IE 10]>
           <link href="css/ie.css" rel="stylesheet" type="text/css" />
-      <![endif]-->        
+      <![endif]-->
         <link rel="stylesheet" type="text/css" href="<?php echo plugin_path('boxer/jquery.fs.boxer.css'); ?>" />
         <?php echo theme_js('plugins/jquery/jquery.min.js'); ?>
         <?php echo theme_js('plugins/jquery/jquery-ui-1.10.1.custom.min.js'); ?>
@@ -31,7 +31,7 @@
         <?php echo theme_js('plugins/other/excanvas.js'); ?>
 
         <?php echo theme_js('plugins/other/jquery.mousewheel.min.js'); ?>
-        <?php echo theme_js('plugins/bootstrap/bootstrap.min.js'); ?>            
+        <?php echo theme_js('plugins/bootstrap/bootstrap.min.js'); ?>
         <?php echo theme_js('plugins/cookies/jquery.cookies.2.2.0.min.js'); ?>
         <?php echo theme_js('plugins/pnotify/jquery.pnotify.min.js'); ?>
 
@@ -40,7 +40,7 @@
 
         <?php echo theme_js('plugins/animatedprogressbar/animated_progressbar.js'); ?>
         <?php echo theme_js('plugins/hoverintent/jquery.hoverIntent.minified.js'); ?>
-        <?php echo theme_js('plugins/scrollup/jquery.scrollUp.min.js'); ?>  
+        <?php echo theme_js('plugins/scrollup/jquery.scrollUp.min.js'); ?>
         <script type="text/javascript" src="<?php echo plugin_path('uploadify/jquery.uploadify.min.js'); ?>"></script>
         <script type="text/javascript" >
                 var skul = '<?php echo $this->school->school; ?> ';
@@ -49,14 +49,14 @@
                 var spath = '<?php echo base_url(); ?>';
         </script>
 
-        <?php echo theme_js('plugins/fancybox/jquery.fancybox.pack.js'); ?>  
-        <?php echo theme_js('plugins/fancybox/fancy-custom.js'); ?>  
- 
-        <link rel="shortcut icon" type="image/ico" href="<?php echo image_path('img/favicon.ico'); ?>" /> 
+        <?php echo theme_js('plugins/fancybox/jquery.fancybox.pack.js'); ?>
+        <?php echo theme_js('plugins/fancybox/fancy-custom.js'); ?>
+
+        <link rel="shortcut icon" type="image/ico" href="<?php echo image_path('img/favicon.ico'); ?>" />
 
     </head>
 
-    <body class="ssRed 
+    <body class="ssRed
     <?php
           if (
                       preg_match('/^(admin\/record_salaries\/slip)/i', $this->uri->uri_string()) ||
@@ -67,12 +67,12 @@
                       preg_match('/^(admin\/fee_payment\/statement)/i', $this->uri->uri_string())
           )
                   echo 'id="bodi"';
-    ?>"> 
+    ?>">
 
         <?php
               if ($this->ion_auth->is_in_group($this->user->id, 3))
               {
-                      ?>	
+                      ?>
 
                       <?php
               }
@@ -85,9 +85,9 @@
          <div class="row">
 
                <div class="col-md-12">
-                    <div class="breadCrumb clearfix">    
+                    <div class="breadCrumb clearfix">
                          <div>
-                              <div style="display: inline-block; width:40%"> 
+                              <div style="display: inline-block; width:40%">
                                    <span > <?php echo anchor('/', 'Home'); ?> > </span>
                                    <?php
                                    if ($this->uri->segment(2))
@@ -120,17 +120,17 @@
                           {
                                   ?>
                                   <div class="alert">
-                                      <button type="button" class="close" data-dismiss="alert">                                    
+                                      <button type="button" class="close" data-dismiss="alert">
                                           <i class="glyphicon glyphicon-remove"></i>                                </button>
                                       <strong>Warning!</strong> <?php echo $this->session->flashdata('warning'); ?>
                                   </div>
-                          <?php } ?> 
+                          <?php } ?>
                     <?php
                           if ($this->session->flashdata('warning'))
                           {
                                   ?>
                                   <div class="alert">
-                                      <button type="button" class="close" data-dismiss="alert">                                    
+                                      <button type="button" class="close" data-dismiss="alert">
                                           <i class="glyphicon glyphicon-remove"></i>                                </button>
                                       <strong>Warning!</strong> <?php echo $this->session->flashdata('warning'); ?>
                                   </div>
@@ -150,7 +150,7 @@
                           {
                                   ?>
                                   <div class="alert alert-info">
-                                      <button type="button" class="close" data-dismiss="alert">                                    
+                                      <button type="button" class="close" data-dismiss="alert">
                                           <i class="glyphicon glyphicon-remove"></i>                                </button>
                                       <?php echo $this->session->flashdata('info'); ?>
                                   </div>
@@ -162,8 +162,8 @@
                                   $str = is_array($message) ? $message['text'] : $message;
                                   ?>
                                   <div class="alert alert-success">
-                                      <button type="button" class="close" data-dismiss="alert">                                   
-                                          <i class="glyphicon glyphicon-remove"></i> 
+                                      <button type="button" class="close" data-dismiss="alert">
+                                          <i class="glyphicon glyphicon-remove"></i>
                                       </button>
                                       <script>  notify('Success', ' <?php echo $str; ?>');</script>
                                       <?php echo $str; ?>
@@ -174,7 +174,7 @@
                           {
                                   ?>
                                   <div class="alert alert-error">
-                                      <button type="button" class="close" data-dismiss="alert">                                    
+                                      <button type="button" class="close" data-dismiss="alert">
                                           <i class="glyphicon glyphicon-remove"></i>      </button>
                                       <strong>Error!</strong> <?php echo $this->session->flashdata('error'); ?>
                                   </div>
@@ -186,7 +186,7 @@
                             <div class="widget">
                                 <div class="profile clearfix">
                                     <div class="image">
-                                    </div>                        
+                                    </div>
                                     <div class="info-s">
                                         <h2> <?php echo $this->get->name; ?></h2>
                                         <p><strong>Title:</strong>  <?php echo $this->get->name; ?></p>
@@ -197,16 +197,16 @@
                                     <div class="stats">
                                         <div class="item">
                                             <div class="title"><?php echo count($this->get->subs); ?></div>
-                                            <div class="descr">Sub Units</div>                                
-                                        </div>                            
+                                            <div class="descr">Sub Units</div>
+                                        </div>
                                         <div class="item">
                                             <div class="title">&nbsp;</div>
-                                            <div class="descr">&nbsp;</div>                                
-                                        </div>                                                        
+                                            <div class="descr">&nbsp;</div>
+                                        </div>
                                         <div class="item">
                                             <div class="title">&nbsp;</div>
-                                            <div class="descr">&nbsp;</div>                                
-                                        </div>                            
+                                            <div class="descr">&nbsp;</div>
+                                        </div>
                                         <div class="item pull-right">
                                             <div class="title"><?php echo count($this->get->classign); ?></div>
                                             <div class="descr">Classes</div>
@@ -225,18 +225,18 @@
                                         <?php echo theme_image('examples/users/bull.png', array('class' => "img-polaroid")); ?>
                                         <a href="<?php echo base_url('admin/subjects/past_papers/' . $this->get->id); ?>">Question Papers</a>
                                         <div class="caption"><span class="label label-success"><?php echo $this->pcount; ?></span></div>
-                                    </div>          
+                                    </div>
                                     <div class="item">
                                         <?php echo theme_image('examples/users/bull.png', array('class' => "img-polaroid")); ?>
                                         <a href="<?php echo base_url('admin/subjects/past_papers/' . $this->get->id); ?>">Performance Trends</a>
                                         <div class="caption"> </div>
-                                    </div>                                             
+                                    </div>
                                     <div class="item">
                                         <?php echo theme_image('examples/users/bull.png', array('class' => "img-polaroid")); ?>
                                         <a href="<?php echo base_url('admin/subjects/upload/' . $this->get->id); ?>">Upload</a>
                                         <div class="caption"> </div>
-                                    </div>                                                 
-                                </div>   
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <?php echo $template['body']; ?>
@@ -246,7 +246,7 @@
 
             </div>
 
-        </div>  
+        </div>
 
         <div id="fcAddEvent" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="fcAddEventLabel" aria-hidden="true">
             <div class="modal-header">
@@ -259,8 +259,8 @@
                     <div class="col-md-9"><input type="text" id="fcAddEventTitle"/></div>
                 </div>
             </div>
-            <div class="modal-footer">            
-                <button class="btn btn-primary" id="fcAddEventButton">Add</button>            
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="fcAddEventButton">Add</button>
             </div>
         </div>
         <script type="text/javascript">  var flist = '<?php echo $this->list_size; ?>';</script>

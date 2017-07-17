@@ -1,7 +1,7 @@
 <div class="navigation hidden-print">
 
     <ul class="main" >
-        <li><a 
+        <li><a
             <?php
             if (preg_match('/^(admin)$/i', $this->uri->uri_string()) || preg_match('/^(admin)$/i', $this->uri->uri_string())
             )
@@ -26,7 +26,7 @@
                         }
                         $str = implode('|', $links);
                         ?>
-                        <li><a 
+                        <li><a
                             <?php
                             if (preg_match('/^(admin\/(' . $str . '))/i', $this->uri->uri_string()))
                                     echo 'class="active"';
@@ -76,14 +76,14 @@
 
     </ul>
 
-    <div class="control"></div>        
+    <div class="control"></div>
     <div class="submain">
 
         <div id="default">
             <div class="widget-fluid userInfo clearfix">
                 <div class="image" >
                     <img style="padding:1px;"src="<?php echo base_url('assets/themes/admin/img/member.png'); ?>" width="60" height="60" />
-                </div>              
+                </div>
                 <div class="name"><?php
                     $user = $this->ion_auth->get_user();
                     echo trim($user->first_name . ' ' . $user->last_name);
@@ -92,7 +92,7 @@
                     <li><a href="<?php echo base_url('admin/settings'); ?>"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
                     <li><a href="<?php echo base_url('admin/sms'); ?>"><span class="glyphicon glyphicon-comment"></span> Messaging</a></li>
                     <li><a href="<?php echo base_url('admin/help'); ?>" target="_blank"><span class="glyphicon glyphicon-question-sign"></span> Help</a></li>
-                    <li><a href="<?php echo base_url('admin/logout'); ?>"><span class="glyphicon glyphicon-share-alt"></span> Logout</a></li>                        
+                    <li><a href="<?php echo base_url('admin/logout'); ?>"><span class="glyphicon glyphicon-share-alt"></span> Logout</a></li>
                 </ul>
                 <div class="text">
                     Welcome back! <?php echo $this->ion_auth->get_user()->last_login ? 'Your last visit: ' . date('d M Y H:i', $this->ion_auth->get_user()->last_login) : ''; ?>
@@ -118,7 +118,7 @@
                                 echo $count;
                                 ?></span>
 
-                        </li> 
+                        </li>
                         <li>
                             <a href="<?php echo base_url('admin/parents'); ?>">Registered Parents</a>
                             <span class="caption blue"><?php
@@ -134,7 +134,7 @@
                                 echo $count;
                                 ?></span>
 
-                        </li>                         
+                        </li>
                         <li>
                             <a href="<?php echo base_url('admin/school_classes'); ?>" >All Classes</a>
                             <span class="caption blue"><?php
@@ -142,7 +142,7 @@
                                 echo $count;
                                 ?></span>
 
-                        </li> 
+                        </li>
                         <li>
                             <a href="<?php echo base_url('admin/subjects'); ?>">All Subjects</a>
                             <span class="caption blue"><?php
@@ -150,7 +150,7 @@
                                 echo $count;
                                 ?></span>
 
-                        </li>	
+                        </li>
                         <li>
                             <a href="<?php echo base_url('admin/class_rooms'); ?>">All Class Rooms </a>
                             <span class="caption blue"><?php
@@ -173,7 +173,7 @@
                             <a href="<?php echo base_url('admin/emails'); ?>">All Emails</a>
                             <span class="caption blue"><?php echo $this->ion_auth->count_emails(); ?></span>
 
-                        </li> 
+                        </li>
                         <li>
                             <a href="<?php echo base_url('admin/sms'); ?>">All SMS'</a>
                             <span class="caption blue"><?php echo $this->ion_auth->count_sms(); ?></span>
@@ -197,7 +197,7 @@
         {
                 foreach ($ss as $title => $arra)
                 {
-                        ?> <div id="<?php echo $title; ?>">                
+                        ?> <div id="<?php echo $title; ?>">
                             <div class="menu">
                                 <?php
                                 if ($title == 'Administration')
@@ -222,9 +222,9 @@
                                                         $soff = $mm->method == 'index' ? '' : '/' . $mm->method;
                                                         $preg = $mm->method == 'index' ? '' : '\/' . $mm->method;
                                                         ?>
-                                                        <a <?php if (preg_match('/^(admin\/' . $mm->module . $preg . ')/i', $this->uri->uri_string())) echo 'class="active"'; ?> 
+                                                        <a <?php if (preg_match('/^(admin\/' . $mm->module . $preg . ')/i', $this->uri->uri_string())) echo 'class="active"'; ?>
                                                             href="<?php echo base_url('admin/' . $mm->module . $soff); ?>">
-                                                            <span class="<?php echo $mm->icon; ?> <?php if (preg_match('/^(admin\/' . $mm->module . '\/' . $mm->method . ')/i', $this->uri->uri_string())) echo 'glyphicon glyphicon-white'; ?>"></span> 
+                                                            <span class="<?php echo $mm->icon; ?> <?php if (preg_match('/^(admin\/' . $mm->module . '\/' . $mm->method . ')/i', $this->uri->uri_string())) echo 'glyphicon glyphicon-white'; ?>"></span>
                                                             <?php echo $mm->title; ?></a>
                                                         <?php
                                                 }
@@ -246,7 +246,7 @@
                                                             <?php } ?>
 
                                                         </ul>
-                                                    </li> 
+                                                    </li>
                                                 </ul>
 
                                                 <?php
@@ -268,7 +268,7 @@
                                                             <?php } ?>
 
                                                         </ul>
-                                                    </li> 
+                                                    </li>
                                                 </ul>
 
                                                 <?php
@@ -297,9 +297,9 @@
                                                         $soff = $mm->method == 'index' ? '' : '/' . $mm->method;
                                                         $preg = $mm->method == 'index' ? '' : '\/' . $mm->method;
                                                         ?>
-                                                        <a  <?php if (preg_match('/^(admin\/' . $mm->module . $preg . ')/i', $this->uri->uri_string())) echo 'class="active"'; ?> 
+                                                        <a  <?php if (preg_match('/^(admin\/' . $mm->module . $preg . ')/i', $this->uri->uri_string())) echo 'class="active"'; ?>
                                                             href="<?php echo base_url('admin/' . $mm->module . $soff); ?>">
-                                                            <span class="<?php echo $mm->icon; ?> <?php if (preg_match('/^(admin\/' . $mm->module . '\/' . $mm->method . ')/i', $this->uri->uri_string())) echo 'glyphicon glyphicon-white'; ?>"></span> 
+                                                            <span class="<?php echo $mm->icon; ?> <?php if (preg_match('/^(admin\/' . $mm->module . '\/' . $mm->method . ')/i', $this->uri->uri_string())) echo 'glyphicon glyphicon-white'; ?>"></span>
                                                             <?php echo $mm->title; ?></a>
                                                         <?php
                                                 }
@@ -322,7 +322,7 @@
                                                                     <li><a <?php if (preg_match('/^(admin\/' . $sl->module . $sreg . ')/i', $this->uri->uri_string())) echo 'class="active"'; ?> href="<?php echo base_url('admin/' . $sl->module . $spoff); ?>"><span class="glyphicon glyphicon-file-text"></span><?php echo $sl->title; ?></a></li>
                                                             <?php } ?>
                                                         </ul>
-                                                    </li> 
+                                                    </li>
                                                 </ul>
 
                                                 <?php
@@ -344,20 +344,20 @@
                                                                     <li><a <?php if (preg_match('/^(admin\/' . $pp->module . $ppreg . ')/i', $this->uri->uri_string())) echo 'class="active"'; ?>href="<?php echo base_url('admin/' . $pp->module . $poff); ?>"><span class="glyphicon glyphicon-file-text"></span><?php echo $pp->title; ?></a></li>
                                                             <?php } ?>
                                                         </ul>
-                                                    </li> 
+                                                    </li>
                                                 </ul>
 
                                                 <?php
                                         }
                                 }
-                                ?></div>    
+                                ?></div>
                             <div class="dr"><span></span></div>
-                        </div>  
+                        </div>
                         <?php
                 }
         }
-        ?> 
+        ?>
 
     </div>
 
-</div> 
+</div>

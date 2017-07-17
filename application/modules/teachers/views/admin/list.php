@@ -1,31 +1,36 @@
-<div class="head"> 
-    <div class="icon"><span class="icosg-target1"></span> </div>
-    <h2>  Teachers  </h2>
-    <div class="right">  
-        <?php echo anchor('admin/teachers/create/' . $page, '<i class="glyphicon glyphicon-plus"></i> ' . lang('web_add_t', array(':name' => 'Teachers')), 'class="btn btn-primary"'); ?>
+<!-- Pager -->
+<div class="panel panel-white">
+	<div class="panel-heading">
+		<h6 class="panel-title">Teachers</h6>
+		<div class="heading-elements">
+			<ul class="heading-btn">
 
-        <?php echo anchor('admin/teachers', '<i class="glyphicon glyphicon-list">
-                </i> ' . lang('web_list_all', array(':name' => 'Teachers')), 'class="btn btn-primary"'); ?> 
+				 <?php echo anchor('admin/teachers/create/' . $page, '<i class="glyphicon glyphicon-plus"></i> ' . lang('web_add_t', array(':name' => 'Teachers')), 'class="btn heading-btn  btn-primary"'); ?>
 
-    </div>
-</div>
+				<?php echo anchor('admin/teachers', '<i class="glyphicon glyphicon-list">
+                </i> ' . lang('web_list_all', array(':name' => 'Teachers')), 'class="btn heading-btn btn-primary"'); ?>
+			</ul>
+		</div>
+	</div>
 
-<div class="block-fluid">
-    <table id="ModeTable" cellpadding="0" cellspacing="0" width="100%">
+	<div class="panel-body">
+		<table class='table' id="ModeTable" cellpadding="0" cellspacing="0" width="100%">
         <thead>
         <th>#</th>
         <th>Name</th>
         <th>Phone</th>
-        <th>Email</th>	
-        <th>Status</th>	
-        <th>Designation</th>	
+        <th>Email</th>
+        <th>Status</th>
+        <th>Designation</th>
         <th width="20%"><?php echo lang('web_options'); ?></th>
         </thead>
         <tbody></tbody>
         <tfoot></tfoot>
     </table>
 
+	</div>
 </div>
+<!-- /pager -->
 
 
 <script type="text/javascript">
