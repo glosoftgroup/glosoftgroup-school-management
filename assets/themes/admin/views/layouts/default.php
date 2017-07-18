@@ -61,7 +61,7 @@
         <?php echo theme_css('dataTables.colVis.min.css'); ?>
 
 
-         <?php echo theme_css('select2/select2.css'); ?>
+          <!-- echo theme_css('select2/select2.css'); -->
         <link href="<?php echo js_path('plugins/jeditable/bootstrap-editable.css'); ?>" rel="stylesheet">
 
         <script> var BASE_URL = '<?php echo base_url(); ?>';</script>
@@ -238,12 +238,17 @@
     <?php echo core_js('core/js/plugins/ui/moment/moment.min.js'); ?>
     <?php echo core_js('core/js/plugins/ui/fullcalendar/fullcalendar.min.js'); ?>
     <?php echo core_js('core/js/plugins/visualization/echarts/echarts.js'); ?>
-
+    <?php echo core_js('core/js/plugins/forms/selects/bootstrap_multiselect.js'); ?>
     <script>
      // Default initialization
      $('.select').select2({
          minimumResultsForSearch: Infinity
      });
+     $('.multiselect').multiselect({
+        onChange: function() {
+            $.uniform.update();
+        }
+    });
     </script>
 
 

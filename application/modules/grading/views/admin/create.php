@@ -1,14 +1,19 @@
-<div class="col-md-8">
-    <div class="head">
-        <div class="icon"><span class="icosg-target1"></span></div>
-        <h2>Grading</h2> 
-        <div class="right">                            
-            <?php echo anchor('admin/grading/create/' . $page, '<i class="glyphicon glyphicon-plus"></i> ' . lang('web_add_t', array(':name' => ' New Grading')), 'class="btn btn-primary"'); ?>
-            <?php echo anchor('admin/grading/', '<i class="glyphicon glyphicon-list">
-                </i> List All', 'class="btn btn-primary"'); ?>             
-        </div>    					
+
+<div class="col-md-8 ">
+
+  <div class="panel">
+    <div class="panel-heading">
+
+      <h2 class="panel-title">Grading</h2>
+      <div class="heading-elements">
+         <div class="heading-btn">
+          <?php echo anchor('admin/grading/create/' . $page, '<i class="glyphicon glyphicon-plus"></i> ' . lang('web_add_t', array(':name' => ' New Grading')), 'class="btn btn-primary"'); ?>
+          <?php echo anchor('admin/grading/', '<i class="glyphicon glyphicon-list">
+              </i> List All', 'class="btn btn-primary"'); ?>
+      </div>
     </div>
-    <div class="block-fluid">
+  </div>
+    <div class="panel-body">
         <?php
         $attributes = array('class' => 'form-horizontal', 'id' => '');
         echo form_open_multipart(current_url(), $attributes);
@@ -23,9 +28,9 @@
             </div>
         </div>
         <div class="head dark">
-        </div>                
+        </div>
         <div class="block-fluid">
-            <table cellpadding="0" cellspacing="0" width="100%">
+            <table class="table table-hover" cellpadding="0" cellspacing="0" width="100%">
                 <thead>
                     <tr>
                         <th width="3%">
@@ -47,12 +52,12 @@
                 </thead>
             </table>
             <div id="entry1" class="clonedInput">
-                <table cellpadding="0" cellspacing="0" width="100%">  
+                <table class="table table-hover" cellpadding="0" cellspacing="0" width="100%">
                     <tbody>
                         <?php
                         $i = 1;
                         foreach ($list_grades as $post):
-                                ?>  
+                                ?>
                                 <tr>
                                     <td width="3%">
                                         <span id="reference" name="reference" class="heading-reference"><?php echo $i; ?>	</span>
@@ -75,7 +80,7 @@
                                     <td width="10%">
                                         <?php echo $post->remarks; ?>
                                     </td>
-                                </tr> 
+                                </tr>
                                 <?php
                                 $i++;
                         endforeach;
@@ -93,45 +98,49 @@
         <?php echo form_close(); ?>
         <div class="clearfix"></div>
     </div>
+    </div>
 </div>
 <div class="col-md-4">
 
-    <div class="widget">
-        <div class="head dark">
-            <div class="icon"></div>
-            <h2>Add Grading System</h2>
-        </div>
+  <div class="panel panel-primary">
+    <div class="panel-heading">
 
-        <div class="block-fluid">
+      <h2 class="panel-title">Add Grading System</h2>
+      <div class="heading-elements">
+         <div class="heading-btn">
+
+      </div>
+    </div>
+  </div>
+        <div class="panel-body">
             <?php echo form_open('admin/grading_system/quick_add', 'class=""'); ?>
             <div class="form-group">
-                <div class="col-md-3">Name:<span class='required'>*</span></div>
-                <div class="col-md-9">                                      
-                    <?php echo form_input('title', '', 'id="title_1"  placeholder=" E.g KNEC"'); ?>
+                <label>Name:<span class='required'>*</span></label>
+
+                    <?php echo form_input('title', '', 'id="title_1"  class="form-control" placeholder=" E.g KNEC"'); ?>
                     <?php echo form_error('title'); ?>
-                </div>
+
             </div>
             <div class='form-group'>
-                <div class='col-md-3' for='title'>Pass Mark <span class='required'>*</span></div>
-                <div class="col-md-5">
-                    <?php echo form_input('pass_mark', '', 'id="pass_mark" placeholder="E.g 250" class="form-control" '); ?>
+                <label>Pass Mark <span class='required'>*</span></label>
+
+                    <?php echo form_input('pass_mark', '', 'id="pass_mark"  placeholder="E.g 250" class="form-control" '); ?>
                     <?php echo form_error('pass_mark'); ?>
-                </div>
+
             </div>
 
             <div class="form-group">
-                <div class="col-md-3">Description:</div>
-                <div class="col-md-9">
-                    <textarea name="description"></textarea> 
-                </div>
-            </div>                        
+                <label >Description:</label>
+                <textarea class="form-control" name="description"></textarea>
+            </div>
 
             <div class="toolbar TAR">
                 <button class="btn btn-primary">Add</button>
             </div>
-            <?php echo form_close(); ?> 
+            <?php echo form_close(); ?>
         </div>
     </div>
+
     <div class="widget">
         <div class="head dark">
             <div class="icon"></div>
@@ -142,14 +151,14 @@
             <?php echo form_open('admin/grades/quick_add', 'class=""'); ?>
             <div class="form-group">
                 <div class="col-md-3">Title:<span class='required'>*</span></div>
-                <div class="col-md-9">                                      
+                <div class="col-md-9">
                     <?php echo form_input('title', '', 'id="title_1"  placeholder=" E.g Distinction"'); ?>
                     <?php echo form_error('title'); ?>
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-md-3">Remarks:<span class='required'>*</span></div>
-                <div class="col-md-9">                                      
+                <div class="col-md-9">
                     <?php echo form_input('remarks', '', 'id="remarks"  placeholder=" e.g Very Good"'); ?>
                     <?php echo form_error('remarks'); ?>
                 </div>
@@ -160,10 +169,9 @@
                 <button class="btn btn-primary">Add</button>
                 <a href="<?php echo base_url('admin/grades'); ?>" class="btn btn-primary"> Manage Grades</a>
             </div>
-            <?php echo form_close(); ?> 
+            <?php echo form_close(); ?>
         </div>
     </div>
 
 
 </div>
-

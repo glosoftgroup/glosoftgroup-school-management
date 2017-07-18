@@ -1,15 +1,15 @@
-<div class="col-md-8">
-    <div class="head">
+<div class="panel panel-white">
+    <div class="panel-heading">
         <div class="icon"><span class="icosg-target1"></span></div>
         <h2> Edit Unit </h2>
 
-        <div class="right">
+        <div class="heading-btn">
              <?php echo anchor('admin/subjects', '<i class="glyphicon glyphicon-list">
                 </i> ' . lang('web_list_all', array(':name' => 'Subjects')), 'class="btn btn-primary"'); ?>
         </div>
     </div>
 
-    <div class="block-fluid">
+    <div class="panel-body">
          <?php
              $attributes = array('class' => 'form-horizontal', 'id' => '');
              echo form_open_multipart(current_url(), $attributes);

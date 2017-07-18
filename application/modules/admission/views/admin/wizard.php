@@ -1,20 +1,20 @@
 <div class="col-md-12">
-    <div class="head"> 
-        <div class="icon"><span class="icosg-target1"></span></div>		
+    <div class="panel panel-white"> 
+        <div class="icon"><span class="icosg-target1"></span></div>
         <h2>  Admission  </h2>
-        <div class="right"> 
+        <div class="right">
             <?php echo anchor('admin/admission/create', '<i class="glyphicon glyphicon-plus">
-                </i> New Admission ', 'class="btn btn-primary"'); ?> 
+                </i> New Admission ', 'class="btn btn-primary"'); ?>
             <?php echo anchor('admin/admission', '<i class="glyphicon glyphicon-list">
-                </i> ' . lang('web_list_all', array(':name' => 'Admission')), 'class="btn btn-primary"'); ?> 
+                </i> ' . lang('web_list_all', array(':name' => 'Admission')), 'class="btn btn-primary"'); ?>
             <?php echo anchor('admin/admission/inactive/', '<i class="glyphicon glyphicon-question-sign"></i> Inactive Students', 'class="btn btn-warning"'); ?>
         </div>
     </div>
     <!--javascript:notify('Wizard','Form #wizard_validate submited')-->
     <div class="block-fluid">
         <form action="javascript:function(){}" method="POST" id="wizard_validate">
-           
-            <fieldset title="Student Details">                            
+
+            <fieldset title="Student Details">
                 <legend>Biodata</legend>
                 <div class="form-group">
                     <div class="col-md-3">First Name:</div>
@@ -29,7 +29,7 @@
                         <?php echo form_input('last_name', $result->last_name, 'class="validate[required,minSize[2]]"'); ?>
                         <span class="bottom">Required, minSize = 2</span>
                     </div>
-                </div>                                
+                </div>
                 <div class="form-group">
                     <div class="col-md-3">Date of Birth:</div>
                     <div class="col-md-4">
@@ -42,7 +42,7 @@
                 </div>
                 <div class="form-group">
                     <div class="col-md-3">Gender:</div>
-                    <div class="col-md-4"> 
+                    <div class="col-md-4">
                         <?php
                         $st = '';
                         if ($result->gender == 1)
@@ -59,7 +59,7 @@
                         <div class = "radio"> <input type = "radio" <?php echo $sf; ?> name = "gender" value = "2" class = "validate[required]"> </div>Female
                     </div>
                 </div>
-				 
+
 
                 <div class = "form-group">
                     <div class = "col-md-3">Passport Photo</div>
@@ -73,35 +73,35 @@
 
                 <div class = "form-group">
                     <div class = "col-md-3">Student's E-mail: (Optional)</div>
-                    <div class = "col-md-4"> 
-                        <?php 
+                    <div class = "col-md-4">
+                        <?php
                        $addi =  $updType=='edit'? '' : ',ajax[ajaxUserCallPhp]';
                         echo form_input('email', $result->email, 'class="validate[custom[email] '.$addi.']" id="smail" placeholder="Optional"');
                         ?>
                         <span class="bottom">Valid email - Will be used to Login</span>
                     </div>
                 </div>
-				
+
 				<div class="form-group">
                     <div class="col-md-3">Former school:</div>
                     <div class="col-md-4">
                         <?php echo form_input('former_school', $result->former_school, 'class=""'); ?>
                         <span class="bottom">Optional</span>
                     </div>
-                </div> 
+                </div>
 				<div class="form-group">
                     <div class="col-md-3">Entry marks:</div>
                     <div class="col-md-4">
                         <?php echo form_input('entry_marks', $result->entry_marks, 'class=""'); ?>
                         <span class="bottom">Optional</span>
                     </div>
-                </div> 
+                </div>
 				<div class="form-group">
                     <div class="col-md-3">Allergies:</div>
                     <div class="col-md-4">
 						 <textarea name="allergies" class=""><?php echo isset($result) && !empty($result) ? $result->allergies : $this->input->post('allergies'); ?></textarea>
                             <span class="bottom">Optional</span>
-                       
+
                     </div>
                 </div>
 				<div class="form-group">
@@ -110,21 +110,21 @@
                         <?php echo form_input('doctor_name', $result->doctor_name, ''); ?>
                         <span class="bottom">Optional</span>
                     </div>
-                </div> 
+                </div>
 				<div class="form-group">
                     <div class="col-md-3">Doctor's Phone:</div>
                     <div class="col-md-4">
                         <?php echo form_input('doctor_phone', $result->doctor_phone, ''); ?>
                         <span class="bottom">Optional</span>
                     </div>
-                </div>  
+                </div>
 <div class="form-group">
                     <div class="col-md-3">Prefered Hospital:</div>
                     <div class="col-md-4">
                         <?php echo form_input('hospital', $result->hospital, 'class=""'); ?>
                         <span class="bottom">Optional</span>
                     </div>
-                </div> 				
+                </div>
 
             </fieldset>
 
@@ -132,7 +132,7 @@
                 <legend>Address & Contact </legend>
                 <div class="form-group" id="swtch">
                     <div class="col-md-3">Parent:</div>
-                    <div class="col-md-6"> 
+                    <div class="col-md-6">
                         <div class = "radio"> <input type = "radio" id="pnew"  name = "ptype" class = "validate[required] " <?php echo $updType == 'edit' ? 'disabled="disabled" ' : ''; ?> value = "1"> </div>New Parent
                         <div class = "radio"> <input type = "radio" id="pexists" name = "ptype" value = "2" class = "validate[required]" <?php echo $updType == 'edit' ? 'disabled="disabled" ' : ''; ?>> </div>Existing Parent
                     </div>
@@ -144,11 +144,11 @@
                         <div class="col-md-4">
 
                             <?php echo form_dropdown('parent_id', $parents, (isset($result->parent_id)) ? $result->parent_id : '', ' class="select" ');
-                            ?><span class="bottom">Required</span>		
+                            ?><span class="bottom">Required</span>
                         </div>
                     </div>
                 </div>
-				
+
 				 <div class="col-md-12">
 				 <div class="col-md-6">
                        <h3 style="text-align:center"> 1st Parent's Details (Father)</h3>
@@ -170,10 +170,10 @@
                             <div class="col-md-3" for='parent_email'> Email  <span class='required'>*</span></div>
                             <div class="col-md-8">
                                 <?php echo form_input('parent_email', isset($pero) && !empty($pero) ? $pero->email : $this->input->post('parent_email'), 'id="parent_email"  class="form-control" '); ?>
-                                <span class="bottom">Required - Will be used to Login(No Spaces)</span> 
+                                <span class="bottom">Required - Will be used to Login(No Spaces)</span>
                             </div>
                         </div>
-                        <input style="display:none" class="mask_mobile" >    
+                        <input style="display:none" class="mask_mobile" >
                         <div class='form-group'>
                             <div class="col-md-3" for='phone'> Phone <span class='required'>*</span></div>
                             <div class="col-md-8">
@@ -182,7 +182,7 @@
 
                             </div>
                         </div>
-						
+
 						 <div class="form-group">
                             <div class="col-md-3"> Occupation:</div>
                             <div class="col-md-8">
@@ -197,8 +197,8 @@
                                 <textarea name="address" class=""><?php echo isset($pero) && !empty($pero) ? $pero->address : $this->input->post('address'); ?></textarea>
                                 <span class="bottom">Optional</span>
                             </div>
-                        </div>  
-                   
+                        </div>
+
                     </div>
 					  <div class="col-md-6">
 					    <h3> 2nd Parent/Guardian (Mother)</h3>
@@ -220,10 +220,10 @@
                             <div class="col-md-3" for='parent_email'> Email  </div>
                             <div class="col-md-8">
                                 <?php echo form_input('mother_email', isset($pero) && !empty($pero) ? $pero->mother_email : $this->input->post('mother_email'), 'id="mother_email"  class=" form-control" '); ?>
-                                <span class="bottom"></span> 
+                                <span class="bottom"></span>
                             </div>
                         </div>
-                        <input style="display:none" class="mask_mobile" >    
+                        <input style="display:none" class="mask_mobile" >
                         <div class='form-group'>
                             <div class="col-md-3" for='phone'> Phone </div>
                             <div class="col-md-8">
@@ -232,7 +232,7 @@
 
                             </div>
                         </div>
-						
+
 						 <div class="form-group">
                             <div class="col-md-3"> Occupation:</div>
                             <div class="col-md-8">
@@ -247,34 +247,34 @@
                                 <textarea name="mother_address" class=""><?php echo isset($pero) && !empty($pero) ? $pero->mother_address : $this->input->post('mother_address'); ?></textarea>
                                 <span class="bottom"> Optionals</span>
                             </div>
-                        </div> 
-                    </div>
-				
-				</div>
-				
-				
-				
-				
-                <div id="newp" <?php echo $updType == 'edit' ? '' : ' style="display: none;"'; ?>>
-                  
-                    
-                  
-					 <input style="display:none" class="mask_mobile" >    
-                    <div class='form-group'>
-                        <div class="col-md-3" for='phone'></div>
-                        <div class="col-md-4">
-                           
                         </div>
                     </div>
 
-                    
+				</div>
+
+
+
+
+                <div id="newp" <?php echo $updType == 'edit' ? '' : ' style="display: none;"'; ?>>
+
+
+
+					 <input style="display:none" class="mask_mobile" >
+                    <div class='form-group'>
+                        <div class="col-md-3" for='phone'></div>
+                        <div class="col-md-4">
+
+                        </div>
+                    </div>
+
+
                 </div>
             </fieldset>
-			
-			
+
+
             <fieldset title="Registration Details">
                 <legend>Admission Details</legend>
-             
+
                 <div class="form-group">
                     <div class="col-md-3">Date of Admission:</div>
                     <div class="col-md-4">
@@ -291,7 +291,7 @@
                         <?php
                         $classes = $this->ion_auth->fetch_classes();
                          echo form_dropdown('class', array(''=>'Select Class')+$classes, (isset($result->class)) ? $result->class : '', ' class="select" data-placeholder="Select  Options..." ');
-                        ?>		
+                        ?>
                     </div>
                 </div>
 
@@ -306,13 +306,13 @@
                     <div class="col-md-4">
                         <?php
                          echo form_dropdown('house', $house, (isset($result->house)) ? $result->house : '', ' class="select" ');
-                        ?>	
+                        ?>
                     </div>
                 </div>
 
             </fieldset>
-            
-            
+
+
             <?php
             if ($updType == 'edit')
             {

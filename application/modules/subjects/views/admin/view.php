@@ -1,8 +1,8 @@
-<div class="col-md-8">
-    <div class="head"> 
+<div class="panel panel-white">
+    <div class="panel-heading"> 
         <div class="icon"><span class="icosg-target1"></span></div>		
         <h2>  Subject Overview  </h2>
-        <div class="right"> 
+        <div class="heading-btn"> 
              <?php echo anchor('admin/subjects/create', '<i class="glyphicon glyphicon-plus">
                 </i> ' . lang('web_add_t', array(':name' => 'Subjects')), 'class="btn btn-primary"'); ?> 
              <?php echo anchor('admin/subjects', '<i class="glyphicon glyphicon-list">
@@ -12,7 +12,7 @@
 
     <div class="block">
         <div class="widget">
-            <table cellpadding="0" cellspacing="0" width="100%">
+            <table class='table table-hover'>
                 <thead>
                     <tr>
                         <th width="20%"> </th>

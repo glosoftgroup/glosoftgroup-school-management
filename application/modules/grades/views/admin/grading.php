@@ -1,13 +1,15 @@
 <div class="col-md-8">
-    <div class="head"> 
-        <div class="icon"><span class="icosg-target1"></span></div>		
-        <h2> Edit Grading </h2>
-        <div class="right">
+<div class="panel">
+    <div class="panel-heading">
+        <h2 class="panel-title"> Edit Grading </h2>
+        <div class="heading-elements">
+			 <div class="heading-btn">
             <?php echo anchor('admin/grading/view/' . $grading, '<i class="glyphicon glyphicon-list">
-                </i> ' . lang('web_list_all', array(':name' => 'Grades')), 'class="btn btn-primary"'); ?> 
+                </i> ' . lang('web_list_all', array(':name' => 'Grades')), 'class="btn btn-primary"'); ?>
         </div>
+      </div>
     </div>
-    <div class="block-fluid">
+    <div class="panel-body">
         <?php
         $attributes = array('class' => 'form-horizontal', 'id' => '');
         echo form_open_multipart(current_url(), $attributes);
@@ -32,5 +34,6 @@
         <?php echo form_close(); ?>
         <div class="clearfix"></div>
     </div>
+</div>
 </div>
 </div>

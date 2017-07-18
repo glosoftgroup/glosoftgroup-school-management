@@ -1,8 +1,8 @@
-<div class="col-md-8">
-    <div class="head"> 
+<div class="panel panel-white">
+    <div class="panel-heading"> 
         <div class="icon"><span class="icosg-target1"></span></div>		
         <h2>  Upload Question Paper  </h2>
-        <div class="right"> 
+        <div class="heading-btn"> 
             <?php echo anchor('admin/subjects/create', '<i class="glyphicon glyphicon-plus">
                 </i> ' . lang('web_add_t', array(':name' => 'Subjects')), 'class="btn btn-primary"'); ?> 
             <?php echo anchor('admin/subjects', '<i class="glyphicon glyphicon-list">
