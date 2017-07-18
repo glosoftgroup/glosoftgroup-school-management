@@ -1,6 +1,6 @@
 <div class="col-md-12">
-    <div class="widget">
-        <div class="block invoice">
+    <div class="panel">
+        <div class="panel-body">
             <div class="row">
                 <div class="col-md-2">
                     <div class="image" >
@@ -8,16 +8,16 @@
                         if (!empty($student->photo)):
                                 if ($passport)
                                 {
-                                        ?> 
+                                        ?>
                                         <image src="<?php echo base_url('uploads/' . $passport->fpath . '/' . $passport->filename); ?>" width="100" height="100" class="img-polaroid" style="align:left">
-                                <?php } ?>	
+                                <?php } ?>
 
-                        <?php else: ?>   
+                        <?php else: ?>
                                 <?php echo theme_image("thumb.png", array('class' => "img-polaroid", 'style' => "width:100px; height:100px; align:left")); ?>
-                        <?php endif; ?>  
+                        <?php endif; ?>
                         <br>
                         <br>
-                        <?php echo anchor('admin/admission/student_id/' . $student->id, '<i class="glyphicon glyphicon-user"> </i> Student ID Card', 'class="btn btn-success"'); ?> 						
+                        <?php echo anchor('admin/admission/student_id/' . $student->id, '<i class="glyphicon glyphicon-user"> </i> Student ID Card', 'class="btn btn-success"'); ?>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -41,7 +41,9 @@
                 <div class="col-md-6 ">
                     <div class="right">
                         <form name="student_post" id="student_post" action="<?php echo base_url('admin/admission/quick_nav/'); ?>" method="POST" >
-                            <select name="student" class="select select2-offscreen" style="" tabindex="-1">
+                          <div class="form-group">
+                            <div class="input-group">
+                            <select name="student" class="select ">
                                 <option value="">Select Student</option>
                                 <?php
                                 $data = $this->ion_auth->students_full_details();
@@ -50,7 +52,11 @@
                                         <option value="<?php echo $key; ?>"><?php echo $value ?></option>
                                 <?php endforeach; ?>
                             </select>
-                            <button class="btn btn-warning"  style="height:30px;" type="submit">View Profile</button>
+                            <span class="input-group-btn">
+                             <button class="btn btn-warning"   type="submit">View Profile</button>
+                            </span>
+                            </div>
+                          </div>
                         </form>
                     </div>
 
@@ -60,12 +66,12 @@
                         <button onClick="window.print();
                                     return false" class="btn btn-primary" type="button"><span class="glyphicon glyphicon-print"></span> Print </button>
                                 <?php echo anchor('admin/admission/edit/' . $student->id, '<i class="glyphicon glyphicon-edit">
-                </i> Edit Details', 'class="btn btn-primary"'); ?>  
+                </i> Edit Details', 'class="btn btn-primary"'); ?>
                                 <?php echo anchor('admin/admission/create/', '<i class="glyphicon glyphicon-plus">
-                </i> New Student', 'class="btn btn-primary"'); ?> 
+                </i> New Student', 'class="btn btn-primary"'); ?>
                                 <?php echo anchor('admin/admission', '<i class="glyphicon glyphicon-list">
-                </i> ' . lang('web_list_all', array(':name' => 'Students')), 'class="btn btn-primary"'); ?> 
-                    </div> 
+                </i> ' . lang('web_list_all', array(':name' => 'Students')), 'class="btn btn-primary"'); ?>
+                    </div>
                 </div>
             </div>
             <div class="row">
@@ -87,10 +93,10 @@
                         {
                                 echo $hse[$student->house];
                         }
-                        ?>  
+                        ?>
                         <br>
                         <br>
-                        <?php echo anchor('admin/leaving_certificate/create/' . $student->id, '<i class="glyphicon glyphicon-file"> </i> Leaving Certificate', 'class="btn btn-info"'); ?> 
+                        <?php echo anchor('admin/leaving_certificate/create/' . $student->id, '<i class="glyphicon glyphicon-file"> </i> Leaving Certificate', 'class="btn btn-info"'); ?>
                     </address>
                 </div>
 
@@ -120,16 +126,15 @@
                             echo '<p>&nbsp;</p>';
                     }
                     ?>
-                    <br/>
-                    <br/>
-                    <?php echo form_open('admin/reports/student_report'); ?> 
+
+                    <?php echo form_open('admin/reports/student_report'); ?>
                     <input type="text" style="display:none" value="<?php echo $student->id; ?>" name="student"/>
-                    <button class="btn btn-success"  style="height:30px;" type="submit">View <?php echo ucwords($student->first_name); ?>'s History Report</button>
+                    <button class="btn btn-success"  type="submit">View <?php echo ucwords($student->first_name); ?>'s History Report</button>
                     <?php echo form_close(); ?>
                 </div>
 
                 <div class="col-md-3">
-                    <h4>Other Details</h4> 
+                    <h4>Other Details</h4>
                     <b>Residence</b><br>
                     <?php echo $student->residence; ?><br>
                     <b>Former School:</b> <?php echo $student->former_school; ?><br>
@@ -141,7 +146,7 @@
 
                     <br>
                     <br>
-                    <?php //echo anchor('admin/parents/view/' . $student->parent_id, '<i class="glyphicon glyphicon-eye-open"> </i> Parents Full Details', 'class="btn btn-warning"'); ?> 
+                    <?php //echo anchor('admin/parents/view/' . $student->parent_id, '<i class="glyphicon glyphicon-eye-open"> </i> Parents Full Details', 'class="btn btn-warning"'); ?>
 
                 </div>
 
@@ -160,7 +165,7 @@
                             }
                             ?>  <em></em>
                         </strong>
-                    </div> 
+                    </div>
                     <div class="highlight ">
                         <strong ><span>Total Paid: </span><?php echo $this->currency; ?> <?php
                             if (!empty($fee) && $student->status)
@@ -209,12 +214,12 @@
                     if ($this->acl->is_allowed(array('fee_payment', 'statement'), 1))
                     {
                             ?>
-                            <?php echo anchor('admin/fee_payment/statement/' . $student->id, '<i class="glyphicon glyphicon-folder-open"> </i> View Fee Statement', 'class="btn btn-primary"'); ?> 
+                            <?php echo anchor('admin/fee_payment/statement/' . $student->id, '<i class="glyphicon glyphicon-folder-open"> </i> View Fee Statement', 'class="btn btn-primary"'); ?>
                     <?php } ?> </div>
             </div>
 
             <div class="widget">
-                <div class="block-fluid tabbable">                    
+                <div class="block-fluid tabbable">
                     <ul class="nav nav-tabs">
                         <li class="active"><a href="#tab7" data-toggle="tab">Parents Details</a></li>
                         <li class=""><a href="#tab1" data-toggle="tab">Payment History</a></li>
@@ -352,7 +357,7 @@
                             <?php else: ?>
                                     <h5>No exams has been recorded at the moment!!</h5>
                             <?php endif; ?>
-                        </div> 
+                        </div>
                         <!--TAB 3-->
                         <div class="tab-pane " id="tab3">
                             <?php if ($bed): ?>
@@ -375,7 +380,7 @@
                                                     $i++;
                                                     ?>
                                                     <tr>
-                                                        <td><?php echo $i . '.'; ?></td>					
+                                                        <td><?php echo $i . '.'; ?></td>
                                                         <td><?php echo date('d M Y', $p->date_assigned); ?></td>
                                                         <td><?php echo $this->terms[$p->term]; ?></td>
                                                         <td><?php echo $p->year; ?></td>
@@ -394,15 +399,15 @@
 
                         <!--TAB 4 POSITIONS-->
                         <div class="tab-pane " id="tab4">
-                            <?php if ($position): ?>              
+                            <?php if ($position): ?>
 
                                     <table cellpadding="0" cellspacing="0" width="100%">
                                         <thead>
                                         <th>#</th>
-                                        <th>Position</th>	
-                                        <th>Representing</th>	
-                                        <th>Start Date</th>	
-                                        <th>Date upto</th>	
+                                        <th>Position</th>
+                                        <th>Representing</th>
+                                        <th>Start Date</th>
+                                        <th>Date upto</th>
                                         </thead>
                                         <tbody>
                                             <?php
@@ -414,7 +419,7 @@
                                                     $class = $this->ion_auth->list_classes();
                                                     ?>
                                                     <tr>
-                                                        <td><?php echo $i . '.'; ?></td>	
+                                                        <td><?php echo $i . '.'; ?></td>
                                                         <td><?php echo $st_pos[$p->position]; ?></td>
                                                         <td><?php
                                                             if ($p->student_class == "Others")
@@ -442,7 +447,7 @@
 
                         <!--TAB 5 POSITIONS-->
                         <div class="tab-pane " id="tab5">
-                            <?php if ($disciplinary): ?>              
+                            <?php if ($disciplinary): ?>
 
                                     <table  cellpadding="0" cellspacing="0" width="100%">
                                         <thead>
@@ -452,7 +457,7 @@
                                         <th>Reason</th>
                                         <th>Action Taken</th>
                                         <th>Taken On</th>
-                                        <th>Comment</th> 
+                                        <th>Comment</th>
                                         </thead>
                                         <tbody>
                                             <?php
@@ -464,7 +469,7 @@
                                                     $user = $this->ion_auth->get_user($p->reported_by);
                                                     ?>
                                                     <tr>
-                                                        <td><?php echo $i . '.'; ?></td>					
+                                                        <td><?php echo $i . '.'; ?></td>
                                                         <td><?php echo date('d/m/Y', $p->date_reported); ?></td>
                                                         <td><?php
                                                             if (!empty($p->reported_by))
@@ -485,7 +490,7 @@
                                                         </td>
                                                         <td>
                                                             <?php echo $p->comment; ?>
-                                                        </td> 
+                                                        </td>
                                                     </tr>
                                             <?php endforeach ?>
                                         </tbody>
@@ -525,7 +530,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="widget">
-                                        <div class="profile clearfix">                        
+                                        <div class="profile clearfix">
                                             <div class="info-s">
                                                 <h2><?php echo $paro->mother_fname . ' ' . $paro->mother_lname ?></h2>
                                                 <table border="0" width="300">
@@ -574,7 +579,7 @@
             float:left;
         }
         .header{display:none}
-        .invoice { 
+        .invoice {
             width:100%;
             margin: auto !important;
             padding: 0px !important;
@@ -590,3 +595,4 @@
         }
     }
 </style>
+<?=core_js("core/js/plugins/forms/selects/select2.min.js");?>

@@ -60,7 +60,7 @@
         <?php echo theme_css('tableTools.css'); ?>
         <?php echo theme_css('dataTables.colVis.min.css'); ?>
 
-        <?php echo theme_css('output.css'); ?>
+
          <?php echo theme_css('select2/select2.css'); ?>
         <link href="<?php echo js_path('plugins/jeditable/bootstrap-editable.css'); ?>" rel="stylesheet">
 
@@ -70,7 +70,7 @@
         <script type="text/javascript" src="<?php echo plugin_path('boxer/jquery.fs.boxer.js'); ?>"></script>
         <?php echo theme_js('plugins/switch/js/switch.js'); ?>
         <?php echo theme_js('plugins/other/jquery.mousewheel.min.js'); ?>
-        
+
         <?php echo theme_js('plugins/cookies/jquery.cookies.2.2.0.min.js'); ?>
         <?php echo theme_js('plugins/pnotify/jquery.pnotify.min.js'); ?>
         <?php echo theme_js('plugins/fullcalendar/fullcalendar.min.js'); ?>
@@ -239,7 +239,12 @@
     <?php echo core_js('core/js/plugins/ui/fullcalendar/fullcalendar.min.js'); ?>
     <?php echo core_js('core/js/plugins/visualization/echarts/echarts.js'); ?>
 
-
+    <script>
+     // Default initialization
+     $('.select').select2({
+         minimumResultsForSearch: Infinity
+     });
+    </script>
 
 
 

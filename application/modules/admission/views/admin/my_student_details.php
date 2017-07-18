@@ -10,16 +10,16 @@
                         if (!empty($student->photo)):
                                 if ($passport)
                                 {
-                                        ?> 
+                                        ?>
                                         <image src="<?php echo base_url('uploads/' . $passport->fpath . '/' . $passport->filename); ?>" width="100" height="100" class="img-polaroid" style="align:left">
-                                <?php } ?>	
+                                <?php } ?>
 
-                        <?php else: ?>   
+                        <?php else: ?>
                                 <?php echo theme_image("thumb.png", array('class' => "img-polaroid", 'style' => "width:100px; height:100px; align:left")); ?>
-                        <?php endif; ?>  
+                        <?php endif; ?>
                         <br>
                         <br>
-                        <?php echo anchor('admin/admission/student_id/' . $student->id, '<i class="glyphicon glyphicon-user"> </i> Student ID Card', 'class="btn btn-success"'); ?> 						
+                        <?php echo anchor('admin/admission/student_id/' . $student->id, '<i class="glyphicon glyphicon-user"> </i> Student ID Card', 'class="btn btn-success"'); ?>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -67,10 +67,10 @@
                         {
                                 echo $hse[$student->house];
                         }
-                        ?>  
+                        ?>
                         <br>
                         <br>
-                        <?php //echo anchor('admin/leaving_certificate/create/' . $student->id, '<i class="glyphicon glyphicon-file"> </i> Leaving Certificate', 'class="btn btn-info"'); ?> 
+                        <?php //echo anchor('admin/leaving_certificate/create/' . $student->id, '<i class="glyphicon glyphicon-file"> </i> Leaving Certificate', 'class="btn btn-info"'); ?>
                     </address>
                 </div>
 
@@ -111,7 +111,7 @@
 
                     <br>
                     <br>
-                    <?php //echo anchor('admin/parents/view/' . $student->parent_id, '<i class="glyphicon glyphicon-eye-open"> </i> Parents Full Details', 'class="btn btn-warning"'); ?> 
+                    <?php //echo anchor('admin/parents/view/' . $student->parent_id, '<i class="glyphicon glyphicon-eye-open"> </i> Parents Full Details', 'class="btn btn-warning"'); ?>
 
                 </div>
 
@@ -134,7 +134,7 @@
                                     }
                                     ?>  <em></em>
                                 </strong>
-                            </div> 
+                            </div>
                             <div class="highlight ">
                                 <strong ><span>Total Paid: </span><?php echo $this->currency; ?> <?php
                                     if (!empty($fee) && $student->status)
@@ -179,7 +179,7 @@
                                     }
                                     ?>   </strong>
                             </div><br>
-                            <?php //echo anchor('admin/fee_payment/statement/' . $student->id, '<i class="glyphicon glyphicon-folder-open"> </i> View Fee Statement', 'class="btn btn-primary"'); ?> 
+                            <?php //echo anchor('admin/fee_payment/statement/' . $student->id, '<i class="glyphicon glyphicon-folder-open"> </i> View Fee Statement', 'class="btn btn-primary"'); ?>
                     <?php } ?>
                 </div>
             </div>
@@ -188,7 +188,7 @@
             {
                     ?>
                     <div class="widget">
-                        <div class="block-fluid tabbable">                    
+                        <div class="block-fluid tabbable">
                             <ul class="nav nav-tabs">
                                 <li class="active"><a href="#tab7" data-toggle="tab">Parents Details</a></li>
                                 <li class=""><a href="#tab1" data-toggle="tab">Payment History</a></li>
@@ -199,7 +199,7 @@
 
                                 <li class=""><a href="#tab6" data-toggle="tab">Transport</a></li>
                                 <li class=""><a href="#tab3" data-toggle="tab">Rooms/Beds</a></li>
- 
+
                             </ul>
                             <div class="tab-content">
                                 <div class="tab-pane " id="tab1">
@@ -324,7 +324,7 @@
                                     <?php else: ?>
                                             <h5>No exams has been recorded at the moment!!</h5>
                                     <?php endif; ?>
-                                </div> 
+                                </div>
                                 <!--TAB 3-->
                                 <div class="tab-pane " id="tab3">
                                     <?php if ($bed): ?>
@@ -347,7 +347,7 @@
                                                             $i++;
                                                             ?>
                                                             <tr>
-                                                                <td><?php echo $i . '.'; ?></td>					
+                                                                <td><?php echo $i . '.'; ?></td>
                                                                 <td><?php echo date('d M Y', $p->date_assigned); ?></td>
                                                                 <td><?php echo $this->terms[$p->term]; ?></td>
                                                                 <td><?php echo $p->year; ?></td>
@@ -368,10 +368,10 @@
                                             <table cellpadding="0" cellspacing="0" width="100%">
                                                 <thead>
                                                 <th>#</th>
-                                                <th>Position</th>	
-                                                <th>Representing</th>	
-                                                <th>Start Date</th>	
-                                                <th>Date upto</th>	
+                                                <th>Position</th>
+                                                <th>Representing</th>
+                                                <th>Start Date</th>
+                                                <th>Date upto</th>
                                                 </thead>
                                                 <tbody>
                                                     <?php
@@ -383,7 +383,7 @@
                                                             $class = $this->ion_auth->list_classes();
                                                             ?>
                                                             <tr>
-                                                                <td><?php echo $i . '.'; ?></td>	
+                                                                <td><?php echo $i . '.'; ?></td>
                                                                 <td><?php echo $st_pos[$p->position]; ?></td>
                                                                 <td><?php
                                                                     if ($p->student_class == "Others")
@@ -411,7 +411,7 @@
 
                                 <!--TAB 5 POSITIONS-->
                                 <div class="tab-pane " id="tab5">
-                                    <?php if ($disciplinary): ?>              
+                                    <?php if ($disciplinary): ?>
 
                                             <table  cellpadding="0" cellspacing="0" width="100%">
                                                 <thead>
@@ -421,7 +421,7 @@
                                                 <th>Reason</th>
                                                 <th>Action Taken</th>
                                                 <th>Taken On</th>
-                                                <th>Comment</th> 
+                                                <th>Comment</th>
                                                 </thead>
                                                 <tbody>
                                                     <?php
@@ -433,7 +433,7 @@
                                                             $user = $this->ion_auth->get_user($p->reported_by);
                                                             ?>
                                                             <tr>
-                                                                <td><?php echo $i . '.'; ?></td>					
+                                                                <td><?php echo $i . '.'; ?></td>
                                                                 <td><?php echo date('d/m/Y', $p->date_reported); ?></td>
                                                                 <td><?php
                                                                     if (!empty($p->reported_by))
@@ -454,7 +454,7 @@
                                                                 </td>
                                                                 <td>
                                                                     <?php echo $p->comment; ?>
-                                                                </td> 
+                                                                </td>
                                                             </tr>
                                                     <?php endforeach ?>
                                                 </tbody>
@@ -468,7 +468,7 @@
 
                                 <!--TAB 6 Transport-->
                                 <div class="tab-pane " id="tab6">
-                                    
+
                                 </div>
                                 <!---End TAB-->
 
@@ -480,7 +480,7 @@
                                                 <div class="profile clearfix">
                                                     <div class="image">
                                                         <img src="<?php echo base_url('assets/themes/admin/img/2.png'); ?>" width="100" height="100"class="img-polaroid"/>
-                                                    </div>                        
+                                                    </div>
                                                     <div class="info-s">
                                                         <h2><?php echo $paro->first_name . ' ' . $paro->last_name ?></h2>
                                                         <table border="0" width="300">
@@ -501,7 +501,7 @@
                                                 <div class="profile clearfix">
                                                     <div class="image">
                                                         <img src="<?php echo base_url('assets/themes/admin/img/3.png'); ?>" width="100" height="100"class="img-polaroid"/>
-                                                    </div>                        
+                                                    </div>
                                                     <div class="info-s">
                                                         <h2><?php echo $paro->mother_fname . ' ' . $paro->mother_lname ?></h2>
                                                         <table border="0" width="300">
@@ -556,7 +556,7 @@
             float:left;
         }
         .header{display:none}
-        .invoice { 
+        .invoice {
             width:100%;
             margin: auto !important;
             padding: 0px !important;

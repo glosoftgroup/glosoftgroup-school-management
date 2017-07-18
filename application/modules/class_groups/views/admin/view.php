@@ -1,45 +1,54 @@
-
-<div class="head">
-    <div class="icon"><span class="icosg-target1"></span></div>
-    <h2>View Class</h2> 
-    <div class="right">
-	   <button onClick="window.print();
-                      return false" class="btn btn-primary" type="button"><span class="glyphicon glyphicon-print"></span> Print Class List</button>
-        <a href="<?php echo base_url('admin/class_groups/classes'); ?>" class="btn btn-info"><i class="glyphicon glyphicon-list">
-            </i> List All</a>    
-    </div>    					
-</div>
-<div class="block slip">
-    <h1><?php
+<!-- Pager -->
+<div class="panel panel-white">
+	<div class="panel-heading">
+		<h4 class="panel-title"><?php
         $cc = isset($classes[$class->class]) ? $classes[$class->class] : ' -';
         $ss = isset($streams[$class->stream]) ? $streams[$class->stream] : ' -';
         echo $cc . ' ' . $ss;
-        ?></h1>
-    <span class="">Class Profile as at : <?php echo date('jS M Y'); ?></span>
+        ?></h4>
+		<div class="heading-elements">
+			<div class="heading-btn">
+				 <button onClick="window.print();
+                      return false" class="btn heading-btn btn-primary" type="button">
+	     <span class="glyphicon glyphicon-print"></span> Print Class List</button>
+        <a href="<?php echo base_url('admin/class_groups/classes'); ?>" class="btn heading-btn btn-info">
+		<i class="glyphicon glyphicon-list"> </i> List All</a>
 
-     <h4>Number of Registered Students <span style="color:red"><?php echo count($post); ?></span>
-	 <span class="right">
-	 Class Teacher : 
-	 <?php
-	 $u = $this->ion_auth->get_user($class->class_teacher);
-			$tr = ' ';
-			if($class->class_teacher>0){
-				
-				$tr = $u->first_name.' '.$u->last_name;
-			}
-			echo '<span style="color:red">'.$tr.'</span>';
-			?></span>
-	 </h4>
+			</div>
+		</div>
+	</div>
 
-    <table cellpadding="0" cellspacing="0" width="100%" border="1">
+	<div class="panel-body">
+		<div class="col-sm-6 content-group">
+		  <h5 class="text-uppercase text-semibold">Number of Registered Students <span style="color:red"><?php echo count($post); ?></h5>
+		  <span class="text-right text-muted">Class Profile as at : <?php echo date('jS M Y'); ?></span>
+		</div>
+		<div class="col-sm-6 content-group">
+      <div class='invoice-details'>
+			<h5 class="text-uppercase position-right text-semibold">
+			 Class Teacher :
+			 <?php
+			 $u = $this->ion_auth->get_user($class->class_teacher);
+					$tr = ' ';
+					if($class->class_teacher>0){
+
+						$tr = $u->first_name.' '.$u->last_name;
+					}
+					echo '<span style="color:red">'.$tr.'</span>';
+					?></span>
+			</h5>
+    </div>
+		</div>
+		<!-- end topline -->
+		<table class='table table-striped table-hover'>
         <thead>
-            <tr>
-                <th width="3%">#</th>
-                <th width="30%">Name</th>
-                <th width="20%">Admission Number</th>
-                <th width="10%">Gender</th>
-                <th width="15%">Admission Date</th>
-                <th width="5%" class="option">Options</th>
+            <tr class="bg-primary">
+                <th>#</th>
+                <th>Name</th>
+                <th>Admission Number</th>
+                <th>Gender</th>
+                <th>Admission Date</th>
+                <th class="option">Options</th>
             </tr>
         </thead>
         <tbody>
@@ -77,15 +86,12 @@
             ?>
         </tbody>
     </table>
-
-    <div class="row">
-        <div class="col-md-9"></div>
-        <div class="col-md-3">
-
-        </div>
-    </div>
+	</div>
 
 </div>
+<!-- /pager -->
+
+
 
 <style>
     @media print{
@@ -100,9 +106,9 @@
          .col-md-4 {
               width: 200px !important;
               float: left !important;
-              margin:0px !important; 
+              margin:0px !important;
          }
-		 
+
 		  table tr{
 			  border:1px solid #666 !important;
 		  }
@@ -160,7 +166,7 @@
 
          .img{
               align:center !important;
-         } 
+         }
          .print{
               display:none !important;
          }
@@ -175,7 +181,7 @@
               float:left;
          }
          .header{display:none}
-         .invoice { 
+         .invoice {
               width:100%;
               margin: auto !important;
               padding: 0px !important;
@@ -190,4 +196,4 @@
               padding: 0px;
          }
     }
-</style>    
+</style>
