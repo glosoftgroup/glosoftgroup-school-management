@@ -1,42 +1,44 @@
 <div class="panel panel-white">
-    <div class="panel-heading"> 
-        <div class="icon"><span class="icosg-target1"></span></div>		
+    <div class="panel-heading">
+        <div class="icon"><span class="icosg-target1"></span></div>
         <h2>  Upload Question Paper  </h2>
-        <div class="heading-btn"> 
+		<div class="heading-elements">
+         <div class="heading-btn">
             <?php echo anchor('admin/subjects/create', '<i class="glyphicon glyphicon-plus">
-                </i> ' . lang('web_add_t', array(':name' => 'Subjects')), 'class="btn btn-primary"'); ?> 
+                </i> ' . lang('web_add_t', array(':name' => 'Subjects')), 'class="btn btn-primary"'); ?>
             <?php echo anchor('admin/subjects', '<i class="glyphicon glyphicon-list">
-                </i> ' . lang('web_list_all', array(':name' => 'Subjects')), 'class="btn btn-primary"'); ?> 
+                </i> ' . lang('web_list_all', array(':name' => 'Subjects')), 'class="btn btn-primary"'); ?>
+		 </div>
         </div>
     </div>
 
-    <div class="block">
-        <div class="widget">
+    <div class="panel-body">
+        <div class="row">
             <?php echo form_open(current_url(), 'id="form"'); ?>
-            
+
             <div class='form-group'>
-                <div class="col-md-3" for='file'>File <span class='required'>*</span></div>
-                <div class="col-md-6">
+                <label>File <span class='required'>*</span></label>
+
                     <?php echo form_error('filename'); ?>
                     <?php echo ( isset($upload_error['filename'])) ? $upload_error['filename'] : ""; ?>
-                    <?php echo form_upload('filename', '', 'id="filename"'); ?>
+                    <?php echo form_upload('filename', '', 'id="filename" class="file-styled-primary"'); ?>
                     <?php echo (isset($error)) ? $error : ''; ?>
-                </div>
+
             </div>
             <div class='form-group'>
-                <div class="col-md-3" for='class'>Class <span class='required'>*</span></div>
-                <div class="col-md-6">
+                <label>Class <span class='required'>*</span></label>
+
                     <?php echo form_dropdown('class', $this->classes, $this->input->post('class'), ' class="qsel form-control" id="class" placeholder="Exam" '); ?>
-                </div>
+
             </div>
             <div class='form-group'>
-                <div class="col-md-3" for='exam'>Exam <span class='required'>*</span></div>
-                <div class="col-md-6">
+                <label for='exam'>Exam <span class='required'>*</span></label>
+
                     <?php echo form_dropdown('exam', $exams, $this->input->post('exam'), ' class="qsel form-control" id="exam" placeholder="Exam" '); ?>
-                </div>
+
             </div>
-            <input type="button" value="Submit" id="batch" />
-            <?php echo form_close(); ?> 
+            <input type="button" value="Submit" class='btn btn-primary' id="batch" />
+            <?php echo form_close(); ?>
         </div>
 
         <div class="clearfix"></div>
@@ -48,7 +50,7 @@
         $(function () {
             $(".qsel").select2({'placeholder': 'Please Select', 'width': '190px'});
             $(".qsel").on("change", function (e) {
-                notify('Select', 'Value changed: ' + e.val);
+                notify('Select', 'Value changed: ' + $(this).val());
             });
             var base_url = '<?php echo base_url(); ?>';
             var sid = '<?php echo $sid; ?>';

@@ -25,8 +25,8 @@
         <!-- Core JS files -->
         <?php echo core_js('core/js/plugins/loaders/pace.min.js'); ?>
         <?php echo core_js('core/js/core/libraries/jquery.min.js'); ?>
-	     <?php echo theme_js('plugins/jquery/jquery-migrate-1.1.1.min.js'); ?>
-
+	      <?php echo theme_js('plugins/jquery/jquery-migrate-1.1.1.min.js'); ?>
+        <?php echo theme_js('plugins/jquery/jquery-ui-1.10.1.custom.min.js'); ?>
         <?php echo core_js('core/js/core/libraries/bootstrap.min.js'); ?>
         <?php echo core_js('core/js/plugins/loaders/blockui.min.js'); ?>
 
@@ -51,6 +51,7 @@
         <?php echo core_js('core/js/plugins/pickers/pickadate/picker.time.js'); ?>
         <!-- Updated stylesheet url -->
         <?=core_js("core/js/core/libraries/jquery_ui/widgets.min.js");?>
+
         <!-- ./theme scripts -->
 
         <!-- old files -->
@@ -91,7 +92,7 @@
         <?php echo theme_js('plugins/underscore/underscore-min.js'); ?>
         <?php echo theme_js('plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js'); ?>
         <?php echo theme_js('plugins/uniform/jquery.uniform.min.js'); ?>
-
+        
         <?php echo theme_js('plugins/maskedinput/jquery.maskedinput-1.3.min.js'); ?>
         <?php echo theme_js('plugins/multiselect/jquery.multi-select.min.js'); ?>
 
@@ -101,10 +102,12 @@
 
         <?php echo theme_js('plugins/scrollup/jquery.scrollUp.min.js'); ?>
         <?php echo theme_js('plugins/SmartWizard/jquery.smartWizard.js'); ?>
-        <?php //echo core_js('core/js/plugins.js'); ?>
+        <?=core_js('core/js/pages/form_inputs.js');?>
+
         <script src="<?php echo plugin_path('bootstrap.daterangepicker/moment.js'); ?>" ></script>
         <script src="<?php echo plugin_path('bootstrap.daterangepicker/daterangepicker.js'); ?>" ></script>
         <script src="<?php echo plugin_path('bootstrap.datetimepicker/bootstrap-datetimepicker.min.js'); ?>"></script>	<link rel="shortcut icon" type="image/ico" href="<?php echo image_path('favicon.ico'); ?>" />
+        <?php echo core_js('core/js/plugins.js'); ?>
         <link rel="shortcut icon" type="image/ico" href="<?php echo image_path('favicon.ico'); ?>" />
     </head>
     <?php
@@ -149,7 +152,7 @@
                               $gp = $this->ion_auth->get_users_groups($user->id)->row();
                               ?><small>&nbsp;</small>
                               <span class="label label-success"  ><?php echo ucwords($gp->name); ?></span>
-                              </span>
+
                       </li>
 						</ul>
 					</div>

@@ -32,7 +32,7 @@
         <div class="block-fluid">
             <table class="table table-hover" cellpadding="0" cellspacing="0" width="100%">
                 <thead>
-                    <tr>
+                    <tr class="bg-primary">
                         <th width="3%">
                             #
                         </th>
@@ -70,11 +70,11 @@
                                         <?php echo $post->title; ?>
                                     </td>
                                     <td width="10%">
-                                        <input type="text" name="minimum_marks[]" id="minimum_marks" class="minimum_marks" placeholder="E.g 60" >
+                                        <input type="text" name="minimum_marks[]" id="minimum_marks" class="form-control minimum_marks" placeholder="E.g 60" >
                                         <?php echo form_error('minimum_marks[]'); ?>
                                     </td>
                                     <td width="10%">
-                                        <input type="text" name="maximum_marks[]" id="maximum_marks" class="maximum_marks" placeholder="E.g 75">
+                                        <input type="text" name="maximum_marks[]" id="maximum_marks" class="form-control maximum_marks" placeholder="E.g 75">
                                         <?php echo form_error('maximum_marks[]'); ?>
                                     </td>
                                     <td width="10%">
@@ -141,27 +141,32 @@
         </div>
     </div>
 
-    <div class="widget">
-        <div class="head dark">
-            <div class="icon"></div>
-            <h2>Add Grades</h2>
-        </div>
+    <div class="panel panel-primary">
+      <div class="panel-heading">
 
-        <div class="block-fluid">
+        <h2 class="panel-title">Add Grades</h2>
+        <div class="heading-elements">
+           <div class="heading-btn">
+
+        </div>
+      </div>
+    </div>
+
+        <div class="panel-body">
             <?php echo form_open('admin/grades/quick_add', 'class=""'); ?>
             <div class="form-group">
-                <div class="col-md-3">Title:<span class='required'>*</span></div>
-                <div class="col-md-9">
-                    <?php echo form_input('title', '', 'id="title_1"  placeholder=" E.g Distinction"'); ?>
+                <label class="col-md-3">Title:<span class='required'>*</span></label>
+
+                    <?php echo form_input('title', '', 'id="title_1" class="form-control"  placeholder=" E.g Distinction"'); ?>
                     <?php echo form_error('title'); ?>
-                </div>
+
             </div>
             <div class="form-group">
-                <div class="col-md-3">Remarks:<span class='required'>*</span></div>
-                <div class="col-md-9">
-                    <?php echo form_input('remarks', '', 'id="remarks"  placeholder=" e.g Very Good"'); ?>
+                <label>Remarks:<span class='required'>*</span></label>
+
+                    <?php echo form_input('remarks', '', 'id="remarks" class="form-control" placeholder=" e.g Very Good"'); ?>
                     <?php echo form_error('remarks'); ?>
-                </div>
+
             </div>
 
 

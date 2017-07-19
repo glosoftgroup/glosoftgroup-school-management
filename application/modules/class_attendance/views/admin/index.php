@@ -1,21 +1,29 @@
-<div class="head">
-    <div class="icon"><span class="icosg-target1"></span></div>
-    <h2>School Classes</h2> 
-    <div class="right">                            
-    </div>    					
-</div>
-<?php if ($post): ?>               
-         <div class="block-fluid">
-             <table class="fpTable" cellpadding="0" cellspacing="0" width="100%">
+<!-- Pager -->
+<div class="panel panel-white">
+	<div class="panel-heading">
+		<h6 class="panel-title">School Classes</h6>
+		<div class="heading-elements">
+
+		</div>
+	</div>
+
+
+
+
+<?php if ($post): ?>
+         <div class="panel-body">
+             <table class="table table-hover fpTable" cellpadding="0" cellspacing="0" width="100%">
                  <thead>
+                   <tr class="bg-primary">
                  <th>#</th>
                  <th>Class </th>
                  <th>Registered Students</th>
                  <th>Class Teacher</th>
                  <th><?php echo lang('web_options'); ?></th>
+                </tr>
                  </thead>
                  <tbody>
-                      <?php 
+                      <?php
                       $i = 0;
                       if ($this->uri->segment(4) && ( (int) $this->uri->segment(4) > 0))
                       {
@@ -46,9 +54,9 @@
                               <td><?php //echo $user->first_name . ' ' . $user->last_name;       ?></td>
                               <td width="330" style="text-align:center">
                                    <?php if ($p->size == 0): ?>
-                                       <a href="<?php echo site_url('admin/admission/create/'); ?>" > Register New Student</a>	
+                                       <a href="<?php echo site_url('admin/admission/create/'); ?>" > Register New Student</a>
                                   <?php else: ?>
-                                       <a href="<?php echo site_url('admin/class_attendance/create/' . $p->id); ?>" class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> New Attendance</a>	
+                                       <a href="<?php echo site_url('admin/class_attendance/create/' . $p->id); ?>" class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> New Attendance</a>
                                        <?php if (empty($p->checks)): ?>
                                        <?php else: ?>
                                             <a href="<?php echo site_url('admin/class_attendance/list_attendance/' . $p->id); ?>" class="btn btn-primary"><i class="glyphicon glyphicon-eye-open"></i> View Attendance</a>

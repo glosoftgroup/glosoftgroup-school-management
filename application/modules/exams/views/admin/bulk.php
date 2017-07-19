@@ -1,11 +1,24 @@
-<div class="row actions">
-    <div class="  right" id="menus">
-        <h3>Generate Per Class Or Per Student</h3>
-        <?php echo form_open(current_url()); ?>
-        Select a Class
-        <?php echo form_dropdown('class', array('' => 'Select Class') + $this->streams, $this->input->post('class'), 'class="select"') ?> 
-        or
-        <select name="student" class="select" tabindex="-1">
+<!-- Pager -->
+<div class="panel panel-white">
+	<div class="panel-heading">
+		<h6 class="panel-title">Generate Per Class Or Per Student</h6>
+		<div class="heading-elements">
+
+		</div>
+	</div>
+
+	<div class="panel-body">
+	<div class="row actions">
+    <div class="col-md-12" id="menus">
+
+		<div class='col-md-4'>
+			 <?php echo form_open(current_url()); ?>
+
+         <?php echo form_dropdown('class', array('' => 'Select Class') + $this->streams, $this->input->post('class'), 'class="select"') ?>
+          or
+	   </div>
+	   <div class='col-md-4'>
+			 <select name="student" class="select" tabindex="-1">
             <option value="">Select Student</option>
             <?php
             $data = $this->ion_auth->students_full_details();
@@ -14,15 +27,18 @@
                     <option value="<?php echo $key; ?>"><?php echo $value ?></option>
             <?php endforeach; ?>
         </select>
-        Show Positions<input type="checkbox" checked="checked" name="pos" value="1"/>
-        <br>
-        <button class="btn btn-warning"  style="height:30px;" type="submit">View Report Forms</button>
-        <a href="" onClick="window.print();
+	   </div>
+	   <div class='col-md-4'>
+			 Show Positions<input type="checkbox" class="checker" checked="styled" name="pos" value="1"/>
+
+           <button class="btn btn-warning"  type="submit">View Report Forms</button>
+         <a href="" onClick="window.print();
                     return false" class="btn btn-primary"><i class="icos-printer"></i> Print
         </a>
         <?php echo form_close(); ?>
-        <br>
-        <br>
+	   </div>
+
+
     </div>
 </div>
 <div class="widget">
@@ -63,14 +79,14 @@
                                         <tr width="100%">
                                             <td class="toppa">
                                                 <img src="<?php echo base_url('uploads/files/' . $this->school->document); ?>" class="center"  alt="img" width="100" height="80" />
-                                                <div style="clear: right"></div> 
+                                                <div style="clear: right"></div>
                                             </td>
                                             <td class="toppa">
                                                 <span class="stitle"><?php echo strtoupper($this->school->school); ?></span>
                                                 <p class="redtop stitle">REPORT FORM</p>
                                             </td>
                                         </tr>
-                                <?php } ?>                            
+                                <?php } ?>
                             </table>
                         </div>
                         <hr>
@@ -98,7 +114,7 @@
                                             ?>
                                         </abbr>
                                     </td>
-                                    <td> <strong>Age : </strong> 
+                                    <td> <strong>Age : </strong>
                                         <abbr>
                                             <?php echo (!empty($rw->student->dob) && $rw->student->dob > 10000) ? $this->dates->createFromTimeStamp($rw->student->dob)->diffInYears() : '-'; ?>
                                         </abbr>
@@ -197,7 +213,7 @@
                                 <tr class="rttbx">
                                     <td class="text-center"> </td>
                                     <td> </td>
-                                    <td class="text-right"><?php echo $gd; ?></td>  
+                                    <td class="text-right"><?php echo $gd; ?></td>
                                     <td colspan="2"> </td>
                                 </tr>
                                 <?php
@@ -217,7 +233,7 @@
 
                         <table class="lower" width="100%" style="border:none !important"  >
                             <tr><td class="nob" width="60%">
-                                    <div>						 
+                                    <div>
                                         <div class="foo"> </div>
                                         <div class="foo">
                                             <strong><span style="text-decoration:underline">Teacher's Remarks:</span></strong>
@@ -228,7 +244,7 @@
                                     </div>
                                 </td>
                                 <td class="nob">
-                                    <div class="right">  
+                                    <div class="right">
                                         <br>
                                         <?php
                                         if (!empty($grading))
@@ -241,7 +257,7 @@
                                         ?> </div>
                                 </td></tr>
                         </table>
-                        <div class="center" style="border-top:1px solid #ccc">		
+                        <div class="center" style="border-top:1px solid #ccc">
                             <span class="center" style="font-size:0.8em !important;text-align:center !important;">
                                 <?php
                                 if (!empty($this->school->tel))
@@ -265,7 +281,7 @@
             {
                     ?>
                     <div class="slip ">
-                        <div class="row center"> 
+                        <div class="row center">
                             <table class="lethead" >
                                 <?php
                                 $file = FCPATH . '/uploads/report.png';
@@ -289,7 +305,7 @@
                                             </td>
                                             <td class="toppa">
                                                 <img src="<?php echo base_url('uploads/files/' . $this->school->document); ?>" class="center"  width="100" height="80"  alt="img"/>
-                                                <div style="clear: right"> </div> 
+                                                <div style="clear: right"> </div>
                                             </td>
                                         </tr>
                                         <tr>
@@ -299,7 +315,7 @@
                                                 <p class="redtop">REPORT FORM</p>
                                             </td>
                                         </tr>
-                                <?php } ?>                            
+                                <?php } ?>
                             </table>
                         </div>
                         <div class="row">
@@ -310,7 +326,7 @@
                                     </td>
                                     <td> <strong>Term : </strong> <abbr><?php echo $exam->term; ?></abbr>
                                     </td>
-                                    <td><strong>Year : </strong> <abbr><?php echo $exam->year; ?></abbr> 
+                                    <td><strong>Year : </strong> <abbr><?php echo $exam->year; ?></abbr>
                                     </td>
                                     <td><strong>ADM No : </strong>
                                         <abbr><?php
@@ -336,7 +352,7 @@
                                             echo (!empty($student->dob) && $student->dob > 10000) ? $this->dates->createFromTimeStamp($student->dob)->diffInYears() : '-';
                                             ?></abbr>
                                     </td>
-                                    <td><strong>Exam : </strong> <abbr><?php echo $exam->title; ?></abbr> 
+                                    <td><strong>Exam : </strong> <abbr><?php echo $exam->title; ?></abbr>
                                     </td>
                                     <td> <strong>Class Teacher : </strong>
                                         <abbr><?php
@@ -352,7 +368,7 @@
                                             echo $cc;
                                             ?></abbr>
                                     </td>
-                                </tr> 
+                                </tr>
                             </table>
                         </div>
 
@@ -433,14 +449,14 @@
                                 <tr class="rttbx">
                                     <td class="text-center"> </td>
                                     <td> </td>
-                                    <td class="text-right"><?php echo $gd; ?></td>  
+                                    <td class="text-right"><?php echo $gd; ?></td>
                                     <td colspan="2"> </td>
                                 </tr>
                             </tbody>
                         </table>
                         <table class="lower nonborder" width="100%" style="border:none !important"  >
                             <tr><td class="nob" width="60%">
-                                    <div>						 
+                                    <div>
                                         <div class="foo"> </div>
                                         <div class="foo">
                                             <strong><span style="text-decoration:underline">Teacher's Remarks:</span></strong>
@@ -451,7 +467,7 @@
                                     </div>
                                 </td>
                                 <td class="nob">
-                                    <div class="right">  
+                                    <div class="right">
                                         <br>
                                         <?php
                                         if (!empty($grading))
@@ -462,7 +478,7 @@
                                         <?php */} ?> </div>
                                 </td></tr>
                         </table>
-                        <div class="center" style="border-top:1px solid #ccc">		
+                        <div class="center" style="border-top:1px solid #ccc">
                             <span class="center" style="font-size:0.8em !important;text-align:center !important;">
                                 <?php
                                 if (!empty($this->school->tel))
@@ -488,6 +504,10 @@
     }
     ?>
 </div>
+	</div>
+</div>
+
+
 <style>
     .amt{text-align: right;}
     .fless{width:100%; border:0;}
@@ -508,7 +528,7 @@
         margin: 0 auto;
         border: 0;
     }
-    .topdets th,  .topdets td ,.topdets 
+    .topdets th,  .topdets td ,.topdets
     {
         border: 0;
     }
@@ -557,7 +577,7 @@
         {
             border: 0;
         }
-        td.toppa 
+        td.toppa
         {
             border-right: none !important;
             border-bottom: none !important;
@@ -588,10 +608,10 @@
         }
         .alert-success{
             display:none;
-        } 
+        }
         .img{
             align:center !important;
-        } 
+        }
         .print{
             display:none !important;
         }
