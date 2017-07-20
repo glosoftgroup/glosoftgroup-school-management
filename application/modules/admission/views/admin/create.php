@@ -1,17 +1,19 @@
+
 <div class="col-md-8">
-    <div class="head"> 
-        <div class="icon"><span class="icosg-target1"></span></div>		
-        <h2>  Admission  </h2>
-        <div class="right"> 
-             <?php echo anchor('admin/admission/create', '<i class="glyphicon glyphicon-plus">
+<!-- Pager -->
+<div class="panel panel-white">
+    <div class="panel-heading">
+        <h6 class="panel-title">Admission</h6>
+        <div class="heading-elements">
+         <?php echo anchor('admin/admission/create', '<i class="glyphicon glyphicon-plus">
                 </i> ' . lang('web_list_all', array(':name' => 'Admission')), 'class="btn btn-primary"'); ?> 
-             <?php echo anchor('admin/admission', '<i class="glyphicon glyphicon-list">
+         <?php echo anchor('admin/admission', '<i class="glyphicon glyphicon-list">
                 </i> ' . lang('web_list_all', array(':name' => 'Students')), 'class="btn btn-primary"'); ?> 
         </div>
     </div>
-
-    <div class="block-fluid">
-         <?php
+    
+    <div class="panel-body">
+     <?php
              $attributes = array('class' => 'form-horizontal', 'id' => '');
              echo form_open_multipart(current_url(), $attributes);
          ?>
@@ -31,7 +33,7 @@
 
         <div class='form-group'>
             <div class="col-md-2" for='dob'>Dob <span class='required'>*</span></div><div class="col-md-10">
-                <input id='dob' type='text' name='dob' maxlength='' class='form-control datepicker' value="<?php echo set_value('dob', (isset($result->dob)) ? $result->dob : ''); ?>"  />
+                <input id='dob datetimepicker1' type='text' name='dob' maxlength='' class='form-control datepicker' value="<?php echo set_value('dob', (isset($result->dob)) ? $result->dob : ''); ?>"  />
                 <?php echo form_error('dob'); ?>
             </div>
         </div>
@@ -68,7 +70,7 @@
             <div class="col-md-2" for='class'>Class <span class='required'>*</span></div>
             <div class="col-md-10">
                  <?php echo form_dropdown('class', $school_classes, (isset($result->class)) ? $result->class : '', ' class="chzn-select" data-placeholder="Select  Options..." ');
-                 ?>		
+                 ?>     
                  <?php echo form_error('class'); ?>
             </div>
         </div>
@@ -77,7 +79,7 @@
             <div class="col-md-2" for='stream'>Stream <span class='required'>*</span></div>
             <div class="col-md-10">
                  <?php echo form_dropdown('stream', $class_stream, (isset($result->stream)) ? $result->stream : '', ' class="chzn-select" data-placeholder="Select  Options..." ');
-                 ?>		
+                 ?>     
                  <?php echo form_error('stream'); ?>
             </div>
         </div>
@@ -128,4 +130,8 @@
         <div class="clearfix"></div>
     </div>
 </div>
+
 </div>
+
+
+    

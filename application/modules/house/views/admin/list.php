@@ -1,18 +1,17 @@
-<div class="head"> 
-
-			 <div class="icon"><span class="icosg-target1"></span> </div>
-            <h2>  House  </h2>
-             <div class="right">  
-             <?php echo anchor( 'admin/house/create/'.$page, '<i class="glyphicon glyphicon-plus"></i> '.lang('web_add_t', array(':name' => 'House')), 'class="btn btn-primary"');?>
+<!-- Pager -->
+<div class="panel panel-white">
+	<div class="panel-heading">
+		<h6 class="panel-title">House</h6>
+		<div class="heading-elements">
+		  <?php echo anchor( 'admin/house/create/'.$page, '<i class="glyphicon glyphicon-plus"></i> '.lang('web_add_t', array(':name' => 'House')), 'class="btn btn-primary"');?>
 			 
 			 <?php echo anchor( 'admin/house' , '<i class="glyphicon glyphicon-list">
                 </i> '.lang('web_list_all', array(':name' => 'House')), 'class="btn btn-primary"');?> 
-             
-                </div>
-                </div>
-         	                    
-              
-                 <?php if ($house): ?>
+		</div>
+	</div>
+	
+	<div class="panel-body">
+	  <?php if ($house): ?>
                  <div class="block-fluid">
 				<table class="fpTable" cellpadding="0" cellspacing="0" width="100%">
 	 <thead>
@@ -59,3 +58,12 @@
 <?php else: ?>
     <p class='text'><?php echo lang('web_no_elements'); ?></p>
      <?php endif ?>
+
+	</div>
+</div>
+
+
+
+         	                    
+              
+               

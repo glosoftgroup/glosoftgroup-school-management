@@ -1,22 +1,24 @@
-<div class="head">
-                    <div class="icon"><span class="icosg-target1"></span></div>
-                    <h2> Full Calender</h2> 
-                     <div class="right">                            
-                       
-             <?php echo anchor( 'admin/school_events/create/', '<i class="glyphicon glyphicon-plus"></i> '.lang('web_add_t', array(':name' => ' New Event')), 'class="btn btn-primary"');?>
-                <?php echo anchor( 'admin/school_events/' , '<i class="glyphicon glyphicon-list">
+<!-- Pager -->
+<div class="panel panel-white">
+  <div class="panel-heading">
+    <h6 class="panel-title">Full Calender</h6>
+    <div class="heading-elements">
+      <?php echo anchor( 'admin/school_events/create/', '<i class="glyphicon glyphicon-plus"></i> '.lang('web_add_t', array(':name' => ' New Event')), 'class="btn btn-primary"');?>
+            <?php echo anchor( 'admin/school_events/' , '<i class="glyphicon glyphicon-list">
                 </i> List All', 'class="btn btn-primary"');?>
-			
-                     </div>    					
-                </div>
-         	                 
-               <div class="block-fluid">
-		   
-			   
-			   <div class="widget-main">
+    </div>
+  </div>
+  
+  <div class="panel-body">
+     <div class="widget-main">
                 <div style="backround:#fff !important;" id='calendar'></div>
            </div>
-           </div>
+  </div>
+</div>
+
+
+                         
+             
           
 <!--- Full skul Calendar---->
 
@@ -28,7 +30,7 @@ foreach ($events as $event)
 
     $user = $this->ion_auth->get_user($event->created_by);
     
-	$start_date = $event->start_date;
+  $start_date = $event->start_date;
     $end_date = $event->end_date;
     $current = date('Y-m-d', time());
   
@@ -44,7 +46,7 @@ foreach ($events as $event)
             'description' => strip_tags($event->description),
             'user' => $user->first_name . ' ' . $user->last_name,
         );
-	}
+  }
   else{
         $event_data[] = array(
             'title' => $event->title . ' at ' . $event->venue . ' ( From :' . date('d M Y H:i', $event->start_date) . ' -- To ' . date('d M Y H:i', $event->end_date) . ' ) ',
@@ -57,7 +59,7 @@ foreach ($events as $event)
             'description' => strip_tags($event->description),
             'user' => $user->first_name . ' ' . $user->last_name,
         );
-	}
+  }
   
 }
 ?>
@@ -109,8 +111,8 @@ cld = (function($) {
 
           cld.init();
       
-</script>		
+</script>   
 
-		   
-		   
-		   
+       
+       
+       
