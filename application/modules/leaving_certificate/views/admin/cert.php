@@ -19,13 +19,13 @@
 </div>
 				<div class="clear"></div>
    <div class="col-md-2"></div>
-    <div class="slip col-md-8">
-	 <div class="slip-content">
+    <div class="slip panel col-md-8">
+	 <div class="panel-body slip-content">
                         <div class="row">
                            <div class="col-md-12 view-title">
-							 <span class="center">
+							 <span class="text-center">
                               <h1><img src="<?php echo base_url('uploads/files/emblem.jpg'); ?>" width="100" height="100" />
-								<h5> Republic of Kenya
+								<h1> Republic of Kenya
 								<br>
 								<span class="border">________________________</span>
 								  <br>
@@ -37,7 +37,7 @@
 						</h1></span>
 							
                                
-                              		  <h3>School Leaving Certificate</h3>			
+                              		  <h3 class="text-center">School Leaving Certificate</h3>			
                             </div>
 							 <div class="col-md-12">
 							 

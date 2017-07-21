@@ -1,16 +1,22 @@
-<div class="head">
-    <div class="icon"><span class="icosg-target1"></span></div>
-    <h2> Subjects </h2>
-    <div class="right">
-         <?php echo anchor('admin/subjects/create/' . $page, '<i class="glyphicon glyphicon-plus"></i> ' . lang('web_add_t', array(':name' => 'Subjects')), 'class="btn btn-primary"'); ?>
-         <?php echo anchor('admin/subjects', '<i class="glyphicon glyphicon-list">
-                </i> ' . lang('web_list_all', array(':name' => 'Subjects')), 'class="btn btn-primary"'); ?>
-         <?php echo anchor('admin/subjects/per_class', '  Allocation Report ', 'class="btn btn-primary"'); ?>
-    </div>
-</div>
-<?php if ($subjects): ?>
-         <div class="block-fluid">
-             <table class="fpTable" cellpadding="0" cellspacing="0" width="100%">
+<!-- Pager -->
+<div class="panel panel-white">
+	<div class="panel-heading">
+		<h6 class="panel-title">Subjects</h6>
+		<div class="heading-elements">
+			<div class="heading-btn">
+				 <?php echo anchor('admin/subjects/create/' . $page, '<i class="glyphicon glyphicon-plus"></i> ' . lang('web_add_t', array(':name' => 'Subjects')), 'class="btn btn-primary"'); ?>
+                <?php echo anchor('admin/subjects', '<i class="glyphicon glyphicon-list">
+                </i> ' . lang('web_list_all', array(':name' => 'Subjects')), 'class="btn heading-btn btn-primary"'); ?>
+               <?php echo anchor('admin/subjects/per_class', '  Allocation Report ', 'class="btn heading-btn btn-primary"'); ?>
+
+			</div>
+		</div>
+	</div>
+
+	<div class="panel-body">
+		<?php if ($subjects): ?>
+         <div class="panel-body">
+             <table class="table table-hover fpTable" cellpadding="0" cellspacing="0" width="100%">
                  <thead>
                  <th>#</th>
                  <th>Name</th>
@@ -57,5 +63,9 @@
              </table>
          </div>
     <?php else: ?>
-         <p class='text'><?php echo lang('web_no_elements'); ?></p>
+         <p class='alert alert-warning'><?php echo lang('web_no_elements'); ?></p>
 <?php endif ?>
+	</div>
+
+</div>
+<!-- /pager -->

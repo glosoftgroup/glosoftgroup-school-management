@@ -1,17 +1,17 @@
-<div class="head"> 
-    <div class="icon"><span class="icosg-target1"></span> </div>
-    <h2>  Alumni Students  </h2>
-    <div class="right">  
-        <?php echo anchor('admin/admission/create/' , '<i class="glyphicon glyphicon-plus"></i> New Admission', 'class="btn btn-primary"'); ?>
+<!-- Pager -->
+<div class="panel panel-white">
+    <div class="panel-heading">
+        <h6 class="panel-title">Alumni Students </h6>
+        <div class="heading-elements">
+            <?php echo anchor('admin/admission/create/' , '<i class="glyphicon glyphicon-plus"></i> New Admission', 'class="btn btn-primary"'); ?>
         <?php echo anchor('admin/admission', '<i class="glyphicon glyphicon-list"></i> ' . lang('web_list_all', array(':name' => 'Students')), 'class="btn btn-primary"'); ?>
- <?php echo anchor('admin/admission/alumni/', '<i class="glyphicon glyphicon-thumbs-up"></i> Alumni Students', 'class="btn btn-success"'); ?>		
+      <?php echo anchor('admin/admission/alumni/', '<i class="glyphicon glyphicon-thumbs-up"></i> Alumni Students', 'class="btn btn-success"'); ?>      
         <?php echo anchor('admin/admission/inactive/', '<i class="glyphicon glyphicon-question-sign"></i> Inactive Students', 'class="btn btn-warning"'); ?>
+        </div>
     </div>
-</div>
-
-<div class="block-fluid">
-
-    <table cellpadding="0" cellspacing="0" border="0" class='hover' id="adm_table" width="100%">
+    
+    <div class="panel-body">
+     <table cellpadding="0" cellspacing="0" border="0" class='table table-hover' id="adm_table" width="100%">
         <thead>
             <tr>
                 <th>#</th>
@@ -21,7 +21,7 @@
                 <th>Gender</th>
                 <th>Birthday</th>
                 <th>Admission Date</th>
-                <th>Completion Year</th>	
+                <th>Completion Year</th>    
                 <th ><?php echo lang('web_options'); ?></th>
             </tr>
         </thead>
@@ -29,7 +29,11 @@
         <tfoot></tfoot>
     </table>
      
+    </div>
 </div>
+
+
+
 <script type="text/javascript">
         $(document).ready(function () {
             var oTable;

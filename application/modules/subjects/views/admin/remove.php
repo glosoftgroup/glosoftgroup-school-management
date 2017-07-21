@@ -1,7 +1,7 @@
-<div class="head">
+<div class="panel-heading">
                     <div class="icon"><span class="icosg-target1"></span></div>
                     <h2>  Classes per Subject </h2> 
-                     <div class="right">                            
+                     <div class="heading-btn">                            
                        
               <?php echo anchor( 'admin/subjects/create/', '<i class="glyphicon glyphicon-plus"></i>'.lang('web_add_t', array(':name' => ' New Subject')), 'class="btn btn-primary"');?>
                 <?php echo anchor( 'admin/subjects/' , '<i class="glyphicon glyphicon-list">
@@ -10,7 +10,7 @@
                      </div>    					
                 </div>
          	        <?php if ($posts): ?>              
-               <div class="block-fluid">
+               <div class="panel-body">
 			    <?php echo form_open('admin/subjects/bulk_delete', ' id="form"  class="form-horizontal"'); ?> 
 			<table class="table table-striped table-bordered  " >
             <thead>

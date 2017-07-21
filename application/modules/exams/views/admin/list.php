@@ -1,17 +1,21 @@
-<div class="head"> 
-    <div class="icon"><span class="icosg-target1"></span> </div>
-    <h2>  Exams  </h2>
-    <div class="right">  
-         <?php echo anchor('admin/exams/create/' . $page, '<i class="glyphicon glyphicon-plus"></i> ' . lang('web_add_t', array(':name' => 'Exams')), 'class="btn btn-primary"'); ?>
+<!-- Pager -->
+<div class="panel panel-white">
+	<div class="panel-heading">
+		<h6 class="panel-title">Exams</h6>
+		<div class="heading-elements">
+			<?php echo anchor('admin/exams/create/' . $page, '<i class="glyphicon glyphicon-plus"></i> ' . lang('web_add_t', array(':name' => 'Exams')), 'class="btn btn-primary"'); ?>
          <?php echo anchor('admin/exams', '<i class="glyphicon glyphicon-list">
-                </i> ' . lang('web_list_all', array(':name' => 'Exams')), 'class="btn btn-primary"'); ?> 
-    </div>
-</div>
+                </i> ' . lang('web_list_all', array(':name' => 'Exams')), 'class="btn btn-primary"'); ?>
+		</div>
+		</div>
+	
 
-<?php if ($exams): ?>
+	<div class="panel-body">
+	<?php if ($exams): ?>
          <div class="block-fluid">
-             <table class="fpTable" cellpadding="0" cellspacing="0" width="100%">
+             <table class="table table-hover fpTable" cellpadding="0" cellspacing="0" width="100%">
                  <thead>
+				 <tr class='bg-primary'>
                  <th>#</th>
                  <th>Title</th>
                  <th>Term</th>
@@ -19,6 +23,7 @@
                  <th>Start</th>
                  <th>End</th>
                  <th><?php echo lang('web_options'); ?></th>
+				 </tr>
                  </thead>
                  <tbody>
                       <?php
@@ -32,7 +37,7 @@
                            $i++;
                            ?>
                           <tr>
-                              <td><?php echo $i . '.'; ?></td>	
+                              <td><?php echo $i . '.'; ?></td>
                               <td><?php echo $p->title; ?></td>
                               <td> <?php echo isset($this->terms[$p->term]) ? $this->terms[$p->term] : ' '; ?></td>
                               <td><?php echo $p->year; ?></td>
@@ -43,7 +48,7 @@
                                       <button class="btn btn-success">Record</button>
                                       <button class="btn  btn-success dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
                                       <ul class="dropdown-menu">
-                                           <?php 
+                                           <?php
                                            foreach ($classes as $xid => $name)
                                            {
                                                 ?>
@@ -57,7 +62,7 @@
                                       <button class="btn btn-success">Edit Marks</button>
                                       <button class="btn  btn-success dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
                                       <ul class="dropdown-menu">
-                                           <?php        
+                                           <?php
                                            foreach ($classes as $xid => $name)
                                            {
                                                 ?>
@@ -67,7 +72,7 @@
                                           ?>
                                       </ul>
                                   </div>
-                                  <?php echo anchor('admin/exams/bulk/' . $p->id, 'Report Forms', 'class="btn btn-success"'); ?>  
+                                  <?php echo anchor('admin/exams/bulk/' . $p->id, 'Report Forms', 'class="btn btn-success"'); ?>
                                   <div class="btn-group">
                                       <a  class="btn btn-primary " href="<?php echo site_url('admin/exams/edit/' . $p->id . '/' . $page); ?>"><span class="glyphicon glyphicon-pencil"></span></a>
                                       <?php
@@ -87,4 +92,7 @@
 
     <?php else: ?>
          <p class='text'><?php echo lang('web_no_elements'); ?></p>
-<?php endif; 
+<?php endif; ?>
+
+	</div>
+</div>

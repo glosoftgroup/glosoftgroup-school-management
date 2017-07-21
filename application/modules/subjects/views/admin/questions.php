@@ -1,5 +1,5 @@
 
-<div class="col-md-8">
+<div class="panel panel-white">
     <div class="widget">
         <div class="head dark">
             <div class="icon"><span class="icos-picture"></span></div>

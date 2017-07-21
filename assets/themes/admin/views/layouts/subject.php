@@ -1,51 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-
         <!--[if gt IE 8]>
             <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <![endif]-->
-
         <title><?php echo $template['title']; ?></title>
 
-        <?php echo theme_css('stylesheets.css'); ?>
+        <!-- Global stylesheets -->
+	      <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+        <?php echo core_css('core/css/icons/icomoon/styles.css'); ?>
+        <?php echo core_css('core/css/bootstrap.css'); ?>
+        <?php echo core_css('core/css/core.css'); ?>
+        <?php echo core_css('core/css/components.css'); ?>
+        <?php echo core_css('core/css/colors.css'); ?>
+        <style>.error { color:red; }</style>
+	      <!-- /global stylesheets -->
+        <!--[if lt IE 10]>
+            <link href="css/ie.css" rel="stylesheet" type="text/css" />
+        <![endif]-->
+        <script> var BASE_URL = '<?php echo base_url(); ?>';</script>
+        <!-- Core JS files -->
+        <!-- Core JS files -->
+        <?php echo core_js('core/js/plugins/loaders/pace.min.js'); ?>
+        <?php echo core_js('core/js/core/libraries/jquery.min.js'); ?>
+	     <?php echo theme_js('plugins/jquery/jquery-migrate-1.1.1.min.js'); ?>
+       <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+
+        <?php echo core_js('core/js/core/libraries/bootstrap.min.js'); ?>
+        <?php echo core_js('core/js/plugins/loaders/blockui.min.js'); ?>
+
+      	<!-- /core JS files -->
+        <!-- Theme JS files -->
+        <?php echo core_js('core/js/plugins/ui/nicescroll.min.js'); ?>
+        <?php echo core_js('core/js/core/app.js'); ?>
+        <?php echo core_js('core/js/plugins/forms/selects/select2.min.js'); ?>
+        <?php echo core_js('core/js/pages/layout_fixed_custom.js'); ?>
+        <?php echo core_js('core/js/plugins/ui/ripple.min.js'); ?>
+      	<!-- /theme JS files -->
+        <!-- datatables -->
+        <?php echo core_js('core/js/plugins/tables/datatables/datatables.min.js'); ?>
+        <?php echo core_js('core/js/pages/datatables_advanced.js'); ?>
+        <!-- ./datatables -->
+
+        <!-- theme scripts -->
+        <?php echo core_js('core/js/plugins/pickers/pickadate/picker.js'); ?>
+
+        <?php echo core_js('core/js/plugins/pickers/pickadate/picker.date.js'); ?>
+
+        <?php echo core_js('core/js/plugins/pickers/pickadate/picker.time.js'); ?>
+        <!-- Updated stylesheet url -->
+        <?=core_js("core/js/core/libraries/jquery_ui/widgets.min.js");?>
+        <!-- ./theme scripts -->
+
+        <!-- old files -->
+
+        <?php echo theme_css('sett.css'); ?>
         <?php echo theme_css('jquery.dataTables.css'); ?>
         <?php echo theme_css('tableTools.css'); ?>
         <?php echo theme_css('dataTables.colVis.min.css'); ?>
-        <?php echo theme_css('select2/select2.css'); ?>
-        <?php echo theme_css('themes/default.css'); ?>
-        <?php echo theme_css('themes/default.date.css'); ?>
-        <?php echo theme_css('custom.css'); ?>
-        <link href="<?php echo js_path('plugins/jeditable/bootstrap-editable.css'); ?>" rel="stylesheet">
-        <link rel="stylesheet" href="<?php echo plugin_path('uploadify/uploadify.css'); ?>" type="text/css" />
-        <!--[if lt IE 10]>
-          <link href="css/ie.css" rel="stylesheet" type="text/css" />
-      <![endif]-->
-        <link rel="stylesheet" type="text/css" href="<?php echo plugin_path('boxer/jquery.fs.boxer.css'); ?>" />
-        <?php echo theme_js('plugins/jquery/jquery.min.js'); ?>
-        <?php echo theme_js('plugins/jquery/jquery-ui-1.10.1.custom.min.js'); ?>
-        <?php echo theme_js('plugins/jquery/jquery-migrate-1.1.1.min.js'); ?>
 
+
+          <!-- echo theme_css('select2/select2.css'); -->
+        <link href="<?php echo js_path('plugins/jeditable/bootstrap-editable.css'); ?>" rel="stylesheet">
+
+        <script> var BASE_URL = '<?php echo base_url(); ?>';</script>
         <?php echo theme_js('plugins/jquery/globalize.js'); ?>
         <?php echo theme_js('plugins/other/excanvas.js'); ?>
         <script type="text/javascript" src="<?php echo plugin_path('boxer/jquery.fs.boxer.js'); ?>"></script>
-
+        <?php echo theme_js('plugins/switch/js/switch.js'); ?>
         <?php echo theme_js('plugins/other/jquery.mousewheel.min.js'); ?>
-        <?php echo theme_js('plugins/bootstrap/bootstrap.min.js'); ?>
 
         <?php echo theme_js('plugins/cookies/jquery.cookies.2.2.0.min.js'); ?>
-        <?php echo theme_js('plugins/fancybox/jquery.fancybox.pack.js'); ?>
-
         <?php echo theme_js('plugins/pnotify/jquery.pnotify.min.js'); ?>
-
+        <?php echo theme_js('plugins/fullcalendar/fullcalendar.min.js'); ?>
         <?php echo theme_js('plugins/datatables/media/js/jquery.dataTables.min.js'); ?>
         <?php echo theme_js('plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js'); ?>
         <?php echo theme_js('plugins/datatables/extensions/ColVis/js/dataTables.colVis.min.js'); ?>
         <?php echo theme_js('jquery.dataTables.delay.min.js'); ?>
-
         <?php echo theme_js('amct/amcharts.js'); ?>
         <?php echo theme_js('amct/pie.js'); ?>
         <?php echo theme_js('amct/serial.js'); ?>
@@ -56,337 +89,248 @@
         <?php echo theme_js('amct/exporting/filesaver.js'); ?>
         <?php echo theme_js('amct/exporting/jspdf.plugin.addimage.js'); ?>
 
+        <?php echo theme_js('plugins/underscore/underscore-min.js'); ?>
         <?php echo theme_js('plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js'); ?>
         <?php echo theme_js('plugins/uniform/jquery.uniform.min.js'); ?>
-
+         <?php echo theme_js('plugins/cleditor/jquery.cleditor.js'); ?>
         <?php echo theme_js('plugins/maskedinput/jquery.maskedinput-1.3.min.js'); ?>
         <?php echo theme_js('plugins/multiselect/jquery.multi-select.min.js'); ?>
 
         <?php echo theme_js('plugins/validationEngine/languages/jquery.validationEngine-en.js'); ?>
         <?php echo theme_js('plugins/validationEngine/jquery.validationEngine.js'); ?>
-
-        <?php echo theme_js('plugins/animatedprogressbar/animated_progressbar.js'); ?>
-        <?php echo theme_js('plugins/hoverintent/jquery.hoverIntent.minified.js'); ?>
-
-        <?php echo theme_js('plugins/isotope/jquery.isotope.min.js'); ?>
-        <?php echo theme_js('plugins/jnotes/jquery-notes_1.0.8_min.js'); ?>
+        <?php echo theme_js('plugins/stepywizard/jquery.stepy.js'); ?>
 
         <?php echo theme_js('plugins/scrollup/jquery.scrollUp.min.js'); ?>
-        <script type="text/javascript" src="<?php echo plugin_path('uploadify/jquery.uploadify.min.js'); ?>"></script>
-        <script type="text/javascript" >
+        <?php echo theme_js('plugins/SmartWizard/jquery.smartWizard.js'); ?>
 
-                /* repeatString() returns a string which has been repeated a set number of times */
-                function repeatString(str, num) {
-                    out = '';
-                    for (var i = 0; i < num; i++) {
-                        out += str;
-                    }
-                    return out;
-                }
-
-                function dump(v, howDisplay, recursionLevel) {
-                    howDisplay = (typeof howDisplay === 'undefined') ? "alert" : howDisplay;
-                    recursionLevel = (typeof recursionLevel !== 'number') ? 0 : recursionLevel;
-
-
-                    var vType = typeof v;
-                    var out = vType;
-
-                    switch (vType) {
-                        case "number":
-                            /* there is absolutely no way in JS to distinguish 2 from 2.0
-                             so 'number' is the best that you can do. The following doesn't work:
-                             var er = /^[0-9]+$/;
-                             if (!isNaN(v) && v % 1 === 0 && er.test(3.0))
-                             out = 'int';*/
-                        case "boolean":
-                            out += ": " + v;
-                            break;
-                        case "string":
-                            out += "(" + v.length + '): "' + v + '"';
-                            break;
-                        case "object":
-                            //check if null
-                            if (v === null) {
-                                out = "null";
-
-                            }
-                            else if (Object.prototype.toString.call(v) === '[object Array]') {
-                                out = 'array(' + v.length + '): {\n';
-                                for (var i = 0; i < v.length; i++) {
-                                    out += repeatString('   ', recursionLevel) + "   [" + i + "]:  " +
-                                            dump(v[i], "none", recursionLevel + 1) + "\n";
-                                }
-                                out += repeatString('   ', recursionLevel) + "}";
-                            }
-                            else { //if object
-                                sContents = "{\n";
-                                cnt = 0;
-                                for (var member in v) {
-                                    sContents += repeatString('   ', recursionLevel) + "   " + member +
-                                            ":  " + dump(v[member], "none", recursionLevel + 1) + "\n";
-                                    cnt++;
-                                }
-                                sContents += repeatString('   ', recursionLevel) + "}";
-                                out += "(" + cnt + "): " + sContents;
-                            }
-                            break;
-                    }
-
-                    if (howDisplay == 'body') {
-                        var pre = document.createElement('pre');
-                        pre.innerHTML = out;
-                        document.body.appendChild(pre)
-                    }
-                    else if (howDisplay == 'alert') {
-                        alert(out);
-                    }
-
-                    return out;
-                }
-        </script>
-        <link rel="shortcut icon" type="image/ico" href="<?php echo image_path('img/favicon.ico'); ?>" />
-
+        <script src="<?php echo plugin_path('bootstrap.daterangepicker/moment.js'); ?>" ></script>
+        <script src="<?php echo plugin_path('bootstrap.daterangepicker/daterangepicker.js'); ?>" ></script>
+        <script src="<?php echo plugin_path('bootstrap.datetimepicker/bootstrap-datetimepicker.min.js'); ?>"></script>	<link rel="shortcut icon" type="image/ico" href="<?php echo image_path('favicon.ico'); ?>" />
+        <link rel="shortcut icon" type="image/ico" href="<?php echo image_path('favicon.ico'); ?>" />
     </head>
-
-    <body class="ssRed"
     <?php
-          if (
-                      preg_match('/^(admin\/record_salaries\/slip)/i', $this->uri->uri_string()) ||
-                      preg_match('/^(admin\/record_sales\/receipt)/i', $this->uri->uri_string()) ||
-                      preg_match('/^(admin\/receipt\/receipt)/i', $this->uri->uri_string()) ||
-                      preg_match('/^(admin\/fee_payment\/receipt)/i', $this->uri->uri_string()) ||
-                      preg_match('/^(admin\/exams_management\/report)/i', $this->uri->uri_string()) ||
-                      preg_match('/^(admin\/fee_payment\/statement)/i', $this->uri->uri_string())
-          )
-                  echo 'id="bodi"'; ?>>
+    $ccls = 'ssRed';
+    if ($this->ion_auth->is_in_group($this->user->id, 3))
+    {
+            $ccls = 'ssGreen';
+    }
+    ?>
+    < class="navbar-top " >
+        <?php echo $template['partials']['top']; ?>
+        <!-- Page container -->
+      	<div class="page-container">
 
-              <?php
-                    if ($this->ion_auth->is_in_group($this->user->id, 3))
-                    {
-                            ?>
+      		<!-- Page content -->
+      		<div class="page-content">
+          <?php echo $template['partials'][$this->side]; ?>
+         <!-- Main content -->
+			<div class="content-wrapper">
 
-                      <?php
-              }
-              else
-              {
-                      ?>
-                      <?php echo $template['partials']['top']; ?>
-                      <?php echo $template['partials'][$this->side]; ?>
+				<!-- Page header -->
+				<div class="page-header page-header-default">
+
+					<div class="breadcrumb-line">
+						<ul class="breadcrumb">
+							<li>
+                <i class="icon-home2 position-left"></i>
+                <?php echo anchor('/', 'Home'); ?>
+              </li>
+              <?php  if ($this->uri->segment(2)) { ?>
+              <li>
+                <?php echo anchor('admin/' . $this->uri->segment(2), humanize($this->uri->segment(2))); ?>
+               </li>
               <?php } ?>
-         <div class="row">
+							<li class="active"><?php echo $template['title']; ?></li>
+						</ul>
 
-               <div class="col-md-12">
-                    <div class="breadCrumb clearfix">
-                         <div>
-                              <div style="display: inline-block; width:40%">
-                                   <span > <?php echo anchor('/', 'Home'); ?> > </span>
-                                   <?php
-                                   if ($this->uri->segment(2))
-                                   {
-                                        ?>
-                                        <span ><?php echo anchor('admin/' . $this->uri->segment(2), humanize($this->uri->segment(2))); ?> > </span>
-                                   <?php } ?>
-                                   <span ><?php echo $template['title']; ?></span>
-                              </div>
-                              <div style="display: inline-block; width:40%"><?php
-                                   $user = $this->ion_auth->get_user();
-                                   $gp = $this->ion_auth->get_users_groups($user->id)->row();
-                                   ?><small>&nbsp;</small>
-                                   <span class="label label-success"  ><?php echo ucwords($gp->name); ?></span>
-                                   </span></div>
-                         </div>
+						<ul class="breadcrumb-elements">
+              <li>
+                <?php
+                              $user = $this->ion_auth->get_user();
+                              $gp = $this->ion_auth->get_users_groups($user->id)->row();
+                              ?><small>&nbsp;</small>
+                              <span class="label label-success"  ><?php echo ucwords($gp->name); ?></span>
+                              </span>
+                      </li>
+						</ul>
+					</div>
+				</div>
+				<!-- /page header -->
 
-                    </div>
-               </div>
 
+				<!-- Content area -->
+				<div class="content">
+          <div>
+            <!-- alerts -->
+            <?php
+            if ($this->session->flashdata('warning'))
+            {
+            		?>
+            		<div class="alert">
+            			<button type="button" class="close" data-dismiss="alert">
+            				<i class="glyphicon glyphglyphicon glyphicon-remove"></i> </button>
+            			<strong>Warning!</strong> <?php echo $this->session->flashdata('warning'); ?>
+            		</div>
+            <?php } ?>
+            <?php
+            if ($this->session->flashdata('success'))
+            {
+            		?>
+            		<div class="alert alert-success">
+            			<button type="button" class="close" data-dismiss="alert">  <i class="glyphicon glyphglyphicon glyphicon-remove-circle"></i>  </button>
+            			<?php echo $this->session->flashdata('success'); ?>
+            		</div>
+            <?php } ?>
+            <?php
+            if ($this->session->flashdata('info'))
+            {
+            		?>
+            		<div class="alert alert-info">
+            			<button type="button" class="close" data-dismiss="alert">
+            				<i class="glyphicon glyphglyphicon glyphicon-remove-circle"></i> </button>
+            			<?php echo $this->session->flashdata('info'); ?>
+            		</div>
+            <?php } ?>
+            <?php
+            if ($this->session->flashdata('message'))
+            {
+            		$message = $this->session->flashdata('message');
+            		$str = is_array($message) ? $message['text'] : $message;
+            		?>
+            		<div class="alert alert-success">
+            			<button type="button" class="close" data-dismiss="alert">
+            				<i class="glyphicon glyphglyphicon glyphicon-remove-circle"></i>                                </button>
+            			<?php echo $str; //$this->session->flashdata('message');  ?>
+            		</div>
+            <?php } ?>
+            <?php
+            if ($this->session->flashdata('error'))
+            {
+            		?>
+            		<div class="alert alert-error">
+            			<button type="button" class="close" data-dismiss="alert">
+            				<i class="glyphicon glyphicon-remove"></i>      </button>
+            			<strong>Error!</strong> <?php echo $this->session->flashdata('error'); ?>
+            		</div>
+            <?php } ?>
+
+          <!-- ./alerts -->
           </div>
-        <div class="content" >
+          <div class="row">
+            <div class="col-md-4">
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h6 class="panel-title"><?php echo $this->get->name; ?></h6>
+                <div class="heading-elements">
 
-            <div class="row">
+                </div>
+              </div>
+                <div class="panel-">
+                  <div class="content-group">
+                    <div class="list-group no-border">
+                      <a href="javascript:;" class="list-group-item">
+                        <i class="icon-file-text2"></i><strong>Title:</strong>  <?php echo $this->get->name; ?>
+                      </a>
 
-                <div class="col-md-12">
+                      <a href="javascript:;" class="list-group-item">
+                        <i class="icon-file-text2"></i> <strong>Shortname:</strong>  <?php echo $this->get->short_name; ?>
+                      </a>
 
-                    <?php
-                          if ($this->session->flashdata('warning'))
-                          {
-                                  ?>
-                                  <div class="alert">
-                                      <button type="button" class="close" data-dismiss="alert">
-                                          <i class="glyphicon glyphicon-remove"></i>                                </button>
-                                      <strong>Warning!</strong> <?php echo $this->session->flashdata('warning'); ?>
-                                  </div>
-                          <?php } ?>
-                    <?php
-                          if ($this->session->flashdata('warning'))
-                          {
-                                  ?>
-                                  <div class="alert">
-                                      <button type="button" class="close" data-dismiss="alert">
-                                          <i class="glyphicon glyphicon-remove"></i>                                </button>
-                                      <strong>Warning!</strong> <?php echo $this->session->flashdata('warning'); ?>
-                                  </div>
-                          <?php } ?>
-                    <?php
-                          if ($this->session->flashdata('success'))
-                          {
-                                  ?>
-                                  <div class="alert alert-success">
-                                      <button type="button" class="close" data-dismiss="alert">  <i class="glyphicon glyphicon-remove"></i>  </button>
-                                      <?php //echo $this->session->flashdata('success');  ?>
-                                      <script>  notify('Success', ' <?php echo $this->session->flashdata('success'); ?>');</script>
-                                  </div>
-                          <?php } ?>
-                    <?php
-                          if ($this->session->flashdata('info'))
-                          {
-                                  ?>
-                                  <div class="alert alert-info">
-                                      <button type="button" class="close" data-dismiss="alert">
-                                          <i class="glyphicon glyphicon-remove"></i>                                </button>
-                                      <?php echo $this->session->flashdata('info'); ?>
-                                  </div>
-                          <?php } ?>
-                    <?php
-                          if ($this->session->flashdata('message'))
-                          {
-                                  $message = $this->session->flashdata('message');
-                                  $str = is_array($message) ? $message['text'] : $message;
-                                  ?>
-                                  <div class="alert alert-success">
-                                      <button type="button" class="close" data-dismiss="alert">
-                                          <i class="glyphicon glyphicon-remove"></i>
-                                      </button>
-                                      <script>  notify('Success', ' <?php echo $str; ?>');</script>
-                                      <?php echo $str; ?>
-                                  </div>
-                          <?php } ?>
-                    <?php
-                          if ($this->session->flashdata('error'))
-                          {
-                                  ?>
-                                  <div class="alert alert-error">
-                                      <button type="button" class="close" data-dismiss="alert">
-                                          <i class="glyphicon glyphicon-remove"></i>      </button>
-                                      <strong>Error!</strong> <?php echo $this->session->flashdata('error'); ?>
-                                  </div>
-                          <?php } ?>
+                      <a href="javascript:;" class="list-group-item">
+                        <i class="icon-file-text2"></i> <strong>Code:</strong>  <?php echo $this->get->code; ?>
+                      </a>
+                      <a href="javascript:;" class="list-group-item">
+                				<i class="icon-file-text2 "></i><span class="label label-success">Active</span>
+                			</a>
 
-                    <div class="widget">
-                        <div class="col-md-4">
-
-                            <div class="widget">
-                                <div class="profile clearfix">
-                                    <div class="image">
-                                    </div>
-                                    <div class="info-s">
-                                        <h2> <?php echo $this->get->name; ?></h2>
-                                        <p><strong>Title:</strong>  <?php echo $this->get->name; ?></p>
-                                        <p><strong>Shortname:</strong>  <?php echo $this->get->short_name; ?></p>
-                                        <p><strong>Code:</strong>  <?php echo $this->get->code; ?></p>
-                                        <div class="status">Active </div>
-                                    </div>
-                                    <div class="stats">
-                                        <div class="item">
-                                            <div class="title"><?php echo count($this->get->subs); ?></div>
-                                            <div class="descr">Sub Units</div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="title">&nbsp;</div>
-                                            <div class="descr">&nbsp;</div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="title">&nbsp;</div>
-                                            <div class="descr">&nbsp;</div>
-                                        </div>
-                                        <div class="item pull-right">
-                                            <div class="title"><?php echo count($this->get->classign); ?></div>
-                                            <div class="descr">Classes</div>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                                <div class="block-fluid users">
-                                    <div class="item">
-                                        <?php echo theme_image('examples/users/bull.png', array('class' => "img-polaroid")); ?>
-                                        <a href="<?php echo base_url('admin/subjects/view/' . $this->get->id); ?>">Overview</a>
-                                        <div class="caption">&nbsp;</div>
-                                    </div>
-                                    <div class="item">
-                                        <?php echo theme_image('examples/users/bull.png', array('class' => "img-polaroid")); ?>
-                                        <a href="<?php echo base_url('admin/subjects/past_papers/' . $this->get->id); ?>">Question Papers</a>
-                                        <div class="caption"><span class="label label-success"><?php echo $this->pcount;?></span></div>
-                                    </div>
-                                    <div class="item">
-                                        <?php echo theme_image('examples/users/bull.png', array('class' => "img-polaroid")); ?>
-                                        <a href="<?php echo base_url('admin/subjects/past_papers/' . $this->get->id); ?>">Performance Trends</a>
-                                        <div class="caption"> </div>
-                                    </div>
-                                    <div class="item">
-                                        <?php echo theme_image('examples/users/bull.png', array('class' => "img-polaroid")); ?>
-                                        <a href="<?php echo base_url('admin/subjects/upload/' . $this->get->id); ?>">Upload</a>
-                                        <div class="caption"> </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <?php echo $template['body']; ?>
                     </div>
+                  </div>
 
-                </div>
+                   <hr>
 
-            </div>
+                    <div class="content-group">
+
+                		<div class="list-group no-border">
+                			<a href="<?php echo base_url('admin/subjects/view/' . $this->get->id); ?>" class="list-group-item">
+                				<i class="icon-file-text2"></i><strong>Overview</strong>
+                			</a>
+                			<a href="<?php echo base_url('admin/subjects/past_papers/' . $this->get->id); ?>" class="list-group-item">
+                				<i class="icon-file-text2"></i><strong>Question Papers</strong><span class="label label-success"><?php echo $this->pcount;?></span>
+                			</a>
+                			<a href="<?php echo base_url('admin/subjects/past_papers/' . $this->get->id); ?>" class="list-group-item">
+                				<i class="icon-file-text2"></i><strong>Performance Trends</strong>
+                			</a>
+                			<a href="<?php echo base_url('admin/subjects/upload/' . $this->get->id); ?>" class="list-group-item">
+                				<i class="icon-file-text2"></i><strong>Upload</strong>
+                			</a>
+                		</div>
+                	</div>
+					<div class="clear-fix"></div>
+					<hr>
+					 <div class="panel-footer">
+					  <div class="panel-body">
+					   <div class="col-md-6">
+                            <div class="title"><?php echo count($this->get->subs); ?></div>
+                            <div class="descr">Sub Units</div>
+                        </div>
+
+                        <div class="col-md-6 text-right">
+                            <div class="title"><?php echo count($this->get->classign); ?></div>
+                            <div class="descr">Classes</div>
+                        </div>
+						</div>
+					</div>
+				</div>
+				</div>
 
         </div>
+          <div class='col-md-8'>
+          <?php echo $template['body']; ?>
+          </div>
+          </div>
 
-        <div id="fcAddEvent" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="fcAddEventLabel" aria-hidden="true">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h3 id="fcAddEventLabel">Add new event</h3>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-3">Title:</div>
-                    <div class="col-md-9"><input type="text" id="fcAddEventTitle"/></div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-primary" id="fcAddEventButton">Add</button>
-            </div>
+				</div>
+				<!-- /content area -->
+        <!-- Footer -->
+        <div class="footer text-muted">
+          &copy; <?=date('Y');?>. <a href="#">Glosoft Group</a>
         </div>
-        <script type="text/javascript">  var flist = '<?php echo $this->list_size; ?>';</script>
-        <?php echo theme_js('plugins.js'); ?>
-        <?php echo theme_js('actions.js'); ?>
-        <?php echo theme_js('include/jquery.ui.timepicker.js'); ?>
-        <?php echo theme_js('ajaxfileupload.js'); ?>
-        <?php echo theme_js('select2/select2.min.js'); ?>
-        <?php echo theme_js('plugins/jeditable/bootstrap-editable.js'); ?>
-        <?php echo theme_js('plugins/drag/jquery.dragtable.js'); ?>
+        <!-- /footer -->
 
-        <script>
-                var BASE_URL = '<?php echo base_url(); ?>';
+			</div>
+			<!-- /main content -->
+       </div>
+     <!-- /page content -->
+    </div>
+    <!-- /page container -->
+    <!-- scripts -->
 
-                jQuery.extend({
-                    handleError: function (s, xhr, status, e) {
-                        // If a local callback was specified, fire it
-                        if (s.error)
-                            s.error(xhr, status, e);
-                        // If we have some XML response text (e.g. from an AJAX call) then log it in the console
-                        else if (xhr.responseText)
-                            console.log(xhr.responseText);
-                    }
-                });
+    <?php echo core_js('core/js/plugins/ui/moment/moment.min.js'); ?>
+    <?php echo core_js('core/js/plugins/ui/fullcalendar/fullcalendar.min.js'); ?>
+    <?php echo core_js('core/js/plugins/visualization/echarts/echarts.js'); ?>
+    <?php echo core_js('core/js/plugins/forms/selects/bootstrap_multiselect.js'); ?>
+    <?php echo theme_js('plugins/animatedprogressbar/animated_progressbar.js'); ?>
+       <?php echo theme_js('plugins/hoverintent/jquery.hoverIntent.minified.js'); ?>
 
-                $(".datepicker").datepicker({
-                    changeMonth: true,
-                    changeYear: true
-                });
+       <?php echo theme_js('plugins/isotope/jquery.isotope.min.js'); ?>
+       <?=core_js('core/js/pages/form_inputs.js');?>
 
-                $(document).ready(function () {
-                    $(".boxer").boxer();
-                });
-        </script>
+       <?php echo theme_js('plugins/scrollup/jquery.scrollUp.min.js'); ?>
+       <script type="text/javascript" src="<?php echo plugin_path('uploadify/jquery.uploadify.min.js'); ?>"></script>
+       <?php echo core_js('core/js/plugins.js'); ?>
+    <script>
+     // Default initialization
+     $('.select').select2({
+         minimumResultsForSearch: Infinity
+     });
+     $('.multiselect').multiselect({
+        onChange: function() {
+            $.uniform.update();
+        }
+    });
+    </script>
+
+
 
     </body>
 </html>

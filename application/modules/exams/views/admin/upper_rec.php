@@ -12,15 +12,19 @@ else
         $sel = 0;
 }
 ?>
+
+
 <div class="col-md-3">
 
-    <div class="widget">
-        <div class="head dark">
-            <div class="icon"><span class="icosg-newtab"></span></div>
-            <h2>Select a Subject</h2>
-        </div>
+   <div class="panel panel-white">
+	<div class="panel-heading">
+		<h6 class="panel-title">Select a Subject</h6>
+		<div class="heading-elements">
+		</div>
+	</div>
 
-        <div class="block-fluid">
+
+        <div class="panel-body">
             <ul class="list tickets">
                 <?php
                 $i = 0;
@@ -41,16 +45,18 @@ else
         </div>
     </div>
 </div>
+
 <div class="col-md-9">
-    <div class="head">
-        <div class="icon"><span class="icosg-target1"></span></div>
-        <h2>Exams Management</h2>
-        <div class="right">         
-            <?php echo anchor('admin/exams/', '<i class="glyphicon glyphicon-list">
+	<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h6 class="panel-title">Exams Management</h6>
+		<div class="heading-elements">
+			 <?php echo anchor('admin/exams/', '<i class="glyphicon glyphicon-list">
                 </i> List All', 'class="btn btn-primary"'); ?>
-        </div>  					
-    </div>
-    <div class="block-fluid">
+		</div>
+	</div>
+
+    <div class="panel-body">
         <?php
         $attributes = array('class' => 'form-horizontal', 'id' => '');
         echo form_open_multipart(current_url() . '?sb=' . $sb, $attributes);
@@ -69,10 +75,10 @@ else
         {
                 ?>
                 <h3 style="text-align:center; text-decoration:underline"><?php echo $class_name; ?></h3>
-                <table class="table-striped table-bordered " >
+                <table class="table table-striped table-bordered " >
                     <!-- BEGIN -->
                     <thead>
-                        <tr> 
+                        <tr>
                             <th width="3%">#</th>
                             <th>Student</th>
                             <?php
@@ -101,11 +107,11 @@ else
                         $tot_class = '';
                         foreach ($students as $post):
                                 $std = $this->worker->get_student($post->id)
-                                ?>  
+                                ?>
                                 <tr>
                                     <td>
                                         <span id="reference" name="reference" class="heading-reference"><?php echo $i . '. '; ?></span>
-                                    </td> 
+                                    </td>
                                     <td> <?php echo $std->first_name . ' ' . $std->last_name; ?>  </td>
                                     <?php
                                     if (isset($sel->units))
@@ -145,7 +151,7 @@ else
                                         echo form_input($nm, $val, '  placeholder="Marks" class="marks ' . $tot_class . '" ');
                                         echo form_error('marks');
                                         ?>
-                                    </td> 
+                                    </td>
                                <!--        <td>
                                     <?php
                                     $rval = '';
@@ -157,27 +163,28 @@ else
                                     $rnm = 'remarks[' . $post->id . ']';
                                     ?>
                                      <textarea name="<?php //echo $rnm;         ?>" cols="25" rows="1" class="col-md-12 remarks" id="remarks_<?php //echo $i;                              ?>"><?php //echo $rval;                              ?></textarea>
-                                    <?php //echo form_error('remarks');   ?> 
+                                    <?php //echo form_error('remarks');   ?>
                                     </td>-->
                                 </tr>
                                 <?php
                                 $i++;
                         endforeach;
-                        ?>		
+                        ?>
                     </tbody>
                 </table>
                 <div class='form-group'>
-                    <div class="col-md-10"> 
+                    <div class="col-md-10">
                         <?php echo form_submit('submit', ($updType == 'edit') ? 'Update' : 'Save', (($updType == 'create') ? "id='submit' class='btn btn-primary''" : "id='submit' class='btn btn-primary'")); ?>
                         <?php echo anchor('admin/exams', 'Cancel', 'class="btn btn-danger"'); ?>
                     </div>
                 </div>
 
-        <?php } ?> 
+        <?php } ?>
 
         <?php echo form_close(); ?>
         <div class="clearfix"></div>
     </div>
+	</div>
 </div>
 
 <script>

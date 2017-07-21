@@ -1,16 +1,20 @@
 <div class="col-md-8">
-    <div class="head"> 
-        <div class="icon"><span class="icosg-target1"></span></div>		
-        <h2>  Subjects  </h2>
-        <div class="right"> 
-             <?php echo anchor('admin/subjects/create', '<i class="glyphicon glyphicon-plus">
-                </i> ' . lang('web_add_t', array(':name' => 'Subjects')), 'class="btn btn-primary"'); ?> 
-             <?php echo anchor('admin/subjects', '<i class="glyphicon glyphicon-list">
-                </i> ' . lang('web_list_all', array(':name' => 'Subjects')), 'class="btn btn-primary"'); ?> 
-        </div>
-    </div>
+<div class="panel panel-white">
+  <div class="panel-heading">
+		<h6 class="panel-title"> Subjects  </h6>
+		<div class="heading-elements">
+			<div class="heading-btn">
+        <?php echo anchor('admin/subjects/create', '<i class="glyphicon glyphicon-plus">
+           </i> ' . lang('web_add_t', array(':name' => 'Subjects')), 'class="btn btn-primary"'); ?>
+        <?php echo anchor('admin/subjects', '<i class="glyphicon glyphicon-list">
+           </i> ' . lang('web_list_all', array(':name' => 'Subjects')), 'class="btn btn-primary"'); ?>
 
-    <div class="block-fluid">
+			</div>
+		</div>
+	</div>
+    
+
+    <div class="panel-body">
          <?php
              $attributes = array('class' => 'form-horizontal', 'id' => '');
              echo form_open_multipart(current_url(), $attributes);
@@ -92,14 +96,14 @@
                            $ttval = $tval[$ii];
                       }
                       ?>
-                      <div id="entry<?php echo $ii + 1; ?>" class="clonedInput"> 
+                      <div id="entry<?php echo $ii + 1; ?>" class="col-md-12 clonedInput">
                           <div class='form-group '>
                               <div class="col-md-3">
                                    <?php echo form_dropdown('class[]', array('' => 'Select class') + $this->classes, $ffval, ' class="xsel validate[required]"'); ?>
                                    <?php echo form_error('class'); ?>
                               </div>
-                              <div class="col-md-6">
-                                   <?php echo form_dropdown('term[' . $ii . '][]', array('' => '') + $this->terms, $ttval, 'id="term_" multiple  class="fsel validate[required]" placeholder="Select Terms" '); ?>
+                              <div class="col-md-5">
+                                   <?php echo form_dropdown('term[' . $ii . '][]', array('' => '') + $this->terms, $ttval, 'id="term_" multiple  class="form-control fsel validate[required]" placeholder="Select Terms" '); ?>
                                    <?php echo form_error('term'); ?>
                               </div>
 
@@ -117,7 +121,7 @@
                       {
                            $t++;
                            ?>
-                           <div id="entry<?php echo $t; ?>" class="clonedInput"> 
+                           <div id="entry<?php echo $t; ?>" class="clonedInput">
                                <div class='form-group '>
                                    <div class="col-md-3">
                                         <?php echo form_dropdown('class[]', array('' => 'Select class') + $this->classes, $tcl, 'id="class_" class="xsel validate[required] class_"'); ?>
@@ -135,15 +139,15 @@
                  }
                  else
                  {
-                      ?>  
-                      <div id="entry1" class="clonedInput"> 
+                      ?>
+                      <div id="entry1" class="clonedInput">
                           <div class='form-group '>
                               <div class="col-md-3">
                                    <?php echo form_dropdown('class[]', array('' => 'Select class') + $this->classes, '', 'id="class_" class="xsel validate[required] class_"'); ?>
                                    <?php echo form_error('class'); ?>
                               </div>
                               <div class="col-md-6">
-                                   <?php echo form_dropdown('term[0][]', $this->terms, '', 'id="term_" multiple  class="fsel validate[required] term_" placeholder="Select Terms" '); ?>
+                                   <?php echo form_dropdown('term[0][]', $this->terms, '', 'id="term_" multiple  class="form-control fsel validate[required] term_" placeholder="Select Terms" '); ?>
                                    <?php echo form_error('term'); ?>
                               </div>
 
@@ -152,10 +156,12 @@
                  <?php } ?>
             <?php } ?>
         <div class="actions">
-            <a  id="btnAdd" class="btn btn-success clone">Add New Line</a> 
+            <a  id="btnAdd" class="btn btn-success clone">Add New Line</a>
             <a  id="btnDel" class="btn btn-danger remove">Remove</a>
         </div>
-        <div class='form-group'><div class="col-md-3"></div><div class="col-md-6">
+        <div class='form-group'>
+        <div class="col-md-3"></div>
+        <div class="col-md-6 text-right">
                   <?php echo form_submit('submit', ($updType == 'edit') ? 'Update' : 'Save', (($updType == 'create') ? "id='submit' class='btn btn-primary''" : "id='submit' class='btn btn-primary'")); ?>
                   <?php echo anchor('admin/subjects', 'Cancel', 'class="btn  btn-default"'); ?>
             </div></div>
@@ -163,6 +169,7 @@
         <?php echo form_close(); ?>
         <div class="clearfix"></div>
     </div>
+</div>
 </div>
 
 <script>
@@ -173,13 +180,13 @@
                   $(".fsel").select2({'placeholder': 'Please Select', 'width': '100%'});
                   $(".fsel").on("change", function (e)
                   {
-                       notify('Select', 'Value changed: ' + e.added.text);
+                       //notify('Select', 'Value changed: ' + e.added.text);
                   });
 
                   $(".xsel").select2({'placeholder': 'Please Select', 'width': '100%'});
                   $(".xsel").on("change", function (e)
                   {
-                       notify('Select', 'Value changed: ' + e.added.text);
+                       //notify('Select', 'Value changed: ' + e.added.text);
                   });
 
                   $('#btnAdd').click(function ()
@@ -193,13 +200,13 @@
                        // subject - select
                        newElem.find('table tr td select.class_').attr('id', 'class_' + newNum);
                        newElem.find('.term_').attr('id', 'term_' + newNum).val('').focus();
-                       newElem.find('.term_').attr('name', 'term[' + num + '][]').val('');
+                       newElem.find('.term_').attr('name', 'term[' + num + '][]').val('').attr('title','Select Term');
 
                        // insert the new element after the last "duplicatable" input field
                        $('#entry' + num).after(newElem);
                        /********************BEGIN SELECT2 CLONE*******************************/
                        newElem.find('.select2-container').remove();
-                       newElem.find('select').select2({'width': '100%'});
+                       newElem.find('select').select2({'placeholder': 'Please Select','width': '100%'});
                        /********************END SELECT2 CLONE*******************************/
                        // enable the "remove" button
                        $('#btnDel').attr('disabled', false);

@@ -1,16 +1,21 @@
-<div class="head"> 
-    <div class="icon"><span class="icosg-target1"></span> </div>
-    <h2>  Assignments  </h2>
-    <div class="right">  
-         <?php echo anchor('admin/assignments/create/' . $page, '<i class="glyphicon glyphicon-plus"></i> ' . lang('web_add_t', array(':name' => 'Assignments')), 'class="btn btn-primary"'); ?>
-         <?php echo anchor('admin/assignments', '<i class="glyphicon glyphicon-list">
-                </i> ' . lang('web_list_all', array(':name' => 'Assignments')), 'class="btn btn-primary"'); ?>
-    </div>
-</div>
+<!-- Pager -->
+<div class="panel panel-white">
+	<div class="panel-heading">
+		<h6 class="panel-title">Assignments</h6>
+		<div class="heading-elements">
+      <?php echo anchor('admin/assignments/create/' . $page, '<i class="glyphicon glyphicon-plus"></i> ' . lang('web_add_t', array(':name' => 'Assignments')), 'class="btn btn-primary"'); ?>
+      <?php echo anchor('admin/assignments', '<i class="glyphicon glyphicon-list">
+             </i> ' . lang('web_list_all', array(':name' => 'Assignments')), 'class="btn btn-primary"'); ?>
+		</div>
+	</div>
+
+
+
 <?php if ($assignments): ?>
-         <div class="block-fluid">
-             <table class="fpTable" cellpadding="0" cellspacing="0" width="100%">
+         <div class="panel-body">
+             <table class="table table-hover fpTable" cellpadding="0" cellspacing="0" width="100%">
                  <thead>
+                <tr class='bg-primary'>
                  <th>#</th>
                  <th>Title</th>
                  <th>Class</th>
@@ -18,6 +23,7 @@
                  <th>End Date</th>
                  <th>Attachment</th>
                  <th ><?php echo lang('web_options'); ?></th>
+                </tr>
                  </thead>
                  <tbody>
                       <?php
@@ -33,7 +39,7 @@
                            $i++;
                            ?>
                           <tr>
-                              <td><?php echo $i . '.'; ?></td>					
+                              <td><?php echo $i . '.'; ?></td>
                               <td><?php echo $p->title; ?></td>
                               <td>
                                    <?php
@@ -73,9 +79,9 @@
                           </tr>
                      <?php endforeach ?>
                  </tbody>
-             </table> 
+             </table>
          </div>
 
     <?php else: ?>
-         <p class='text'><?php echo lang('web_no_elements'); ?></p>
+         <p class='text-center alert alert-warning col-md-12'><?php echo lang('web_no_elements'); ?></p>
 <?php endif ?>

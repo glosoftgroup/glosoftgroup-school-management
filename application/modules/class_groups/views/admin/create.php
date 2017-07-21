@@ -1,44 +1,52 @@
 <div class="col-md-8">
-    <div class="head"> 
-        <div class="icon"><span class="icosg-target1"></span></div>		
-        <h2>  Class Groups  </h2>
-        <div class="right"> 
-            <?php echo anchor('admin/class_groups/create', '<i class="glyphicon glyphicon-plus">
-                </i> ' . lang('web_add_t', array(':name' => 'Class Groups')), 'class="btn btn-primary"'); ?> 
+<!-- Pager -->
+<div class="panel panel-white">
+	<div class="panel-heading">
+		<h6 class="panel-title">  Class Group</h6>
+		<div class="heading-elements">
+			 <?php echo anchor('admin/class_groups/create', '<i class="glyphicon glyphicon-plus">
+                </i> ' . lang('web_add_t', array(':name' => 'Class Groups')), 'class="btn btn-primary"'); ?>
             <?php echo anchor('admin/class_groups', '<i class="glyphicon glyphicon-list">
-                </i> ' . lang('web_list_all', array(':name' => 'Class Groups')), 'class="btn btn-primary"'); ?> 
+                </i> ' . lang('web_list_all', array(':name' => 'Class Groups')), 'class="btn btn-primary"'); ?>
+		</div>
+	</div>
 
-        </div>
-    </div>
-    <div class="block-fluid">
-
-        <?php
+	<div class="panel-body">
+	     <?php
         $attributes = array('class' => 'form-horizontal', 'id' => '');
         echo form_open_multipart(current_url(), $attributes);
         ?>
         <div class='form-group'>
-            <div class="col-md-2" for='name'>Name </div><div class="col-md-10">
+            <div class="col-md-2" for='name'>Name </div>
+            <div class="col-md-10">
                 <?php echo form_input('name', $result->name, 'id="name_"  class="form-control" '); ?>
                 <?php echo form_error('name'); ?>
             </div>
         </div>
 
         <div class='widget'>
-            <div class='head dark'>
-                <div class='icon'><i class='icos-pencil'></i></div>
-                <h2>Description </h2></div>
-            <div class="block-fluid editor">
-                <textarea id="description"   style="height: 300px;" class=" wysiwyg "  name="description"  /><?php echo set_value('description', (isset($result->description)) ? htmlspecialchars_decode($result->description) : ''); ?></textarea>
+
+            <div class="form-group  editor">
+              <div class="col-md-2" for='name'>
+                <label>Description</label>
+              </div>
+              <div class="col-md-10">
+                <textarea id="description"    class="form-control wysiwyg "  name="description"  /><?php echo set_value('description', (isset($result->description)) ? htmlspecialchars_decode($result->description) : ''); ?></textarea>
                 <?php echo form_error('description'); ?>
+              </div>
             </div>
         </div>
 
-        <div class='form-group'><div class="col-md-2"></div><div class="col-md-10">
+        <div class='form-group'>
+          <div class="col-md-2"></div>
+          <div class="col-md-10 text-right">
                 <?php echo form_submit('submit', ($updType == 'edit') ? 'Update' : 'Save', (($updType == 'create') ? "id='submit' class='btn btn-primary''" : "id='submit' class='btn btn-primary'")); ?>
                 <?php echo anchor('admin/class_groups', 'Cancel', 'class="btn  btn-default"'); ?>
-            </div></div>
+            </div>
+          </div>
 
         <?php echo form_close(); ?>
         <div class="clearfix"></div>
-    </div>
+	</div>
+</div>
 </div>

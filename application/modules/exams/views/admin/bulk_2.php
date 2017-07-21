@@ -1,9 +1,9 @@
 <div class="row-fluid actions">
     <div class="  right" id="menus">
-        <h4>Generate Per Class Or Per Student</h4>	
+        <h4>Generate Per Class Or Per Student</h4>
         <?php echo form_open(current_url()); ?>
         Select a Class
-        <?php echo form_dropdown('class', array('' => 'Select Class') + $this->streams, $this->input->post('class'), 'class="select"') ?> 
+        <?php echo form_dropdown('class', array('' => 'Select Class') + $this->streams, $this->input->post('class'), 'class="select"') ?>
         or
         <select name="student" class="select" tabindex="-1">
             <option value="">Select Student</option>
@@ -53,7 +53,7 @@
                                         echo $this->school->tel;
                                         echo $this->school->cell;
                                         ?>
-                                   </h5>                 
+                                   </h5>
                                    <h5><?php echo $this->school->email; ?> <?php echo $this->school->website; ?></h5>
                                    <h4><em>ACADEMIC REPORT – TERM <?php echo $exam->term; ?></em></h4>
                                </div>
@@ -73,14 +73,14 @@
                                            <abbr><?php echo $rw->student->first_name . ' ' . $rw->student->last_name; ?> </abbr>
                                        </td>
                                        <td> <strong><em>ADMIN NO: </em> </strong> <abbr title="Reg No">
-                                               <?php echo (!empty($rw->student->old_adm_no)) ? $rw->student->old_adm_no : $rw->student->admission_number; ?> </abbr> </td>                                      
+                                               <?php echo (!empty($rw->student->old_adm_no)) ? $rw->student->old_adm_no : $rw->student->admission_number; ?> </abbr> </td>
                                        <td> <strong><em>CLASS : </em> </strong>
                                             <?php
                                             $crr = isset($this->classes[$rw->cls->class]) ? $this->classes[$rw->cls->class] : '';
                                             $ctr = isset($streams[$rw->cls->stream]) ? $streams[$rw->cls->stream] : '';
                                             echo $crr . ' ' . $ctr;
                                             ?>
-                                       </td> 
+                                       </td>
                                        <td></td>
                                    </tr>
                                    <?php
@@ -182,7 +182,7 @@
                                                    }
                                                    else
                                                    {
-                                                        
+
                                                    }
                                                    $labels[] = $stitle;
                                                    if (isset($p->units))
@@ -197,13 +197,13 @@
                                                            foreach ($fnl as $key => $value)
                                                            {
                                                                 ?>
-                                                                <td><?php echo $key; ?> 
+                                                                <td><?php echo $key; ?>
                                                                 <?php
                                                                 break;
                                                            }
                                                            ?>
                                                            <td rowspan=""><span class="strong" ><?php echo $p->marks; ?></span></td>
-                                                       
+
                                                        </tr>
                                                        <?php
                                                        $x = 0;
@@ -243,19 +243,19 @@
                                                        </tr>
                                                        <?php
                                                   }
-                                                  ?> 
+                                                  ?>
                                                   <?php
                                              }
                                         endforeach;
                                    }
-                                   ?>        
+                                   ?>
                                    <tr class="new">
-                                      
+
                                          <td> </td>
                                        <td class="rightb" colspan="">  <strong>TOTAL:</strong></td>
 									    <td> -</td>
                                        <td class="rightb"><strong><?php echo $sm; ?></strong></td>
-                                      
+
                                          <td class="rightb"><strong><?php echo $sm; ?></strong></td>
                                        <td> </td>
                                        <td> </td>
@@ -285,7 +285,7 @@
                            <table class="lower" width="100%" border="0">
                                <tr>
                                    <td class="nob">
-                                       <div>						 
+                                       <div>
                                            <div class="foo">
                                                <span style="text-decoration:underline">Teacher's Remarks:</span>
                                                <br>
@@ -303,7 +303,7 @@
                                    </td>
                                    <?php $div = 'Div' . $j; ?>
                                    <td class="nob" width="60%">
-                                       <div class="right"> 
+                                       <div class="right">
                                            <div id="<?php echo $div; ?>" style="width: 400px; height: 220px;">
                                            </div>
                                    </td>
@@ -317,7 +317,7 @@
                                        </div>
                                    </td>
                                    <td class="nob">
-                                       <div>						 
+                                       <div>
                                           <span style="text-decoration:underline">Next Term begins on:</span>
                                            <br><span><hr style="border-bottom:dotted; white-space: pre;"/></span>
                                            <br><span style="text-decoration:underline">Date:</span>
@@ -349,7 +349,7 @@
                   {
                        ?>
                        <div class="slip">
-                           <div class="row-fluid center"> 
+                           <div class="row-fluid center">
                                <table class="lethead" >
                                     <?php
                                     $file = FCPATH . '/uploads/report.png';
@@ -373,7 +373,7 @@
                                             </td>
                                             <td class="toppa">
                                                 <img src="<?php echo base_url('uploads/files/' . $this->school->document); ?>" class="center"  width="100" height="80" />
-                                                <div style="clear: right"> </div> 
+                                                <div style="clear: right"> </div>
                                             </td>
                                         </tr>
                                         <tr>
@@ -383,7 +383,7 @@
                                                 <p class="redtop">REPORT FORM</p>
                                             </td>
                                         </tr>
-                                   <?php } ?>                            
+                                   <?php } ?>
                                </table>
                            </div>
                            <div class="row-fluid">
@@ -394,7 +394,7 @@
                                        </td>
                                        <td> <strong>Term : </strong> <abbr title="Term"><?php echo $exam->term; ?></abbr>
                                        </td>
-                                       <td><strong>Year : </strong> <abbr title="Year"><?php echo $exam->year; ?></abbr> 
+                                       <td><strong>Year : </strong> <abbr title="Year"><?php echo $exam->year; ?></abbr>
                                        </td>
                                        <td><strong>ADM No : </strong>
                                            <abbr title="ADM No."><?php
@@ -416,7 +416,7 @@
                                                  echo (!empty($rw->student->dob)) ? $this->dates->createFromTimeStamp($rw->student->dob)->age : '-';
                                                  ?></abbr>
                                        </td>
-                                       <td><strong>Exam : </strong> <abbr title="Exam"><?php echo $exam->title; ?></abbr> 
+                                       <td><strong>Exam : </strong> <abbr title="Exam"><?php echo $exam->title; ?></abbr>
                                        </td>
                                        <td> <strong>Class Teacher : </strong>
                                            <abbr title="Class Teacher"><?php
@@ -495,7 +495,7 @@
                                                    }
                                                    else
                                                    {
-                                                        
+
                                                    }
 
                                                    if (isset($p->units))
@@ -528,10 +528,10 @@
                                                                  continue;
                                                             }
                                                             ?>
-                                                            <tr> <td><?php echo $key; ?> </td> 
+                                                            <tr> <td><?php echo $key; ?> </td>
 															<td> <?php echo $value; ?> </td>
 															<td> </td>
-															<td> </td> 
+															<td> </td>
 															</tr>
                                                             <?php
                                                        }
@@ -551,12 +551,12 @@
                                                        </tr>
                                                        <?php
                                                   }
-                                                  ?> 
+                                                  ?>
                                                   <?php
                                              }
                                         endforeach;
                                    }
-                                   ?>        
+                                   ?>
                                    <tr class="new">
                                        <td> </td>
                                        <td> </td>
@@ -601,7 +601,7 @@
                            <table class="lower" width="100%" border="0">
                                <tr>
                                    <td class="nob" width="60%">
-                                       <div>						 
+                                       <div>
                                            <div class="foo"> </div>
                                            <div class="foo">
                                                <strong><span style="text-decoration:underline">Teacher's Remarks:</span></strong>
@@ -612,7 +612,7 @@
                                        </div>
                                    </td>
                                    <td class="nob">
-                                       <div class="right">  
+                                       <div class="right">
                                            <br>
                                            <?php
                                            if (!empty($grading))
@@ -624,7 +624,7 @@
                                    </td></tr>
                            </table>
 
-                           <div class="center" style="border-top:1px solid #ccc">		
+                           <div class="center" style="border-top:1px solid #ccc">
                                <span class="center" style="font-size:0.8em !important;text-align:center !important;">
                                     <?php
                                     if (!empty($this->school->tel))
@@ -649,7 +649,7 @@
              {
                   ?>
                   <div class="slip ">
-                      <div class="row-fluid center"> 
+                      <div class="row-fluid center">
                           <table class="lethead" >
                                <?php
                                $file = FCPATH . '/uploads/report.png';
@@ -673,7 +673,7 @@
                                        </td>
                                        <td class="toppa">
                                            <img src="<?php echo base_url('uploads/files/' . $this->school->document); ?>" class="center"  width="100" height="80" />
-                                           <div style="clear: right"> </div> 
+                                           <div style="clear: right"> </div>
                                        </td>
                                    </tr>
                                    <tr>
@@ -683,7 +683,7 @@
                                            <p class="redtop">REPORT FORM</p>
                                        </td>
                                    </tr>
-                              <?php } ?>                            
+                              <?php } ?>
                           </table>
                       </div>
                       <div class="row-fluid">
@@ -694,7 +694,7 @@
                                   </td>
                                   <td> <strong>Term : </strong> <abbr title="Term"><?php echo $exam->term; ?></abbr>
                                   </td>
-                                  <td><strong>Year : </strong> <abbr title="Year"><?php echo $exam->year; ?></abbr> 
+                                  <td><strong>Year : </strong> <abbr title="Year"><?php echo $exam->year; ?></abbr>
                                   </td>
                                   <td><strong>ADM No : </strong>
                                       <abbr title="ADM No."><?php
@@ -717,7 +717,7 @@
                                             echo (!empty($student->dob)) ? $this->dates->createFromTimeStamp($student->dob)->age : '-';
                                             ?></abbr>
                                   </td>
-                                  <td><strong>Exam : </strong> <abbr title="Exam"><?php echo $exam->title; ?></abbr> 
+                                  <td><strong>Exam : </strong> <abbr title="Exam"><?php echo $exam->title; ?></abbr>
                                   </td>
                                   <td> <strong>Class Teacher : </strong>
                                       <abbr title="Class Teacher"><?php
@@ -799,7 +799,7 @@
                                               }
                                               else
                                               {
-                                                   
+
                                               }
 
                                               if (isset($p->units))
@@ -851,13 +851,13 @@
                                                   </tr>
                                                   <?php
                                              }
-                                             ?> 
+                                             ?>
                                              <?php
                                         }
                                    endforeach;
                               }
                               // $total = isset($report['total']) ? $report['total'] : 0;
-                              ?>        
+                              ?>
                               <tr class="new">
                                   <td> </td>
                                   <td> </td>
@@ -892,7 +892,7 @@
 
                       <table class="lower" width="100%" border="0"  >
                           <tr><td class="nob" width="60%">
-                                  <div>						 
+                                  <div>
                                       <div class="foo"> </div>
                                       <div class="foo">
                                           <strong><span style="text-decoration:underline">Teacher's Remarks:</span></strong>
@@ -903,7 +903,7 @@
                                   </div>
                               </td>
                               <td class="nob">
-                                  <div class="right">  
+                                  <div class="right">
                                       <br>
                                       <?php
                                       if (!empty($grading))
@@ -916,7 +916,7 @@
                               </td></tr>
                       </table>
 
-                      <div class="center" style="border-top:1px solid #ccc">		
+                      <div class="center" style="border-top:1px solid #ccc">
                           <span class="center" style="font-size:0.8em !important;text-align:center !important;">
                                <?php
                                if (!empty($this->school->tel))
@@ -947,7 +947,7 @@
 <style>
     .docpg  {
          background: #FFF;
-         padding: 8px;          
+         padding: 8px;
          min-height: 29.7cm;
          border-radius: 5px;
          margin: 1cm auto;
@@ -956,7 +956,7 @@
          margin: 5px 0 3px 0;
     }
 
-    .docpg .hpe strong 
+    .docpg .hpe strong
     {
          margin-right: 5px;
     }
@@ -966,15 +966,15 @@
     {
          height:110px;
          margin-left: 25%;
-    }  
+    }
     .docpg center{ padding: 10px;}
     .col-xs-8{width:66.66666667%;}
-    .col-xs-4 
+    .col-xs-4
     {
          width: 33.33333333%;
     }
     td.nob{border: 0;}
-    .col-xs-6 
+    .col-xs-6
     {
          width: 50%;
     }
@@ -990,12 +990,12 @@
     {
          .docpg  {
               background: #FFF;
-              padding: 8px;                                 
-              min-height: 26.7cm;              
+              padding: 8px;
+              min-height: 26.7cm;
               border: 0 !important;
               page-break-after: always;
 
-         }  
+         }
          .docpg:last-child {
               page-break-after: avoid;
          }
@@ -1017,21 +1017,21 @@
                   margin: 1cm auto;
                   border: 0 !important;
                   border-radius: 5px;
-                  background: white;        
-             }  
+                  background: white;
+             }
 
              .actions{background-color: #fff; padding: 8px}
              .lower{margin-top: 6px;}
              .lethead
              {
                   border: 0;
-             } 
+             }
              .topdets {
                   width:100%;
                   margin: 0 auto;
                   border: 0;
              }
-             .topdets th,  .topdets td ,.topdets 
+             .topdets th,  .topdets td ,.topdets
              {
                   border: 0;
              }
@@ -1061,14 +1061,14 @@
              .ptable td, table th {
                   padding: 4px; font-size: 12px;
              }  .nob{border-right:0 !important;}
-             @media print{       
+             @media print{
                   .slip{
                        width: 21cm;
                        padding: 2cm;
-                       min-height: 26.7cm;              
+                       min-height: 26.7cm;
                        border: 0 !important;
                        page-break-after: always;
-                  }  
+                  }
                   .slip:last-child {
                        page-break-after: avoid;
                   }
@@ -1100,10 +1100,10 @@
                   }
                   .alert-success{
                        display:none;
-                  } 
+                  }
                   .img{
                        align:center !important;
-                  } 
+                  }
                   .print{
                        display:none !important;
                   }
@@ -1132,7 +1132,6 @@
                        margin-left: 0px;
                   }
              }
-         </style>  
+         </style>
          <?php
     }
-         

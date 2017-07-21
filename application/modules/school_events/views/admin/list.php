@@ -1,18 +1,20 @@
-<div class="head">
-    <div class="icon"><span class="icosg-target1"></span></div>
-    <h2> School Events</h2> 
-    <div class="right">                            
-        <?php if (!$this->ion_auth->is_in_group($this->user->id, 3))
+<!-- Pager -->
+<div class="panel panel-white">
+    <div class="panel-heading">
+        <h6 class="panel-title"> School Events</h6>
+        <div class="heading-elements">
+             <?php if (!$this->ion_auth->is_in_group($this->user->id, 3))
         { ?>     
                 <?php echo anchor('admin/school_events/create/', '<i class="glyphicon glyphicon-plus"></i> ' . lang('web_add_t', array(':name' => ' New Event')), 'class="btn btn-primary"'); ?>
         <?php } ?>
         <?php echo anchor('admin/school_events/calendar', '<i class="glyphicon glyphicon-list"> </i> Full Calendar', 'class="btn btn-primary"'); ?>
-<?php echo anchor('admin/school_events/list_view', '<i class="glyphicon glyphicon-list"> </i> List All', 'class="btn btn-primary"'); ?>
-
-    </div>    					
-</div>
-<?php if ($school_events): ?>              
-        <div class="block-fluid">
+        <?php echo anchor('admin/school_events/list_view', '<i class="glyphicon glyphicon-list"> </i> List All', 'class="btn btn-primary"'); ?>
+        </div>
+    </div>
+    
+    <div class="panel-body">
+    <?php if ($school_events): ?>              
+        <div class="panel-body">
 
             <table class="fpTable" cellpadding="0" cellspacing="0" width="100%">
 
@@ -39,7 +41,7 @@
                             $i++;
                             ?>
                             <tr>
-                                <td><?php echo $i . '.'; ?></td>					
+                                <td><?php echo $i . '.'; ?></td>                    
                                 <td><?php echo $p->title; ?></td>
                                 <td><?php echo date('d/m/Y', $p->start_date); ?></td>
                                 <td><?php echo date('d/m/Y', $p->end_date); ?></td>
@@ -66,15 +68,12 @@
 
             </table>
         </div>
-
         <?php echo $links; ?>
-        </div>
-        </div>
-        </div>
-        </div>
-
-        </div>
-
-<?php else: ?>
+        
+        <?php else: ?>
         <p class='text'><?php echo lang('web_no_elements'); ?></p>
          <?php endif ?>
+    </div>
+</div>
+
+

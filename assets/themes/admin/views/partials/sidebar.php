@@ -197,7 +197,7 @@
           					</ul>
       				    </li>
                  <!-- ./accounts -->
-								</li>
+								
 								<!-- inventory -->
 								<li>
 									<a href="#"><i class=" icon-list"></i> <span>Inventory</span></a>

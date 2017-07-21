@@ -12,15 +12,15 @@
          $sel = 0;
     }
 ?>
-<div class="col-md-9">
-    <div class="head">
+<div class="panel panel-white">
+    <div class="panel-heading">
         <div class="icon"><span class="icosg-target1"></span></div>
         <h2>Assign Elective Subjects</h2>
-        <div class="right">             
+        <div class="heading-btn">             
              <?php echo anchor('admin/fee_structure/my_extras', '<i class="glyphicon glyphicon-list">  </i> Manage Fee Extras', 'target="blank" class="btn btn-primary"'); ?>
         </div>			
     </div>
-    <div class="block-fluid">
+    <div class="panel-body">
          <?php echo form_open(current_url(), 'class="form-inline" id="list"'); ?>
         <?php echo form_error('sids', '<p class="error" style="width:200px; margin: 15px auto;" >', '</p>'); ?>
         <table class="clon" width="100%">
@@ -91,7 +91,7 @@
             <h2>Class</h2>
         </div>
 
-        <div class="block-fluid">
+        <div class="panel-body">
 
             <ul class="list tickets">
                  <?php

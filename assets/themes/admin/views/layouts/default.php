@@ -25,8 +25,8 @@
         <!-- Core JS files -->
         <?php echo core_js('core/js/plugins/loaders/pace.min.js'); ?>
         <?php echo core_js('core/js/core/libraries/jquery.min.js'); ?>
-	     <?php echo theme_js('plugins/jquery/jquery-migrate-1.1.1.min.js'); ?>
-
+	      <?php echo theme_js('plugins/jquery/jquery-migrate-1.1.1.min.js'); ?>
+        <?php echo theme_js('plugins/jquery/jquery-ui-1.10.1.custom.min.js'); ?>
         <?php echo core_js('core/js/core/libraries/bootstrap.min.js'); ?>
         <?php echo core_js('core/js/plugins/loaders/blockui.min.js'); ?>
 
@@ -51,17 +51,18 @@
         <?php echo core_js('core/js/plugins/pickers/pickadate/picker.time.js'); ?>
         <!-- Updated stylesheet url -->
         <?=core_js("core/js/core/libraries/jquery_ui/widgets.min.js");?>
+
         <!-- ./theme scripts -->
 
         <!-- old files -->
 
-        <?php echo theme_css('sett.css'); ?>
+       <!-- echo theme_css('sett.css'); ?> -->
         <?php echo theme_css('jquery.dataTables.css'); ?>
         <?php echo theme_css('tableTools.css'); ?>
         <?php echo theme_css('dataTables.colVis.min.css'); ?>
 
 
-         <?php echo theme_css('select2/select2.css'); ?>
+          <!-- echo theme_css('select2/select2.css'); -->
         <link href="<?php echo js_path('plugins/jeditable/bootstrap-editable.css'); ?>" rel="stylesheet">
 
         <script> var BASE_URL = '<?php echo base_url(); ?>';</script>
@@ -74,6 +75,11 @@
         <?php echo theme_js('plugins/cookies/jquery.cookies.2.2.0.min.js'); ?>
         <?php echo theme_js('plugins/pnotify/jquery.pnotify.min.js'); ?>
         <?php echo theme_js('plugins/fullcalendar/fullcalendar.min.js'); ?>
+        <!-- limit calender -->
+       <?php echo core_js('core/js/plugins/ui/moment/moment.min.js'); ?>
+       <?php echo core_js('core/js/plugins/ui/fullcalendar/fullcalendar.min.js'); ?>
+       <?php echo core_js('core/js/plugins/visualization/echarts/echarts.js'); ?>
+        <!-- ./limit  calendar -->
         <?php echo theme_js('plugins/datatables/media/js/jquery.dataTables.min.js'); ?>
         <?php echo theme_js('plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js'); ?>
         <?php echo theme_js('plugins/datatables/extensions/ColVis/js/dataTables.colVis.min.js'); ?>
@@ -91,7 +97,7 @@
         <?php echo theme_js('plugins/underscore/underscore-min.js'); ?>
         <?php echo theme_js('plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js'); ?>
         <?php echo theme_js('plugins/uniform/jquery.uniform.min.js'); ?>
-
+        
         <?php echo theme_js('plugins/maskedinput/jquery.maskedinput-1.3.min.js'); ?>
         <?php echo theme_js('plugins/multiselect/jquery.multi-select.min.js'); ?>
 
@@ -100,11 +106,13 @@
         <?php echo theme_js('plugins/stepywizard/jquery.stepy.js'); ?>
 
         <?php echo theme_js('plugins/scrollup/jquery.scrollUp.min.js'); ?>
-        <?php echo theme_js('plugins/SmartWizard/jquery.smartWizard.js'); ?>
-        <?php //echo core_js('core/js/plugins.js'); ?>
+        
+        <?=core_js('core/js/pages/form_inputs.js');?>
+        <?php echo theme_js('ajaxfileupload.js'); ?>
         <script src="<?php echo plugin_path('bootstrap.daterangepicker/moment.js'); ?>" ></script>
         <script src="<?php echo plugin_path('bootstrap.daterangepicker/daterangepicker.js'); ?>" ></script>
         <script src="<?php echo plugin_path('bootstrap.datetimepicker/bootstrap-datetimepicker.min.js'); ?>"></script>	<link rel="shortcut icon" type="image/ico" href="<?php echo image_path('favicon.ico'); ?>" />
+        
         <link rel="shortcut icon" type="image/ico" href="<?php echo image_path('favicon.ico'); ?>" />
     </head>
     <?php
@@ -127,7 +135,10 @@
 
 				<!-- Page header -->
 				<div class="page-header page-header-default">
-
+                <?php 
+                if (!preg_match('/^(admin\/leaving_certificate)/i', $this->uri->uri_string())){
+                ?>
+                <!-- breadcrumb -->leaving_certificate
 					<div class="breadcrumb-line">
 						<ul class="breadcrumb">
 							<li>
@@ -149,10 +160,12 @@
                               $gp = $this->ion_auth->get_users_groups($user->id)->row();
                               ?><small>&nbsp;</small>
                               <span class="label label-success"  ><?php echo ucwords($gp->name); ?></span>
-                              </span>
+
                       </li>
 						</ul>
 					</div>
+                    <!-- end breadcrumbs -->
+                    <?php } ?>
 				</div>
 				<!-- /page header -->
 
@@ -238,14 +251,40 @@
     <?php echo core_js('core/js/plugins/ui/moment/moment.min.js'); ?>
     <?php echo core_js('core/js/plugins/ui/fullcalendar/fullcalendar.min.js'); ?>
     <?php echo core_js('core/js/plugins/visualization/echarts/echarts.js'); ?>
-
+    <?php echo core_js('core/js/plugins/forms/selects/bootstrap_multiselect.js'); ?>
     <script>
      // Default initialization
      $('.select').select2({
          minimumResultsForSearch: Infinity
      });
+     $('.multiselect').multiselect({
+        onChange: function() {
+            $.uniform.update();
+        }
+    });
+    $(".datepicker").datepicker({
+      format: "dd MM yyyy",
+     
+    });
     </script>
+    <?=core_js("core/js/plugins/editors/wysihtml5/wysihtml5.min.js");?>
+    <?=core_js("core/js/plugins/editors/wysihtml5/toolbar.js");?>
+    <?=core_js("core/js/plugins/editors/wysihtml5/parsers.js");?>
 
+    <?=core_js("core/js/plugins/editors/wysihtml5/locales/bootstrap-wysihtml5.ua-UA.js");?>
+   <?=core_js("core/js/pages/editor_wysihtml5.js");?> 
+   <!-- wysihtml5 wysihtml5-min  -->
+    <?php echo theme_js('plugins/cleditor/jquery.cleditor.js'); ?>
+    <?php echo core_js('core/js/plugins.js'); ?>
+    <style>
+    .uppercase {
+    font-family: sans-serif;
+    line-height: 250%;
+    word-spacing: 3px;
+    font-size: 1.3em;
+}
+
+</style>
 
 
     </body>

@@ -1,17 +1,19 @@
 <div class="col-md-8">
-    <div class="head">
-        <div class="icon"><span class="icosg-target1"></span></div>
-        <h2> Subjects </h2>
+<div class="panel panel-white">
+    <div class="panel-heading">
 
-        <div class="right">
+        <h2 class="panel-title"> Subjects </h2>
+       <div class="heading-elements">
+        <div class="heading-btn">
              <?php echo anchor('admin/subjects/create', '<i class="glyphicon glyphicon-plus">
                 </i> ' . lang('web_add_t', array(':name' => 'Subjects')), 'class="btn btn-primary"'); ?>
              <?php echo anchor('admin/subjects', '<i class="glyphicon glyphicon-list">
                 </i> ' . lang('web_list_all', array(':name' => 'Subjects')), 'class="btn btn-primary"'); ?>
         </div>
+       </div>
     </div>
 
-    <div class="block-fluid">
+    <div class="panel-body">
          <?php
              $attributes = array('class' => 'form-horizontal', 'id' => '');
              echo form_open_multipart(current_url(), $attributes);
@@ -188,7 +190,7 @@
         <div class="clearfix"></div>
     </div>
 </div>
-
+</div>
 <script>
      $(document).ready(
              function ()
