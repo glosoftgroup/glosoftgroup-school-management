@@ -1,5 +1,5 @@
-<div class="panel panel-white">
-    <div class="panel panel-white">
+<div class="panel panel-white animated fadeIn">
+    <div class="panel panel-white animated fadeIn">
         <div class="icon"><span class="icosg-target1"></span></div>
         <h2> Subject </h2>
         <div class="panel-heading">                            

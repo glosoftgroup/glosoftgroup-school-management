@@ -15,6 +15,7 @@
         <?php echo core_css('core/css/core.css'); ?>
         <?php echo core_css('core/css/components.css'); ?>
         <?php echo core_css('core/css/colors.css'); ?>
+        <?=core_css("core/css/extras/animate.min.css");?>
         <style>.error { color:red; }</style>
 	      <!-- /global stylesheets -->
         <!--[if lt IE 10]>
@@ -51,6 +52,7 @@
         <?php echo core_js('core/js/plugins/pickers/pickadate/picker.time.js'); ?>
         <!-- Updated stylesheet url -->
         <?=core_js("core/js/core/libraries/jquery_ui/widgets.min.js");?>
+        <?=core_js("core/js/pages/animations_css3.js");?>
 
         <!-- ./theme scripts -->
 
@@ -138,7 +140,7 @@
                 <?php 
                 if (!preg_match('/^(admin\/leaving_certificate)/i', $this->uri->uri_string())){
                 ?>
-                <!-- breadcrumb -->leaving_certificate
+                <!-- breadcrumb -->
 					<div class="breadcrumb-line">
 						<ul class="breadcrumb">
 							<li>
@@ -274,7 +276,12 @@
     <?=core_js("core/js/plugins/editors/wysihtml5/locales/bootstrap-wysihtml5.ua-UA.js");?>
    <?=core_js("core/js/pages/editor_wysihtml5.js");?> 
    <!-- wysihtml5 wysihtml5-min  -->
+
+     <script type="text/javascript">  var flist = '<?php echo $this->list_size; ?>';</script>
+        <?php echo theme_js('plugins/animatedprogressbar/animated_progressbar.js'); ?>
+        <?php echo theme_js('plugins/hoverintent/jquery.hoverIntent.minified.js'); ?>
     <?php echo theme_js('plugins/cleditor/jquery.cleditor.js'); ?>
+    <?php echo theme_js('actions.js'); ?>
     <?php echo core_js('core/js/plugins.js'); ?>
     <style>
     .uppercase {

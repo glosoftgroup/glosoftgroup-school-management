@@ -41,7 +41,7 @@
         </div>
 
 <?php else: ?>
-        <p class='text'><?php echo lang('web_no_elements'); ?></p>
+        <p class='text-center'><?php echo lang('web_no_elements'); ?></p>
 <?php endif; ?> 
 <style>
     h3{  line-height: 12px;  color: #42536d; font-size: 16px; } table td {padding:4px;}

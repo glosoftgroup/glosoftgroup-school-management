@@ -1,9 +1,10 @@
 <div class="col-md-12">
-<div class="head">
-                    <div class="icon"><span class="icosg-target1"></span></div>
-                    <h2> Hostel Rooms </h2> 
-                     <div class="right">                            
-                <?php echo anchor( 'admin/hostel_rooms/create/'.$page, '<i class="glyphicon glyphicon-plus"></i> '.lang('web_add_t', array(':name' => 'Hostel Rooms')), 'class="btn btn-primary"');?>
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+	<div class="panel-heading">
+		<h4 class="panel-title">Hostel Rooms</h4>
+		<div class="heading-elements">
+			<?php echo anchor( 'admin/hostel_rooms/create/'.$page, '<i class="glyphicon glyphicon-plus"></i> '.lang('web_add_t', array(':name' => 'Hostel Rooms')), 'class="btn btn-primary"');?>
 			 <a class="btn btn-primary"  href="<?php echo base_url('admin/hostel_rooms'); ?>"><i class="glyphicon glyphicon-list"></i> Hostel Rooms</a>
 			
 			 <div class="btn-group">
@@ -19,8 +20,12 @@
 					</ul>
 				</div>
 			
-                     </div>    					
-                </div>
+		</div>
+	</div>
+	
+	<div class="panel-body">
+                   
+                    
 				
 <?php 
 $attributes = array('class' => 'form-horizontal', 'id' => '');
@@ -34,16 +39,16 @@ echo   form_open_multipart(current_url(), $attributes);
 			   <!-- END ADVANCED SEARCH EXAMPLE -->
         <!-- BEGIN TABLE DATA -->
         <div id="editable_wrapper" class="dataTables_wrapper form-inline" role="grid">
-		 <table cellpadding="0" cellspacing="0" width="100%">
+		 <table class="table table-hover" cellpadding="0" cellspacing="0" width="100%">
 		  <!-- BEGIN -->
             <thead>
                 <tr role="row">
 				
 				
 				<th width="3%">#</th>
-				<th width="20%" >Hostel</th>
-				<th width="20%">Room Name </th>
-				<th width="57%">Description</th>
+				<th  >Hostel</th>
+				<th class="text-right">Room Name </th>
+				<th class="text-center">Description</th>
 				
 				</tr>
             </thead>
@@ -51,29 +56,26 @@ echo   form_open_multipart(current_url(), $attributes);
 		   
 		   <div id="entry1" class="clonedInput">
 							
-							 <table cellpadding="0" cellspacing="0" width="100%">  
-										<tbody>
-										
-										<tr >
-                  
-													 <td width="3%">
-													  <span id="reference" name="reference" class="heading-reference">1</span>
+<table class="table table-hover" cellpadding="0" cellspacing="0" width="100%">  
+<tbody>
+
+<tr >
+
+		 <td width="3%">
+		  <span id="reference" name="reference" class="heading-reference">1</span>
+		</td>
+		<td >
+		<?php 		
+		 echo form_dropdown('hostel_id[]', $hostel,  (isset($result->hostel_id)) ? $result->hostel_id : ''     ,   'placeholder="Select Hostel" class="select hostel_id col-md-6"  id="hostel_id"');
+		 echo form_error('hostel_id'); ?>
+		</td> 
+		
+		<td >
+		<input type="text" name="room_name[]" placeholder="Room Name" id="room_name" class="form-control room_name" value="<?php 
+			if(!empty($result->room_name)){															echo $result->room_name;}													?>">													
 													</td>
-													<td width="20%">
-													<?php 		
-													 echo form_dropdown('hostel_id[]', $hostel,  (isset($result->hostel_id)) ? $result->hostel_id : ''     ,   ' class=" hostel_id"  id="hostel_id"');
-													 echo form_error('hostel_id'); ?>
-													</td> 
-													
-													<td width="20%">
-													<input type="text" name="room_name[]" id="room_name" class="room_name" value="<?php 
-															if(!empty($result->room_name)){
-																	echo $result->room_name;}
-															?>">
-													
-													</td>
-													<td width="57%">
-													<input type="text" name="description[]" id="description" class="description" value="<?php 
+													<td >
+													<input type="text" name="description[]" id="description" placeholder="Room Description" class="form-control description" value="<?php 
 															if(!empty($result->description)){
 																	echo $result->description;}
 															?>">
@@ -89,13 +91,13 @@ echo   form_open_multipart(current_url(), $attributes);
 		   
 		   
 				
-					<div class="actions">
+					<div class="actions text-left">
 						<a href="#" id="btnAdd" class="btn btn-success clone">Add New Line</a> 
 						<a href="#" id="btnDel" class="btn btn-danger remove">Remove</a>
 					</div>
 		</div>
 
-<div class='form-group'><div class="control-div"></div><div class="col-md-10">
+<div class='form-group'><div class="control-div"></div><div class="col-md-12 text-right">
     
 
     <?php echo form_submit( 'submit', ($updType == 'edit') ? 'Update' : 'Save', (($updType == 'create') ? "id='submit' class='btn btn-primary''" : "id='submit' class='btn btn-primary'")); ?>

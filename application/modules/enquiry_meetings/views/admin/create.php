@@ -1,17 +1,19 @@
 <div class="col-md-8">
-        <div class="head"> 
-             <div class="icon"><span class="icosg-target1"></span></div>		
-            <h2>  Enquiry Meetings  </h2>
-             <div class="right"> 
-             <?php echo anchor( 'admin/enquiry_meetings/create' , '<i class="glyphicon glyphicon-plus">
+       <!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+    <div class="panel-heading">
+        <h4 class="panel-title">Enquiry Meetings</h4>
+        <div class="heading-elements">
+                <?php echo anchor( 'admin/enquiry_meetings/create' , '<i class="glyphicon glyphicon-plus">
                 </i> '.lang('web_add_t', array(':name' => 'Enquiry Meetings')), 'class="btn btn-primary"');?> 
               <?php echo anchor( 'admin/enquiry_meetings' , '<i class="glyphicon glyphicon-list">
                 </i> '.lang('web_list_all', array(':name' => 'Enquiry Meetings')), 'class="btn btn-primary"');?> 
-             
-                </div>
-                </div>
-         	                    
-               
+        </div>
+    </div>
+    
+    <div class="panel-body">		
+       
+            
 				   <div class="block-fluid">
 
 <?php 
@@ -32,7 +34,7 @@ echo   form_open_multipart(current_url(), $attributes);
 "0"=>"Spanish",
 "1"=>"English",
 );		
-     echo form_dropdown('person_to_meet', $items,  (isset($result->person_to_meet)) ? $result->person_to_meet : ''     ,   ' class="chzn-select" data-placeholder="Select Options..." ');
+     echo form_dropdown('person_to_meet', $items,  (isset($result->person_to_meet)) ? $result->person_to_meet : ''     ,   ' class="select chzn-select" data-placeholder="Select Options..." ');
      echo form_error('person_to_meet'); ?>
 </div></div>
 
@@ -50,17 +52,17 @@ echo   form_open_multipart(current_url(), $attributes);
 </div>
 </div>
 
-<div class='widget'>
+<div class='form-group'>
   <div class='head dark'>
         <div class='icon'><i class='icos-pencil'></i></div>
 	<h2>Reason <span class='required'>*</span></h2></div>
 	 <div class="block-fluid editor">
-	<textarea id="reason"   style="height: 300px;" class=" wysiwyg "  name="reason"  /><?php echo set_value('reason', (isset($result->reason)) ? htmlspecialchars_decode($result->reason) : ''); ?></textarea>
+	<textarea id="reason"   style="height: 300px;" class=" wysihtml5 wysihtml5-min"  name="reason"  /><?php echo set_value('reason', (isset($result->reason)) ? htmlspecialchars_decode($result->reason) : ''); ?></textarea>
 	<?php echo form_error('reason'); ?>
 </div>
 </div>
 
-<div class='form-group'><div class="col-md-3"></div><div class="col-md-6">
+<div class='form-group'><div class="col-md-3"></div><div class="col-md-12 text-right">
     
 
     <?php echo form_submit( 'submit', ($updType == 'edit') ? 'Update' : 'Save', (($updType == 'create') ? "id='submit' class='btn btn-primary''" : "id='submit' class='btn btn-primary'")); ?>

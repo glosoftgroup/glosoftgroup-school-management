@@ -14,22 +14,22 @@ else
 ?>
 
 <div class="col-md-9">
-    <div class="head">
-        <div class="icon"><span class="icosg-target1"></span></div>
-        <h2>Student Transport</h2>
-    </div>
-    <div class="toolbar">
-        <div class="left TAL">                                                        
-        </div>
-        <div class="right TAR">
-            <div class="btn-group" data-toggle="buttons-radio">
+  <!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+    <div class="panel-heading">
+        <h4 class="panel-title">Student Transport</h4>
+        <div class="heading-elements">
+         <div class="btn-group" >
                 <a href="<?php echo base_url('admin/transport/routes'); ?>" class="btn btn-primary">Routes</a>     
-            </div>           
+            </div>
         </div>
     </div>
+    
+    <div class="panel-body">
+        
     <div class="block-fluid">
         <?php echo form_open(current_url(), 'class="form-inline" id="fext"'); ?>
-        <table cellpadding="0" cellspacing="0" border="0" class='hover' id="adm_table" width="100%">
+        <table cellpadding="0" cellspacing="0" border="0" class='table table-hover' id="adm_table" width="100%">
             <thead>
                 <tr>
                     <th width="5%">#</th>
@@ -64,23 +64,31 @@ else
             </tr>
         </table>
 
-        <div class='form-group'><div class="col-md-2"></div><div class="col-md-10">
+        <div class='form-group'>
+        <div class="col-md-12 text-right" style="padding: 12px;">
                 <?php echo form_submit('submit', 'Save', "id='submit' class='btn btn-primary' "); ?>
                 <?php echo anchor('admin/fee_structure', 'Cancel', 'class="btn  btn-default"'); ?>
-            </div></div>
+            </div>
+        </div>
         <?php echo form_close(); ?>
     </div>
 </div>
-
+</div>
+</div>
 <div class="col-md-3">
-    <div class="widget">
-        <div class="head dark">
-            <div class="icon"><span class="icosg-newtab"></span></div>
-            <h2>Classes</h2>
+    <!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+    <div class="panel-heading">
+        <h4 class="panel-title">Classes</h4>
+        <div class="heading-elements">
+        
         </div>
-        <div class="block-fluid">
+    </div>
+    
+    <div class="panel-body">
+           
             <div class="clearfix"></div>
-            <ul class="list tickets">
+            <ul class="media-list media-list-linked pb-5">
                 <?php
                 $i = 0;
                 foreach ($this->classlist as $cid => $cl)

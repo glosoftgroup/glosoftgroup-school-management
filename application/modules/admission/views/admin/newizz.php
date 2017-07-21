@@ -1,6 +1,6 @@
 <div class="col-md-12">
     <!-- Pager -->
-    <div class="panel panel-white">
+    <div class="panel panel-white animated fadeIn">
         <div class="panel-heading">
             <h6 class="panel-title">Admission</h6>
             <div class="heading-elements">

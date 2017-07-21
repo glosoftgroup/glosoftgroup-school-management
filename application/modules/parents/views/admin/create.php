@@ -64,7 +64,7 @@
                 <div class='icon'><i class='icos-pencil'></i></div>
                 <h2>Address <span class='required'>*</span></h2></div>
             <div class="block-fluid editor">
-                <textarea id="address"   style="height: 300px;" class=" wysiwyg "  name="address"  /><?php echo set_value('address', (isset($result->address)) ? htmlspecialchars_decode($result->address) : ''); ?></textarea>
+                <textarea id="address"   style="height: 300px;" class=" wysihtml5 wysihtml5-min"  name="address"  /><?php echo set_value('address', (isset($result->address)) ? htmlspecialchars_decode($result->address) : ''); ?></textarea>
                 <?php echo form_error('address'); ?>
             </div>
         </div>

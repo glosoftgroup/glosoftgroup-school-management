@@ -1,15 +1,19 @@
 <div class="col-md-8">
-    <div class="head"> 
-        <div class="icon"><span class="icosg-target1"></span></div>		
-        <h2>  Feedback  </h2>
-        <div class="right"> 
-             <?php echo anchor('admin/feedbacks/create', '<i class="glyphicon glyphicon-plus">
+   <!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+    <div class="panel-heading">
+        <h4 class="panel-title">Feedback</h4>
+        <div class="heading-elements">
+        <?php echo anchor('admin/feedbacks/create', '<i class="glyphicon glyphicon-plus">
                 </i> ' . lang('web_add_t', array(':name' => 'Feedbacks')), 'class="btn btn-primary"'); ?> 
              <?php echo anchor('admin/feedbacks', '<i class="glyphicon glyphicon-list">
-                </i> ' . lang('web_list_all', array(':name' => 'Feedbacks')), 'class="btn btn-primary"'); ?> 
+                </i> ' . lang('web_list_all', array(':name' => 'Feedbacks')), 'class="btn btn-primary"'); ?>
         </div>
     </div>
-    <div class="block-fluid">
+    
+    <div class="panel-body">	
+        
+   
          <?php
              $attributes = array('class' => 'form-horizontal', 'id' => '');
              echo form_open_multipart(current_url(), $attributes);
@@ -20,16 +24,16 @@
                  <?php echo form_error('title'); ?>
             </div>
         </div>
-        <div class='widget'>
+        <div class='form-group'>
             <div class='head dark'>
                 <div class='icon'><i class='icos-pencil'></i></div>
                 <h2>Feedback <span class='required'>*</span></h2></div>
             <div class="block-fluid editor">
-                <textarea id="feedback"   style="height: 300px;" class=" wysiwyg "  name="feedback"  /><?php echo set_value('feedback', (isset($result->feedback)) ? htmlspecialchars_decode($result->feedback) : ''); ?></textarea>
+                <textarea id="feedback"   style="height: 300px;" class=" wysihtml5 wysihtml5-min"  name="feedback"  /><?php echo set_value('feedback', (isset($result->feedback)) ? htmlspecialchars_decode($result->feedback) : ''); ?></textarea>
                 <?php echo form_error('feedback'); ?>
             </div>
         </div>
-        <div class='form-group'><div class="col-md-3"></div><div class="col-md-6">
+        <div class='form-group'><div class="col-md-3"></div><div class="col-md-12 text-right">
                   <?php echo form_submit('submit', ($updType == 'edit') ? 'Update' : 'Save', (($updType == 'create') ? "id='submit' class='btn btn-primary''" : "id='submit' class='btn btn-primary'")); ?>
                   <?php echo anchor('admin/feedbacks', 'Cancel', 'class="btn  btn-default"'); ?>
             </div></div>

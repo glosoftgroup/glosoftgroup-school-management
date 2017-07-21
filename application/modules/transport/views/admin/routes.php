@@ -1,12 +1,17 @@
 <div class="col-md-12">
-    <div class="head">
-        <div class="icon"><span class="icosg-target1"></span></div>
-        <h2>  Transport Routes </h2> 
-        <div class="right">
-            <?php echo anchor('admin/transport/', '<i class="glyphicon glyphicon-circle-arrow-left"></i> Go Back', 'class="btn btn-primary"'); ?>            
-        </div>					
+    <!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+    <div class="panel-heading">
+        <h4 class="panel-title">Transport Routes</h4>
+        <div class="heading-elements">
+         <?php echo anchor('admin/transport/', '<i class="glyphicon glyphicon-circle-arrow-left"></i> Go Back', 'class="btn btn-primary"'); ?>
+        </div>
     </div>
-    <div class="block-fluid">
+    
+    <div class="panel-body">
+        
+       
+   
         <div class="widget col-md-6">
             <?php
             if ($this->uri->segment(3) !== 'students')
@@ -21,7 +26,7 @@
                         <div class="form-group">
                             <div class="col-md-3">Name:</div>
                             <div class="col-md-6">                                      
-                                <?php echo form_input('name', isset($result->name) ? $result->name : '', 'id="title_1"  placeholder="Name"'); ?>
+                                <?php echo form_input('name', isset($result->name) ? $result->name : '', 'id="title_1" class="form-control" placeholder="Name"'); ?>
                                 <?php echo form_error('name'); ?>
                             </div>
                             <div class="col-md-3"> <button type="submit" class="btn btn-primary">Save</button></div>
@@ -40,7 +45,7 @@
                     <div class="icon"><span class="icosg-target1"></span></div>
                     <h2> Route List</h2>
                 </div>        
-                <table cellpadding="0" cellspacing="0" width="100%">
+                <table class="table table-hover" cellpadding="0" cellspacing="0" width="100%">
                     <!-- BEGIN -->
                     <thead>
                         <tr role="row">
@@ -80,7 +85,7 @@
                     <div class="icon"><span class="icosg-target1"></span></div>
                     <h2> Route : <?php echo $row->name ?></h2>
                 </div>        
-                <table cellpadding="0" cellspacing="0" width="100%">
+                <table class="table table-hover" cellpadding="0" cellspacing="0" width="100%">
                     <!-- BEGIN -->
                     <thead>
                         <tr role="row">

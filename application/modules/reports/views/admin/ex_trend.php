@@ -22,7 +22,7 @@
     <?php if (!empty($post)): ?>
 
         <div class="block-fluid">
-            <table class="fpTable" cellpadding="0" cellspacing="0" width="100%">
+            <table class="table table-hover fpTable" cellpadding="0" cellspacing="0" width="100%">
 
                 <thead>
                 <th>#</th>

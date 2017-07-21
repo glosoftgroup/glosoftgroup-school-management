@@ -393,7 +393,7 @@
 
                                     </table>
                             <?php else: ?>
-                                    <p class='text'><?php echo lang('web_no_elements'); ?></p>
+                                    <p class='text-center'><?php echo lang('web_no_elements'); ?></p>
                             <?php endif ?>
                         </div>
 
@@ -440,7 +440,7 @@
                                     </table>
 
                             <?php else: ?>
-                                    <p class='text'><?php echo lang('web_no_elements'); ?></p>
+                                    <p class='text-center'><?php echo lang('web_no_elements'); ?></p>
                             <?php endif ?>
                         </div>
                         <!---End Position-->
@@ -497,7 +497,7 @@
 
                                     </table>
                             <?php else: ?>
-                                    <p class='text'><?php echo lang('web_no_elements'); ?></p>
+                                    <p class='text-center'><?php echo lang('web_no_elements'); ?></p>
                             <?php endif ?>
                         </div>
                         <!---End TAB-->

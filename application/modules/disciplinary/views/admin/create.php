@@ -1,18 +1,17 @@
-
-  <div class="col-md-8">
-  <div class="head">
-                    <div class="icon"><span class="icosg-target1"></span></div>
-                    <h2> Disciplinary </h2> 
-                     <div class="right">                            
-                       
-             <?php echo anchor( 'admin/disciplinary/create/'.$page, '<i class="glyphicon glyphicon-plus"></i> '.lang('web_add_t', array(':name' => ' New Disciplinary')), 'class="btn btn-primary"');?>
-                <?php echo anchor( 'admin/disciplinary/' , '<i class="glyphicon glyphicon-list">
+<div class="col-md-8 animated fadeIn">
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+	<div class="panel-heading">
+		<h4 class="panel-title">Disciplinary</h4>
+		<div class="heading-elements">
+			<?php echo anchor( 'admin/disciplinary/create/'.$page, '<i class="glyphicon glyphicon-plus"></i> '.lang('web_add_t', array(':name' => ' New Disciplinary')), 'class="btn btn-primary"');?>
+            <?php echo anchor( 'admin/disciplinary/' , '<i class="glyphicon glyphicon-list">
                 </i> List All', 'class="btn btn-primary"');?>
-			
-                     </div>    					
-                </div>
-         	                   
-               <div class="block-fluid"> 
+		</div>
+	</div>
+	
+	<div class="panel-body">
+	<div class="block-fluid"> 
 
 				<?php 
 				$attributes = array('class' => 'form-horizontal', 'id' => '');
@@ -20,7 +19,7 @@
 				?>
 				<div class='form-group'>
 					<div class="col-md-2" for='date_reported'>Date Reported </div>
-					<div id="datepicker" class="col-md-10 input-group date form_datetime">
+					<div id="datepicker" class="col-md-6 input-group date form_datetime">
 					<input id='date_reported' type='text' name='date_reported' maxlength=''  class='form-control datepicker' value="<?php 
 					if(!empty($result->date_reported)) {echo date('d/m/Y',$result->date_reported);}
 					else {echo set_value('date_reported', (isset($result->date_reported)) ? $result->date_reported : '');} ?>"  />
@@ -68,14 +67,14 @@
 					</div>
 				</div>
 		
-<div class="widget">
+<div class="form-group">
                     <div class="head dark">
                         <div class="icon"><i class="icos-pencil"></i></div>
                         <h2>Description</h2>
                     </div>
                     <div class="block-fluid editor">
                         
-                        <textarea id="wysiwyg"  name="description" style="height: 300px;">
+                        <textarea id=""  name="description" class="wysihtml5 wysihtml5-min" style="height: 300px;">
                           <?php echo set_value('description', (isset($result->description)) ? htmlspecialchars_decode($result->description) : ''); ?></textarea>
 	<?php echo form_error('description'); ?>
                         
@@ -84,7 +83,7 @@
                 </div> 
   <div style="display:none">
 				<div class='form-group'>
-					<div class="col-md-2" for='action_taken'>Action Taken </div><div class="col-md-10">
+					<div class="col-md-2" for='action_taken'>Action Taken </div><div class="col-md-12 text-right">
 					<?php echo form_input('action_taken' ,$result->action_taken , 'id="action_taken_"  class="form-control" ' );?>
 					<?php echo form_error('action_taken'); ?>
 				</div>
@@ -96,7 +95,7 @@
                     </div>
                     <div class="block-fluid editor">
                         
-                        <textarea class="wysiwyg"  name="comment" style="height: 300px;">
+                        <textarea class="wysihtml5 wysihtml5-min"  name="comment" style="height: 300px;">
                           <?php echo set_value('comment', (isset($result->comment)) ? htmlspecialchars_decode($result->comment) : ''); ?></textarea>
 	<?php echo form_error('comment'); ?>
                         
@@ -118,9 +117,14 @@
 <?php echo form_close(); ?>
 <div class="clearfix"></div>
  </div>
-            </div>
-        </div>
-    </div>
+	</div>
+</div>
+
+</div>
+
+
+         	                   
+        
 	
 	<script>
 

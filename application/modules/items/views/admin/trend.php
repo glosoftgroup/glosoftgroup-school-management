@@ -38,7 +38,7 @@
                 </div>	
                 </div>	
   
-     <table class="fpTable" cellpadding="0" cellspacing="0" width="100%">
+     <table class="table table-hover fpTable" cellpadding="0" cellspacing="0" width="100%">
 <thead>
 		    <th>No.</th>
 		    <th>Date</th>
@@ -79,7 +79,7 @@
                 </div>	
                 </div>
 
-     <table class="fpTable" cellpadding="0" cellspacing="0" width="100%">
+     <table class="table table-hover fpTable" cellpadding="0" cellspacing="0" width="100%">
 <thead>
 		    <th>No.</th>
 		    <th>Stock Date</th>

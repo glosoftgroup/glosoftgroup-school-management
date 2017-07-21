@@ -12,7 +12,7 @@
          $sel = 0;
     }
 ?>
-<div class="panel panel-white">
+<div class="panel panel-white animated fadeIn">
     <div class="panel-heading">
         <div class="icon"><span class="icosg-target1"></span></div>
         <h2>Assign Elective Subjects</h2>

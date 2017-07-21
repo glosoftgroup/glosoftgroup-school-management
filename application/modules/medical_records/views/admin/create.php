@@ -1,18 +1,18 @@
 <div class="col-md-8">
-        <div class="head"> 
-             <div class="icon"><span class="icosg-target1"></span></div>		
-            <h2>  Medical Records  </h2>
-             <div class="right"> 
-             <?php echo anchor( 'admin/medical_records/create' , '<i class="glyphicon glyphicon-plus">
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+	<div class="panel-heading">
+		<h4 class="panel-title">Medical Records</h4>
+		<div class="heading-elements">
+		 <?php echo anchor( 'admin/medical_records/create' , '<i class="glyphicon glyphicon-plus">
                 </i> '.lang('web_add_t', array(':name' => 'Medical Records')), 'class="btn btn-primary"');?> 
               <?php echo anchor( 'admin/medical_records' , '<i class="glyphicon glyphicon-list">
                 </i> '.lang('web_list_all', array(':name' => 'Medical Records')), 'class="btn btn-primary"');?> 
-             
-                </div>
-                </div>
-         	                    
-               
-				   <div class="block-fluid">
+		</div>
+	</div>
+	
+	<div class="panel-body">
+	<div class="block-fluid">
 
 <?php 
 $attributes = array('class' => 'form-horizontal', 'id' => '');
@@ -47,27 +47,27 @@ echo   form_open_multipart(current_url(), $attributes);
 </div>
 </div>
 
-<div class='widget'>
+<div class='form-group'>
   <div class='head dark'>
         <div class='icon'><i class='icos-pencil'></i></div>
 	<h2>Action Taken <span class='required'>*</span></h2></div>
 	 <div class="block-fluid editor">
-	<textarea id="action_taken"   style="height: 300px;" class=" wysiwyg "  name="action_taken"  /><?php echo set_value('action_taken', (isset($result->action_taken)) ? htmlspecialchars_decode($result->action_taken) : ''); ?></textarea>
+	<textarea id="action_taken"    class=" wysihtml5 wysihtml5-min "  name="action_taken"  /><?php echo set_value('action_taken', (isset($result->action_taken)) ? htmlspecialchars_decode($result->action_taken) : ''); ?></textarea>
 	<?php echo form_error('action_taken'); ?>
 </div>
 </div>
 
-<div class='widget'>
+<div class='form-group'>
   <div class='head dark'>
         <div class='icon'><i class='icos-pencil'></i></div>
 	<h2>Comment </h2></div>
 	 <div class="block-fluid editor">
-	<textarea id="comment"   style="height: 300px;" class=" wysiwyg "  name="comment"  /><?php echo set_value('comment', (isset($result->comment)) ? htmlspecialchars_decode($result->comment) : ''); ?></textarea>
+	<textarea id="comment"   style="height: 300px;" class=" wysihtml5 wysihtml5-min "  name="comment"  /><?php echo set_value('comment', (isset($result->comment)) ? htmlspecialchars_decode($result->comment) : ''); ?></textarea>
 	<?php echo form_error('comment'); ?>
 </div>
 </div>
 
-<div class='form-group'><div class="col-md-3"></div><div class="col-md-6">
+<div class='form-group'><div class="col-md-3"></div><div class="col-md-12 text-right">
     
 
     <?php echo form_submit( 'submit', ($updType == 'edit') ? 'Update' : 'Save', (($updType == 'create') ? "id='submit' class='btn btn-primary''" : "id='submit' class='btn btn-primary'")); ?>
@@ -77,4 +77,8 @@ echo   form_open_multipart(current_url(), $attributes);
 <?php echo form_close(); ?>
 <div class="clearfix"></div>
  </div>
-            </div>
+	</div>
+</div>
+
+</div>
+

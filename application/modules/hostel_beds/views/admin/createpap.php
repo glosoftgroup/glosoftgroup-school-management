@@ -1,31 +1,30 @@
 <div class="col-md-8">
-<!-- Pager -->
+ <!-- Pager -->
 <div class="panel panel-white animated fadeIn">
-  <div class="panel-heading">
-    <h4 class="panel-title">Hostel Beds</h4>
-    <div class="heading-elements">
-       <?php echo anchor( 'admin/hostel_beds/create/'.$page, '<i class="glyphicon glyphicon-plus"></i> '.lang('web_add_t', array(':name' => 'Hostel Bed')), 'class="btn btn-primary"');?>
-         <a class="btn btn-primary" href="<?php echo base_url('admin/hostel_beds'); ?>"><i class="glyphicon glyphicon-list"></i> List All Beds</a>
-      
-       <div class="btn-group">
-          <button class="btn dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-cog"></i> Options</button>
-          
-          <ul class="dropdown-menu pull-right">
-            <li><a class=""  href="<?php echo base_url('admin/hostel_rooms'); ?>"><i class="glyphicon glyphicon-check"></i> Manage Hostel Rooms</a></li>
-          
-            <li><a href="<?php echo base_url('admin/hostel_beds'); ?>"><i class="glyphicon glyphicon-share"></i> Manage Hostel Beds</a></li>
-          <li class="divider"></li>
-            <li><a href="<?php echo base_url('admin/hostels'); ?>"><i class="glyphicon glyphicon-home"></i> Back to Hostels</a></li>
-             
-          </ul>
-      </div>
-    </div>
-  </div>
-  
-  <div class="panel-body">
- 
-                                
+    <div class="panel-heading">
+        <h4 class="panel-title">Hostel Beds</h4>
+        <div class="heading-elements">
+         <?php echo anchor( 'admin/hostel_beds/create/'.$page, '<i class="glyphicon glyphicon-plus"></i> '.lang('web_add_t', array(':name' => 'Hostel Bed')), 'class="btn btn-primary"');?>
+                 <a class="btn btn-primary" href="<?php echo base_url('admin/hostel_beds'); ?>"><i class="glyphicon glyphicon-list"></i> List All Beds</a>
             
+             <div class="btn-group">
+                    <button class="btn dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-cog"></i> Options</button>
+                    
+                    <ul class="dropdown-menu pull-right">
+                      <li><a class=""  href="<?php echo base_url('admin/hostel_rooms'); ?>"><i class="glyphicon glyphicon-check"></i> Manage Hostel Rooms</a></li>
+                    
+                      <li><a href="<?php echo base_url('admin/hostel_beds'); ?>"><i class="glyphicon glyphicon-share"></i> Manage Hostel Beds</a></li>
+                    <li class="divider"></li>
+                      <li><a href="<?php echo base_url('admin/hostels'); ?>"><i class="glyphicon glyphicon-home"></i> Back to Hostels</a></li>
+                       
+                    </ul>
+                </div>
+        </div>
+    </div>
+    
+    <div class="panel-body">       
+                                
+             
        <?php $attributes = array('class' => 'form-horizontal', 'id' => ''); echo   form_open_multipart(current_url(), $attributes); ?>
          
          <!-- END ADVANCED SEARCH EXAMPLE -->
@@ -39,7 +38,7 @@
         
         <th width="3%">#</th>
         <th width="50" >Hostel Room</th>
-        <th width="50">Bed Number</th>
+        <th width="50" class="text-center">Bed Number</th>
         
         </tr>
             </thead>
@@ -58,12 +57,12 @@
                           <td width="50">
                           
                           <?php   
-                             echo form_dropdown('room_id[]', $hostel_rooms,  (isset($result->room_id)) ? $result->room_id : ''     ,   ' class="room_id" id="room_id" data-placeholder="Select Options..." ');
+                             echo form_dropdown('room_id[]', $hostel_rooms,  (isset($result->room_id)) ? $result->room_id : ''     ,   ' class="select room_id" id="room_id" data-placeholder="Select Options..." ');
                              echo form_error('room_id'); ?>
                           </td> 
                           
                           <td width="50">
-                          <input type="text" name="bed_number[]" id="bed_number" class="bed_number" value="<?php 
+                          <input type="text" name="bed_number[]" id="bed_number" placeholder="Bed number" class="form-control bed_number" value="<?php 
                               if(!empty($result->bed_number)){
                                   echo $result->bed_number;}
                               ?>">
@@ -80,7 +79,7 @@
        
        
         
-          <div class="actions col-md-12 text-left">
+          <div class=" text-left col-md-12" style="padding:12px;">
             <a href="#" id="btnAdd" class="btn btn-success clone">Add New Line</a> 
             <a href="#" id="btnDel" class="btn btn-danger remove">Remove</a>
           </div>
@@ -101,7 +100,7 @@
 </div>
   <div class="col-md-4">
     
-      <!-- Pager -->
+        <!-- Pager -->
     <div class="panel panel-white animated fadeIn">
       <div class="panel-heading">
         <h4 class="panel-title">Add Hostel Room</h4>
@@ -111,30 +110,28 @@
       </div>
       
       <div class="panel-body">
-                       
-          
-                   
+                    
                        <?php echo form_open('admin/hostel_rooms/quick_add','class=""'); ?>
                         <div class="form-group">
                             <label>Hostel:<span class='required'>*</span></label>
                                                                  
-                                 <?php echo form_dropdown('hostel_id',$hostel, 'id="hostel_id" class="select"' );?>
+                                 <?php echo form_dropdown('hostel_id',$hostel, 'id="hostel_id" class="select" ' );?>
                              <?php echo form_error('hostel_id'); ?>
-                           
-                        </div>
+                            </div>
+                        
                         <div class="form-group">
-                            <label>Room Name:<span class='required'>*</span></label>
-                                                                 
-                                 <?php echo form_input('room_name','', 'id="room_name" class="form-control"  placeholder=" e.g Buffalo"' );?>
+                            <label>Room Name:<span class='required'>*</label>
+                                                                
+                                 <?php echo form_input('room_name','', 'id="room_name" class="form-control" placeholder=" e.g Buffalo"' );?>
                              <?php echo form_error('room_name'); ?>
-                            
+
                         </div>
                                                     
                         <div class="form-group">
-             <div class="col-md-3">Description:</div>
-                            <div class="col-md-9">
+             <label>Description:</label>
+                            
                                 <textarea class='form-control' name="description"></textarea> 
-                            </div>
+                          
                         </div>                        
                    
                     <div class="toolbar TAR col-md-12 text-right">

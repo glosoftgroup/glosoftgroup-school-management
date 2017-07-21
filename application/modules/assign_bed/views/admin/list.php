@@ -1,19 +1,20 @@
-<div class="head"> 
-    <div class="icon"><span class="icosg-target1"></span> </div>
-    <h2>  Assign Bed  </h2>
-    <div class="right">  
-        <?php echo anchor('admin/assign_bed/create/' . $page, '<i class="glyphicon glyphicon-plus"></i> Assign Bed', 'class="btn btn-primary"'); ?>
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+    <div class="panel-heading">
+        <h4 class="panel-title">Assign Bed </h4>
+        <div class="heading-elements">
+            <?php echo anchor('admin/assign_bed/create/' . $page, '<i class="glyphicon glyphicon-plus"></i> Assign Bed', 'class="btn btn-primary"'); ?>
 
         <?php echo anchor('admin/assign_bed', '<i class="glyphicon glyphicon-list">
                 </i> ' . lang('web_list_all', array(':name' => 'Assign Bed')), 'class="btn btn-primary"'); ?> 
-
+        </div>
     </div>
-</div>
-
+    
+    <div class="panel-body">
 
 <?php if ($assign_bed): ?>
     <div class="block-fluid">
-        <table class="fpTable" cellpadding="0" cellspacing="0" width="100%">
+        <table class="table table-hover fpTable" cellpadding="0" cellspacing="0" width="100%">
             <thead>
             <th>#</th>
             <th>Date Assigned</th>
@@ -71,5 +72,5 @@
     </div>
 
 <?php else: ?>
-    <p class='text'><?php echo lang('web_no_elements'); ?></p>
+    <p class='text-center'><?php echo lang('web_no_elements'); ?></p>
      <?php endif ?>

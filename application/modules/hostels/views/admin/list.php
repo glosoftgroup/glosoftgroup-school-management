@@ -1,8 +1,9 @@
-<div class="head">
-                    <div class="icon"><span class="icosg-target1"></span></div>
-                    <h2> Hostels/Domitories </h2> 
-                     <div class="right">                            
-                <?php echo anchor( 'admin/hostels/create/'.$page, '<i class="glyphicon glyphicon-plus"></i> '.lang('web_add_t', array(':name' => 'Hostels')), 'class="btn btn-primary"');?>
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+	<div class="panel-heading">
+		<h4 class="panel-title">Hostels/Domitories</h4>
+		<div class="heading-elements">
+		  <?php echo anchor( 'admin/hostels/create/'.$page, '<i class="glyphicon glyphicon-plus"></i> '.lang('web_add_t', array(':name' => 'Hostels')), 'class="btn btn-primary"');?>
 				<?php echo anchor( 'admin/hostels/', '<i class="glyphicon glyphicon-list"></i> List All Hostels', 'class="btn btn-primary"');?>
 			
 			 <div class="btn-group">
@@ -17,12 +18,14 @@
 					   
 					</ul>
 				</div>
-			
-                     </div>    					
-                </div>
+		</div>
+	</div>
+	
+	<div class="panel-body">
+                    
          	        <?php if ($hostels): ?>              
                <div class="block-fluid">
-				<table class="fpTable" cellpadding="0" cellspacing="0" width="100%">
+				<table class="table table-hover fpTable" cellpadding="0" cellspacing="0" width="100%">
 
 	 <thead>
                 <th>#</th>
@@ -73,5 +76,5 @@
 </div>
 	
 <?php else: ?>
- 	<p class='text'><?php echo lang('web_no_elements');?></p>
+ 	<p class='text-center'><?php echo lang('web_no_elements');?></p>
  <?php endif ?>

@@ -240,7 +240,7 @@ echo   form_open_multipart(current_url(), $attributes);
                 <div class="datepicker"></div>
             </div>
 			<?php else: ?>
- 	<p class='text'><?php echo lang('web_no_elements');?></p>
+ 	<p class='text-center'><?php echo lang('web_no_elements');?></p>
  <?php endif ?> 
             
         </div>        

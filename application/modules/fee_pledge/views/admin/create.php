@@ -64,7 +64,7 @@
                 <div class='icon'><i class='icos-pencil'></i></div>
                 <h2>Remark </h2></div>
             <div class="block-fluid editor">
-                <textarea id="remark"   style="height: 300px;" class=" wysiwyg "  name="remark"  /><?php echo set_value('remark', (isset($result->remark)) ? htmlspecialchars_decode($result->remark) : ''); ?></textarea>
+                <textarea id="remark"   style="height: 300px;" class=" wysihtml5 wysihtml5-min"  name="remark"  /><?php echo set_value('remark', (isset($result->remark)) ? htmlspecialchars_decode($result->remark) : ''); ?></textarea>
 <?php echo form_error('remark'); ?>
             </div>
         </div>

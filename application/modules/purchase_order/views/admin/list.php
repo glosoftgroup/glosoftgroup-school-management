@@ -52,7 +52,7 @@
                  <?php if ($purchase_order): ?>
                
    <div class="block-fluid">
-    <table class="fpTable" cellpadding="0" cellspacing="0" width="100%">
+    <table class="table table-hover fpTable" cellpadding="0" cellspacing="0" width="100%">
 
 
 	 <thead>
@@ -143,5 +143,5 @@
    
 
 <?php else: ?>
- 	<p class='text'><?php echo lang('web_no_elements');?></p>
+ 	<p class='text-center'><?php echo lang('web_no_elements');?></p>
  <?php endif ?>

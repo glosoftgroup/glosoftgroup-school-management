@@ -65,7 +65,7 @@
              </div>
          </div>
     <?php else: ?>
-         <p class='text'><?php echo lang('web_no_elements'); ?></p>
+         <p class='text-center'><?php echo lang('web_no_elements'); ?></p>
 <?php endif ?>
 <style>
     blockquote p { font-size: 12px;}

@@ -56,7 +56,7 @@
              </table>
          </div>
     <?php else: ?>
-         <p class='text'>
+         <p class='text-center'>
              <?php echo lang('web_no_elements'); ?>
          </p>
                                 <?php endif ?>

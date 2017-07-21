@@ -26,7 +26,7 @@ echo   form_open_multipart(current_url(), $attributes);
         <div class='icon'><i class='icos-pencil'></i></div>
 	Feedback <span class='required'>*</span></div>
 	 <div class="block-fluid editor">
-	<textarea id="feedback"   style="height: 150px; width:400px;" class=" wysiwyg "  name="feedback"  /><?php echo set_value('feedback', (isset($result->feedback)) ? htmlspecialchars_decode($result->feedback) : ''); ?></textarea>
+	<textarea id="feedback"   style="height: 150px; width:400px;" class=" wysihtml5 wysihtml5-min"  name="feedback"  /><?php echo set_value('feedback', (isset($result->feedback)) ? htmlspecialchars_decode($result->feedback) : ''); ?></textarea>
 	<?php echo form_error('feedback'); ?>
 </div>
 </div>

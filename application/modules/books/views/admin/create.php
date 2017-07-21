@@ -94,7 +94,7 @@ echo   form_open_multipart(current_url(), $attributes);
         <div class='icon'><i class='icos-pencil'></i></div>
 	<h2>Memo </h2></div>
 	 <div class="block-fluid editor">
-	<textarea id="memo"   style="height: 300px;" class=" wysiwyg "  name="memo"  /><?php echo set_value('memo', (isset($result->memo)) ? htmlspecialchars_decode($result->memo) : ''); ?></textarea>
+	<textarea id="memo"   style="height: 300px;" class=" wysihtml5 wysihtml5-min"  name="memo"  /><?php echo set_value('memo', (isset($result->memo)) ? htmlspecialchars_decode($result->memo) : ''); ?></textarea>
 	<?php echo form_error('memo'); ?>
 </div>
 </div>

@@ -38,7 +38,7 @@ echo   form_open_multipart(current_url(), $attributes);
         <div class='icon'><i class='icos-pencil'></i></div>
 	<h2>Headteacher Remarks </h2></div>
 	 <div class="block-fluid editor">
-	<textarea id="ht_remarks"   style="height: 300px;" class=" wysiwyg "  name="ht_remarks"  /><?php echo set_value('ht_remarks', (isset($result->ht_remarks)) ? htmlspecialchars_decode($result->ht_remarks) : ''); ?></textarea>
+	<textarea id="ht_remarks"   style="height: 300px;" class=" wysihtml5 wysihtml5-min"  name="ht_remarks"  /><?php echo set_value('ht_remarks', (isset($result->ht_remarks)) ? htmlspecialchars_decode($result->ht_remarks) : ''); ?></textarea>
 	<?php echo form_error('ht_remarks'); ?>
 </div>
 </div>
@@ -48,7 +48,7 @@ echo   form_open_multipart(current_url(), $attributes);
         <div class='icon'><i class='icos-pencil'></i></div>
 	<h2>Co-Curricular Activities</h2></div>
 	 <div class="block-fluid editor">
-	<textarea id="co_curricular"   style="height: 300px;" class=" wysiwyg "  name="co_curricular"  /><?php echo set_value('co_curricular', (isset($result->co_curricular)) ? htmlspecialchars_decode($result->co_curricular) : ''); ?></textarea>
+	<textarea id="co_curricular"   style="height: 300px;" class=" wysihtml5 wysihtml5-min"  name="co_curricular"  /><?php echo set_value('co_curricular', (isset($result->co_curricular)) ? htmlspecialchars_decode($result->co_curricular) : ''); ?></textarea>
 	<?php echo form_error('co_curricular'); ?>
 </div>
 </div>

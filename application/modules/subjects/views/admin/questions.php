@@ -1,5 +1,5 @@
 
-<div class="panel panel-white">
+<div class="panel panel-white animated fadeIn">
     <div class="widget">
         <div class="head dark">
             <div class="icon"><span class="icos-picture"></span></div>

@@ -1,5 +1,5 @@
 <!-- Pager -->
-<div class="panel panel-white">
+<div class="panel panel-white animated fadeIn">
 	<div class="panel-heading">
 		<h4 class="panel-title"><?php
         $cc = isset($classes[$class->class]) ? $classes[$class->class] : ' -';

@@ -1,5 +1,5 @@
 <!-- Pager -->
-<div class="panel panel-white">
+<div class="panel panel-white animated fadeIn">
     <div class="panel-heading">
         <h6 class="panel-title"> School Events</h6>
         <div class="heading-elements">
@@ -16,7 +16,7 @@
     <?php if ($school_events): ?>              
         <div class="panel-body">
 
-            <table class="fpTable" cellpadding="0" cellspacing="0" width="100%">
+            <table class="table table-hover fpTable" cellpadding="0" cellspacing="0" width="100%">
 
                 <thead> 
                 <th>#</th>
@@ -71,7 +71,7 @@
         <?php echo $links; ?>
         
         <?php else: ?>
-        <p class='text'><?php echo lang('web_no_elements'); ?></p>
+        <p class='text-center'><?php echo lang('web_no_elements'); ?></p>
          <?php endif ?>
     </div>
 </div>

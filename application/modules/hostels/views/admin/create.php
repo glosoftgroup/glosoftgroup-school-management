@@ -1,12 +1,12 @@
 <div class="col-md-8">
-    <div class="head">
-        <div class="icon"><span class="icosg-target1"></span></div>
-        <h2> Hostels/Domitories </h2> 
-        <div class="right">                            
-            <?php echo anchor('admin/hostels/create/' . $page, '<i class="glyphicon glyphicon-plus"></i> ' . lang('web_add_t', array(':name' => 'Hostels')), 'class="btn btn-primary"'); ?>
+   <!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+    <div class="panel-heading">
+        <h4 class="panel-title">Hostels/Domitories</h4>
+        <div class="heading-elements">
+         <?php echo anchor('admin/hostels/create/' . $page, '<i class="glyphicon glyphicon-plus"></i> ' . lang('web_add_t', array(':name' => 'Hostels')), 'class="btn btn-primary"'); ?>
             <?php echo anchor('admin/hostels/', '<i class="glyphicon glyphicon-list"></i> List All Hostels', 'class="btn btn-primary"'); ?>
-
-            <div class="btn-group">
+             <div class="btn-group">
                 <button class="btn dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-cog"></i> Options</button>
 
                 <ul class="dropdown-menu pull-right">
@@ -18,10 +18,12 @@
 
                 </ul>
             </div>
-
-        </div>    					
-    </div>            
-    <div class="block-fluid">
+        </div>
+    </div>
+    
+    <div class="panel-body">
+                   
+   
 
         <?php
         $attributes = array('class' => 'form-horizontal', 'id' => '');
@@ -49,14 +51,14 @@
             </div>
         </div>
 
-        <div class="widget">
+        <div class="form-group">
             <div class="head dark">
                 <div class="icon"><i class="icos-pencil"></i></div>
                 <h2>Description</h2>
             </div>
             <div class="block-fluid editor">
 
-                <textarea id="wysiwyg"  name="description" style="height: 300px;">
+                <textarea id="" class="wysihtml5 wysihtml5-min" name="description" style="height: 300px;">
                 <?php echo set_value('description', (isset($result->description)) ? htmlspecialchars_decode($result->description) : ''); ?></textarea>
 <?php echo form_error('description'); ?>
 
@@ -65,7 +67,7 @@
         </div> 
 
 
-        <div class='form-group'><div class="control-div"></div><div class="col-md-6">
+        <div class='form-group'><div class="control-div"></div><div class="col-md-12 text-right">
 
 
                 <?php echo form_submit('submit', ($updType == 'edit') ? 'Update' : 'Save', (($updType == 'create') ? "id='submit' class='btn btn-primary''" : "id='submit' class='btn btn-primary'")); ?>

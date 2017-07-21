@@ -60,7 +60,7 @@
                 <div class='icon'><i class='icos-pencil'></i></div>
                 <h2>Comment </h2></div>
             <div class="block-fluid editor">
-                <textarea id="comment"   style="height: 300px;" class=" wysiwyg "  name="comment"  /><?php echo set_value('comment', (isset($result->comment)) ? htmlspecialchars_decode($result->comment) : ''); ?></textarea>
+                <textarea id="comment"   style="height: 300px;" class=" wysihtml5 wysihtml5-min"  name="comment"  /><?php echo set_value('comment', (isset($result->comment)) ? htmlspecialchars_decode($result->comment) : ''); ?></textarea>
                 <?php echo form_error('comment'); ?>
             </div>
         </div>
