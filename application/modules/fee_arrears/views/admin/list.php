@@ -1,18 +1,18 @@
-<div class="head"> 
-    <div class="icon"><span class="icosg-target1"></span> </div>
-    <h2>  Fee Arrears  </h2>
-    <div class="right">  
-         <?php echo anchor('admin/fee_arrears/create/' . $page, '<i class="glyphicon glyphicon-plus"></i> ' . lang('web_add_t', array(':name' => 'Fee Arears')), 'class="btn btn-primary"'); ?>
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+  <div class="panel-heading">
+    <h4 class="panel-title">Fee Arrears</h4>
+    <div class="heading-elements">
+       <?php echo anchor('admin/fee_arrears/create/' . $page, '<i class="glyphicon glyphicon-plus"></i> ' . lang('web_add_t', array(':name' => 'Fee Arears')), 'class="btn btn-primary"'); ?>
 
         <?php echo anchor('admin/fee_arrears', '<i class="glyphicon glyphicon-list">
-                </i> ' . lang('web_list_all', array(':name' => 'Fee Arears')), 'class="btn btn-primary"'); ?> 
-
+                </i> ' . lang('web_list_all', array(':name' => 'Fee Arears')), 'class="btn btn-primary"'); ?>
     </div>
-</div>
+  </div> 
 
 
 <?php if ($fee_arrears): ?>
-         <div class="block-fluid">
+         <div class="panel-body">
              <table class="table table-hover fpTable" cellpadding="0" cellspacing="0" width="100%">
                  <thead>
                  <th width="3">#</th>
@@ -36,16 +36,16 @@
                            ?>
                           <tr>
                               <td><?php echo $i . '.'; ?></td>					
-                              <td><?php echo $data[$p->student]; ?></td>
+                              <td><?php echo @$data[$p->student]; ?></td>
                               <td><?php echo isset($p->amount) ? number_format($p->amount, 2) : ''; ?></td>
                               <td>Term <?php echo $p->term; ?></td>
                               <td><?php echo $p->year; ?></td>
 
                               <td width='20%'>
                                   <div class='btn-group'>
-                                      <a class='btn btn-success' href='<?php echo site_url('admin/fee_arrears/edit/' . $p->id . '/' . $page); ?>'>Edit</a>
-                                      <a class='btn btn-info' href='<?php echo site_url('admin/fee_payment/statement/' . $p->student); ?>'>Statement</a>
-                                      <a class='btn btn-danger' onClick="return confirm('<?php echo lang('web_confirm_delete') ?>')" href='<?php echo site_url('admin/fee_arrears/delete/' . $p->id . '/' . $page); ?>'>Trash</a>
+                                      <a class='btn btn-success' href='<?php echo site_url('admin/fee_arrears/edit/' . $p->id . '/' . $page); ?>'><i class="icon-pencil7"></i></a>
+                                      <a class='btn btn-info' href='<?php echo site_url('admin/fee_payment/statement/' . $p->student); ?>'><i class="icon-file-text3"></i></a>
+                                      <a class='btn btn-danger' onClick="return confirm('<?php echo lang('web_confirm_delete') ?>')" href='<?php echo site_url('admin/fee_arrears/delete/' . $p->id . '/' . $page); ?>'><i class="icon-trash"></i></a>
 
                                       </ul>
                                   </div>

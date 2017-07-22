@@ -1,3 +1,4 @@
+<?php echo theme_js('select2/select2.min.js'); ?>
 <div class="  right" id="menus"> 
     <a href="" onClick="window.print();
               return false" class="btn btn-primary"><i class="icos-printer"></i> Print</a>
@@ -5,10 +6,10 @@
     <a href="<?php echo site_url('admin/fee_payment/'); ?>" class="btn btn-primary"><i class="glyphicon glyphicon-list"></i> List Fee Statements</a>
     <a href="<?php echo site_url('admin/admission/view/' . $post->id); ?>" class="btn btn-success"><i class="glyphicon glyphicon-eye-open"></i> View <?php echo $post->first_name; ?>'s Profile</a>
 </div>
-<div class="widget">
+<div class="widget ">
     <div class="col-md-12 slip">
-        <div class="statement">
-            <div class="block invoice slip-content">
+        <div class="statement panel">
+            <div class="block invoice panel-body slip-content">
                 <div class="row">
                     <div class="col-sm-3 invoice-left">
                         <img  src="<?php echo base_url('uploads/files/' . $this->school->document); ?>" class="center" align="center" style="" width="100%" height="120" />

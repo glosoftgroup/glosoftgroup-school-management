@@ -1,16 +1,18 @@
 
 <div class="col-md-8">
-    <div class="head">
-        <div class="icon"><span class="icosg-target1"></span></div>
-        <h2> Fee Structure  </h2> 
-        <div class="right">                            
-            <?php echo anchor('admin/fee_structure/create/' . $page, '<i class="glyphicon glyphicon-plus"></i> Add New Fee Structure', 'class="btn btn-primary"'); ?>
-            <?php echo anchor('admin/fee_structure/', '<i class="glyphicon glyphicon-list">
+    <!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+    <div class="panel-heading">
+        <h4 class="panel-title">Fee Structure</h4>
+        <div class="heading-elements">
+         <?php echo anchor('admin/fee_structure/create/' . $page, '<i class="glyphicon glyphicon-plus"></i> Add New Fee Structure', 'class="btn btn-primary"'); ?>
+        <?php echo anchor('admin/fee_structure/', '<i class="glyphicon glyphicon-list">
                 </i> List All', 'class="btn btn-primary"'); ?>
-        </div>    					
+        </div>
     </div>
-
-    <div class="block-fluid"> 
+    
+    <div class="panel-body">
+        
         <?php
         $attributes = array('class' => 'form-horizontal', 'id' => '');
         echo form_open_multipart(current_url(), $attributes);
@@ -19,7 +21,7 @@
             <div class="col-md-3" for='term'>School Term </div>
             <div class="col-md-9">
                 <?php
-                echo form_dropdown('term[]', $this->terms, $this->input->post('term'), ' class="select" multiple="multiple" ');
+                echo form_dropdown('term[]', $this->terms, $this->input->post('term'), ' class="select" placeholder="Select Term" multiple="multiple" ');
                 echo form_error('term');
                 ?>
             </div>
@@ -29,7 +31,7 @@
             <div class="col-md-3" for='school_class'>School Class </div>
             <div class="col-md-9">
                 <?php
-                echo form_dropdown('school_class[]', $class, $this->input->post('school_class'), ' class="select" multiple="multiple" ');
+                echo form_dropdown('school_class[]', $class, $this->input->post('school_class'), ' class="select" multiple="multiple" placeholder="Select Term" ');
                 echo form_error('school_class');        
                 ?>
             </div>

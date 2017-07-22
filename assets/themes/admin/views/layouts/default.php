@@ -277,12 +277,14 @@
    <?=core_js("core/js/pages/editor_wysihtml5.js");?> 
    <!-- wysihtml5 wysihtml5-min  -->
 
-     <script type="text/javascript">  var flist = '<?php echo $this->list_size; ?>';</script>
+     <script type="text/javascript">var sub=1;  var flist = '<?php echo $this->list_size; ?>';</script>
         <?php echo theme_js('plugins/animatedprogressbar/animated_progressbar.js'); ?>
         <?php echo theme_js('plugins/hoverintent/jquery.hoverIntent.minified.js'); ?>
     <?php echo theme_js('plugins/cleditor/jquery.cleditor.js'); ?>
     <?php echo theme_js('actions.js'); ?>
     <?php echo core_js('core/js/plugins.js'); ?>
+    <?php echo theme_js('ng/lib-ng.js'); ?> 
+        <?php echo theme_js('ng/ngsc.js'); ?>
     <style>
     .uppercase {
     font-family: sans-serif;

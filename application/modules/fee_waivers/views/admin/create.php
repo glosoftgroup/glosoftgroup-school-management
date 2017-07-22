@@ -1,16 +1,18 @@
 <div class="col-md-12">
-    <div class="head"> 
-        <div class="icon"><span class="icosg-target1"></span></div>		
-        <h2>  Fee Waivers  </h2>
-        <div class="right"> 
+   <!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+    <div class="panel-heading">
+        <h4 class="panel-title">Fee Waivers</h4>
+        <div class="heading-elements">
             <?php echo anchor('admin/fee_waivers/create', '<i class="glyphicon glyphicon-plus">
                 </i> ' . lang('web_add_t', array(':name' => 'Fee Waivers')), 'class="btn btn-primary"'); ?> 
             <?php echo anchor('admin/fee_waivers', '<i class="glyphicon glyphicon-list">
                 </i> ' . lang('web_list_all', array(':name' => 'Fee Waivers')), 'class="btn btn-primary"'); ?> 
         </div>
     </div>
-
-    <div class="block-fluid">
+    
+    <div class="panel-body">
+       
 
         <?php
         $data = $this->ion_auth->students_full_details();
@@ -20,24 +22,24 @@
 
         <!-- BEGIN TABLE DATA -->
         <div id="editable_wrapper" class="dataTables_wrapper form-inline" role="grid">
-            <table cellpadding="0" cellspacing="0" width="100%">
+            <table class='table' cellpadding="0" cellspacing="0" width="100%">
                 <!-- BEGIN -->
                 <thead>
                     <tr >
                         <th width="3%">#</th>
-                        <th width="10%">Date</th>
-                        <th width="32%">Student</th>
-                        <th width="12%">Amount</th>
-                        <th width="9%">Term</th>
-                        <th width="9%">Year</th>
-                        <th width="25%">Remarks</th>
+                        <th class="text-center" width="10%">Date</th>
+                        <th class="text-center" width="32%">Student</th>
+                        <th class="text-center" width="12%">Amount</th>
+                        <th class="text-center" width="9%">Term</th>
+                        <th class="text-center" width="9%">Year</th>
+                        <th class="text-center" width="25%">Remarks</th>
                     </tr>
                 </thead>
             </table>
 
             <div id="entry1" class="clonedInput">
 
-                <table cellpadding="0" cellspacing="0" width="100%">  
+                <table class='table' cellpadding="0" cellspacing="0" width="100%">  
                     <tbody>
                         <tr>
                             <td width="3%">
@@ -45,19 +47,19 @@
                             </td>
 
                             <td width="10%">
-                                <input id='date' type='text' name='date[]' style="" class='date   datepicker' value=""  />
+                                <input id='date' type='text' placeholder="Date" name='date[]' style="" class='date   datepicker' value=""  />
                                 <?php echo form_error('date'); ?>
                             </td>
                             <td width="32%">
                                 <?php
-                                echo form_dropdown('student[]', $data, (isset($result->student)) ? $result->student : '', ' class="xsel student" id="student" style="width:180px !important;" ');
+                                echo form_dropdown('student[]', $data, (isset($result->student)) ? $result->student : '', ' class="xsel student" placeholder="Student" id="student" style="width:180px !important;" ');
                                 echo form_error('student');
                                 ?>
                             </td>
 
                             <td width="12%">
 
-                                <input type="text" name="amount[]" id="amount" class="amount" value="<?php
+                                <input type="text" name="amount[]" placeholder="Amount" id="amount" class="amount form-control" value="<?php
                                 if (!empty($result->amount))
                                 {
                                     echo $result->amount;
@@ -67,7 +69,7 @@
                             </td>
                             <td width="9%">
                                 <?php
-                                echo form_dropdown('term[]', $this->terms, (isset($result->term)) ? $result->term : '', ' id="term" class="xsel term" ');
+                                echo form_dropdown('term[]', $this->terms, (isset($result->term)) ? $result->term : '', ' id="term" placeholder="Term" class="xsel term" ');
                                 echo form_error('term');
                                 ?>
 
@@ -89,7 +91,7 @@
                             </td>
 
                             <td width="25%">
-                                <textarea name="remarks[]" cols="25" rows="1" class="col-md-12 remarks  validate[required]" style="resize:vertical;" id="remarks"><?php echo set_value('remarks', (isset($result->remarks)) ? htmlspecialchars_decode($result->remarks) : ''); ?></textarea>
+                                <textarea name="remarks[]" cols="25" placeholder="Remarks" rows="1" class="col-md-12 remarks  validate[required]" style="resize:vertical;" id="remarks"><?php echo set_value('remarks', (isset($result->remarks)) ? htmlspecialchars_decode($result->remarks) : ''); ?></textarea>
                             </td>
 
                         </tr>
@@ -98,14 +100,14 @@
                 </table>
             </div>
 
-            <div class="actions">
+            <div class="actions col-md-12 text-left">
                 <a href="#" id="btnAdd" class="btn btn-success clone">Add New Line</a> 
                 <a href="#" id="btnDel" class="btn btn-danger remove">Remove</a>
             </div>
         </div>
 
 
-        <div class='form-group'><div class="col-md-2"></div><div class="col-md-10">
+        <div class='form-group col-md-12'><div class="col-md-2"></div><div class="col-md-12 text-right">
                 <?php echo form_submit('submit', ($updType == 'edit') ? 'Update' : 'Save', (($updType == 'create') ? "id='submit' class='btn btn-primary''" : "id='submit' class='btn btn-primary'")); ?>
                 <?php echo anchor('admin/fee_waivers', 'Cancel', 'class="btn  btn-default"'); ?>
             </div></div>

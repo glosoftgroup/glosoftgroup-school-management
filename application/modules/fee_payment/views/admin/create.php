@@ -1,16 +1,28 @@
+<?php echo theme_css('sett.css'); ?>
+        <?php echo theme_css('jquery.dataTables.css'); ?>   
+        <?php echo theme_css('tableTools.css'); ?>   
+        <?php echo theme_css('dataTables.colVis.min.css');?>
+        
+        <?php echo theme_css('themes/default.css'); ?>
+        <?php echo theme_css('custom.css'); ?>
+           
+        <?php echo theme_css('output.css'); ?>
+        <link href="<?php echo js_path('plugins/jeditable/bootstrap-editable.css'); ?>" rel="stylesheet">
 <div class="col-md-12">
-    <div class="head"> 
-        <div class="icon"><span class="icosg-target1"></span></div>		
-        <h2>  Fee Payment  </h2>
-        <div class="right"> 
+   <!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+    <div class="panel-heading">
+        <h4 class="panel-title">Fee Payment </h4>
+        <div class="heading-elements">
             <?php echo anchor('admin/fee_payment/create', '<i class="glyphicon glyphicon-plus">
                 </i> ' . lang('web_add_t', array(':name' => 'Fee Payment')), 'class="btn btn-primary"'); ?> 
             <?php echo anchor('admin/fee_payment', '<i class="glyphicon glyphicon-list">
                 </i> ' . lang('web_list_all', array(':name' => 'Fee Payment')), 'class="btn btn-primary"'); ?> 
         </div>
     </div>
+    
+    <div class="panel-body">           
 
-    <div class="block-fluid">
         <?php
         $attributes = array('class' => 'form-horizontal', 'id' => '');
         echo form_open_multipart(current_url(), $attributes);
@@ -27,24 +39,24 @@
 
         <!-- BEGIN TABLE DATA -->
         <div id="editable_wrapper" class="dataTables_wrapper form-inline" role="grid">
-            <table cellpadding="0" cellspacing="0" width="100%">
+            <table class="" cellpadding="0" cellspacing="0" width="100%">
                 <!-- BEGIN -->
                 <thead>
                     <tr role="row">
                         <th width="3%">#</th>
                         <th width="10%">Payment Date</th>
-                        <th width="10%">Amount</th>
-                        <th width="15%">Payment Method</th>
-                        <th width="15%">Transaction No.</th>
-                        <th width="20%">Bank</th>
-                        <th width="47%">Description</th>
+                        <th width="15%" class="text-center">Amount</th>
+                        <th width="15%" class="text-center">Payment Method</th>
+                        <th width="15%" class="text-center"> Transaction No.</th>
+                        <th width="20%" class="text-center">Bank</th>
+                        <th width="17%" class="text-center">Description</th>
                     </tr>
                 </thead>
             </table>
-
+          
             <div id="entry1" class="clonedInput">
                 <?php echo validation_errors(); ?>
-                <table cellpadding="0" cellspacing="0" width="100%">  
+                <table class=""  cellpadding="0" cellspacing="0" width="100%">  
                     <tbody>
                         <tr >
                             <td width="3%">
@@ -52,7 +64,7 @@
                             </td>
 
                             <td width="10%">
-                                <input id='payment_date' type='text' name='payment_date[]' style="" class='payment_date   datepicker' value="<?php
+                                <input id='payment_date' type='text' placeholder=" Date" name='payment_date[]' style="" class='payment_date   datepicker' value="<?php
                                 if (!empty($result->payment_date))
                                 {
                                         echo date('d/m/Y', $result->payment_date);
@@ -64,7 +76,7 @@
                                 ?>"  />
                             </td>
                             <td width="10%">
-                                <input type="text" name="amount[]" id="amount" class="amount" value="<?php
+                                <input type="text" name="amount[]" placeholder="Amount" id="amount" class=" amount" value="<?php
                                 if (!empty($result->amount))
                                 {
                                         echo $result->amount;
@@ -74,11 +86,11 @@
                             <td width="15%">
                                 <?php
                                 $items = array('Bank Slip' => 'Bank Slip', 'Cash' => 'Cash', 'Mpesa' => 'Mpesa', 'Cheque' => 'Cheque');
-                                echo form_dropdown('payment_method[]', array('' => 'Select Pay Method') + $items, (isset($result->payment_method)) ? $result->payment_method : '', ' class="payment_method" id="payment_method" data-placeholder="Select Options..." ');
+                                echo form_dropdown('payment_method[]', array('' => 'Select Pay Method') + $items, (isset($result->payment_method)) ? $result->payment_method : '', ' class=" payment_method" placeholder="Payment Method" id="payment_method" data-placeholder="Select Options..." ');
                                 ?>
                             </td>
                             <td width="15%">
-                                <input type="text" name="transaction_no[]" id="transaction_no" class="transaction_no" value="<?php
+                                <input type="text" name="transaction_no[]" id="transaction_no" placeholder="Transaction Number" class="transaction_no" value="<?php
                                 if (!empty($result->transaction_no))
                                 {
                                         echo $result->transaction_no;
@@ -87,13 +99,13 @@
                             </td>
                             <td width="20%">
                                 <?php
-                                echo form_dropdown('bank_id[]', array('' => 'Select Bank Account') + $bank, (isset($result->bank_id)) ? $result->bank_id : '', ' class="bank_id" id="bank_id" ');
+                                echo form_dropdown('bank_id[]', array('' => 'Select Bank Account') + $bank, (isset($result->bank_id)) ? $result->bank_id : '', ' class=" bank_id" id="bank_id" ');
                                 ?>
                             </td>
                             <td width="47%">
 
                                 <?php
-                                echo form_dropdown('description[]', array('' => 'Select option', '0' => 'Tuition Fee Payment') + $extras, (isset($result->description)) ? $result->description : '', ' class="description validate[required]" id="description" ');
+                                echo form_dropdown('description[]', array('' => 'Select option', '0' => 'Tuition Fee Payment') + $extras, (isset($result->description)) ? $result->description : '', ' class=" description validate[required]" placeholder="Description" id="description" ');
                                 ?>
 
                             </td> 
@@ -103,13 +115,13 @@
                 </table>
             </div>
 
-            <div class="actions">
+            <div class="actions col-md-12 text-left" style="padding: 12px;">
                 <a href="#" id="btnAdd" class="btn btn-success clone">Add New Line</a> 
                 <a href="#" id="btnDel" class="btn btn-danger remove">Remove</a>
             </div>
         </div>
 
-        <div class='form-group'><div class="col-md-2"></div><div class="col-md-10">
+        <div class='form-group'><div class="col-md-2"></div><div class="col-md-12 text-right">
                 <?php echo form_submit('submit', ($updType == 'edit') ? 'Update' : 'Save', (($updType == 'create') ? "id='submit' class='btn btn-primary''" : "id='submit' class='btn btn-primary'")); ?>
                 <?php echo anchor('admin/fee_payment', 'Cancel', 'class="btn  btn-default"'); ?>
             </div></div>
@@ -118,6 +130,7 @@
         <div class="clearfix"></div>
     </div>
 </div>
+ <?php echo theme_js('plugins/jeditable/bootstrap-editable.js'); ?>
 <script type="text/javascript">
         $(function ()
         {
@@ -186,5 +199,8 @@
 
             $('#btnDel').attr('disabled', true);
         });
-
+    $(document).ready(function(){
+        $('td').css('padding','8px 5px');
+    });
+  
 </script>

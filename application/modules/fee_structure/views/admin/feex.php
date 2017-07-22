@@ -13,15 +13,18 @@
     }
 ?>
 <div class="col-md-9">
-    <div class="head">
-        <div class="icon"><span class="icosg-target1"></span></div>
-        <h2>Manage Fee Extras  & Invoice</h2> 
-        <div class="right">                            
-             <?php echo anchor('admin/fee_structure/extras', '<i class="glyphicon glyphicon-list">
+    <!-- Pager -->
+  <div class="panel panel-white animated fadeIn">
+    <div class="panel-heading">
+      <h4 class="panel-title">Manage Fee Extras  & Invoice</h4>
+      <div class="heading-elements">
+         <?php echo anchor('admin/fee_structure/extras', '<i class="glyphicon glyphicon-list">
                 </i> Fee Extras', 'class="btn btn-primary"'); ?>
-        </div>    					
+      </div>
     </div>
-    <div class="block-fluid">
+    
+    <div class="panel-body">
+        
          <?php
              $attributes = array('class' => 'form-horizontal', 'id' => '');
              echo form_open_multipart(current_url(), $attributes);
@@ -147,14 +150,20 @@
             <?php } ?>
     </div>
 </div>
+</div>
 <div class="col-md-3">
-    <div class="widget">
-        <div class="head dark">
-            <div class="icon"><span class="icosg-newtab"></span></div>
-            <h2>Class</h2>
-        </div>
-        <div class="block-fluid">
-            <ul class="list tickets">
+   <!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+  <div class="panel-heading">
+    <h4 class="panel-title">Class</h4>
+    <div class="heading-elements">
+    
+    </div>
+  </div>
+  
+  <div class="panel-body">
+            
+            <ul class="media-list tickets">
                  <?php
                      $i = 0;
                      foreach ($this->classlist as $cid => $cl)

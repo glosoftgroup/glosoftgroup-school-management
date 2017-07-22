@@ -65,7 +65,7 @@
           <!-- echo theme_css('select2/select2.css'); -->
         <link href="<?php echo js_path('plugins/jeditable/bootstrap-editable.css'); ?>" rel="stylesheet">
 
-        <script> var BASE_URL = '<?php echo base_url(); ?>';</script>
+        <script>var sub=1; var BASE_URL = '<?php echo base_url(); ?>';</script>
         <?php echo theme_js('plugins/jquery/globalize.js'); ?>
         <?php echo theme_js('plugins/other/excanvas.js'); ?>
         <script type="text/javascript" src="<?php echo plugin_path('boxer/jquery.fs.boxer.js'); ?>"></script>
@@ -318,6 +318,7 @@
        <?php echo theme_js('plugins/scrollup/jquery.scrollUp.min.js'); ?>
        <script type="text/javascript" src="<?php echo plugin_path('uploadify/jquery.uploadify.min.js'); ?>"></script>
        <?php echo core_js('core/js/plugins.js'); ?>
+       <?php echo theme_js('actions.js'); ?>
     <script>
      // Default initialization
      $('.select').select2({
