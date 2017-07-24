@@ -1,20 +1,17 @@
  
 
 <div class="col-md-8">
-        <div class="head"> 
-             <div class="icon"><span class="icosg-target1"></span></div>		
-            <h2>  Book Fund Stock  </h2>
-             <div class="right"> 
-             <!--<?php echo anchor( 'admin/book_fund_stock/create' , '<i class="glyphicon glyphicon-plus">
-                </i> '.lang('web_add_t', array(':name' => 'Book Fund Stock')), 'class="btn btn-primary"');?> -->
-              <?php echo anchor( 'admin/book_fund_stock' , '<i class="glyphicon glyphicon-list">
-                </i> '.lang('web_list_all', array(':name' => 'Book Fund Stock')), 'class="btn btn-primary"');?> 
-             
-                </div>
-                </div>
-         	                    
-               
-				   <div class="block-fluid">
+    <!-- Pager -->
+    <div class="panel panel-white animated fadeIn">
+      <div class="panel-heading">
+        <h4 class="panel-title"> Book Fund Stock</h4>
+        <div class="heading-elements">
+          <?php echo anchor( 'admin/book_fund_stock' , '<i class="glyphicon glyphicon-list">
+                </i> '.lang('web_list_all', array(':name' => 'Book Fund Stock')), 'class="btn btn-primary"');?>
+        </div>
+      </div>
+      
+      <div class="panel-body">           
 
 <?php 
 $attributes = array('class' => 'form-horizontal', 'id' => '');
@@ -34,7 +31,7 @@ echo   form_open_multipart(current_url(), $attributes);
 <div class='form-group'>
 	<div class=' col-md-3' for='quantity'>Quantity <span class='required'>*</span></div>
         <div class="col-md-4">
-	<?php echo form_input('quantity' ,$result->quantity , 'id="quantity"  class="" id="focusedinput" onblur="totals()"' );?>
+	<?php echo form_input('quantity' ,$result->quantity , 'id="quantity"  class="form-control" id="focusedinput" onblur="totals()"' );?>
  	<?php echo form_error('quantity'); ?>
 </div>
 </div>
@@ -44,7 +41,7 @@ echo   form_open_multipart(current_url(), $attributes);
  <div class='form-group'>
             <div class="col-md-3" for='receipt'>Upload Receipt </div>
             <div class="col-md-9">
-                <input id='receipt' type='file' name='receipt' />
+                <input id='receipt' class="file-styled-primary" type='file' name='receipt' />
 
                 <?php if ($updType == 'edit'): ?>
                     <a href='<?php echo base_url('uploads/files/' . $result->receipt); ?>' >Download actual file (receipt)</a>
@@ -55,7 +52,7 @@ echo   form_open_multipart(current_url(), $attributes);
             </div>
         </div>
 
-<div class='form-group'><div class="col-md-2"></div><div class="col-md-10">
+<div class='form-group col-md-12'><div class="col-md-2"></div><div class="col-md-12 text-right">
     
 
     <?php echo form_submit( 'submit', ($updType == 'edit') ? 'Update' : 'Save', (($updType == 'create') ? "id='submit' class='btn btn-primary''" : "id='submit' class='btn btn-primary'")); ?>

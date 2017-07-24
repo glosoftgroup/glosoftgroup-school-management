@@ -1,13 +1,17 @@
-<div class="head"> 
-    <div class="icon"><span class="icosg-target1"></span> </div>
-    <h2>  Parents  </h2>
-    <div class="right">  
-        <?php echo anchor('admin/parents', '<i class="glyphicon glyphicon-list">
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+    <div class="panel-heading">
+        <h4 class="panel-title">Parents</h4>
+        <div class="heading-elements">
+         <?php echo anchor('admin/parents', '<i class="glyphicon glyphicon-list">
                 </i> ' . lang('web_list_all', array(':name' => 'Parents')), 'class="btn btn-primary"'); ?>
+        </div>
     </div>
-</div>
+    
+    
 <?php if ($parents): ?>
-        <div class="block-fluid">
+        
+    <div class="panel-body">
             <table class="table table-hover fpTable" cellpadding="0" cellspacing="0" width="100%">
                 <thead>
                 <th>#</th>

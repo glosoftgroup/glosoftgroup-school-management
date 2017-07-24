@@ -139,7 +139,7 @@
                       <li <?php if (preg_match('/^(admin\/fee_arrears)/i', $this->uri->uri_string())) echo 'class="active"'; ?>><a href="<?php echo base_url('admin/fee_arrears'); ?>">Fee Arrears</a></li>
           						<li <?php if (preg_match('/^(admin\/fee_pledge)/i', $this->uri->uri_string())) echo 'class="active"'; ?>><a href="<?php echo base_url('admin/fee_pledge'); ?>">Fee Pledges</a></li>
                       <li <?php if (preg_match('/^(admin\/expenses)/i', $this->uri->uri_string())) echo 'class="active"'; ?>><a href="<?php echo base_url('admin/expenses'); ?>">Expenses</a></li>
-                      <li <?php if (preg_match('/^(admin\/expenses\/requisitions)/i', $this->uri->uri_string())) echo 'class="active"'; ?>><a href="<?php echo base_url('admin/expenses/requisitions'); ?>">Requisitioins</a></li>
+                      <li <?php if (preg_match('/^(admin\/expenses\/requisitions)/i', $this->uri->uri_string())) echo 'class="active"'; ?>><a href="<?php echo base_url('admin/expenses/requisitions'); ?>">Requisition</a></li>
                       <li <?php if (preg_match('/^(admin\/petty_cash)/i', $this->uri->uri_string())) echo 'class="active"'; ?>><a href="<?php echo base_url('admin/petty_cash'); ?>">Petty Cash</a></li>
                       <li <?php if (preg_match('/^(admin\/purchase_order)/i', $this->uri->uri_string())) echo 'class="active"'; ?>><a href="<?php echo base_url('admin/purchase_order'); ?>">Purchase Orders</a></li>
                       <li <?php if (preg_match('/^(admin\/bank_accounts)/i', $this->uri->uri_string())) echo 'class="active"'; ?>><a href="<?php echo base_url('admin/bank_accounts'); ?>">Bank Accounts</a></li>
@@ -295,6 +295,21 @@
 										<li
 										<?php echo (preg_match('/^(admin\/teachers)/i', $this->uri->uri_string())) ? 'class="active"' : ' ' ?>
 										><a href="<?php echo base_url('admin/teachers'); ?>">Teachers</a></li>
+                    <li
+                    <?php echo (preg_match('/^(admin\/parents)/i', $this->uri->uri_string())) ? 'class="active"' : ' ' ?> 
+                    ><a href="<?php echo base_url('admin/parents'); ?>">Parents</a></li>
+                    <li
+                     <?php echo (preg_match('/^(admin\/admission)/i', $this->uri->uri_string())) ? 'class="active"' : ' ' ?>
+                    ><a href="<?php echo base_url('admin/admission'); ?>">Students</a></li>
+                    <li
+                    <?php echo (preg_match('/^(admin\/users\/create)/i', $this->uri->uri_string())) ? 'class="active"' : ' ' ?> 
+                    ><i class="icon-plus"></i><a href="<?php echo base_url('admin/users/create'); ?>">Add Staff</a></li>
+                    <li
+                    <?php echo (preg_match('/^(admin\/users)$/i', $this->uri->uri_string())) ? 'class="active"' : ' ' ?>
+                    ><a href="<?php echo base_url('admin/users'); ?>">List all Users</a></li>
+                    <li
+                    <?php echo (preg_match('/^(admin\/groups)/i', $this->uri->uri_string())) ? 'class="active"' : ' ' ?>
+                    ><a href="<?php echo base_url('admin/groups'); ?>">User Groups</a></li>
 									</ul>
 								</li>
 								<!-- ./users -->

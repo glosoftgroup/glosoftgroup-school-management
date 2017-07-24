@@ -1,16 +1,20 @@
-<div class="head">
-                    <div class="icon"><span class="icosg-target1"></span></div>
-                    <h2> Inventory </h2> 
-                     <div class="right">                            
-               <a class="btn btn-primary" id="" href="<?php echo base_url('admin/items'); ?>"><i class="glyphicon glyphicon-shopping-cart"></i>  Items</a>
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+	<div class="panel-heading">
+		<h4 class="panel-title">Inventory</h4>
+		<div class="heading-elements">
+			 <a class="btn btn-primary" id="" href="<?php echo base_url('admin/items'); ?>"><i class="glyphicon glyphicon-shopping-cart"></i>  Items</a>
 				<a class="btn btn-primary" id="" href="<?php echo base_url('admin/items_category'); ?>"><i class="glyphicon glyphicon-random" ></i>  Items Category</a>
 				<a class="btn btn-primary" id="" href="<?php echo base_url('admin/add_stock'); ?>"><i class="glyphicon glyphicon-pencil"></i> Add Stock</a>
 				<a class="btn btn-primary" id="" href="<?php echo base_url('admin/stock_taking/create'); ?>"><i class="glyphicon glyphicon-book"></i> Take Stock</a>
 				<a href="<?php echo base_url('admin/inventory'); ?>" class="btn btn-success collapsed"><i class="glyphicon glyphicon-list-alt"></i> List All</a>
-                     </div>    					
-                </div>
+		</div>
+	</div>
+	
+
+                    
          	        <?php if ($add_stock): ?>              
-               <div class="block-fluid">
+       	<div class="panel-body">
 			     <?php  $total_cost = 0;
 
                             foreach ($add_stock as $p){
@@ -115,7 +119,7 @@
 
                         </div>
                     <?php else: ?>
-                        <h3>No Posts at the moment</h3>
+                        <h3 class="text-center p-10 text-muted">No Posts at the moment</h3>
 <?php endif; ?>
                     <!-- END TABLE DATA -->
               

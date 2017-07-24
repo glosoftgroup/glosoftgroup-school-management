@@ -1,63 +1,61 @@
 <div class="col-md-9">
-        <div class="head"> 
-             <div class="icon"><span class="icosg-target1"></span></div>		
-            <h2>  Give out  Book Fund  </h2>
-             <div class="right"> 
-             <?php echo anchor( 'admin/borrow_book_fund/create' , '<i class="glyphicon glyphicon-plus">
+    <!-- Pager -->
+    <div class="panel panel-white animated fadeIn">
+      <div class="panel-heading">
+        <h4 class="panel-title">Give out  Book Fund</h4>
+        <div class="heading-elements">
+           <?php echo anchor( 'admin/borrow_book_fund/create' , '<i class="glyphicon glyphicon-plus">
                 </i> Give out  Book Fund', 'class="btn btn-primary"');?> 
               <?php echo anchor( 'admin/borrow_book_fund' , '<i class="glyphicon glyphicon-list">
-                </i> '.lang('web_list_all', array(':name' => 'Borrowed Books')), 'class="btn btn-primary"');?> 
-             
-                </div>
-                </div>
-         	                    
-               
-				   <div class="block-fluid">
+                </i> '.lang('web_list_all', array(':name' => 'Borrowed Books')), 'class="btn btn-primary"');?>
+        </div>
+      </div>
+      
+      <div class="panel-body">    
+           
 
 <?php 
 $attributes = array('class' => 'form-horizontal', 'id' => '');
 echo   form_open_multipart(current_url(), $attributes); 
 ?>
 <div class='form-group'>
-	<div class="col-md-2" for='borrow_date'>Borrow Date <span class='required'>*</span></div><div class="col-md-10">
-	<div id="datetimepicker1" class="input-group date form_datetime">
-	 <?php echo form_input('borrow_date', $result->borrow_date > 0 ? date('d M Y', $result->borrow_date) : $result->borrow_date, 'class="validate[required] form-control datepicker col-md-4"'); ?>
-	<span class="input-group-addon "><i class="glyphicon glyphicon-calendar"></i></span>
-	</div>
- 	<?php echo form_error('borrow_date'); ?>
+  <div class="col-md-2" for='borrow_date'>Borrow Date <span class='required'>*</span></div><div class="col-md-10">
+  <div id="datetimepicker1" class="input-group date form_datetime">
+   <?php echo form_input('borrow_date', $result->borrow_date > 0 ? date('d M Y', $result->borrow_date) : $result->borrow_date, 'class="validate[required] form-control datepicker col-md-4"'); ?>
+  <span class="input-group-addon "><i class="glyphicon glyphicon-calendar"></i></span>
+  </div>
+  <?php echo form_error('borrow_date'); ?>
 </div>
 </div>
 <div class='form-group'>
-	<div class="col-md-2" for='student'>Student </div><div class="col-md-10">
-	   <?php
+  <div class="col-md-2" for='student'>Student </div><div class="col-md-10">
+     <?php
                 $data = $this->ion_auth->students_full_details();
                 echo form_dropdown('student', array('' => 'Select Student') + $data, (isset($result->student)) ? $result->student : '', ' class="select" data-placeholder="Select Options..." ');
                 ?>
-	
- 	<?php echo form_error('student'); ?>
+  
+  <?php echo form_error('student'); ?>
 </div>
 </div>
 
 
   <!-- BEGIN TABLE DATA -->
         <div id="editable_wrapper" class="dataTables_wrapper form-inline" role="grid">
-            <table cellpadding="0" cellspacing="0" width="100%">
-                <!-- BEGIN -->
-                <thead>
+            
+
+            <div >
+
+                <table class="table table-hover" cellpadding="0" cellspacing="0" width="100%">
+                 <thead>
                     <tr role="row">
                         <th width="3%">#</th>
                         <th width="30%">Book</th>
                         <th width="67%">Remarks</th>
                     </tr>
-                </thead>
-            </table>
-
-            <div id="entry1" class="clonedInput">
-
-                <table cellpadding="0" cellspacing="0" width="100%">  
+                </thead>  
                     <tbody>
 
-                        <tr >
+                        <tr id="entry1" class="clonedInput">
 
                             <td width="3%">
                                 <span id="reference" name="reference" class="heading-reference">1</span>
@@ -66,7 +64,7 @@ echo   form_open_multipart(current_url(), $attributes);
                             <td width="30%">
 
                                <?php
-                               echo form_dropdown('book[]', $books, (isset($result->book)) ? $result->book : '', ' class="book" id="book" data-placeholder="Select Options..." ');
+                               echo form_dropdown('book[]', $books, (isset($result->book)) ? $result->book : '', 'style="padding-right: 99px;" class="form-control book" id="book" data-placeholder="Select Options..." ');
                                 ?>
                                        <?php echo form_error('book'); ?>
                             </td>
@@ -85,36 +83,40 @@ echo   form_open_multipart(current_url(), $attributes);
 
 
             <div class="actions">
-                <a href="#" id="btnAdd" class="btn btn-success clone">Add New Line</a> 
+                <a href="javascript:;" id="btnAdd" class="btn btn-success clone">Add New Line</a> 
                 <a href="#" id="btnDel" class="btn btn-danger remove">Remove</a>
             </div>
         </div>
 
 
-<div class='form-group'><div class="col-md-2"></div><div class="col-md-10">
+<div class='form-group col-md-12'><div class="col-md-2"></div><div class="col-md-12 text-right">
     
 
     <?php echo form_submit( 'submit', ($updType == 'edit') ? 'Update' : 'Save', (($updType == 'create') ? "id='submit' class='btn btn-primary''" : "id='submit' class='btn btn-primary'")); ?>
-	<?php echo anchor('admin/borrow_book_fund','Cancel','class="btn  btn-default"');?>
+  <?php echo anchor('admin/borrow_book_fund','Cancel','class="btn  btn-default"');?>
 </div></div>
  
 <?php echo form_close(); ?>
 <div class="clearfix"></div>
  </div>
             </div>
-			
-			
-			<div class="col-md-3">
+  </div>    
+      
+      <div class="col-md-3">
 
-     <div class="widget">
-          <div class="head dark">
-               <div class="icon"><span class="icosg-newtab"></span></div>
-               <h2>Give out books per class</h2>
-          </div>
-
-          <div class="block-fluid">
-		
-               <ul class="list tickets">
+     <!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+  <div class="panel-heading">
+    <h4 class="panel-title">Give out books per class</h4>
+    <div class="heading-elements">
+    
+    </div>
+  </div>
+  
+  <div class="panel-body">
+               
+    
+               <ul class="media-list list tickets">
                     <?php
                     $i = 0;
                     foreach ($this->classlist as $cid => $cl)
@@ -125,13 +127,13 @@ echo   form_open_multipart(current_url(), $attributes);
                          ?> 
                          <li class = "<?php echo $cll; ?> clearfix" >
                               <div class = ""> 
-							  <a href ="<?php echo base_url('admin/borrow_book_fund/per_class/'.$cid); ?>">
-							 
-								   <span class="glyphicon glyphicon-share"></span> <?php echo $cc->name; ?> 
-								  <span style="background:#B1B1B1;float:right; color:#fff; padding:5px;"><b> <?php echo $cc->size; ?> Students</b> </span>
-								  
-								  </a>
-								 
+                <a href ="<?php echo base_url('admin/borrow_book_fund/per_class/'.$cid); ?>">
+               
+                   <span class="glyphicon glyphicon-share"></span> <?php echo $cc->name; ?> 
+                  <span style="background:#B1B1B1;float:right; color:#fff; padding:5px;"><b> <?php echo $cc->size; ?> Students</b> </span>
+                  
+                  </a>
+                 
                                  
                               </div>
                          </li>
@@ -142,7 +144,7 @@ echo   form_open_multipart(current_url(), $attributes);
 
 
 </div>
-			
+      
 
 <script type="text/javascript">
 

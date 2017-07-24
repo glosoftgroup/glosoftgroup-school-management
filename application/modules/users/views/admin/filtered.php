@@ -1,25 +1,26 @@
   <?php echo   form_open_multipart('admin/users/filtered_users'); ?>
-<div class="head">
-    <div class="icon"><span class="icosg-target1"></span></div>
-    <h2>Users Management</h2> 
-    <div class="right">                            
-
-   
-		
-      <?php  echo form_dropdown('group_id', array(''=>'Filter Users Per Group...')+(array)$groups_list,  (isset($result->group_id)) ? $result->group_id : ''     ,   ' class="select" data-placeholder="Select Options..." ');
-					 ?>
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+    <div class="panel-heading">
+        <h4 class="panel-title">Users Management</h4>
+        <div class="heading-elements">
+            <?php  echo form_dropdown('group_id', array(''=>'Filter Users Per Group...')+(array)$groups_list,  (isset($result->group_id)) ? $result->group_id : ''     ,   ' class="select" data-placeholder="Select Options..." ');
+                     ?>
     <button class='btn btn-success' type="submit">  <i class="glyphicon glyphicon-search" style="color:#fff"></i> Filter Users</button>
-	
+    
  
 
    <?php echo anchor('admin/users/create/' . $page, '<i class="glyphicon glyphicon-plus"></i>' . lang('web_add_t', array(':name' => 'New User')), 'class="btn btn-primary"'); ?>
-        <?php echo anchor('admin/users/', '<i class="glyphicon glyphicon-list"></i> List All', 'class="btn btn-info"'); ?>	
-    </div>    					
-</div>
+        <?php echo anchor('admin/users/', '<i class="glyphicon glyphicon-list"></i> List All', 'class="btn btn-info"'); ?>
+        </div>
+    </div>
+    
+   
+    
  <?php echo form_close(); ?>
 
-<div class="block-fluid">
-    <table cellpadding="0" cellspacing="0" width="100%" id="users_tbb">
+ <div class="panel-body">
+    <table class="table table-hover" cellpadding="0" cellspacing="0" width="100%" id="users_tbb">
         <thead>
         <th>#</th>
         <th>Name</th>

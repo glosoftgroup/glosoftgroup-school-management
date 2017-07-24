@@ -1,18 +1,18 @@
-<div class="head"> 
-			 <div class="icon"><span class="icosg-target1"></span> </div>
-            <h2>  Books Category  </h2>
-             <div class="right">  
-             <?php echo anchor( 'admin/books_category/create/'.$page, '<i class="glyphicon glyphicon-plus"></i> '.lang('web_add_t', array(':name' => 'Books Category')), 'class="btn btn-primary"');?>
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+	<div class="panel-heading">
+		<h4 class="panel-title"> Books Category</h4>
+		<div class="heading-elements">
+			<?php echo anchor( 'admin/books_category/create/'.$page, '<i class="glyphicon glyphicon-plus"></i> '.lang('web_add_t', array(':name' => 'Books Category')), 'class="btn btn-primary"');?>
 			 
 			 <?php echo anchor( 'admin/books_category' , '<i class="glyphicon glyphicon-list">
                 </i> '.lang('web_list_all', array(':name' => 'Books Category')), 'class="btn btn-primary"');?> 
-             
-                </div>
-                </div>
+		</div>
+	</div>      
          	                    
               
                  <?php if ($books_category): ?>
-                 <div class="block-fluid">
+               	<div class="panel-body">
 				<table class="table table-hover fpTable" cellpadding="0" cellspacing="0" width="100%">
 	 <thead>
                 <th>#</th>
@@ -43,9 +43,9 @@
 
 			 <td width='20%'>
 						 <div class='btn-group'>
-							<a class="btn btn-primary" href='<?php echo site_url('admin/books_category/edit/'.$p->id.'/'.$page);?>'><i class='glyphicon glyphicon-edit'></i> Edit</a>
+							<a class="btn btn-primary" href='<?php echo site_url('admin/books_category/edit/'.$p->id.'/'.$page);?>'><i class='glyphicon glyphicon-edit'></i> </a>
 							  
-						   <a class="btn btn-danger" onClick="return confirm('<?php echo lang('web_confirm_delete')?>')" href='<?php echo site_url('admin/books_category/delete/'.$p->id.'/'.$page);?>'><i class='glyphicon glyphicon-trash'></i> Trash</a>
+						   <a class="btn btn-danger" onClick="return confirm('<?php echo lang('web_confirm_delete')?>')" href='<?php echo site_url('admin/books_category/delete/'.$p->id.'/'.$page);?>'><i class='glyphicon glyphicon-trash'></i> </a>
 						</div>
 					</td>
 				</tr>

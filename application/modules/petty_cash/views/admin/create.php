@@ -1,16 +1,18 @@
 <div class="col-md-8">
-    <div class="head"> 
-        <div class="icon"><span class="icosg-target1"></span></div>		
-        <h2>  Petty Cash  </h2>
-        <div class="right"> 
+   <!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+    <div class="panel-heading">
+        <h4 class="panel-title">Petty Cash</h4>
+        <div class="heading-elements">
             <?php echo anchor('admin/petty_cash/create', '<i class="glyphicon glyphicon-plus">
                 </i> ' . lang('web_add_t', array(':name' => 'Petty Cash')), 'class="btn btn-primary"'); ?> 
             <?php echo anchor('admin/petty_cash', '<i class="glyphicon glyphicon-list">
-                </i> ' . lang('web_list_all', array(':name' => 'Petty Cash')), 'class="btn btn-primary"'); ?> 
-         </div>
+                </i> ' . lang('web_list_all', array(':name' => 'Petty Cash')), 'class="btn btn-primary"'); ?>
+        </div>
     </div>
- 
-    <div class="block-fluid">
+    
+    <div class="panel-body">		
+        
 
         <?php
         $attributes = array('class' => 'form-horizontal', 'id' => '');

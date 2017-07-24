@@ -1,16 +1,19 @@
 <div class="col-md-12">
-    <div class="head">
-        <div class="icon"><span class="icosg-target1"></span></div>
-        <h2>  Expenses </h2> 
-        <div class="right">
-            <?php echo anchor('admin/expenses/create/' . $page, '<i class="glyphicon glyphicon-plus"> </i>' . lang('web_add_t', array(':name' => 'Expenses')), 'class="btn btn-primary"'); ?>
+   <!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+    <div class="panel-heading">
+        <h4 class="panel-title">Expenses</h4>
+        <div class="heading-elements">
+          <?php echo anchor('admin/expenses/create/' . $page, '<i class="glyphicon glyphicon-plus"> </i>' . lang('web_add_t', array(':name' => 'Expenses')), 'class="btn btn-primary"'); ?>
             <?php echo anchor('admin/expenses/', '<i class="glyphicon glyphicon-list">
                 </i> List All', 'class="btn btn-primary"'); ?>
             <?php echo anchor('admin/expenses/voided', '<i class="glyphicon glyphicon-list">
                 </i> Voided Expenses', 'class="btn btn-warning"'); ?>
-        </div>					
+        </div>
     </div>
-    <div class="block-fluid">
+    
+    <div class="panel-body">
+       
         <!------NEW WIDGET------>
         <div class="widget col-md-6">
             <div class="head black">
@@ -22,7 +25,7 @@
                 <div class="form-group">
                     <div class="col-md-3">Name:</div>
                     <div class="col-md-6">                                      
-                        <?php echo form_input('name', '', 'id="title_1"  placeholder=" E.g Rice, Fuel, Pens, Electricity etc."'); ?>
+                        <?php echo form_input('name', '', 'id="title_1" class="form-control" placeholder=" E.g Rice, Fuel, Pens, Electricity etc."'); ?>
                         <?php echo form_error('name'); ?>
                     </div>
                     <div class="col-md-3"> <button class="btn btn-primary">Add Item</button></div>
@@ -43,7 +46,7 @@
                 <div class="form-group">
                     <div class="col-md-3">Name:</div>
                     <div class="col-md-6">                                      
-                        <?php echo form_input('title', '', 'id="title_1"  placeholder=" E.g Stationery, Foodstuff, Transport"'); ?>
+                        <?php echo form_input('title', '', 'id="title_1" class="form-control"  placeholder=" E.g Stationery, Foodstuff, Transport"'); ?>
                         <?php echo form_error('title'); ?>
                     </div>
                     <div class="col-md-3"> <button class="btn btn-primary">Add Category</button></div>
@@ -64,9 +67,10 @@
         ?>
         <!-- BEGIN TABLE DATA -->
         <div id="editable_wrapper" class="dataTables_wrapper form-inline" role="grid">
-            <table cellpadding="0" cellspacing="0" width="100%">
-                <!-- BEGIN -->
-                <thead>
+            
+            <div >
+                <table class='table table-hover' cellpadding="0" cellspacing="0" width="100%">
+                    <thead>
                     <tr role="row">
                         <th width="3%">#</th>
                         <th width="10%">Expense Date</th>
@@ -79,11 +83,8 @@
 
                     </tr>
                 </thead>
-            </table>
-            <div id="entry1" class="clonedInput">
-                <table cellpadding="0" cellspacing="0" width="100%">
                     <tbody>
-                        <tr>
+                        <tr id="entry1" class="clonedInput">
                             <td width="3%">
                                 <span id="reference" name="reference" class="heading-reference">1</span>
                             </td>
@@ -102,19 +103,19 @@
                             </td>
                             <td width="10%">
                                 <?php
-                                echo form_dropdown('title[]', $items, (isset($result->title)) ? $result->title : '', ' class=" title" id="title"   data-placeholder="Select Options..." ');
+                                echo form_dropdown('title[]', $items, (isset($result->title)) ? $result->title : '', ' class="form-control title" id="title"   data-placeholder="Select Options..." ');
                                 echo form_error('title');
                                 ?>
                             </td>
                             <td width="10%">
                                 <?php
-                                echo form_dropdown('category[]', $cats, (isset($result->category)) ? $result->category : '', ' class="category "   id="category" data-placeholder="Select Options..." ');
+                                echo form_dropdown('category[]', $cats, (isset($result->category)) ? $result->category : '', ' class="form-control category "   id="category" data-placeholder="Select Options..." ');
                                 echo form_error('category');
                                 ?>
                                 <?php echo form_error('category'); ?>
                             </td>
                             <td width="10%">
-                                <input type="text" name="amount[]" id="amount" class="amount" value="<?php
+                                <input type="text" name="amount[]" placeholder="Amount" id="amount" class="form-control amount" value="<?php
                                 if (!empty($result->amount))
                                 {
                                         echo $result->amount;
@@ -125,12 +126,12 @@
                             <td width="18%">
                                 <?php
                                 $staff = $this->ion_auth->list_staff();
-                                echo form_dropdown('person_responsible[]', $staff, (isset($result->person_responsible)) ? $result->person_responsible : '', ' class="person_responsible" id="person_responsible" ');
+                                echo form_dropdown('person_responsible[]', $staff, (isset($result->person_responsible)) ? $result->person_responsible : '', ' class="form-control person_responsible" id="person_responsible" ');
                                 echo form_error('person_responsible');
                                 ?>
                             </td> 
                             <td width="12%">
-                                <input id='receipt' class='receipt' type='file' style="width:93px !important;" name='receipt[]' />
+                                <input id='receipt' class='file-styled-primary receipt' type='file' style="width:93px !important;" name='receipt[]' />
                                 <?php if ($updType == 'edit'): ?>
                                         <a href='<?php echo base_url('uploads/files/' . $result->receipt); ?>' >Download actual file (receipt)</a>
                                 <?php endif ?>
@@ -138,7 +139,7 @@
                                 <?php echo ( isset($upload_error['receipt'])) ? $upload_error['receipt'] : ""; ?>
                             </td>
                             <td width="27%">
-                                <textarea name="description[]" cols="25" rows="1" class="col-md-12 description  validate[required]" style="resize:vertical;" id="description"><?php echo set_value('description', (isset($result->description)) ? htmlspecialchars_decode($result->description) : ''); ?></textarea>
+                                <textarea name="description[]" cols="25" rows="1" placeholder="Description" class="form-control col-md-12 description  validate[required]" style="resize:vertical;" id="description"><?php echo set_value('description', (isset($result->description)) ? htmlspecialchars_decode($result->description) : ''); ?></textarea>
                             </td>
                         </tr>
                     </tbody>
@@ -149,9 +150,9 @@
                 <a href="#" id="btnDel" class="btn btn-danger remove">Remove</a>
             </div>
         </div>
-        <div class='form-group'>
+        <div class='form-group col-md-12'>
             <div class="control-div"></div>
-            <div class="col-md-6">
+            <div class="col-md-12 text-right">
                 <?php echo form_submit('submit', ($updType == 'edit') ? 'Update' : 'Save', (($updType == 'create') ? "id='submit' class='btn btn-primary''" : "id='submit' class='btn btn-primary'")); ?>
                 <?php echo anchor('admin/expenses', 'Cancel', 'class="btn btn-danger"'); ?>
             </div>
@@ -159,6 +160,7 @@
         <?php echo form_close(); ?>
         <div class="clearfix"></div>
     </div>
+</div>
 </div>
 <script type="text/javascript">
         $(function ()
@@ -220,5 +222,10 @@
                 $('#btnAdd').attr('disabled', false);
             });
             $('#btnDel').attr('disabled', true);
+        });
+
+        $(document).ready(function(){
+            $('td').css('padding','5px 5px');
+            $('.filename').addClass('hidden');
         });
 </script>

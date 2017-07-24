@@ -1,19 +1,17 @@
 <div class="col-md-8">
-    <div class="head"> 
-        <div class="icon"><span class="icosg-target1"></span></div>		
-        <h2>  Give Items  </h2>
-        <div class="right"> 
-            <?php echo anchor('admin/give_items/create', '<i class="glyphicon glyphicon-plus">
+    <!-- Pager -->
+    <div class="panel panel-white animated fadeIn">
+        <div class="panel-heading">
+            <h4 class="panel-title">Give Items</h4>
+            <div class="heading-elements">
+              <?php echo anchor('admin/give_items/create', '<i class="glyphicon glyphicon-plus">
                 </i> ' . lang('web_add_t', array(':name' => 'Give Items')), 'class="btn btn-primary"'); ?> 
             <?php echo anchor('admin/give_items', '<i class="glyphicon glyphicon-list">
                 </i> ' . lang('web_list_all', array(':name' => 'Give Items')), 'class="btn btn-primary"'); ?> 
-
+            </div>
         </div>
-    </div>
-
-
-    <div class="block-fluid">
-
+        
+        <div class="panel-body">
         <?php
         $attributes = array('class' => 'form-horizontal', 'id' => '');
         echo form_open_multipart(current_url(), $attributes);
@@ -55,7 +53,7 @@
                 ?>
             </div></div>
 
-        <div class='widget'>
+        <div class='form-group'>
             <div class='head dark'>
                 <div class='icon'><i class='icos-pencil'></i></div>
                 <h2>Comment </h2></div>
@@ -65,7 +63,7 @@
             </div>
         </div>
 
-        <div class='form-group'><div class="col-md-3"></div><div class="col-md-6">
+        <div class='form-group col-md-12'><div class="col-md-3"></div><div class="col-md-12 text-right">
 
 
                 <?php echo form_submit('submit', ($updType == 'edit') ? 'Update' : 'Save', (($updType == 'create') ? "id='submit' class='btn btn-primary''" : "id='submit' class='btn btn-primary'")); ?>

@@ -1,18 +1,20 @@
-<div class="head"> 
-			 <div class="icon"><span class="icosg-target1"></span> </div>
-            <h2>  Give out  Book Fund  </h2>
-             <div class="right">  
-             <?php echo anchor( 'admin/borrow_book_fund/create/'.$page, '<i class="glyphicon glyphicon-plus"></i> Give out  Book Fund', 'class="btn btn-primary"');?>
+<!-- Pager -->
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+	<div class="panel-heading">
+		<h4 class="panel-title">Give out  Book Fund</h4>
+		<div class="heading-elements">
+		  <?php echo anchor( 'admin/borrow_book_fund/create/'.$page, '<i class="glyphicon glyphicon-plus"></i> Give out  Book Fund', 'class="btn btn-primary"');?>
 			 
 			 <?php echo anchor( 'admin/borrow_book_fund' , '<i class="glyphicon glyphicon-list">
-                </i> '.lang('web_list_all', array(':name' => 'Borrowed Books')), 'class="btn btn-primary"');?> 
-             
-                </div>
-                </div>
-         	                    
-              
-                 <?php if ($borrow_book_fund): ?>
-                 <div class="block-fluid">
+                </i> '.lang('web_list_all', array(':name' => 'Borrowed Books')), 'class="btn btn-primary"');?>
+		</div>
+	</div>
+	
+	
+	
+           <?php if ($borrow_book_fund): ?>
+             <div class="panel-body">
 				<table class="table table-hover fpTable" cellpadding="0" cellspacing="0" width="100%">
 	 <thead>
                 <th>#</th>
@@ -73,9 +75,9 @@
 						 <div class='btn-group'>
 							<button class='btn dropdown-toggle' data-toggle='dropdown'>Action <i class='glyphicon glyphicon-caret-down'></i></button>
 							<ul class='dropdown-menu pull-right'>
-								 <li><a  href='<?php echo site_url('admin/borrow_book_fund/edit/'.$p->id.'/'.$page);?>'><i class='glyphicon glyphicon-edit'></i> Edit</a></li>
+								 <li><a  href='<?php echo site_url('admin/borrow_book_fund/edit/'.$p->id.'/'.$page);?>'><i class='glyphicon glyphicon-edit'></i> </a></li>
 							  
-								<li><a  onClick="return confirm('<?php echo lang('web_confirm_delete')?>')" href='<?php echo site_url('admin/borrow_book_fund/delete/'.$p->id.'/'.$page);?>'><i class='glyphicon glyphicon-trash'></i> Trash</a></li>
+								<li><a  onClick="return confirm('<?php echo lang('web_confirm_delete')?>')" href='<?php echo site_url('admin/borrow_book_fund/delete/'.$p->id.'/'.$page);?>'><i class='glyphicon glyphicon-trash'></i> </a></li>
 							</ul>
 						</div>
 					</td>
@@ -91,3 +93,4 @@
 <?php else: ?>
  	<p class='text-center'><?php echo lang('web_no_elements');?></p>
  <?php endif ?>
+ </div>

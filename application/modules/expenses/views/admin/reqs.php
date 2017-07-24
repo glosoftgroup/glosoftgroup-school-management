@@ -1,8 +1,9 @@
-<div class="head">
-    <div class="icon"><span class="icosg-target1"></span></div>
-    <h2>Requisitions </h2> 
-    <div class="right">
-         <?php
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+  <div class="panel-heading">
+    <h4 class="panel-title">Requisitions</h4>
+    <div class="heading-elements">
+       <?php
              if ($this->acl->is_allowed(array('admin', 'expenses', 'create_req'), 1))
              {
                   ?>
@@ -10,10 +11,12 @@
                   <?php echo anchor('admin/expenses/requisitions', '<i class="glyphicon glyphicon-list">
                 </i> List All', 'class="btn btn-primary"'); ?>              
              <?php } ?>
-    </div>   					
-</div>
-<div class="block-fluid">
-    <table cellpadding="0" cellspacing="0" border="0" class='hover' id="exx_table" width="100%">
+    </div>
+  </div>
+  
+  <div class="panel-body">
+    
+    <table cellpadding="0" cellspacing="0" border="0" class='table table-hover' id="exx_table" width="100%">
         <thead>
         <th>#</th>
         <th>Requisition Date</th>

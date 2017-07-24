@@ -265,6 +265,7 @@ class Index extends Public_Controller
          */
         function login()
         {
+            redirect('admin/login');
                 if ($this->ion_auth->logged_in())
                 {
                         //already logged in so no need to access this page

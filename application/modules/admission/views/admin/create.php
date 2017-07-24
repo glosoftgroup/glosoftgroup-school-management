@@ -1,7 +1,7 @@
 
 <div class="col-md-8">
 <!-- Pager -->
-<div class="panel panel-white animated fadeIn">
+<div class="panel panel-white">
     <div class="panel-heading">
         <h6 class="panel-title">Admission</h6>
         <div class="heading-elements">
@@ -33,7 +33,7 @@
 
         <div class='form-group'>
             <div class="col-md-2" for='dob'>Dob <span class='required'>*</span></div><div class="col-md-10">
-                <input id='dob datetimepicker1' type='text' name='dob' maxlength='' class='form-control datepicker' value="<?php echo set_value('dob', (isset($result->dob)) ? $result->dob : ''); ?>"  />
+                <input id='dob ' type='text' name='dob' maxlength='' class='form-control datepicker' value="<?php echo set_value('dob', (isset($result->dob)) ? $result->dob : ''); ?>"  />
                 <?php echo form_error('dob'); ?>
             </div>
         </div>

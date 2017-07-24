@@ -1,15 +1,13 @@
-<div class="head"> 
-			 <div class="icon"><span class="icosg-target1"></span> </div>
-            <h2>  Return Book Fund  </h2>
-             <div class="right">  
-            
-			
-                </div>
-                </div>
-         	                    
-              
-                 <?php if ($return_book_fund): ?>
-                 <div class="block-fluid">
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+	<div class="panel-heading">
+		<h4 class="panel-title">Return Book Fund</h4>
+		<div class="heading-elements">
+		
+		</div>
+	</div>         
+                <?php if ($return_book_fund): ?>
+    <div class="panel-body">
 				<table class="table table-hover fpTable" cellpadding="0" cellspacing="0" width="100%">
 	 <thead>
                 <th>#</th>
@@ -61,5 +59,5 @@
 </div>
 
 <?php else: ?>
- 	<h4 class='text'>No Book has been borrowed at the moment !! <a href="<?php echo base_url('admin/borrow_book_fund/create/1');?>" style="font-size:.9em">Click here to give out book</a></h4>
+ 	<h4 class='text-center p-10'>No Book has been borrowed at the moment !! <a href="<?php echo base_url('admin/borrow_book_fund/create/1');?>" style="font-size:.9em">Click here to give out book</a></h4>
  <?php endif ?>

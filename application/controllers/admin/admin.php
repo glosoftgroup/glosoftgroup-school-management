@@ -201,6 +201,7 @@
          //log the user in
          function login()
          {
+          
               $this->load->model('settings/settings_m');
               $this->data['settings'] = $this->settings_m->fetch();
               $this->template->set_layout('login');
