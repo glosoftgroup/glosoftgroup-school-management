@@ -1,18 +1,18 @@
 <div class="col-md-8">
-        <div class="head"> 
-             <div class="icon"><span class="icosg-target1"></span></div>		
-            <h2>  allowances  </h2>
-             <div class="right"> 
-             <?php echo anchor( 'admin/allowances/create' , '<i class="glyphicon glyphicon-plus">
+    <!-- Pager -->
+    <div class="panel panel-white animated fadeIn">
+    	<div class="panel-heading">
+    		<h4 class="panel-title">allowances</h4>
+    		<div class="heading-elements">
+    		  <?php echo anchor( 'admin/allowances/create' , '<i class="glyphicon glyphicon-plus">
                 </i> '.lang('web_add_t', array(':name' => 'allowances')), 'class="btn btn-primary"');?> 
               <?php echo anchor( 'admin/allowances' , '<i class="glyphicon glyphicon-list">
                 </i> '.lang('web_list_all', array(':name' => 'allowances')), 'class="btn btn-primary"');?> 
-             
-                </div>
-                </div>
-         	                    
-               
-				   <div class="block-fluid">
+    		</div>
+    	</div>
+    	
+    	<div class="panel-body">		
+            
 				   <?php 
 $attributes = array('class' => 'form-horizontal', 'id' => '');
 echo   form_open_multipart(current_url(), $attributes); 
@@ -20,7 +20,7 @@ echo   form_open_multipart(current_url(), $attributes);
 				   	   <!-- END ADVANCED SEARCH EXAMPLE -->
         <!-- BEGIN TABLE DATA -->
         <div id="editable_wrapper" class="dataTables_wrapper form-inline" role="grid">
-		 <table cellpadding="0" cellspacing="0" width="100%">
+		 <table class="table table-hover" cellpadding="0" cellspacing="0" width="100%">
 		  <!-- BEGIN -->
             <thead>
                 <tr role="row">
@@ -32,14 +32,10 @@ echo   form_open_multipart(current_url(), $attributes);
 				
 				</tr>
             </thead>
-           </table>
-		   
-		   <div id="entry1" class="clonedInput">
-							
-							 <table cellpadding="0" cellspacing="0" width="100%">  
+            
 										<tbody>
 										
-										<tr >
+										<tr id="entry1" class="clonedInput" >
                   
 													 <td width="3%">
 													  <span id="reference" name="reference" class="heading-reference">1</span>
@@ -72,7 +68,7 @@ echo   form_open_multipart(current_url(), $attributes);
 		</div>
 
 
-<div class='form-group'><div class="col-md-10">
+<div class='form-group'><div class="col-md-10 p-10">
     
 
     <?php echo form_submit( 'submit', ($updType == 'edit') ? 'Update' : 'Save', (($updType == 'create') ? "id='submit' class='btn btn-primary''" : "id='submit' class='btn btn-primary'")); ?>

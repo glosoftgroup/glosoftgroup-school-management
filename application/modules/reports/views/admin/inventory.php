@@ -1,10 +1,16 @@
-<div class="head">
-    <div class="icon"><span class="icosg-target1"></span></div>
-    <h2> School Assets </h2> 
-
-</div>
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+    <div class="panel-heading">
+        <h4 class="panel-title"> School Assets</h4>
+        <div class="heading-elements">
+        
+        </div>
+    </div>
+    
+   
+   
 <?php if ($add_stock): ?>              
-    <div class="block-fluid">
+     <div class="panel-body">
 
         <?php
         $total_cost = 0;

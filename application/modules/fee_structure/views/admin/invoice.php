@@ -18,8 +18,7 @@
         <input type="checkbox" name="waiver" value="1"/> Include Fee Waiver
         <input type="checkbox" name="bal" value="1"/> Include Balance
         <button class="btn btn-warning"  style="height:30px;" type="submit">View Invoice</button>
-        <a href="" onClick="window.print();
-                    return false" class="btn btn-primary"><i class="icos-printer"></i> Print
+        <a href="" id="printBtn" onClick="return false;" class="btn btn-primary"><i class="icos-printer"></i> Print
         </a>
         </form>
         <br>
@@ -27,7 +26,7 @@
     </div>
 </div>
 
-<div class="widget">
+<div class="widget" id="printme">
     <?php
     if ($flag)
     {//************************multiple**/

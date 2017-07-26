@@ -1,13 +1,12 @@
 <?php echo theme_js('select2/select2.min.js'); ?>
 <div class="  right" id="menus"> 
-    <a href="" onClick="window.print();
-              return false" class="btn btn-primary"><i class="icos-printer"></i> Print</a>
+    <a href="" id="printBtn" onClick="return false;" class="btn btn-primary"><i class="icos-printer"></i> Print</a>
     <a href="<?php echo site_url('admin/fee_payment/create/1'); ?>" class="btn btn-primary"><i class="glyphicon glyphicon-file"></i> New Payment</a>
     <a href="<?php echo site_url('admin/fee_payment/'); ?>" class="btn btn-primary"><i class="glyphicon glyphicon-list"></i> List Fee Statements</a>
     <a href="<?php echo site_url('admin/admission/view/' . $post->id); ?>" class="btn btn-success"><i class="glyphicon glyphicon-eye-open"></i> View <?php echo $post->first_name; ?>'s Profile</a>
 </div>
 <div class="widget ">
-    <div class="col-md-12 slip">
+    <div class="col-md-12 slip" id="printme">
         <div class="statement panel">
             <div class="block invoice panel-body slip-content">
                 <div class="row">
@@ -60,13 +59,13 @@
                          foreach ($p as $term => $trans)
                          {
                               ?>
-                              <table class="nob"  width="100%" > 
+                              <table class="table table-hover table-bordered nob"  width="100%" > 
                                   <tr>
                                       <td width="59%" style="border:0 !important;"><b><?php echo $this->terms[$term]; ?></b></td> 
                                       <td width="41%"  style="border:0 !important;" class="rttx">Balance Brought Forward: <b><?php echo number_format($ibal, 2); ?></b></td>
                                   </tr> 
                               </table>
-                              <table cellpadding="0" cellspacing="0" width="100%" class="stt" style="margin-bottom: 6px;">
+                              <table cellpadding="0" cellspacing="0" width="100%" class=" table table-hover stt" style="margin-bottom: 6px;">
                                   <thead>
                                       <tr>
                                           <th width="3%">#</th>
@@ -198,7 +197,7 @@
                                          </strong>
                                      </span>
                                 <?php else: ?>
-                                     <span class="highlight">
+                                     <span class="highlight col-md-12 text-right">
                                          <strong><span>Balance:</span> <?php echo $this->currency; ?> <?php echo number_format($ibal, 2); ?>                                             <em></em>
                                          </strong>
                                      </span>
@@ -207,8 +206,8 @@
                     </div>
                 </div>
             </div>
-            <div class="footer">
-                <div class="center" style="border-top:1px solid #ccc">		
+            <div class="footer p-10">
+                <div class="text-center" style="border-top:1px solid #ccc">		
                     <span class="center" style="font-size:0.8em !important;text-align:center !important;">
                          <?php
                              if (!empty($this->school->tel))

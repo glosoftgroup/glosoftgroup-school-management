@@ -9,20 +9,20 @@
   </script>
 
 <div class="col-md-8">
-        <div class="head"> 
-             <div class="icon"><span class="icosg-target1"></span></div>		
-            <h2>  Sales Items Stock  </h2>
-             <div class="right"> 
-             <?php echo anchor( 'admin/sales_items_stock/create' , '<i class="glyphicon glyphicon-plus">
+   <!-- Pager -->
+   <div class="panel panel-white animated fadeIn">
+   	<div class="panel-heading">
+   		<h4 class="panel-title"> Sales Items Stock </h4>
+   		<div class="heading-elements">
+   		  <?php echo anchor( 'admin/sales_items_stock/create' , '<i class="glyphicon glyphicon-plus">
                 </i> '.lang('web_add_t', array(':name' => 'Sales Items Stock')), 'class="btn btn-primary"');?> 
               <?php echo anchor( 'admin/sales_items_stock' , '<i class="glyphicon glyphicon-list">
-                </i> '.lang('web_list_all', array(':name' => 'Sales Items Stock')), 'class="btn btn-primary"');?> 
-             
-                </div>
-                </div>
-         	                    
-               
-				   <div class="block-fluid">
+                </i> '.lang('web_list_all', array(':name' => 'Sales Items Stock')), 'class="btn btn-primary"');?>
+   		</div>
+   	</div>
+   	
+   	<div class="panel-body">		
+           
 
 <?php 
 $attributes = array('class' => 'form-horizontal', 'id' => '');
@@ -50,7 +50,7 @@ echo   form_open_multipart(current_url(), $attributes);
 <div class='form-group'>
 	<div class=' col-md-3' for='quantity'>Quantity <span class='required'>*</span></div>
         <div class="col-md-6">
-	<?php echo form_input('quantity' ,$result->quantity , 'id="quantity"  class="" id="focusedinput" onblur="totals()"' );?>
+	<?php echo form_input('quantity' ,$result->quantity , 'id="quantity"  class="form-control" id="focusedinput" onblur="totals()"' );?>
  	<?php echo form_error('quantity'); ?>
 </div>
 </div>
@@ -58,7 +58,7 @@ echo   form_open_multipart(current_url(), $attributes);
 <div class='form-group'>
 	<div class=' col-md-3' for='unit_price'>Unit Price <span class='required'>*</span></div>
         <div class="col-md-6">
-	<?php echo form_input('unit_price' ,$result->unit_price , 'id="unit_price"  class="" id="focusedinput" onblur="totals()"' );?>
+	<?php echo form_input('unit_price' ,$result->unit_price , 'id="unit_price"  class="form-control" id="focusedinput" onblur="totals()"' );?>
  	<?php echo form_error('unit_price'); ?>
 </div>
 </div>
@@ -66,7 +66,7 @@ echo   form_open_multipart(current_url(), $attributes);
 <div class='form-group'>
 	<div class=' col-md-3' for='total'>Total ( Buying Price ) <span class='required'>*</span></div>
         <div class="col-md-6">
-	<?php echo form_input('total' ,$result->total , 'id="total"  class="" id="focusedinput" ' );?>
+	<?php echo form_input('total' ,$result->total , 'id="total"  class="form-control" id="focusedinput" ' );?>
  	<?php echo form_error('total'); ?>
 </div>
 </div>
@@ -88,7 +88,7 @@ echo   form_open_multipart(current_url(), $attributes);
 <div class='form-group'>
 	<div class=' col-md-3' for='receipt'><?php echo lang( ($updType == 'edit')  ? "web_file_edit" : "web_file_create" )?> (receipt) </div>
  <div class="col-md-6">
-	<input id='receipt' type='file' name='receipt' />
+	<input id='receipt' class="file-styled-primary" type='file' name='receipt' />
 
 	<?php if ($updType == 'edit'): ?>
 	<a href='/public/uploads/add_stock/files/<?php echo $add_stock_m->receipt?>' />Download actual file (receipt)</a>
@@ -99,7 +99,7 @@ echo   form_open_multipart(current_url(), $attributes);
 </div>
 </div>
 
-<div class='widget'>
+<div class='form-group'>
   <div class='head dark'>
         <div class='icon'><i class='icos-pencil'></i></div>
 	<h2>Description </h2></div>
@@ -109,7 +109,7 @@ echo   form_open_multipart(current_url(), $attributes);
 </div>
 </div>
 
-<div class='form-group'><div class="col-md-3"></div><div class="col-md-6">
+<div class='form-group'><div class="col-md-3"></div><div class="col-md-12 text-right">
     
 
     <?php echo form_submit( 'submit', ($updType == 'edit') ? 'Update' : 'Save', (($updType == 'create') ? "id='submit' class='btn btn-primary''" : "id='submit' class='btn btn-primary'")); ?>

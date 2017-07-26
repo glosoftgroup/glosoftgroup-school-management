@@ -3,12 +3,17 @@
 
     <div class="col-sm-12">
 
-        <div class="widget">                    
-            <div class="head dark">
-                <div class="icon"><span class="icos-box-add"></span></div>
-                <h2>Inbox</h2>
-            </div>                                                 
-          <div class="block-fluid">
+     <!-- Pager -->
+     <div class="panel panel-white animated fadeIn">
+         <div class="panel-heading">
+             <h4 class="panel-title">Inbox</h4>
+             <div class="heading-elements">
+             
+             </div>
+         </div>
+         
+         <div class="panel-body">
+             
                 <?php if ($sms): ?>
 
                         <table class="table-hover mailbox" cellpadding="0" cellspacing="0">

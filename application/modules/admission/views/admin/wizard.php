@@ -1,4 +1,5 @@
-<?=core_js('core/js/plugins/forms/wizards/stepy.min.js'); ?> 
+<?=core_js('core/js/plugins/forms/wizards/stepy.min.js'); ?>
+<?=core_js('core/js/pages/wizard_stepy.js');?> 
 <div class="col-md-12">
 <!-- Pager -->
 <div class="panel panel-white animated fadeIn">
@@ -18,33 +19,34 @@
 
             <fieldset title="Student Details">
                 <legend>Biodata</legend>
+            <div class="row">
+             <div class='col-md-6'>
                 <div class="form-group">
-                    <div class="col-md-3">First Name:</div>
-                    <div class="col-md-4">
+                    <label>First Name: </label>                   
                         <?php echo form_input('first_name', $result->first_name, 'class="form-control validate[required,minSize[2]]"'); ?>
                         <span class="bottom">Required, minSize = 2</span>
-                    </div>
+                   
                 </div>
                 <div class="form-group">
-                    <div class="col-md-3">Last Name:</div>
-                    <div class="col-md-4">
+                   <label>Last Name:</label>
+                   
                         <?php echo form_input('last_name', $result->last_name, 'class="form-control validate[required,minSize[2]]"'); ?>
                         <span class="bottom">Required, minSize = 2</span>
-                    </div>
+                  
                 </div>
                 <div class="form-group">
-                    <div class="col-md-3">Date of Birth:</div>
-                    <div class="col-md-4">
+                   <label>Date of Birth:</label>
+                    
                         <div id="datetimepicker1" class="input-group date form_datetime">
                             <?php echo form_input('dob', $result->dob > 0 ? date('d M Y', $result->dob) : $result->dob, 'class=" form-control datepicker col-md-4"'); ?>
                             <span class="input-group-addon "><i class="glyphicon glyphicon-calendar"></i></span>
                             <span class="bottom">Required, date</span>
                         </div>
-                    </div>
+                   
                 </div>
                 <div class="form-group">
-                    <div class="col-md-3">Gender:</div>
-                    <div class="col-md-4">
+                   <label>Gender:</label>
+                    
                         <?php
                         $st = '';
                         if ($result->gender == 1)
@@ -57,97 +59,111 @@
                             $sf = 'checked="checked"';
                         }
                         ?>
-                        <div class = "radio"> <input type = "radio"  <?php echo $st; ?> name = "gender" class = "validate[required]" value = "1"> </div>Male
-                        <div class = "radio"> <input type = "radio" <?php echo $sf; ?> name = "gender" value = "2" class = "validate[required]"> </div>Female
-                    </div>
+                        <div class = "radio">
+                            <label>
+                             <input type = "radio" style="position: static;"  <?php echo $st; ?> name = "gender" class = "styled validate[required]" value = "1">
+                                    Male
+                            </label>
+                         </div>
+                        <div class = "radio">
+                         <label>
+                             <input type = "radio" style="position: static;" <?php echo $sf; ?> name = "gender" value = "2" class = "styled validate[required]"> 
+                             Female 
+                         </label>                        
+                        </div>
+
+                    
                 </div>
 
 
                 <div class = "form-group">
-                    <div class = "col-md-3">Passport Photo</div>
-                    <div class = "col-md-4">
+                    <label>Passport Photo</label>
+                    
                         <?php
-                        echo form_upload('userfile', '', 'id="userfile" ');
+                        echo form_upload('userfile', '', 'id="userfile" class="file-styled-primary" ');
                         echo form_input('photo', $result->photo, ' readonly="readonly" style="display:none" class="col-md-4" id="sphoto" ');
                         ?>
-                    </div>
+                    
                 </div>
 
                 <div class = "form-group">
-                    <div class = "col-md-3">Student's E-mail: (Optional)</div>
-                    <div class = "col-md-4">
+                   <label>Student's E-mail: (Optional)</label>
+                    
                         <?php
                        $addi =  $updType=='edit'? '' : ',ajax[ajaxUserCallPhp]';
                         echo form_input('email', $result->email, 'class="form-control validate[custom[email] '.$addi.']" id="smail" placeholder="Optional"');
                         ?>
                         <span class="bottom">Valid email - Will be used to Login</span>
-                    </div>
+                  
                 </div>
+            </div>
+            <div class='col-md-6'>
 
                 <div class="form-group">
-                    <div class="col-md-3">Former school:</div>
-                    <div class="col-md-4">
+                    <label>Former school:</label>
+                    
                         <?php echo form_input('former_school', $result->former_school, 'class="form-control"'); ?>
                         <span class="bottom">Optional</span>
-                    </div>
+                   
                 </div>
                 <div class="form-group">
-                    <div class="col-md-3">Entry marks:</div>
-                    <div class="col-md-4">
+                   <label>Entry marks:</label>
+                    
                         <?php echo form_input('entry_marks', $result->entry_marks, 'class="form-control"'); ?>
                         <span class="bottom">Optional</span>
-                    </div>
+                   
                 </div>
                 <div class="form-group">
-                    <div class="col-md-3">Allergies:</div>
-                    <div class="col-md-4">
-                         <textarea name="allergies" class=""><?php echo isset($result) && !empty($result) ? $result->allergies : $this->input->post('allergies'); ?></textarea>
+                   <label>Allergies:</label>
+                   
+                         <textarea name="allergies" class="form-control"><?php echo isset($result) && !empty($result) ? $result->allergies : $this->input->post('allergies'); ?></textarea>
                             <span class="bottom">Optional</span>
 
-                    </div>
+                  
                 </div>
                 <div class="form-group">
-                    <div class="col-md-3">Doctor's Name:</div>
-                    <div class="col-md-4">
+                    <label>Doctor's Name:</label>
+                   
                         <?php echo form_input('doctor_name', $result->doctor_name, 'class="form-control"'); ?>
                         <span class="bottom">Optional</span>
-                    </div>
+                   
                 </div>
                 <div class="form-group">
-                    <div class="col-md-3">Doctor's Phone:</div>
-                    <div class="col-md-4">
+                    <label>Doctor's Phone:</label>
+                    
                         <?php echo form_input('doctor_phone', $result->doctor_phone, 'class="form-control"'); ?>
                         <span class="bottom">Optional</span>
-                    </div>
+                    
                 </div>
-<div class="form-group">
-                    <div class="col-md-3">Prefered Hospital:</div>
-                    <div class="col-md-4">
+              <div class="form-group">
+                    <label>Prefered Hospital:</label>
+                    
                         <?php echo form_input('hospital', $result->hospital, 'class="form-control"'); ?>
                         <span class="bottom">Optional</span>
-                    </div>
+                   
                 </div>
-
+            </div>
+            </div>
             </fieldset>
 
             <fieldset title="Parent Details">
                 <legend>Address & Contact </legend>
+            
                 <div class="form-group" id="swtch">
-                    <div class="col-md-3">Parent:</div>
-                    <div class="col-md-6">
+                    <label>Parent:</label>
+                   
                         <div class = "radio"> <input type = "radio" id="pnew"  name = "ptype" class = "validate[required] " <?php echo $updType == 'edit' ? 'disabled="disabled" ' : ''; ?> value = "1"> </div>New Parent
                         <div class = "radio"> <input type = "radio" id="pexists" name = "ptype" value = "2" class = "validate[required]" <?php echo $updType == 'edit' ? 'disabled="disabled" ' : ''; ?>> </div>Existing Parent
-                    </div>
+                   
                 </div>
 
                 <div id="pdrop" style="display: none;">
                     <div class='form-group'>
-                        <div class="col-md-3" for='parent_id'>Select Parent <span class='required'>*</span></div>
-                        <div class="col-md-4">
-
+                        <label>Select Parent <span class='required'>*</span></label>
+                       
                             <?php echo form_dropdown('parent_id', $parents, (isset($result->parent_id)) ? $result->parent_id : '', ' class="select" ');
                             ?><span class="bottom">Required</span>
-                        </div>
+                     
                     </div>
                 </div>
 
@@ -188,7 +204,7 @@
                          <div class="form-group">
                             <div class="col-md-3"> Occupation:</div>
                             <div class="col-md-8">
-                                <?php echo form_input('occupation', isset($pero) && !empty($pero) ? $pero->occupation : $this->input->post('occupation'), 'class=""'); ?>
+                                <?php echo form_input('occupation', isset($pero) && !empty($pero) ? $pero->occupation : $this->input->post('occupation'), 'class="form-control"'); ?>
                                 <span class="bottom">optional</span>
                             </div>
                         </div>
@@ -196,7 +212,7 @@
                         <div class="form-group">
                             <div class="col-md-3"> Address:</div>
                             <div class="col-md-8">
-                                <textarea name="address" class=""><?php echo isset($pero) && !empty($pero) ? $pero->address : $this->input->post('address'); ?></textarea>
+                                <textarea name="address" class="form-control"><?php echo isset($pero) && !empty($pero) ? $pero->address : $this->input->post('address'); ?></textarea>
                                 <span class="bottom">Optional</span>
                             </div>
                         </div>
@@ -276,7 +292,7 @@
 
             <fieldset title="Registration Details">
                 <legend>Admission Details</legend>
-
+            <div class="row">
                 <div class="form-group">
                     <div class="col-md-3">Date of Admission:</div>
                     <div class="col-md-4">
@@ -311,10 +327,10 @@
                         ?>
                     </div>
                 </div>
-
+            </div>
             </fieldset>
 
-       
+         
             <?php
             if ($updType == 'edit')
             {
@@ -327,6 +343,7 @@
             <?php endif ?>
             <?php echo form_close(); ?>
 
+
             <div class="clearfix"></div>
     </div>
 </div>
@@ -334,8 +351,7 @@
 </div>
 
 
-   
-
+ 
 
 <script>
     $(document).ready(
@@ -647,3 +663,8 @@ body[dir="rtl"] .formError .formErrorArrow, body.rtl .formError .formErrorArrow 
 }
 
 </style>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.button-next').addClass('btn btn-primary');
+    });
+</script>

@@ -1,19 +1,20 @@
 <div class="col-md-12">
-        <div class="head"> 
-             <div class="icon"><span class="icosg-target1"></span></div>		
-            <h2>  Record Sales  </h2>
-             <div class="right"> 
-             <?php echo anchor( 'admin/record_sales/create' , '<i class="glyphicon glyphicon-plus">
+      <!-- Pager -->
+      <div class="panel panel-white animated fadeIn">
+          <div class="panel-heading">
+              <h4 class="panel-title">Record Sales</h4>
+              <div class="heading-elements">
+                 <?php echo anchor( 'admin/record_sales/create' , '<i class="glyphicon glyphicon-plus">
                 </i> Record Sales', 'class="btn btn-primary"');?> 
               <?php echo anchor( 'admin/record_sales' , '<i class="glyphicon glyphicon-list">
                 </i> '.lang('web_list_all', array(':name' => 'Record Sales')), 'class="btn btn-primary"');?> 
              <?php echo anchor( 'admin/record_sales/voided' , '<i class="glyphicon glyphicon-list">
-                </i> All Voided Sales', 'class="btn btn-warning"');?> 
-                </div>
-                </div>
-         	                    
-               
-				   <div class="block-fluid">
+                </i> All Voided Sales', 'class="btn btn-warning"');?>
+              </div>
+          </div>
+          
+          <div class="panel-body">		
+            
 
 <?php 
 $attributes = array('class' => 'form-horizontal', 'id' => '');
@@ -43,8 +44,11 @@ echo   form_open_multipart(current_url(), $attributes);
 
         <!-- BEGIN TABLE DATA -->
         <div id="editable_wrapper" class="dataTables_wrapper form-inline" role="grid">
-            <table cellpadding="0" cellspacing="0" width="100%">
-                <!-- BEGIN -->
+            
+
+            <div >
+
+                <table class="table table-hover" cellpadding="0" cellspacing="0" width="100%"> 
                 <thead>
                     <tr role="row">
                         <th width="3%">#</th>
@@ -55,15 +59,10 @@ echo   form_open_multipart(current_url(), $attributes);
                         <th width="40%">Description</th>
 
                     </tr>
-                </thead>
-            </table>
-
-            <div id="entry1" class="clonedInput">
-
-                <table cellpadding="0" cellspacing="0" width="100%">  
+                </thead> 
                     <tbody>
 
-                        <tr >
+                        <tr id="entry1" class="clonedInput">
 
                             <td width="3%">
                                 <span id="reference" name="reference" class="heading-reference">1</span>
@@ -74,13 +73,13 @@ echo   form_open_multipart(current_url(), $attributes);
                             <td width="22%">
                                 <?php
                                 
-                                echo form_dropdown('item_id[]', $items, (isset($result->item_id)) ? $result->item_id : '', ' class="item_id" id="item_id" data-placeholder="Select Options..." ');
+                                echo form_dropdown('item_id[]', $items, (isset($result->item_id)) ? $result->item_id : '', ' class="form-control item_id" id="item_id" data-placeholder="Select Options..." ');
                                 echo form_error('item_id');
                                 ?>
                             </td>
 							 <td width="10%">
 
-                                <input type="text" name="quantity[]" id="quantity" class="quantity" value="<?php
+                                <input type="text" name="quantity[]" id="quantity" class="form-control quantity" value="<?php
                                 if (!empty($result->quantity))
                                 {
                                     echo $result->quantity;
@@ -91,7 +90,7 @@ echo   form_open_multipart(current_url(), $attributes);
 							
                             <td width="10%">
 
-                                <input type="text" name="unit_price[]" id="unit_price" class="unit_price" value="<?php
+                                <input type="text" name="unit_price[]" id="unit_price" class="form-control unit_price" value="<?php
                                 if (!empty($result->unit_price))
                                 {
                                     echo $result->unit_price;
@@ -101,7 +100,7 @@ echo   form_open_multipart(current_url(), $attributes);
                             </td>
 							<td width="15%">
 
-                                <input type="text" name="total[]" id="total" class="total" value="<?php
+                                <input type="text" name="total[]" id="total" class="form-control total" value="<?php
                                 if (!empty($result->total))
                                 {
                                     echo $result->total;
@@ -130,7 +129,7 @@ echo   form_open_multipart(current_url(), $attributes);
         </div>
 
 
-        <div class='form-group'><div class="col-md-2"></div><div class="col-md-10">
+        <div class='form-group'><div class="col-md-2"></div><div class="col-md-12 text-right p-10">
                 <?php echo form_submit('submit', ($updType == 'edit') ? 'Update' : 'Save', (($updType == 'create') ? "id='submit' class='btn btn-primary''" : "id='submit' class='btn btn-primary'")); ?>
                 <?php echo anchor('admin/fee_payment', 'Cancel', 'class="btn  btn-default"'); ?>
             </div></div>

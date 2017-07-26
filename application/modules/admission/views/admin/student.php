@@ -1,6 +1,6 @@
 <div class="col-md-12">
     <div class="panel">
-        <div class="panel-body">
+        <div class="panel-body" id="printme">
             <div class="row">
                 <div class="col-md-2">
                     <div class="image" >
@@ -63,8 +63,8 @@
                     <div class="right">
                         <br>
                         <br>
-                        <button onClick="window.print();
-                                    return false" class="btn btn-primary" type="button"><span class="glyphicon glyphicon-print"></span> Print </button>
+                        <button id="printBtn" onClick="
+                                    return false;" class="btn btn-primary" type="button"><span class="glyphicon glyphicon-print"></span> Print </button>
                                 <?php echo anchor('admin/admission/edit/' . $student->id, '<i class="glyphicon glyphicon-edit">
                 </i> Edit Details', 'class="btn btn-primary"'); ?>
                                 <?php echo anchor('admin/admission/create/', '<i class="glyphicon glyphicon-plus">
@@ -563,6 +563,15 @@
         }
         .head{
             display:none;
+        }
+        .sidebar { 
+            display: none; 
+        }
+        .btn {
+            display: none;
+        }
+        .page-header{
+            display: none;
         }
 
         .tip{

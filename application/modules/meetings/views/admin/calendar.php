@@ -1,19 +1,20 @@
 <div class="col-md-12">
-<div class="head">
-                    <div class="icon"><span class="icosg-target1"></span></div>
-                    <h2> Meetings Calender</h2> 
-                     <div class="right">                            
-                <?php if (!$this->ion_auth->is_in_group($this->user->id, 3)){ ?>        
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+  <div class="panel-heading">
+    <h4 class="panel-title">Meetings Calender</h4>
+    <div class="heading-elements">
+      <?php if (!$this->ion_auth->is_in_group($this->user->id, 3)){ ?>        
              <?php echo anchor( 'admin/meetings/create/', '<i class="glyphicon glyphicon-plus"></i> '.lang('web_add_t', array(':name' => ' New Event')), 'class="btn btn-primary"');?>
-			 <?php } ?>
-			  <?php echo anchor( 'admin/meetings/calendar' , '<i class="glyphicon glyphicon-calendar"></i> Calendar View', 'class="btn btn-primary"');?> 
+       <?php } ?>
+        <?php echo anchor( 'admin/meetings/calendar' , '<i class="glyphicon glyphicon-calendar"></i> Calendar View', 'class="btn btn-primary"');?> 
                 <?php echo anchor( 'admin/meetings/' , '<i class="glyphicon glyphicon-list">
                 </i> List View', 'class="btn btn-primary"');?>
-			
-                     </div>    					
-                </div>
-         	                 
-                <div class="block-fluid " >
+    </div>
+  </div>
+  
+  <div class="panel-body">
+                    
                             <div id="calendar"></div>
                         </div> 
   </div>

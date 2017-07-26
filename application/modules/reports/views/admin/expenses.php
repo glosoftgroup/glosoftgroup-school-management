@@ -1,9 +1,14 @@
-
-<div class="head">
-    <div class="icon"><span class="icosg-target1"></span></div>
-    <h2>Expense Summary Report</h2> 
-
-</div>
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+    <div class="panel-heading">
+        <h4 class="panel-title">Expense Summary Report</h4>
+        <div class="heading-elements">
+        
+        </div>
+    </div>
+    
+    <div class="panel-body">
+   
 <div class="toolbar">
     <div class="noovf">
         <?php echo form_open(current_url()); ?>
@@ -18,7 +23,7 @@
 <div class="block invoice">
 
     <?php if (!empty($post)): ?>
-        <table cellpadding="0" cellspacing="0" width="100%">
+        <table class=" table-bordered table-striped " cellpadding="0" cellspacing="0" width="100%">
             <thead>
                 <tr>
                     <th width="3%">#</th>

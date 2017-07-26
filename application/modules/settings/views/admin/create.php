@@ -1,11 +1,15 @@
 <div class="col-md-9">
-    <div class="head"> 
-        <div class="icon"><span class="icosg-target1"></span></div>		
-        <h2>  Settings  </h2>
-        <div class="right">
-        </div>
-    </div>
-    <div class="block-fluid">
+  <!-- Pager -->
+  <div class="panel panel-white animated fadeIn">
+      <div class="panel-heading">
+          <h4 class="panel-title">Settings</h4>
+          <div class="heading-elements">
+          
+          </div>
+      </div>
+      
+      <div class="panel-body">	
+        
         <?php
         $attributes = array('class' => 'form-horizontal', 'id' => '');
         echo form_open_multipart(current_url(), $attributes);
@@ -131,7 +135,7 @@
         <div class='form-group'>
             <div class="col-md-2" for='document'>Upload Logo </div>
             <div class="col-md-10">
-                <input id='document' type='file' name='document' />
+                <input id='document' class="file-styled-primary" type='file' name='document' />
                 <?php if ($updType == 'edit'): ?>
                          <a href='<?php echo base_url('uploads/files/' . $result->document); ?>' >Download actual file (logo)</a>
                     <?php endif ?>
@@ -165,7 +169,7 @@
                  <?php echo form_error('mobile_pay'); ?>
             </div>
         </div>
-        <div class='form-group'><div class="col-md-4"></div><div class="col-md-6">
+        <div class='form-group'><div class="col-md-4"></div><div class="col-md-12 text-right p-10">
                 <?php echo form_submit('submit', ($updType == 'edit') ? 'Update' : 'Save', (($updType == 'create') ? "id='submit' class='btn btn-primary''" : "id='submit' class='btn btn-primary'")); ?>
                 <?php echo anchor('admin/settings', 'Cancel', 'class="btn  btn-default"'); ?>
             </div></div>

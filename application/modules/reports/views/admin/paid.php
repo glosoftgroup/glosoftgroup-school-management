@@ -1,14 +1,14 @@
-<div class="head">
-    <div class="icon">
-        <span class="icosg-target1"></span>
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+    <div class="panel-heading">
+        <h4 class="panel-title">Fee Payments Report</h4>
+        <div class="heading-elements">
+         <a href="" id="printBtn" onClick="return false" class="btn btn-primary"><i class="icos-printer"></i> Print</a>
+        </div>
     </div>
-    <h2>Fee Payments Report</h2>
-    <div class="right">   
-        <a href="" onClick="window.print();
-                    return false" class="btn btn-primary"><i class="icos-printer"></i> Print</a>
-    </div>    					
-</div>
-
+    
+    <div class="panel-body">
+    
 <div class="toolbar">
     <div class="noof">
         <div class="spadn7"><?php echo form_open(current_url()); ?>
@@ -19,7 +19,7 @@
         </div>
     </div>
     </div>
-    <div class="block invoice">
+    <div class="block invoice" id="printme">
         <h1> </h1>
 
         <div class="row">
@@ -28,9 +28,9 @@
             </div>
         </div>
 
-        <table cellpadding="0" cellspacing="0" width="100%" class="nob">
+        <table cellpadding="0" cellspacing="0" width="100%" class="table table-hover nob">
             <thead>
-                <tr>
+                <tr class="bg-primary">
                     <th width="3%">#</th>
                     <th width="10%">Date</th>
                     <th width="20%">Name</th>
@@ -79,7 +79,7 @@
 								   ?><?php //echo $pay->description; ?></td>
                                              <?php /*<td> <?php echo isset($bank[$pay->bank_id]) ? $bank[$pay->bank_id] : ' '; ?></td>
                                             <td><?php echo $pay->payment_method; ?> </td>*/?>
-                                            <td class="rttb"><?php echo number_format($pay->amount, 2); ?> </td>
+                                            <td class="rttb text-right text-semibold"><?php echo number_format($pay->amount, 2); ?> </td>
                                         </tr>
                                         <?php
                                 }
@@ -89,7 +89,7 @@
                             <td> </td>
                             <td> </td>
                             <td colspan="2"><?php echo $cname; ?> Totals:</td>
-                            <td class="rttb"><?php echo number_format($opd, 2); ?></td>
+                            <td class="rttb text-right text-semibold"><?php echo number_format($opd, 2); ?></td>
                         </tr>
                         <?php
                         $i = 0;
@@ -105,8 +105,8 @@
                 <tr>
                      <td></td>
                      <td></td>
-                    <td colspan="2"  class="rttbd"> Total Payments:  </td>
-                    <td colspan="2"  class="rttbd"><?php echo number_format($obal, 2);        ?></td>
+                    <td colspan="2" class="border-bottom-lg border-bottom-danger text-right text-bold rttbd" > Total Payments:  </td>
+                    <td colspan="2"  class="text-bold text-right rttbd"><?php echo number_format($obal, 2);        ?></td>
                 </tr>
                 <tr>
                     <td colspan="4" > </td>
@@ -116,8 +116,8 @@
                 <tr>
                     <td> </td>
                     <td> </td>
-                     <td  colspan="2" ><small>Total Payments: <?php echo number_format($s); ?></small></td>
-                    <td colspan="2" ><small> Date: <?php echo date('d M Y H:i:s'); ?></small></td>
+                     <td class="border-bottom-lg border-bottom-danger text-right" colspan="2" ><small>Total Payments: <?php echo number_format($s); ?></small></td>
+                    <td colspan="2" class="text-right" ><small> Date: <?php echo date('d M Y H:i:s'); ?></small></td>
                 </tr>
 
             </tbody>

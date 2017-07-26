@@ -1,19 +1,22 @@
-<div class="head"> 
-			 <div class="icon"><span class="icosg-target1"></span> </div>
-            <h2>  Record Sales  </h2>
-             <div class="right">  
-             <?php echo anchor( 'admin/record_sales/create/'.$page, '<i class="glyphicon glyphicon-plus"></i> Record Sales', 'class="btn btn-primary"');?>
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+	<div class="panel-heading">
+		<h4 class="panel-title"> Record Sales</h4>
+		<div class="heading-elements">
+		  <?php echo anchor( 'admin/record_sales/create/'.$page, '<i class="glyphicon glyphicon-plus"></i> Record Sales', 'class="btn btn-primary"');?>
 			 
 			 <?php echo anchor( 'admin/record_sales' , '<i class="glyphicon glyphicon-list">
                 </i> '.lang('web_list_all', array(':name' => 'Record Sales')), 'class="btn btn-primary"');?> 
              <?php echo anchor( 'admin/record_sales/voided' , '<i class="glyphicon glyphicon-list">
                 </i> All Voided Sales', 'class="btn btn-warning"');?> 
-                </div>
-                </div>
-         	                    
+		</div>
+	</div>
+	
+	
+                     
               
                  <?php if ($record_sales): ?>
-                 <div class="block-fluid">
+                <div class="panel-body">
 				<table class="table table-hover fpTable" cellpadding="0" cellspacing="0" width="100%">
 	 <thead>
                 <th>#</th>
@@ -54,9 +57,9 @@
 
 			 <td width='20%'>
 						 <div class='btn-group'>
-							<a class="btn btn-success" href='<?php echo base_url('admin/record_sales/receipt/'.$p->receipt_id);?>'><i class='glyphicon glyphicon-eye-open'></i> View Receipt</a>
+							<a class="btn btn-success" href='<?php echo base_url('admin/record_sales/receipt/'.$p->receipt_id);?>'><i class='glyphicon glyphicon-eye-open'></i> </a>
 							
-							<a class="btn btn-primary" href='<?php echo base_url('admin/record_sales/manipulate/'.$p->receipt_id);?>'><i class='glyphicon glyphicon-edit'></i> Manipulate</a>
+							<a class="btn btn-primary" href='<?php echo base_url('admin/record_sales/manipulate/'.$p->receipt_id);?>'><i class='glyphicon glyphicon-edit'></i> </a>
 							  
 						
 						</div>
@@ -71,5 +74,5 @@
 </div>
 
 <?php else: ?>
- 	<p class='text-center'><?php echo lang('web_no_elements');?></p>
+ 	<p class='text-center text-muted p-10'><?php echo lang('web_no_elements');?></p>
  <?php endif ?>

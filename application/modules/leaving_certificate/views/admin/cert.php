@@ -8,8 +8,7 @@
 <div class="col-md-4"></div>
 <div class="col-md-4">
 <div class="right print">
-			  <button onClick="window.print();
-                return false" class="btn btn-primary" type="button"><span class="glyphicon glyphicon-print"></span> Print </button>
+			  <button id="printBtn" onClick="return false;" class="btn btn-primary" type="button"><span class="glyphicon glyphicon-print"></span> Print </button>
 				 <?php echo anchor( 'admin/leaving_certificate' , '<i class="glyphicon glyphicon-list">
                 </i> '.lang('web_list_all', array(':name' => 'Leaving Certificate')), 'class="btn btn-primary"');?> 
         
@@ -19,7 +18,7 @@
 </div>
 				<div class="clear"></div>
    <div class="col-md-2"></div>
-    <div class="slip panel col-md-8">
+    <div class="slip panel col-md-8" id="printme">
 	 <div class="panel-body slip-content">
                         <div class="row">
                            <div class="col-md-12 view-title">

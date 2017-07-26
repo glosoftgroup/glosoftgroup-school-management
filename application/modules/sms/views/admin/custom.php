@@ -14,12 +14,18 @@ else
 ?>
 <?php echo form_open(current_url(), 'class="form-inline" id="fextra"'); ?>
 <div class="col-md-7">
-    <div class="head">
-        <div class="icon"><span class="icosg-target1"></span></div>
-        <h2>Custom SMS</h2>
-    </div>
-    <div class="block-fluid">
-        <table cellpadding="0" cellspacing="0" border="0" class='hover' id="adm_table" width="100%">
+    <!-- Pager -->
+    <div class="panel panel-white animated fadeIn">
+        <div class="panel-heading">
+            <h4 class="panel-title">Custom SMS</h4>
+            <div class="heading-elements">
+            
+            </div>
+        </div>
+        
+        <div class="panel-body">
+        
+        <table cellpadding="0" cellspacing="0" border="0" class='table table-hover hover' id="adm_table" width="100%">
             <thead>
                 <tr>
                     <th width="5%">#</th>
@@ -36,20 +42,25 @@ else
         <?php echo form_error('sids', '<p class="error" style="width:200px; margin: 15px auto;" >', '</p>'); ?>
     </div>
 </div>
-
+</div>
 <div class="col-md-5">
-    <div class="widget">
-        <div class="head dark">
-            <div class="icon"><span class="icosg-newtab"></span></div>
-            <h2>Message</h2>
-        </div>
-        <div class="block-fluid">
+   <!-- Pager -->
+   <div class="panel panel-white animated fadeIn">
+       <div class="panel-heading">
+           <h4 class="panel-title">Message</h4>
+           <div class="heading-elements">
+           
+           </div>
+       </div>
+       
+       <div class="panel-body">
+            
             <textarea name="sms" placeholder="Your Message" class="common autoExpand" rows='3' data-min-rows='3'></textarea>
             <div class="p-action">
                 <input type="submit" class="btn btn-sm btn-success pull-right" value="Send SMS" onClick="return confirm('Confirm Send SMS')" />
             </div>
             <div class="clearfix"></div>
-            <ul class="list tickets">
+            <ul class="media-list tickets">
                 <?php
                 $i = 0;
                 foreach ($this->classlist as $cid => $cl)
@@ -70,6 +81,7 @@ else
     </div>
 
 </div>
+
 <?php echo form_close(); ?>
 <style>
     .autoExpand{  

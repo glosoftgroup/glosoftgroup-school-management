@@ -244,18 +244,18 @@
 						?>
  
  <div class="col-md-8">
- <div class="head">
-                    <div class="icon"><span class="icosg-target1"></span></div>
-                    <h2>Items Manager</h2> 
-                     <div class="right">                            
-                       
-             <?php echo anchor( 'admin/address_book/create/'.$page, '<i class="glyphicon glyphicon-plus"></i>'.lang('web_add_t', array(':name' => 'New Contact')), 'class="btn btn-primary"');?>
+ <!-- Pager -->
+ <div class="panel panel-white animated fadeIn">
+ 	<div class="panel-heading">
+ 		<h4 class="panel-title">Items Manager</h4>
+ 		<div class="heading-elements">
+ 		   <?php echo anchor( 'admin/address_book/create/'.$page, '<i class="glyphicon glyphicon-plus"></i>'.lang('web_add_t', array(':name' => 'New Contact')), 'class="btn btn-primary"');?>
 			     <?php echo anchor( 'admin/address_book' , '<i class="glyphicon glyphicon-list">
-                </i>'.lang('web_list_all', array(':name' => ' New Contact')), 'class="btn btn-primary"');?> 
-			
-                     </div>    					
-                </div>
-       <div class="block-fluid">
+                </i>'.lang('web_list_all', array(':name' => ' New Contact')), 'class="btn btn-primary"');?>
+ 		</div>
+ 	</div>
+ 	
+ 	<div class="panel-body">                   
 
 
 <?php 
@@ -350,14 +350,14 @@ echo   form_open_multipart(current_url(), $attributes);
      echo form_error('country'); ?>
 </div></div>
 
- <div class="widget">
+ <div class="form-group">
                     <div class="head dark">
                         <div class="icon"><i class="icos-pencil"></i></div>
                         <h2>Description</h2>
                     </div>
                     <div class="block-fluid editor">
                         
-                        <textarea id="wysiwyg"  name="description" style="height: 300px;">
+                        <textarea id="" class="wysihtml5 wysihtml5-min " name="description" style="height: 300px;">
                           <?php echo set_value('description', (isset($result->description)) ? htmlspecialchars_decode($result->description) : ''); ?></textarea>
 	<?php echo form_error('description'); ?>
                         
@@ -365,7 +365,8 @@ echo   form_open_multipart(current_url(), $attributes);
                    
                 </div> 
 
-<div class='form-group'><div class="col-md-6">
+<div class='form-group'>
+<div class="col-md-12 text-right p-10">
     
 
     <?php echo form_submit( 'submit', ($updType == 'edit') ? 'Update' : 'Save', (($updType == 'create') ? "id='submit' class='btn btn-primary''" : "id='submit' class='btn btn-primary'")); ?>
@@ -375,21 +376,25 @@ echo   form_open_multipart(current_url(), $attributes);
 <?php echo form_close(); ?>
 <div class="clearfix"></div>
  </div>
-   
+ </div>  
  	<div class="col-md-4">
 	  <!--Category Form-->
-	     <div class="widget">
-                    <div class="head dark">
-                        <div class="icon"></div>
-                        <h2>Add Address Book Category</h2>
-                    </div>
-					
-                    <div class="block-fluid">
+	    <!-- Pager -->
+	    <div class="panel panel-white animated fadeIn">
+	    	<div class="panel-heading">
+	    		<h4 class="panel-title">Add Address Book Category</h4>
+	    		<div class="heading-elements">
+	    		
+	    		</div>
+	    	</div>
+	    	
+	    	<div class="panel-body">
+                       
                        <?php echo form_open('admin/address_book_category/quick_add','class=""'); ?>   
                         <div class="form-group">
                             <div class="col-md-3">title:</div>
                             <div class="col-md-9">                                      
-                                 <?php echo form_input('title','', 'id="title_"  placeholder=" e.g Stationery Supplier"' );?>
+                                 <?php echo form_input('title','', 'id="title_" class="form-control" placeholder=" e.g Stationery Supplier"' );?>
  	                           <?php echo form_error('title'); ?>
                             </div>
                         </div>
@@ -397,11 +402,11 @@ echo   form_open_multipart(current_url(), $attributes);
                         <div class="form-group">
 						 <div class="col-md-3">Description:</div>
                             <div class="col-md-9">
-                                <textarea name="description"></textarea> 
+                                <textarea class="form-control" name="description"></textarea> 
                             </div>
                         </div>                        
                    
-                    <div class="toolbar TAR">
+                    <div class="toolbar text-right">
                         <button class="btn btn-primary">Add</button>
                     </div>
 					   <?php echo form_close(); ?> 

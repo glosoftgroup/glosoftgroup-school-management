@@ -1,10 +1,10 @@
 <div class="col-md-12">	
-<div class="head">
-                    <div class="icon"><span class="icosg-target1"></span></div>
-                    <h2>Trend for  <?php echo $item->item_name;?> </h2> 
-                     <div class="right">                            
-						
-			  <div class="btn-group">
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+	<div class="panel-heading">
+		<h4 class="panel-title">Trend for  <?php echo $item->item_name;?></h4>
+		<div class="heading-elements">
+			<div class="btn-group">
 					<button class="btn dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-cog"></i> Options</button>
 					
 					<ul class="dropdown-menu pull-right">
@@ -19,19 +19,19 @@
 					  <li><a href="<?php echo base_url('admin/inventory'); ?>"><i class="glyphicon glyphicon-folder-open"></i> Inventory Listing</a></li>
 					</ul>
 				</div>
-			
-                     </div>    					
-                </div>
-         	       
- <div class="block-fluid">
-	<div class="col-md-6" style="border:1px solid #000">	
+		</div>
+	</div>
+	
+	<div class="panel-body">
+                    
+	<div class="col-md-5 panel border-left-lg border-left-primary mr-5" style="border:1px solid #000">	
 	
 	<div class="row">	
 	<div class="middle">	
  <div class="informer">
                     <a href="#">
                         <span class="icomg-cart"></span>
-                        <span class="text">Stock Addition</span>
+                        <span class="text-bold label label-success label-lg">Stock Addition</span>
                     </a>
                     <span class="caption purple">+</span>
                 </div>	
@@ -66,13 +66,13 @@
 	</table>
 </div>
 
-<div class="col-md-6" style="border:1px solid #000">	
+<div class="col-md-5 panel border-left-lg border-left-primary" style="border:1px solid #000">	
   <div class="row">	
 	<div class="middle">	
  <div class="informer">
                     <a href="#">
                         <span class="icomg-stats-up"></span>
-                        <span class="text">Stock Taking</span>
+                        <span class="text text-bold label label-success label-lg">Stock Taking</span>
                     </a>
                     <span class="caption purple">+</span>
                 </div>	
@@ -109,26 +109,26 @@
 
 <div class="col-md-12">
 <div class="row">	
-	<div class="middle">	
- <div class="informer">
-                    <a href="#">
-                        <span ><h2><?php echo $add_totals->quantity; ?> </h2></span>
-                        <span class="text">Total Added Stock</span>
-                    </a>
-                    <span class="caption purple">Units</span>
-                </div>	
-				<div class="button">
-                        <a href="#">
-						
-						<br>
-                            <span class="icomg-minus"></span>
-                        </a>
-                       
-                    </div>
+	<div class="text-">	
+ <div class="informer col-md-3">
+    <a href="#">
+     <div class="panel border-left-lg border-left-primary">
+                      <span class="heading-text badge bg-teal-800">Units</span>
+	  					<div class="panel-body">
+        <span ><h2><?php echo $add_totals->quantity; ?> </h2></span>
+        <span class="text">Total Added Stock</span>
+    </a>
+    </div>
+    </div>
+</div>	
+
                 
                 	
- <div class="informer">
+ <div class="informer col-md-3">
                     <a href="#">
+                     <div class="panel border-left-lg border-left-danger">
+                      <span class="heading-text badge bg-teal-800">Units</span>
+	  					<div class="panel-body">
                          <span ><h2> <?php  
 						   $rem = 0;
 						  if(!empty($remove_totals->closing_totals)){ 
@@ -143,21 +143,30 @@
 						 }
 						 ?></h2></span>
                         <span class="text">Total Removed Stock</span>
+                        </div>
+                        </div>
                     </a>
-                    <span class="caption orange">Units</span>
+                  
                 </div>	
-				<div class="button">
+				<div class="button col-md-3">
                         <a href="#">
 						
-						<br>
-						<br>
+						 <div class="panel border-left-lg border-left-primary">
+                      <span class="heading-text badge bg-teal-800">Units</span>
+	  					<div class="panel-body">
                            <span > <img src="<?php echo base_url('assets/themes/admin/img/loaders/1d_4.gif'); ?>"  /> </span><br>
                           <span > <img src="<?php echo base_url('assets/themes/admin/img/loaders/1d_4.gif'); ?>"  /> </span>
+
+                          </div>
+                          </div>
                         </a>
                        
                     </div>
-	<div class="informer">
+	<div class="informer col-md-3">
                     <a href="#">
+                      <div class="panel border-left-lg border-left-warning">
+                      <span class="heading-text badge bg-teal-800">Units</span>
+	  					<div class="panel-body">
                          <span ><h2>
 						 <?php							
 						 if($rem==0){
@@ -167,10 +176,14 @@
 							 echo  $add_totals->quantity-$total_removed; 							
 						 }
 						 ?> 
-						 </h2></span>
+						 </h2>
+						 </span>
+
                         <span class="text">Total Remaining Stock</span>
+                       </div>
+                       </div>
                     </a>
-                    <span class="caption green">Units</span>
+                    
                 </div>	
 		</div>	
 </div>

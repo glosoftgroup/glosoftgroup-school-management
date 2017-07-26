@@ -1,17 +1,18 @@
-<div class="head">
-    <div class="icon"><span class="icosg-target1"></span></div>
-    <h2> Exams Report   </h2> 
-    <div class="right">                    
-    </div> 
-    <div class="toolbar">
-        <div class="left TAR">
-            <div class="btn-group" data-toggle="buttons-radio">
-                <a href="<?php echo base_url('admin/reports/sms_exam/'); ?>" class="btn btn-primary "><span class="glyphicon glyphicon-comment"></span> SMS Results</a>
-                <a href="<?php echo base_url('admin/reports/grade_analysis/'); ?>" class="btn btn-warning "><span class="glyphicon glyphicon-signal"></span> Grade Analysis</a>                                
-            </div>           
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+    <div class="panel-heading">
+        <h4 class="panel-title"> Exams Report</h4>
+        <div class="heading-elements">
+         <div class="btn-group" data-toggle="buttons-radio">
+                <a id="blink" data-href="<?php echo base_url('admin/reports/sms_exam/'); ?>" class="blink btn btn-primary "><span class="glyphicon glyphicon-comment"></span> SMS Results</a>
+                <a id="blink" data-href="<?php echo base_url('admin/reports/grade_analysis/'); ?>" class="blink btn btn-warning "><span class="glyphicon glyphicon-signal"></span> Grade Analysis</a>                                
+            </div> 
         </div>
     </div>
-</div>
+    
+    <div class="panel-body">
+    
+   
 <div class="toolbar">
     <div class="noof">
         <div class="col-md-10"><?php echo form_open(current_url()); ?>
@@ -22,12 +23,11 @@
             <?php echo form_close(); ?>
         </div>
         <div class="col-md-2"><div class="date  right" id="menus"> </div>
-            <a href="" onClick="window.print();
-                        return false" class="btn btn-primary"><i class="icos-printer"></i> Print</a>
+            <a href="" id="printBtn" onClick="return false" class="btn btn-primary"><i class="icos-printer"></i> Print</a>
         </div>
     </div>
 </div>
-<div class="block invoice">
+<div class="block invoice" id='printme'>
     <span class="left center titles">   
         <?php echo $this->school->school; ?>
         Exams Report <?php
@@ -344,3 +344,10 @@
         }  
     }
 </style>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.blink').on('click',function(){
+            window.location.href = $(this).data('href');
+        });
+    });
+</script>

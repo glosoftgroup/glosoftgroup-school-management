@@ -7,8 +7,7 @@
         <div class="col-md-2"></div>
         <div class="col-md-8">
             <div class="right print">
-                <button onClick="window.print();
-                          return false" class="btn btn-primary" type="button"><span class="glyphicon glyphicon-print"></span> Print Receipt </button>
+                <button id="printBtn" onClick="return false;" class="btn btn-primary" type="button"><span class="glyphicon glyphicon-print"></span> Print Receipt </button>
                         <?php echo anchor("admin/fee_payment/statement/" . $post->reg_no, "<i class='glyphicon glyphicon-list'>
                 </i> View " . $st->first_name . "'s Statement", "class='btn btn-primary'"); ?>
                         <?php echo anchor('admin/fee_payment/create', '<i class="glyphicon glyphicon-list">
@@ -20,7 +19,7 @@
         <div class="col-md-2"></div>
     </div>
     <div class="col-md-1"></div>
-    <div class="slip panel panel-white col-md-10">
+    <div class="slip panel panel-white col-md-10" id="printme">
         <div class="panel-body slip-content">
             <div class="row">
                 <div class="col-sm-3 invoice-left">

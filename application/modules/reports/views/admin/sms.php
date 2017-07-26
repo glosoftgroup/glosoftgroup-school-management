@@ -1,9 +1,14 @@
-<div class="head">
-    <div class="icon"><span class="icosg-target1"></span></div>
-    <h2> Exams Report </h2> 
-    <div class="right">                    
-    </div> 					
-</div>
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+    <div class="panel-heading">
+        <h4 class="panel-title">Exams Report</h4>
+        <div class="heading-elements">
+        
+        </div>
+    </div>
+    
+    <div class="panel-body">
+    
 <div class="toolbar">
     <div class="noof">
         <div class="col-md-10"><?php echo form_open(current_url()); ?>

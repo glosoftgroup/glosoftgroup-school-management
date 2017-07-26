@@ -105,7 +105,7 @@
 
         <?php echo theme_js('plugins/validationEngine/languages/jquery.validationEngine-en.js'); ?>
         <?php echo theme_js('plugins/validationEngine/jquery.validationEngine.js'); ?>
-        <?php echo theme_js('plugins/stepywizard/jquery.stepy.js'); ?>
+        
 
         <?php echo theme_js('plugins/scrollup/jquery.scrollUp.min.js'); ?>
         
@@ -115,7 +115,9 @@
         <?php echo theme_js('ng/ngsc.js'); ?>
         <script src="<?php echo plugin_path('bootstrap.daterangepicker/moment.js'); ?>" ></script>
         <script src="<?php echo plugin_path('bootstrap.daterangepicker/daterangepicker.js'); ?>" ></script>
-        <script src="<?php echo plugin_path('bootstrap.datetimepicker/bootstrap-datetimepicker.min.js'); ?>"></script>	<link rel="shortcut icon" type="image/ico" href="<?php echo image_path('favicon.ico'); ?>" />
+        <script src="<?php echo plugin_path('bootstrap.datetimepicker/bootstrap-datetimepicker.min.js'); ?>"></script>	
+        <?php echo theme_js('include/jquery.ui.timepicker.js'); ?>
+        <link rel="shortcut icon" type="image/ico" href="<?php echo image_path('favicon.ico'); ?>" />
         
         <link rel="shortcut icon" type="image/ico" href="<?php echo image_path('favicon.ico'); ?>" />
     </head>
@@ -278,7 +280,8 @@
     <?=core_js("core/js/plugins/editors/wysihtml5/locales/bootstrap-wysihtml5.ua-UA.js");?>
    <?=core_js("core/js/pages/editor_wysihtml5.js");?> 
    <!-- wysihtml5 wysihtml5-min  -->
-
+   <?=core_js("core/js/plugins/printThis/printThis.js");?>
+   <?=core_js("core/js/plugins/printThis/printer.js");?>
      <script type="text/javascript">var sub=1;  var flist = '<?php echo $this->list_size; ?>';</script>
         <?php echo theme_js('plugins/animatedprogressbar/animated_progressbar.js'); ?>
         <?php echo theme_js('plugins/hoverintent/jquery.hoverIntent.minified.js'); ?>
@@ -295,7 +298,9 @@
 }
 
 </style>
+
 <script>
+
                 $(document).ready(function ()
                 {
                     angular.bootstrap(document, ["Calc"]);
