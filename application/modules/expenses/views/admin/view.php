@@ -1,14 +1,14 @@
 <div class="col-md-4">
-<div class="head"> 
-			 <div class="icon"><span class="icosg-target1"></span> </div>
-            <h2>  Expense Details  </h2>
-			  <div class="right">  
-			 <?php echo anchor( 'admin/expenses/edit/'.$p->id , '<i class="glyphicon glyphicon-edit"></i> Edit Details', 'class="btn btn-primary"');?> 
-             
-                </div>
-                </div>
-
-          <div class="block-fluid">
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+  <div class="panel-heading">
+    <h4 class="panel-title"> Expense Details</h4>
+    <div class="heading-elements">
+       <?php echo anchor( 'admin/expenses/edit/'.$p->id , '<i class="glyphicon glyphicon-edit"></i> Edit Details', 'class="btn btn-primary"');?>
+    </div>
+  </div>
+  
+  <div class="panel-body">            
                         
             <div class="col-md-12">
                 
@@ -79,22 +79,25 @@
              </div>
            </div>
     </div>
+    </div>
+
 	<div class="col-md-8">
 	
-	<div class="head"> 
-			 <div class="icon"><span class="icosg-target1"></span> </div>
-            <h2>  Description  </h2>
-             <div class="right">  
-					 <?php echo anchor( 'admin/expenses/create/', '<i class="glyphicon glyphicon-plus"></i> '.lang('web_add_t', array(':name' => 'Expense')), 'class="btn btn-primary"');?>
-					
-					<?php echo anchor( 'admin/expenses' , '<i class="glyphicon glyphicon-list"></i> List All', 'class="btn btn-primary"');?> 
-             
-                </div>
-                </div>
-         	                    
-              
+	<!-- Pager -->
+  <div class="panel panel-white animated fadeIn">
+    <div class="panel-heading">
+      <h4 class="panel-title">Description</h4>
+      <div class="heading-elements">
+        <?php echo anchor( 'admin/expenses/create/', '<i class="glyphicon glyphicon-plus"></i> '.lang('web_add_t', array(':name' => 'Expense')), 'class="btn btn-primary"');?>
+          
+          <?php echo anchor( 'admin/expenses' , '<i class="glyphicon glyphicon-list"></i> List All', 'class="btn btn-primary"');?>
+      </div>
+    </div>
+    
+  
+            
                 
-                 <div class="block-fluid" style="padding:20px !important;">
+                 <div class="panel-body" style="padding:20px !important;">
 				
 				 <?php echo $p->description; ?>
 				

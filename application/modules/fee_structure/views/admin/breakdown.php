@@ -1,17 +1,19 @@
-<div class="head">
-                    <div class="icon"><span class="icosg-target1"></span></div>
-                    <h2> Fee Structure  </h2> 
-                     <div class="right">                            
-                       
-             <?php echo anchor( 'admin/fee_structure/create/', '<i class="glyphicon glyphicon-plus"></i> Add New Fee Structure', 'class="btn btn-primary"');?>
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+	<div class="panel-heading">
+		<h4 class="panel-title">Fee Structure</h4>
+		<div class="heading-elements">
+		  <?php echo anchor( 'admin/fee_structure/create/', '<i class="glyphicon glyphicon-plus"></i> Add New Fee Structure', 'class="btn btn-primary"');?>
              
                 <?php echo anchor( 'admin/fee_structure/' , '<i class="glyphicon glyphicon-list">
                 </i> List All', 'class="btn btn-primary"');?>
-			
-                     </div>    					
-                </div>
+		</div>
+	</div>
+	
+	
+                  
          	        <?php if ($post): ?>              
-               <div class="block-fluid">
+           <div class="panel-body">
 				<table class="table table-hover fpTable" cellpadding="0" cellspacing="0" width="100%">
  
 	    <thead>

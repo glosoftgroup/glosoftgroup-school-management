@@ -8,8 +8,7 @@
         ?></h4>
 		<div class="heading-elements">
 			<div class="heading-btn">
-				 <button onClick="window.print();
-                      return false" class="btn heading-btn btn-primary" type="button">
+				 <button onClick="return false;" id="printBtn" class="btn heading-btn btn-primary" type="button">
 	     <span class="glyphicon glyphicon-print"></span> Print Class List</button>
         <a href="<?php echo base_url('admin/class_groups/classes'); ?>" class="btn heading-btn btn-info">
 		<i class="glyphicon glyphicon-list"> </i> List All</a>
@@ -18,7 +17,7 @@
 		</div>
 	</div>
 
-	<div class="panel-body">
+	<div class="panel-body" id="printme">
 		<div class="col-sm-6 content-group">
 		  <h5 class="text-uppercase text-semibold">Number of Registered Students <span style="color:red"><?php echo count($post); ?></h5>
 		  <span class="text-right text-muted">Class Profile as at : <?php echo date('jS M Y'); ?></span>

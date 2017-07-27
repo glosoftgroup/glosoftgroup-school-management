@@ -1,18 +1,18 @@
 <div class="col-md-8">
-        <div class="head"> 
-             <div class="icon"><span class="icosg-target1"></span></div>		
-            <h2>  Expense Items  </h2>
-             <div class="right"> 
-             <?php echo anchor( 'admin/expense_items/create' , '<i class="glyphicon glyphicon-plus">
+   <!-- Pager -->
+   <div class="panel panel-white animated fadeIn">
+       <div class="panel-heading">
+           <h4 class="panel-title">Expense Items</h4>
+           <div class="heading-elements">
+            <?php echo anchor( 'admin/expense_items/create' , '<i class="glyphicon glyphicon-plus">
                 </i> '.lang('web_add_t', array(':name' => 'Expense Items')), 'class="btn btn-primary"');?> 
               <?php echo anchor( 'admin/expense_items' , '<i class="glyphicon glyphicon-list">
                 </i> '.lang('web_list_all', array(':name' => 'Expense Items')), 'class="btn btn-primary"');?> 
-             
-                </div>
-                </div>
-         	                    
-               
-				   <div class="block-fluid">
+           </div>
+       </div>
+       
+       <div class="panel-body">		
+           
 
 <?php 
 $attributes = array('class' => 'form-horizontal', 'id' => '');

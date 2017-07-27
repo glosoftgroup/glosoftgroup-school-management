@@ -1,4 +1,5 @@
 <!-- Pager -->
+<div class='row'>
 <div class="panel panel-white animated fadeIn">
 	<div class="panel-heading">
 		<h4 class="panel-title">Purchase Order</h4>
@@ -17,6 +18,7 @@
 $attributes = array('class' => 'form-horizontal', 'id' => '');
 echo   form_open_multipart(current_url(), $attributes); 
 ?>
+<div class='row'>
 <div class='form-group'>
 	 <div class="col-md-2" for='purchase_date'>Purchase Date </div>
 	 <div class="col-md-3">
@@ -24,10 +26,12 @@ echo   form_open_multipart(current_url(), $attributes);
 	<input id='purchase_date' type='text' name='purchase_date' maxlength='' class='form-control datepicker' value="<?php echo set_value('purchase_date', (isset($result->purchase_date)) ? $result->purchase_date : ''); ?>"  />
 	<span class="input-group-addon "><i class="glyphicon glyphicon-calendar "></i></span>
  	
-</div>
+    </div>
  	<?php echo form_error('purchase_date'); ?>
 	
+    </div>
 </div>
+<div class='form-group'>
  <div class="col-md-1" for='due_date'>Due Date </div>
 	 <div class="col-md-3">
 	  <div id="datetimepicker1" class="input-group date form_datetime">
@@ -45,7 +49,7 @@ echo   form_open_multipart(current_url(), $attributes);
     <?php echo form_dropdown('supplier',array(''=>'Select Supplier')+ $address_book,  (isset($result->supplier)) ? $result->supplier : ''     ,   ' class="select" data-placeholder="Select  Options..." ');
                             ?>		
  	<?php echo form_error('supplier'); ?>
-</div>
+   </div>
 </div>
  <div class="widget">
                 <div class="head dark">
@@ -120,15 +124,30 @@ echo   form_open_multipart(current_url(), $attributes);
 			<?php echo form_error('comment'); ?>
 		</div>
 	</div>
-	<div class="col-md-6 text-right">
+	<div class="col-md-12">
 		<div class='form-group' style="border:none !important">
-			<label for='vat'>VAT 			 
-			 <input id='vat' type='radio' name='vat' checked="checked" value='1'  class="form-control" <?php echo preset_radio('vat', '1', (isset($result->vat)) ? $result->vat : ''  )?> />	<?php echo form_error('vat'); ?> Yes 
-			 <input id='vat' type='radio' name='vat' value='2'  class="form-control" <?php echo preset_radio('vat', '2', (isset($result->vat)) ? $result->vat : ''  )?> />	<?php echo form_error('vat'); ?> No
+			<label for='vat'>VAT</label>
+            <div class='checked'>
+			 <label>
+			 <input id='vat' type='radio' name='vat' checked="checked" value='1'  class="form-control" 
+			 <?php echo preset_radio('vat', '1', (isset($result->vat)) ? $result->vat : ''  )?> />	
+			 <?php echo form_error('vat'); ?>
+             			 Yes 
+				</label>
+			 </div>
+			 <div class='checked'>
+			 <label>
+			 <input id='vat' type='radio' name='vat' value='2'  class="form-control"
+			 <?php echo preset_radio('vat', '2', (isset($result->vat)) ? $result->vat : ''  )?> />	
+			 <?php echo form_error('vat'); ?> No
+			 </label>
+			 </div>
 			
 			<?php echo form_error('vat'); ?>
 		  </label>
 		</div>
+	</div>
+	<div class='col-md-12 text-right'>
 	<div class='form-group' style="border:none !important">
 		<div class="col-md-3" for='total'>TOTAL  </div>
 			<div class="col-md-9">
@@ -153,6 +172,9 @@ echo   form_open_multipart(current_url(), $attributes);
 
 
 <?php echo form_close(); ?>
+</div>
+</div>
+</div>
 
 
  

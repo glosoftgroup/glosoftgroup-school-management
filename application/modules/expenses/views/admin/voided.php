@@ -1,21 +1,21 @@
-
-
-<div class="head">
-                    <div class="icon"><span class="icosg-target1"></span></div>
-                    <h2>  Expenses </h2> 
-                     <div class="right">                            
-                       
-            <?php echo anchor( 'admin/expenses/create/'.$page, '<i class="glyphicon glyphicon-plus">                </i>'.lang('web_add_t', array(':name' => 'Expenses')), 'class="btn btn-primary"');?>
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+	<div class="panel-heading">
+		<h4 class="panel-title">Expenses</h4>
+		<div class="heading-elements">
+		  <?php echo anchor( 'admin/expenses/create/'.$page, '<i class="glyphicon glyphicon-plus">                </i>'.lang('web_add_t', array(':name' => 'Expenses')), 'class="btn btn-primary"');?>
                 <?php echo anchor( 'admin/expenses/' , '<i class="glyphicon glyphicon-list">
                 </i> List All', 'class="btn btn-primary"');?>
 				<?php echo anchor( 'admin/expenses/voided' , '<i class="glyphicon glyphicon-list">
                 </i> Voided Expenses', 'class="btn btn-warning"');?>
-			
-                     </div>    					
-                </div>
+		</div>
+	</div>
+	
+	
+                   
 				<?php if ($expenses): ?>    
 
- <div class="toolbar-fluid">
+<div class="panel-body">
                             <div class="information">
 								 <div class="item">
                                     <div class="rates">

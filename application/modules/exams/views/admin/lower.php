@@ -1,23 +1,26 @@
 <div class="col-md-12">
-    <div class="head">
-        <div class="icon"><span class="icosg-target1"></span></div>
-        <?php $std = $this->worker->get_student($student); ?> 
-
-        <h2>Progress Record For: <?php echo $std->first_name . ' ' . $std->last_name; ?></h2> 
-        <div class="right">                            
-            <?php echo anchor('admin/exams/rec_lower/' . $class . '/' . $stream . '/1/', '<i class="glyphicon glyphicon-list">
+   <!-- Pager -->
+   <div class="panel panel-white animated fadeIn">
+   <?php $std = $this->worker->get_student($student); ?> 
+       <div class="panel-heading">
+           <h4 class="panel-title">Progress Record For: <?php echo $std->first_name . ' ' . $std->last_name; ?></h4>
+           <div class="heading-elements">
+              <?php echo anchor('admin/exams/rec_lower/' . $class . '/' . $stream . '/1/', '<i class="glyphicon glyphicon-list">
                 </i> List All', 'class="btn btn-primary"'); ?> 
-            <button onClick="window.print();
-                    return false" class="btn btn-primary" type="button"><span class="glyphicon glyphicon-print"></span> Print </button>
-        </div>    					
-    </div>
-    <div class="block-fluid">
+            <button onClick="return false;" id="printBtn" class="btn btn-primary" type="button"><span class="glyphicon glyphicon-print"></span> Print </button>
+           </div>
+       </div>
+       
+       <div class="panel-body" id="printme">
+        
+
+        
         <div class="col-md-9">
-            <h3 align="center"> <?php echo $this->school->school; ?></h3> 
-            <h4 align="center"> Progress Record For <?php echo isset($this->classes[$class]) ? $this->classes[$class] : ' - '; ?></h4> 
+            <h3 align="text-center"> <?php echo $this->school->school; ?></h3> 
+            <h4 align="text-center"> Progress Record For <?php echo isset($this->classes[$class]) ? $this->classes[$class] : ' - '; ?></h4> 
             <b>Student : </b>
             <abbr title="Name" ><?php echo ucwords($std->first_name . ' ' . $std->last_name); ?> </abbr>
-            <span class="right">
+            <span class="text-right">
                 <b>Class :</b>
                 <abbr title="Class"><?php echo isset($this->classes[$class]) ? $this->classes[$class] : ' - '; ?></abbr>
                 <b>Year :</b>

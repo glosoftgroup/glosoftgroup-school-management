@@ -1,14 +1,16 @@
-<div class="head">
-    <div class="icon"><span class="icosg-target1"></span></div>
-    <h2>School Classes</h2> 
-    <div class="right">
-         <?php echo anchor('admin/class_stream/create/' . $page, '<i class="glyphicon glyphicon-plus"></i> ' . lang('web_add_t', array(':name' => ' New Stream')), 'class="btn btn-primary"'); ?>
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+    <div class="panel-heading">
+        <h4 class="panel-title">School Classes</h4>
+        <div class="heading-elements">
+          <?php echo anchor('admin/class_stream/create/' . $page, '<i class="glyphicon glyphicon-plus"></i> ' . lang('web_add_t', array(':name' => ' New Stream')), 'class="btn btn-primary"'); ?>
          <?php echo anchor('admin/class_stream/', '<i class="glyphicon glyphicon-list">
                 </i> List All', 'class="btn btn-primary"'); ?>
-    </div>    					
-</div>
-
-<div class="block-fluid">
+        </div>
+    </div>
+    
+    <div class="panel-body">
+   
      <?php
          $attributes = array('class' => 'form-horizontal', 'id' => '');
          echo form_open_multipart(current_url(), $attributes);

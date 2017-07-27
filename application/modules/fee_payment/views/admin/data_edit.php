@@ -1,18 +1,19 @@
 <div class="col-md-12">
-    <div class="head"> 
-        <div class="icon"><span class="icosg-target1"></span></div>		
-        <h2>  Fee Payment  </h2>
-        <div class="right"> 
+   <!-- Pager -->
+   <div class="panel panel-white animated fadeIn">
+       <div class="panel-heading">
+           <h4 class="panel-title"> Fee Payment  </h4>
+           <div class="heading-elements">
             <?php echo anchor('admin/fee_payment/create', '<i class="glyphicon glyphicon-plus">
                 </i> ' . lang('web_add_t', array(':name' => 'Fee Payment')), 'class="btn btn-primary"'); ?> 
             <?php echo anchor('admin/fee_payment', '<i class="glyphicon glyphicon-list">
                 </i> ' . lang('web_list_all', array(':name' => 'Fee Payment')), 'class="btn btn-primary"'); ?> 
 
-        </div>
-    </div>
-
-
-    <div class="block-fluid">
+           </div>
+       </div>
+       
+       <div class="panel-body">		
+       
 
         <?php
         $attributes = array('class' => 'form-horizontal', 'id' => '');

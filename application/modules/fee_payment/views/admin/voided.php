@@ -1,17 +1,19 @@
-<div class="head"> 
-    <div class="icon"><span class="icosg-target1"></span> </div>
-    <h2>  Fee Payment  </h2>
-    <div class="right">  
-        <?php echo anchor('admin/fee_payment/create/', '<i class="glyphicon glyphicon-plus"></i> Receive Payment', 'class="btn btn-primary"'); ?>
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+    <div class="panel-heading">
+        <h4 class="panel-title">Fee Payment </h4>
+        <div class="heading-elements">
+         <?php echo anchor('admin/fee_payment/create/', '<i class="glyphicon glyphicon-plus"></i> Receive Payment', 'class="btn btn-primary"'); ?>
         <?php echo anchor('admin/fee_payment/paid', '<i class="glyphicon glyphicon-list">
                 </i> ' . lang('web_list_all', array(':name' => 'Fee Payment')), 'class="btn btn-primary"'); ?>
   <?php echo anchor('admin/fee_payment/all_voided', '<i class="glyphicon glyphicon-list">
-                </i> Voided Payments', 'class="btn btn-warning"'); ?>				
+                </i> Voided Payments', 'class="btn btn-warning"'); ?>   
+        </div>
     </div>
-</div>
-
-<div class="block-fluid">
-    <table id="feee" cellpadding="0" cellspacing="0" width="100%">
+    
+    <div class="panel-body">
+    
+    <table id="feee" class="table table-hover" cellpadding="0" cellspacing="0" width="100%">
         <thead>
         <th>#</th>
         <th  width="10%">Date</th>

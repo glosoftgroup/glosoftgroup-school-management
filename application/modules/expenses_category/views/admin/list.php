@@ -1,19 +1,19 @@
- <div class="head">
- <div class="icon"><span class="icosg-target1"></span></div>		
-            <h2>  Expenses Category  </h2>
-             <div class="right"> 
-			              
-            <?php echo anchor( 'admin/expenses_category/create/'.$page, '<i class="glyphicon glyphicon-plus"></i>'.lang('web_add_t', array(':name' => 'Expense Category')), 'class="btn btn-primary"');?>
+ <!-- Pager -->
+ <div class="panel panel-white animated fadeIn">
+ 	<div class="panel-heading">
+ 		<h4 class="panel-title">Expenses Category</h4>
+ 		<div class="heading-elements">
+ 		  <?php echo anchor( 'admin/expenses_category/create/'.$page, '<i class="glyphicon glyphicon-plus"></i>'.lang('web_add_t', array(':name' => 'Expense Category')), 'class="btn btn-primary"');?>
                 <?php echo anchor( 'admin/expenses_category/' , '<i class="glyphicon glyphicon-list">
                 </i> List All', 'class="btn btn-primary"');?>
-				
-           
-             
-                </div>
-                </div>
+ 		</div>
+ 	</div>
+ 	
+ 		
+          
 				
                  <?php if ($expenses_category): ?>
-                <div class="block-fluid">
+           <div class="panel-body">	
 				<table class="table table-hover fpTable" cellpadding="0" cellspacing="0" width="100%">
 	 <thead>
                 <th>#</th><th>Title</th>

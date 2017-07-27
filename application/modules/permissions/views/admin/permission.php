@@ -1,13 +1,17 @@
 <?php echo $template['partials']['perms']; ?>
 <div class="row">
     <div class="col-md-4">
-        <div class="head"> 
-            <div class="icon"><span class="icosg-target1"></span> </div>
-            <h2>   Select User Groups </h2>
-            <div class="right">  
-            </div>
-        </div>
-        <div class="block-fluid">
+      <!-- Pager -->
+      <div class="panel panel-white animated fadeIn">
+          <div class="panel-heading">
+              <h4 class="panel-title"> Select User Groups</h4>
+              <div class="heading-elements">
+              
+              </div>
+          </div>
+          
+          <div class="panel-body">
+      
 
             <div class="db" style="height:400px">
                 <ul class="list tickets">
@@ -39,7 +43,7 @@
             </div>
         </div>
     </div>
-
+</div>
     <div class="col-md-8">
         <div class="block-fluid">
             <div class="head">

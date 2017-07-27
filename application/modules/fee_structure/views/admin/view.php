@@ -3,25 +3,26 @@
 $refNo = refNo();
 $settings = $this->ion_auth->settings();
 ?>
-<div class="head">
-    <div class="icon"><span class="icosg-target1"></span></div>
-    <h2> Fee Structure  </h2> 
-    <div class="right">                            
-
-        <?php echo anchor('admin/fee_structure/create/', '<i class="glyphicon glyphicon-plus"></i> Add Fee Structure', 'class="btn btn-primary"'); ?>
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+    <div class="panel-heading">
+        <h4 class="panel-title">Fee Structure</h4>
+        <div class="heading-elements">
+           <?php echo anchor('admin/fee_structure/create/', '<i class="glyphicon glyphicon-plus"></i> Add Fee Structure', 'class="btn btn-primary"'); ?>
 
         <?php echo anchor('admin/fee_structure/', '<i class="glyphicon glyphicon-list"></i> List All', 'class="btn btn-primary"'); ?>
-        <a href="" onClick="window.print();
-                return false" class="btn btn-primary"><span class="glyphicon glyphicon-print"></span><span class="text"> Print </span>  </a> 
-    </div>    					
-</div>
-<div class="widget">
+        <a href="" onClick="return false;" id="printBtn" class="btn btn-primary"><span class="glyphicon glyphicon-print"></span><span class="text"> Print </span>  </a> 
+        </div>
+    </div>
+    
+    <div class="panel-body">
+    
 
-    <div class="block invoice">
+    <div class="block invoice" id="printme">
 
         <div class="row">
             <div class="col-md-12 view-title">
-                <span class="center">
+                <span class="text-center">
                     <h1><img src="<?php echo base_url('uploads/files/' . $settings->document); ?>" width="150" height="150" />
                         <h5><?php echo ucwords($settings->motto); ?>
                             <br>

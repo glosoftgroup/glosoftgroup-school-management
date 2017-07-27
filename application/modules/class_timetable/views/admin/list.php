@@ -1,18 +1,20 @@
-<div class="head">
-    <div class="icon"><span class="icosg-target1"></span></div>
-    <h2> Class Timetable</h2> 
-    <div class="right">                            
-        <?php if (!$this->ion_auth->is_in_group($this->user->id, 3))
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+    <div class="panel-heading">
+        <h4 class="panel-title">Class Timetable</h4>
+        <div class="heading-elements">
+         <?php if (!$this->ion_auth->is_in_group($this->user->id, 3))
         { ?>          
                 <?php echo anchor('admin/class_timetable/create/' . $page, '<i class="glyphicon glyphicon-plus"></i> ' . lang('web_add_t', array(':name' => ' New Class Timetable')), 'class="btn btn-primary"'); ?>
         <?php } ?>
         <?php echo anchor('admin/class_timetable/', '<i class="glyphicon glyphicon-list">
                 </i> List All', 'class="btn btn-primary"'); ?>
-
-    </div>    					
-</div>
+        </div>
+    </div>
+ 
+ 
 <?php if ($class_timetable): ?>               
-        <div class="block-fluid">
+       <div class="panel-body">
             <table class="table table-hover fpTable" cellpadding="0" cellspacing="0" width="100%">
                 <thead>
                 <th>#</th>

@@ -54,17 +54,19 @@ $banks = array('ABC Bank (Kenya)' => 'ABC Bank (Kenya)',
 );
 ?>
 <div class="col-md-8">
-    <div class="head"> 
-        <div class="icon"><span class="icosg-target1"></span></div>		
-        <h2>  Salaries  </h2>
-        <div class="right"> 
-            <?php echo anchor('admin/salaries/create', '<i class="glyphicon glyphicon-plus">
+    <!-- Pager -->
+    <div class="panel panel-white animated fadeIn">
+        <div class="panel-heading">
+            <h4 class="panel-title"> Salaries</h4>
+            <div class="heading-elements">
+               <?php echo anchor('admin/salaries/create', '<i class="glyphicon glyphicon-plus">
                 </i> ' . lang('web_add_t', array(':name' => 'Salaries')), 'class="btn btn-primary"'); ?> 
             <?php echo anchor('admin/salaries', '<i class="glyphicon glyphicon-list">
                 </i> ' . lang('web_list_all', array(':name' => 'Salaries')), 'class="btn btn-primary"'); ?> 
+            </div>
         </div>
-    </div>
-    <div class="block-fluid">
+        <div class="panel-body">
+      
         <?php
         $attributes = array('class' => 'form-horizontal', 'id' => '');
         echo form_open_multipart(current_url(), $attributes);
@@ -87,7 +89,7 @@ $banks = array('ABC Bank (Kenya)' => 'ABC Bank (Kenya)',
                     "Daily" => "Daily",
                     "Weekly" => "Weekly",
                 );
-                echo form_dropdown('salary_method', $items, (isset($result->salary_method)) ? $result->salary_method : '', ' class="chzn-select" data-placeholder="Select Options..." ');
+                echo form_dropdown('salary_method', $items, (isset($result->salary_method)) ? $result->salary_method : '', ' class="select chzn-select" data-placeholder="Select Options..." ');
                 echo form_error('salary_method');
                 ?>
             </div></div>

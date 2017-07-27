@@ -1,15 +1,19 @@
 <div class="col-md-8">
- <div class="head">
-                    <div class="icon"><span class="icosg-target1"></span></div>
-                    <h2> Exams Timetable</h2> 
-                     <div class="right">                            
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+    <div class="panel-heading">
+        <h4 class="panel-title">Exams Timetable</h4>
+        <div class="heading-elements">
            <?php echo anchor( 'admin/placement_positions/create/'.$page, '<i class="glyphicon glyphicon-plus">                </i>'.lang('web_add_t', array(':name' => 'Placement Positions')), 'class="btn btn-primary"');?>
-			
-                     </div>    					
-                </div>
+            
+        </div>
+    </div>
+
+                    
       
                  <?php if ($placement_positions): ?>
-                 <div class="block-fluid">
+        
+    <div class="panel-body">
 				<table class="table table-hover fpTable" cellpadding="0" cellspacing="0" width="100%">
 	 <thead>
                 <th>#</th>

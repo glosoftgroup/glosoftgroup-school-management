@@ -3,7 +3,7 @@
     <div class="panel-heading">
         <h4 class="panel-title">Book Details </h4>
         <div class="heading-elements">
-         <button onClick="window.print();return false" class="btn btn-primary" type="button"><span class="glyphicon glyphicon-print"></span> Print </button>
+         <button onClick="return false;" id="printBtn" class="btn btn-primary" type="button"><span class="glyphicon glyphicon-print"></span> Print </button>
                       <?php echo anchor( 'admin/book_fund/' , '<i class="glyphicon glyphicon-list">
                 </i> List All', 'class="btn btn-primary"');?>
         </div>
@@ -13,7 +13,7 @@
                     
       <div class="widget">
                     
-                    <div class="block invoice1">
+                    <div class="block invoice1" id="printme">
 					
 						<div class="clearfix"></div>
                             <div class="col-md-11 view-title text-center">
@@ -61,13 +61,13 @@
                     <div class="panel-body events">
                         
                         <table class="text-left table table-hover " id="sort_1">
-                            <td><b>Category:</b> <span style="margin-left:20px;"><?php echo $category[$post->category];?></span></td>
-                            <td><b>Title:</b> <span style="margin-left:20px;"><?php echo $post->title;?></span></td>
-                            <td><b>Author</b> <span style="margin-left:20px;"><?php echo $post->author;?></span></td>
-                            <td><b>Edition:</b> <span style="margin-left:20px;"><?php echo $post->edition;?></span></td>
-                            <td><b>Pages:</b> <span style="margin-left:20px;"><?php echo $post->pages;?></span></td>
+                            <td><b>Category:</b> <span ><?php echo $category[$post->category];?></span></td>
+                            <td><b>Title:</b> <span ><?php echo $post->title;?></span></td>
+                            <td><b>Author</b> <span ><?php echo $post->author;?></span></td>
+                            <td><b>Edition:</b> <span ><?php echo $post->edition;?></span></td>
+                            <td><b>Pages:</b> <span ><?php echo $post->pages;?></span></td>
                             <td><b>Memo:</b>
-							<span style="margin-left:20px;"><?php echo $post->description;?></span>
+							<span ><?php echo $post->description;?></span>
 							</td>
                             
                         </table>                       
