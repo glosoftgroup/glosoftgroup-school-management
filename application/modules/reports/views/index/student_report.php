@@ -1,23 +1,26 @@
-<div class="head">
-
-<div class="  right" id="menus"> 
-    <div class="col-sm-6">
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+    <div class="panel-heading">
+        <h4 class="panel-title"></h4>
+        <div class="heading-elements">
+          <div class="col-sm-6">
        <?php echo form_open('reports/student_report/'); ?> 
-	     <?php echo form_dropdown('student', array('' => 'Select Student') + $kids, $this->input->post('student'), 'class="form-control"'); ?>
+         <?php echo form_dropdown('student', array('' => 'Select Student') + $kids, $this->input->post('student'), 'class="form-control"'); ?>
    
     <button class="btn btn-warning pull-right"  style="" type="submit">View Report</button>
-	</div>
-	<div class="col-sm-6">
-    <a href="" onClick="window.print();
-                return false" class="btn btn-primary pull-right"><i class="icos-printer"></i> Print</a>
-	</div>
+    </div>
+    <div class="col-sm-6">
+    <a href="" onClick="return false" id="printBtn" class="btn btn-primary pull-right"><i class="icos-printer"></i> Print</a>
+    </div>
 <?php echo form_close();?>
+        </div>
+    </div>
+    
+ 
 
-</div>
-</div>
  <?php $settings = $this->ion_auth->settings(); ?>
-<div class="widget">
-    <div class="col-sm-12 slip">
+   <div class="panel-body">
+    <div class="col-sm-12 slip" id="printme">
 	
 
         <div class="statement">

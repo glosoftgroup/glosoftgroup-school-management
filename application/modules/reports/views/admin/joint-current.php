@@ -9,8 +9,8 @@ foreach ($this->classlist as $ssid => $s)
         $sslist[$ssid] = $s['name'];
 }
 ?>
-<div class="toolbar">
-    <div class="row row-fluid">
+<div class="toolbar panel">
+    <div class="row row-fluid panel-body">
         <div class="col-md-12 span12">
             <?php echo form_open(current_url()); ?>
             Class
@@ -19,7 +19,7 @@ foreach ($this->classlist as $ssid => $s)
             <?php echo form_dropdown('exams[]', $exams, $this->input->post('exams'), 'class ="fsel" multiple placeholder="Select Exams" '); ?>
             <button class="btn btn-primary"  type="submit">View Report</button>
             <div class="pull-right"> 
-                <a href="" onClick="window.print(); return false" class="btn btn-primary"><i class="icos-printer"></i> Print </a>
+                <a href="" id="printBtn" onClick="return false;" class="btn btn-primary"><i class="icos-printer"></i> Print </a>
             </div>
             <?php echo form_close(); ?>
         </div>
@@ -40,9 +40,9 @@ foreach ($mks as $student => $pyl)
         }
         $p = (object) $pyl;
         ?>
-        <div class="invoice">
+        <div class="invoice" id="printme">
             <div class="row row-fluid">
-                  <div class="row-fluid center">
+                  <div class="row-fluid text-center">
 					  
 					  <span class="" style="text-align:center">
 					   <img src="<?php echo base_url('uploads/files/' . $this->school->document); ?>" class="center"  width="80" height="80" />

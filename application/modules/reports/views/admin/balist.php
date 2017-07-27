@@ -1,15 +1,18 @@
- 
-<div class="head"> 
-    <div class="icon"><span class="icosg-target1"></span> </div>
-    <h2>  Fee Balances Breakdown Report  </h2>
-    <div class="right">  
-        <?php echo anchor('admin/reports/fee/'  , '<i class="glyphicon glyphicon-bar-chart"></i> Back' , 'class="btn btn-primary"'); ?>
-     </div>
-</div>
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+    <div class="panel-heading">
+        <h4 class="panel-title"> Fee Balances Breakdown Report  </h4>
+        <div class="heading-elements">
+          <?php echo anchor('admin/reports/fee/'  , '<i class="glyphicon glyphicon-bar-chart"></i> Back' , 'class="btn btn-primary"'); ?>
+        </div>
+    </div>
+    
+
+    
 <style>
     a{color:#000;}
 </style>
-<div class="block invoice">
+    <div class="panel-body invoice">
     <h1> </h1>
 
     <div class="row">

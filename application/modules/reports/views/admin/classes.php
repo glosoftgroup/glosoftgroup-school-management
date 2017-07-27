@@ -1,11 +1,14 @@
-<div class="head">
-    <div class="icon"><span class="icosg-target1"></span></div>
-    <h2>View Class Report</h2> 
-    <div class="right">                       
-    </div>    					
-</div>
-
-<div class="toolbar">
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+    <div class="panel-heading">
+        <h4 class="panel-title">View Class Report</h4>
+        <div class="heading-elements">
+        
+        </div>
+    </div>
+    
+    <div class="panel-body">
+   
     <div class="left">
         <?php echo form_open(current_url()); ?>
         <div class="input-append input-prepend">

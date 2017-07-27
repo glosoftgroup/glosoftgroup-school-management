@@ -1,22 +1,21 @@
-
-
-<div class="head">
-    <div class="icon"><span class="icosg-target1"></span></div>
-    <h2> Event Details </h2> 
-    <div class="right">
-        <button onClick="window.print();
-                    return false" class="btn btn-primary" type="button"><span class="glyphicon glyphicon-print"></span> Print </button>
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+    <div class="panel-heading">
+        <h4 class="panel-title"> Event Details</h4>
+        <div class="heading-elements">
+          <button onClick="return false" id="printBtn" class="btn btn-primary" type="button"><span class="glyphicon glyphicon-print"></span> Print </button>
                 <?php echo anchor('admin/school_events/list_view/', '<i class="glyphicon glyphicon-list">
                 </i> List All', 'class="btn btn-primary"'); ?>
+        </div>
     </div>
+    
+    <div class="panel-body">
+    
 
-</div>
-<div class="widget">
-
-    <div class="block invoice1">
+    <div class="block invoice1" id="printme">
 
         <div class="clearfix"></div>
-        <div class="col-md-11 view-title center">
+        <div class="col-md-11 view-title text-center">
             <h1><img src="<?php echo base_url('assets/themes/admin/img/logo-sm.png'); ?>" />
                 <h5><?php $settings = $this->ion_auth->settings();
                 echo ucwords($settings->motto);

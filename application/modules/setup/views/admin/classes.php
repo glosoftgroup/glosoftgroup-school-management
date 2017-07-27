@@ -1,12 +1,17 @@
-<div class="head"> 
-    <div class="icon"><span class="icosg-target1"></span> </div>
-    <h2>  Classes  </h2>
-    <div class="right">  
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+    <div class="panel-heading">
+        <h4 class="panel-title">Classes</h4>
+        <div class="heading-elements">
+        
+        </div>
     </div>
-</div>
+    
+
+   
 
 <?php if ($class_groups): ?>
-    <div class="block-fluid">
+      <div class="panel-body">
         <table class="table table-hover fpTable" cellpadding="0" cellspacing="0" width="100%">
             <thead>
             <th>#</th>

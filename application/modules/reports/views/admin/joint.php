@@ -1,15 +1,9 @@
-<div class="head">
-    <div class="icon"></div>
-    <h2></h2>
-    <div class="right"></div>    					
-</div><?php
-$sslist = array();
-foreach ($this->classlist as $ssid => $s)
-{
-        $sslist[$ssid] = $s['name'];
-}
-?>
-<div class="toolbar">
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+    <div class="panel-heading">
+        <h4 class="panel-title">erwerfwewdq</h4>
+        <div class="heading-elements">
+        <div class="toolbar ">
     <div class="row row-fluid">
         <div class="col-md-12 span12">
             <?php echo form_open(current_url()); ?>
@@ -19,12 +13,24 @@ foreach ($this->classlist as $ssid => $s)
             <?php echo form_dropdown('exams[]', $exams, $this->input->post('exams'), 'class ="fsel" multiple placeholder="Select Exams" '); ?>
             <button class="btn btn-primary"  type="submit">View Report</button>
             <div class="pull-right"> 
-                <a href="" onClick="window.print(); return false" class="btn btn-primary"><i class="icos-printer"></i> Print </a>
+                <a href="" onClick="return false" id="printBtn" class="btn btn-primary"><i class="icos-printer"></i> Print </a>
             </div>
             <?php echo form_close(); ?>
         </div>
     </div>
 </div>
+        </div>
+    </div>
+    
+    				
+<?php
+$sslist = array();
+foreach ($this->classlist as $ssid => $s)
+{
+        $sslist[$ssid] = $s['name'];
+}
+?>
+
 <?php
 $ij = 0;
 $bars = array();
@@ -41,7 +47,7 @@ foreach ($mks as $student => $pyl)
         }
         $p = (object) $pyl;
         ?>
-        <div class="invoice">
+        <div class="invoice" id="printme">
             <div class="row row-fluid">
                 <div class="row-fluid center">
                     <span class="" style="text-align:center">
