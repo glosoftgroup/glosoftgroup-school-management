@@ -18,7 +18,7 @@ $refNo = refNo();
             <div class="block invoice">
                 <div class="date right">F-<?php echo $refNo; ?>-<?php echo date('y', time()) . '-' . date('2', time()) . '-' . date('H', time()); ?></div>
                 <div class="clearfix"></div>
-                <div class="col-md-11 view-title center">
+                <div class="col-md-11 view-title text-center">
                     <h1><img src="<?php echo base_url('uploads/files/' . $settings->document); ?>" width="150" height="150" />
                         <h5><?php echo ucwords($settings->motto); ?>
                             <br>
@@ -47,7 +47,7 @@ $refNo = refNo();
                 </h3>
                 <span class="right"><b>Total Present:</b> <?php echo $present; ?> Student(s) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;   <b>Total Absent:</b> <?php echo $absent; ?> Student(s) </span>
                 <div class="clearfix"></div>
-                <table class="table-hover mailbox fpTable" cellpadding="0" cellspacing="0">
+                <table class="table table-hover mailbox fpTable" cellpadding="0" cellspacing="0">
                     <thead>
                         <tr>
                             <th>#</th>
