@@ -1,5 +1,5 @@
 <!-- Pager -->
-<div class='row'>
+<div class=''>
 <div class="panel panel-white animated fadeIn">
 	<div class="panel-heading">
 		<h4 class="panel-title">Purchase Order</h4>
@@ -32,7 +32,7 @@ echo   form_open_multipart(current_url(), $attributes);
     </div>
 </div>
 <div class='form-group'>
- <div class="col-md-1" for='due_date'>Due Date </div>
+ <div class="col-md-2" for='due_date'>Due Date </div>
 	 <div class="col-md-3">
 	  <div id="datetimepicker1" class="input-group date form_datetime">
 	<input id='due_date' type='text' name='due_date' maxlength='' class='form-control datepicker' value="<?php echo set_value('due_date', (isset($result->due_date)) ? $result->due_date : ''); ?>"  />
@@ -91,7 +91,7 @@ echo   form_open_multipart(current_url(), $attributes);
 											</td>
 											
 											<td width="10%">
-												<input type="text" name="description[]" id="description" class="description">
+												<input type="text" name="description[]" id="description" class="form-control description">
 													
 													<?php echo form_error('description'); ?>
 											</td>
@@ -117,39 +117,45 @@ echo   form_open_multipart(current_url(), $attributes);
 								<a href="#" id="btnAdd" class="btn btn-success clone">Add New Line</a> 
 								<a href="#" id="btnDel" class="btn btn-danger remove">Remove</a>
 							</div> 
-<div class="row">							
+<div class="">							
 	<div class="col-md-6 text-left">
 		<div class='form-group' style="border:none !important">
-		 <textarea name="comment"  class="" placeholder="Comment here..." style="resize:vertical;" id="comment"></textarea>
+		 <textarea name="comment"  class="form-control" placeholder="Comment here..." style="resize:vertical;" id="comment"></textarea>
 			<?php echo form_error('comment'); ?>
 		</div>
 	</div>
-	<div class="col-md-12">
+	<div class="row">
+	<div class='col-md-8'>
+	</div>
+	<div class="col-md-4">	   
 		<div class='form-group' style="border:none !important">
-			<label for='vat'>VAT</label>
-            <div class='checked'>
+			<label class='text-bold' for='vat'>VAT</label>
+		
+            <div class='radio-inline'>
 			 <label>
-			 <input id='vat' type='radio' name='vat' checked="checked" value='1'  class="form-control" 
+			 <input id='vat' type='radio' name='vat' checked="checked" value='1'  class="styled" 
 			 <?php echo preset_radio('vat', '1', (isset($result->vat)) ? $result->vat : ''  )?> />	
 			 <?php echo form_error('vat'); ?>
              			 Yes 
 				</label>
 			 </div>
-			 <div class='checked'>
+			 <div class='radio-inline'>
 			 <label>
-			 <input id='vat' type='radio' name='vat' value='2'  class="form-control"
+			 <input id='vat' type='radio' name='vat' value='2'  class="styled"
 			 <?php echo preset_radio('vat', '2', (isset($result->vat)) ? $result->vat : ''  )?> />	
 			 <?php echo form_error('vat'); ?> No
 			 </label>
 			 </div>
 			
 			<?php echo form_error('vat'); ?>
-		  </label>
+		 
 		</div>
 	</div>
-	<div class='col-md-12 text-right'>
+	<div class='col-md-8'>
+	</div>
+	<div class='col-md-4'>
 	<div class='form-group' style="border:none !important">
-		<div class="col-md-3" for='total'>TOTAL  </div>
+		<div class="col-md-3 text-bold" for='total'>TOTAL  </div>
 			<div class="col-md-9">
 					
 				<?php echo form_input('total' ,$result->total , 'id="total_" readonly class="total" style="border:none !important" ' );?>
@@ -157,11 +163,12 @@ echo   form_open_multipart(current_url(), $attributes);
 			</div>
 		</div>
 	</div>
+	<div>
 </div>
 						
 				
 <div class='form-group'><label class="control-label"></div><div class="col-md-12 text-right p-10">
-   <?php echo form_submit( 'submit', ($updType == 'edit') ? 'Update' : 'Save', (($updType == 'create') ? "id='submit' class='btn btn-primary''" : "id='submit' class='btn btn-primary'")); ?>
+   <?php echo form_submit( 'submit', ($updType == 'edit') ? 'Update' : 'Save', (($updType == 'create') ? "id='submit' class='btn btn-primary'" : "id='submit' class='btn btn-primary'")); ?>
 	<?php echo anchor('admin/purchase_order','Cancel','class="btn btn-default"');?>
 
 </div></div>
