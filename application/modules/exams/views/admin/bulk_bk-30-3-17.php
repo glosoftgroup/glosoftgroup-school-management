@@ -15,15 +15,14 @@
             <?php endforeach; ?>
         </select>
         <button class="btn btn-warning"  style="height:30px;" type="submit">View Report Forms</button>
-        <a href="" onClick="window.print();
-                    return false" class="btn btn-primary"><i class="icos-printer"></i> Print
+        <a href="" id="printBtn" onClick="return false" class="btn btn-primary"><i class="icos-printer"></i> Print
         </a>
         <?php echo form_close(); ?>
         <br>
         <br>
     </div>
 </div>
-<div class="widget">
+<div class="widget" id="printme">
     <?php
     $this->load->library('Dates');
     $pref = '';

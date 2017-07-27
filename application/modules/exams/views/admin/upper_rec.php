@@ -16,7 +16,7 @@ else
 
 <div class="col-md-3">
 
-   <div class="panel panel-white animated fadeIn">
+   <div class="panel panel-primary border-left-lg border-left-primary animated zoomIn">
 	<div class="panel-heading">
 		<h6 class="panel-title">Select a Subject</h6>
 		<div class="heading-elements">
