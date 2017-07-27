@@ -1,6 +1,6 @@
 <div class="col-md-8">
 <!-- Pager -->
-<div class="panel panel-white">
+<div class="panel panel-white animated fadeIn">
 	<div class="panel-heading">
 		<h6 class="panel-title">Exams</h6>
 		<div class="heading-elements">
@@ -97,7 +97,7 @@
                 <label>Description</label>
               </div>
               <div class="col-md-9">
-                <textarea id="description"  class="form-control wysiwyg "  name="description"  /><?php echo set_value('description', (isset($result->description)) ? htmlspecialchars_decode($result->description) : ''); ?></textarea>
+                <textarea id="description"  class="wysihtml5 wysihtml5-min   "  name="description"  /><?php echo set_value('description', (isset($result->description)) ? htmlspecialchars_decode($result->description) : ''); ?></textarea>
                 <?php echo form_error('description'); ?>
               </div>
             </div>

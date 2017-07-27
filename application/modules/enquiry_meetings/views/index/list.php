@@ -1,21 +1,21 @@
 <div class="col-sm-9">
-<div class="head"> 
-			 <div class="icon"><span class="icosg-target1"></span> </div>
-           <h2>  Enquiry Meetings  
-             <div class="pull-right"> 
-             <?php echo anchor( 'enquiry_meetings/create' , '<i class="glyphicon glyphicon-plus">
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+	<div class="panel-heading">
+		<h4 class="panel-title">Enquiry Meetings</h4>
+		<div class="heading-elements">
+		<?php echo anchor( 'enquiry_meetings/create' , '<i class="glyphicon glyphicon-plus">
                 </i> '.lang('web_add_t', array(':name' => 'Enquiry Meetings')), 'class="btn btn-primary"');?> 
               <?php echo anchor( 'enquiry_meetings/meetings' , '<i class="glyphicon glyphicon-list">
-                </i> '.lang('web_list_all', array(':name' => 'Enquiry Meetings')), 'class="btn btn-primary"');?> 
-             
-                </div>
-			</h2>
-                </div>
-         	     <hr>               
+                </i> '.lang('web_list_all', array(':name' => 'Enquiry Meetings')), 'class="btn btn-primary"');?>
+		
+	
+	<div class="panel-body"> 
+			               
               
      <?php if ($enquiry_meetings): ?>
      <div class="block-fluid">
-	 <table cellpadding="0" cellspacing="0" width="100%" class="display" style="">
+	 <table cellpadding="0" cellspacing="0" width="100%" class="table table-hover display" style="">
 	 <thead>
                 <th>#</th>
 				<th>Title</th>
@@ -60,6 +60,6 @@
 </div>
 
 <?php else: ?>
- 	<p class='text'>You have no enquiry meeting scheduled for now !!</p>
+ 	<p class='text-center'>You have no enquiry meeting scheduled for now !!</p>
  <?php endif ?>
  </div>

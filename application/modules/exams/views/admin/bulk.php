@@ -1,5 +1,5 @@
 <!-- Pager -->
-<div class="panel panel-white">
+<div class="panel panel-white animated fadeIn">
 	<div class="panel-heading">
 		<h6 class="panel-title">Generate Per Class Or Per Student</h6>
 		<div class="heading-elements">

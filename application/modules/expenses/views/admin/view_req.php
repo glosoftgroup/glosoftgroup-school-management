@@ -5,11 +5,12 @@
             window.rjx = <?php echo json_encode($rejt); ?>;
             window.pdx = <?php echo json_encode($pend); ?>;
     </script>
-    <div class="head">
-        <div class="icon"><span class="icosg-target1"></span></div>
-        <h2> Expense Requisitions </h2>
-        <div class="right">
-            <?php
+  <!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+    <div class="panel-heading">
+        <h4 class="panel-title">Expense Requisitions </h4>
+        <div class="heading-elements">
+             <?php
             if ($this->acl->is_allowed(array('admin', 'expenses', 'create_req'), 1))
             {
                     ?>
@@ -19,12 +20,15 @@
             <?php } ?>
         </div>
     </div>
+    
+    <div class="panel-body">
+        
     <div class="slip">
         <?php
         $user = $this->ion_auth->user($req->created_by)->row();
         ?>
         <div class="invoicelist-footer">
-            <table class='fttb'>
+            <table class='table table-hover fttb'>
                 <tr class="taxrelated">
                     <td>#</td>
                     <td>Req<?php echo str_pad($req->id, 4, '0', 0) ?></td>
@@ -129,7 +133,7 @@
                         <input type="text" class="form-controll" ng-model="comm" placeholder="Add a comment">
                     </fieldset>
                     <button type="button" class="btn btn-sm btn-success" ng-click="post(<?php echo $id; ?>);">Post</button>
-                </form>	
+                </form> 
             </div>
         </div> 
     </div>

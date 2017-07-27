@@ -9,11 +9,12 @@
   </script>
     
     <div class="col-md-8">
-	<div class="head">
-                    <div class="icon"><span class="icosg-target1"></span></div>
-                    <h2> Stock Taking </h2> 
-                     <div class="right">                            
-						 <?php echo anchor( 'admin/stock_taking/create/' , '<i class="glyphicon glyphicon-plus">
+	<!-- Pager -->
+	<div class="panel panel-white animated fadeIn">
+		<div class="panel-heading">
+			<h4 class="panel-title"> Stock Taking</h4>
+			<div class="heading-elements">
+			 <?php echo anchor( 'admin/stock_taking/create/' , '<i class="glyphicon glyphicon-plus">
                 </i> Take Stock ', 'class="btn btn-primary"');?> 
 			
              <?php echo anchor( 'admin/stock_taking/' , '<i class="glyphicon glyphicon-list">
@@ -33,10 +34,11 @@
 					  <li><a href="<?php echo base_url('admin/inventory'); ?>"><i class="glyphicon glyphicon-folder-open"></i> Inventory Listing</a></li>
 					</ul>
 				</div>
-			
-                     </div>    					
-                </div>           
-               <div class="block-fluid">
+			</div>
+		</div>
+		
+		<div class="panel-body">
+                   
 
 <?php 
 $attributes = array('class' => 'form-horizontal', 'id' => '');
@@ -64,18 +66,18 @@ echo   form_open_multipart(current_url(), $attributes);
 <div class='form-group'>
 	<div class=' col-md-2' for='closing_stock'>Closing Stock </div>
         <div class="col-md-6">
-	<?php echo form_input('closing_stock' ,$stock_taking_m->closing_stock , 'id="closing_stock_"  class="" id="focusedinput" ' );?>
+	<?php echo form_input('closing_stock' ,$stock_taking_m->closing_stock , 'id="closing_stock_"  class="form-control" id="focusedinput" ' );?>
  	<?php echo form_error('closing_stock'); ?>
 </div>
 </div>
-<div class="widget">
+<div class="form-group">
                     <div class="head dark">
                         <div class="icon"><i class="icos-pencil"></i></div>
                         <h2>Description</h2>
                     </div>
                     <div class="block-fluid editor">
                         
-                        <textarea id="wysiwyg"  name="description" style="height: 300px;">
+                        <textarea id="" class="wysihtml5 wysihtml5-min "  name="description" style="height: 300px;">
                          <?php echo set_value('comment', (isset($stock_taking_m->comment)) ? htmlspecialchars_decode($stock_taking_m->comment) : ''); ?></textarea>   
 					<?php echo form_error('comment'); ?> </textarea>
 
@@ -85,7 +87,7 @@ echo   form_open_multipart(current_url(), $attributes);
                 </div> 
 	
 <div class='form-group'>
-	<div class="col-md-10">
+	<div class="col-md-12 text-right ">
 		
 
 		<?php echo form_submit( 'submit', ($updType == 'edit') ? 'Update' : 'Save', (($updType == 'create') ? "id='submit' class='btn btn-primary''" : "id='submit' class='btn btn-primary'")); ?>

@@ -1,15 +1,15 @@
-
-        <div class="head">
- <div class="icon"><span class="icosg-target1"></span></div>		
-            <h2>  Expenses Category  </h2>
-             <div class="right"> 
-             <?php echo anchor( 'admin/expenses_category' , '<i class="glyphicon glyphicon-list">
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+    <div class="panel-heading">
+        <h4 class="panel-title">Expenses Category</h4>
+        <div class="heading-elements">
+          <?php echo anchor( 'admin/expenses_category' , '<i class="glyphicon glyphicon-list">
                 </i>'.lang('web_list_all', array(':name' => 'Expenses Category')), 'class="btn btn-primary"');?> 
-             
-                </div>
-                </div>
-         	                    
-            <div class="block-fluid">
+        </div>
+    </div>
+    
+    <div class="panel-body">	
+            
 <?php 
 $attributes = array('class' => 'form-horizontal', 'id' => '');
 echo   form_open_multipart(current_url(), $attributes); 

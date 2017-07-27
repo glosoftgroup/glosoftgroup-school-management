@@ -1,18 +1,18 @@
 <div class="col-md-8">
-        <div class="head"> 
-             <div class="icon"><span class="icosg-target1"></span></div>		
-            <h2>  Bank Accounts  </h2>
-             <div class="right"> 
-             <?php echo anchor( 'admin/bank_accounts/create' , '<i class="glyphicon glyphicon-plus">
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+    <div class="panel-heading">
+        <h4 class="panel-title">Bank Accounts </h4>
+        <div class="heading-elements">
+          <?php echo anchor( 'admin/bank_accounts/create' , '<i class="glyphicon glyphicon-plus">
                 </i> '.lang('web_add_t', array(':name' => 'Bank Accounts')), 'class="btn btn-primary"');?> 
               <?php echo anchor( 'admin/bank_accounts' , '<i class="glyphicon glyphicon-list">
-                </i> '.lang('web_list_all', array(':name' => 'Bank Accounts')), 'class="btn btn-primary"');?> 
-             
-                </div>
-                </div>
-         	                    
-               
-				   <div class="block-fluid">
+                </i> '.lang('web_list_all', array(':name' => 'Bank Accounts')), 'class="btn btn-primary"');?>
+        </div>
+    </div>
+    
+    <div class="panel-body">		
+           
 
 <?php 
 $attributes = array('class' => 'form-horizontal', 'id' => '');
@@ -110,7 +110,7 @@ echo   form_open_multipart(current_url(), $attributes);
                     </div>
                     <div class="block-fluid editor">
                         
-                        <textarea id="wysiwyg"  name="description" style="height: 300px;">
+                        <textarea id="" class="wysihtml5 wysihtml5-min "  name="description" style="height: 300px;">
                           <?php echo set_value('description', (isset($result->description)) ? htmlspecialchars_decode($result->description) : ''); ?></textarea>
 	<?php echo form_error('description'); ?>
                         
@@ -118,7 +118,7 @@ echo   form_open_multipart(current_url(), $attributes);
                    
                 </div> 
 
-<div class='form-group'><div class="col-md-2"></div><div class="col-md-6">
+<div class='form-group'><div class="col-md-2"></div><div class="col-md-12 text-right">
     
 
     <?php echo form_submit( 'submit', ($updType == 'edit') ? 'Update' : 'Save', (($updType == 'create') ? "id='submit' class='btn btn-primary''" : "id='submit' class='btn btn-primary'")); ?>
@@ -128,4 +128,4 @@ echo   form_open_multipart(current_url(), $attributes);
 <?php echo form_close(); ?>
 <div class="clearfix"></div>
  </div>
-            </div>
+            </div></div>

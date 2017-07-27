@@ -1,44 +1,44 @@
 <div class="col-md-12">
-                <div class="head">
-                    <div class="icon"><span class="icosg-target1"></span></div>
-                    <h2>Purchase Order</h2> 
-                     <div class="right">                            
-                       
-             <?php echo anchor( 'admin/purchase_order/create/'.$page, '<i class="glyphicon glyphicon-plus"></i> New Order', 'class="btn btn-primary"');?>
+              <!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+	<div class="panel-heading">
+		<h4 class="panel-title">Purchase Order</h4>
+		<div class="heading-elements">
+		 <?php echo anchor( 'admin/purchase_order/create/'.$page, '<i class="glyphicon glyphicon-plus"></i> New Order', 'class="btn btn-primary"');?>
 			    <?php echo anchor( 'admin/purchase_order/' , '<i class="glyphicon glyphicon-list">
                 </i> List All', 'class="btn btn-primary"');?>
 				<?php echo anchor( 'admin/purchase_order/voided' , '<i class="glyphicon glyphicon-list">
                 </i> Voided Purchase Orders', 'class="btn btn-warning"');?>
-			
-             
-             
-                     </div>    					
-                </div>
-				 <div class="toolbar-fluid">
-                            <div class="information">
-							<div class="item">
-                                    <div class="rates">
+		</div>
+	</div>
+	
+	<div class="panel-body">
+                    
+				 <div class="row">
+                            <div class="col-md-12">
+							<div class="col-md-3">
+                                    <div class="well">
                                         <div class="title"> <?php echo $this->currency.' '.number_format($months_lpo->total,2);?> </div>
                                         <div class="description">This month's orders 
 										<span style="" class="caption blue">[ <?php echo $count_months_lpo;?> ]</span></div>
                                     </div>
                                 </div>		
-								 <div class="item">
-                                    <div class="rates">
+								<div class="col-md-3">
+                                    <div class="well">
                                         <div class="title"><?php echo $this->currency.' '.number_format($total_unpaid->total+$total_balance->total,2);?> </div>
                                         <div class="description">Awaiting Payment [ <?php echo $count_unpaid;?> ]</div>
                                     </div>
                                 </div>
-                                <div class="item">
-                                    <div class="rates">
+                                <div class="col-md-3">
+                                    <div class="well">
                                         <div class="title"><?php echo $this->currency.' '.number_format($total_overdue->total,2);?> </div>
                                         <div class="description">Overdue orders [ <?php echo $count_overdue;?> ]</div>
                                     </div>
                                 </div>
                                
                                
-                                <div class="item">
-                                    <div class="rates">
+                               <div class="col-md-3">
+                                    <div class="well">
                                         <div class="title"><?php echo $this->currency.' '.number_format($total_paid->total,2);?> </div>
                                         <div class="description">Total Paid Purchase order [ <?php echo $count_paid;?> ]</div>
                                     </div>
@@ -52,7 +52,7 @@
                  <?php if ($purchase_order): ?>
                
    <div class="block-fluid">
-    <table class="fpTable" cellpadding="0" cellspacing="0" width="100%">
+    <table class="table table-hover fpTable" cellpadding="0" cellspacing="0" width="100%">
 
 
 	 <thead>
@@ -143,5 +143,5 @@
    
 
 <?php else: ?>
- 	<p class='text'><?php echo lang('web_no_elements');?></p>
+ 	<p class='text-center'><?php echo lang('web_no_elements');?></p>
  <?php endif ?>

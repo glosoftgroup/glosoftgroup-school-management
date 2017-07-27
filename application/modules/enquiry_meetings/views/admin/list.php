@@ -1,19 +1,24 @@
-<div class="head"> 
-			 <div class="icon"><span class="icosg-target1"></span> </div>
-            <h2>  Enquiry Meetings  </h2>
-             <div class="right">  
-             <?php echo anchor( 'admin/enquiry_meetings/create/'.$page, '<i class="glyphicon glyphicon-plus"></i> '.lang('web_add_t', array(':name' => 'Enquiry Meetings')), 'class="btn btn-primary"');?>
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+	<div class="panel-heading">
+		<h4 class="panel-title">Enquiry Meetings</h4>
+		<div class="heading-elements">
+			<?php echo anchor( 'admin/enquiry_meetings/create/'.$page, '<i class="glyphicon glyphicon-plus"></i> '.lang('web_add_t', array(':name' => 'Enquiry Meetings')), 'class="btn btn-primary"');?>
 			 
 			 <?php echo anchor( 'admin/enquiry_meetings' , '<i class="glyphicon glyphicon-list">
                 </i> '.lang('web_list_all', array(':name' => 'Enquiry Meetings')), 'class="btn btn-primary"');?> 
              
-                </div>
-                </div>
+		</div>
+	</div>
+	
+	<div class="panel-body">
+			 
+             
          	                    
               
                  <?php if ($enquiry_meetings): ?>
                  <div class="block-fluid">
-				<table class="fpTable" cellpadding="0" cellspacing="0" width="100%">
+				<table class="table table-hover fpTable" cellpadding="0" cellspacing="0" width="100%">
 	 <thead>
                 <th>#</th>
 				<th>Parent</th>
@@ -65,5 +70,5 @@
 </div>
 
 <?php else: ?>
- 	<p class='text'><?php echo lang('web_no_elements');?></p>
+ 	<p class='text-center'><?php echo lang('web_no_elements');?></p>
  <?php endif ?>

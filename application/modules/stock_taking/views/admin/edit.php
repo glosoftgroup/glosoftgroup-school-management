@@ -8,11 +8,12 @@
   }
   </script>
    <div class="col-md-8">
-	<div class="head">
-                    <div class="icon"><span class="icosg-target1"></span></div>
-                    <h2> Stock Taking </h2> 
-                     <div class="right">                            
-						 <?php echo anchor( 'admin/stock_taking/create/' , '<i class="glyphicon glyphicon-plus">
+	<!-- Pager -->
+	<div class="panel panel-white animated fadeIn">
+		<div class="panel-heading">
+			<h4 class="panel-title"> Stock Taking</h4>
+			<div class="heading-elements">
+			   <?php echo anchor( 'admin/stock_taking/create/' , '<i class="glyphicon glyphicon-plus">
                 </i> Take Stock ', 'class="btn btn-primary"');?> 
 			
              <?php echo anchor( 'admin/stock_taking/' , '<i class="glyphicon glyphicon-list">
@@ -33,9 +34,11 @@
 					</ul>
 				</div>
 			
-                     </div>    					
-                </div>           
-               <div class="block-fluid">
+			</div>
+		</div>
+		
+		<div class="panel-body">
+                   
   
   
 <?php 
@@ -47,7 +50,7 @@ echo   form_open_multipart(current_url(), $attributes);
 	<div class="col-md-2" for='start_date'>Date <span class='required'>*</span></div>
 	<div class="col-md-10">
 	<div id="datetimepicker1" class="input-group date form_datetime">
-	 <input type="text" class="col-md-4 datepicker" id='stock_date' style="width:200px !important;" name='stock_date' value="<?php echo date('d-m-Y',$stock_taking_m->stock_date); ?>"><span class="input-group-addon "><i class="glyphicon glyphicon-calendar"></i></span>
+	 <input type="text" class="form-control datepicker" id='stock_date' style="width:200px !important;" name='stock_date' value="<?php echo date('d-m-Y',$stock_taking_m->stock_date); ?>"><span class="input-group-addon "><i class="glyphicon glyphicon-calendar"></i></span>
  	<?php echo form_error('stock_date'); ?>
 </div>
 </div>
@@ -65,20 +68,20 @@ echo   form_open_multipart(current_url(), $attributes);
 <div class='form-group'>
 	<div class=' col-md-2' for='closing_stock'>Closing Stock </div>
         <div class="col-md-6">
-	<?php echo form_input('closing_stock' ,$stock_taking_m->closing_stock , 'id="closing_stock_"  class="col-md-4" id="focusedinput" ' );?>
+	<?php echo form_input('closing_stock' ,$stock_taking_m->closing_stock , 'id="closing_stock_"  class="form-control" id="focusedinput" ' );?>
  	<?php echo form_error('closing_stock'); ?>
 </div>
 </div>
 
 
-<div class="widget">
+<div class="form-group">
                     <div class="head dark">
                         <div class="icon"><i class="icos-pencil"></i></div>
                         <h2>Description</h2>
                     </div>
                     <div class="block-fluid editor">
                         
-                        <textarea id="wysiwyg"  name="description" style="height: 300px;">
+                        <textarea id="" class="wysihtml5 wysihtml5-min "  name="description" style="height: 300px;">
                          <?php echo set_value('comment', (isset($stock_taking_m->comment)) ? htmlspecialchars_decode($stock_taking_m->comment) : ''); ?></textarea>   
 					<?php echo form_error('comment'); ?> </textarea>
 
@@ -89,6 +92,7 @@ echo   form_open_multipart(current_url(), $attributes);
 
 
 			<br />
+<div class="text-right">
  <?php echo form_submit( 'submit', ($updType == 'edit') ? 'Update' : 'Save', (($updType == 'create') ? "id='submit' class='btn btn-primary''" : "id='submit' class='btn btn-primary'")); ?>
 		<?php echo anchor('admin/stock_taking','Cancel','class="btn btn-danger"');?>
 
@@ -97,7 +101,7 @@ echo   form_open_multipart(current_url(), $attributes);
 <?php if ($updType == 'edit'): ?>
 	<?php echo form_hidden('id',$stock_taking_m->id); ?>
 <?php endif ?>
-
+</div>
 <?php echo form_close(); ?>
 </div>
 </div>

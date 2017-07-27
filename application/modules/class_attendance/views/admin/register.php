@@ -2,13 +2,17 @@
 $settings = $this->ion_auth->settings();
 $refNo = refNo();
 ?>
-<div class="head">
-    <div class="icon"><span class="icosg-target1"></span></div>
-    <h2> Class Attendance </h2> 
-    <div class="right">                            
-        <?php echo anchor('admin/class_attendance/list_attendance/' . $dat->class_id, '<i class="glyphicon glyphicon-list"></i> List All Class Attendance', 'class="btn btn-primary"'); ?>
-    </div>    					
-</div>
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+    <div class="panel-heading">
+        <h4 class="panel-title">Class Attendance </h4>
+        <div class="heading-elements">
+          <?php echo anchor('admin/class_attendance/list_attendance/' . $dat->class_id, '<i class="glyphicon glyphicon-list"></i> List All Class Attendance', 'class="btn btn-primary"'); ?>
+        </div>
+    </div>
+    
+    <div class="panel-body">
+   
 <?php if ($post): ?>  
         <div class="widget">
             <div class="block invoice">
@@ -93,5 +97,5 @@ $refNo = refNo();
             </div>
         </div>
 <?php else: ?>
-        <p class='text'><?php echo lang('web_no_elements'); ?></p>
+        <p class='text-center'><?php echo lang('web_no_elements'); ?></p>
                                                                         <?php endif ?>

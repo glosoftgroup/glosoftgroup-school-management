@@ -13,16 +13,19 @@ else
 }
 ?>
 <div class="col-md-9">
-    <div class="head">
-        <div class="icon"><span class="icosg-target1"></span></div>
-        <h2>Charge Student Fee Structure  Extras</h2>
-        <div class="right">             
-            <?php echo anchor('admin/fee_structure/my_extras', '<i class="glyphicon glyphicon-list">  </i> Manage Fee Extras', 'target="blank" class="btn btn-primary"'); ?>
-        </div>			
-    </div>
-    <div class="block-fluid">
+    <!-- Pager -->
+    <div class="panel panel-white animated fadeIn">
+        <div class="panel-heading">
+            <h4 class="panel-title">Charge Student Fee Structure  Extras</h4>
+            <div class="heading-elements">
+                <?php echo anchor('admin/fee_structure/my_extras', '<i class="glyphicon glyphicon-list">  </i> Manage Fee Extras', 'target="blank" class="btn btn-primary"'); ?>            
+            </div>
+        </div>
+        
+        <div class="panel-body">
+     
         <?php echo form_open(current_url(), 'class="form-inline" id="fextra"'); ?>
-        <table cellpadding="0" cellspacing="0" border="0" class='hover' id="adm_table" width="100%">
+        <table cellpadding="0" cellspacing="0" border="0" class='table table-hover' id="adm_table" width="100%">
             <thead>
                 <tr>
                     <th width="5%">#</th>
@@ -37,7 +40,7 @@ else
             <tfoot></tfoot>
         </table>
         <?php echo form_error('sids', '<p class="error" style="width:200px; margin: 15px auto;" >', '</p>'); ?>
-        <table class="clon" width="100%">
+        <table class="table clon" width="100%">
             <?php
             if ($this->input->post())
             {
@@ -77,24 +80,24 @@ else
                             }
                             ?>
                             <tr id="entry<?php echo $ii + 1; ?>" class="tr_clone"> 
-                                <td width="25%"><?php
-                                    echo form_dropdown('fee[]', array('' => 'Select Fee') + $list, $ffval, ' class="fsel validate[required]"');
+                                <td style="padding:4px 6px;" width="25%"><?php
+                                    echo form_dropdown('fee[]', array('' => 'Select Fee') + $list, $ffval, ' class="select fsel validate[required]"');
                                     echo form_error('fee');
                                     ?>
                                 </td> 
 
-                                <td>
-                                    <?php echo form_input('description[]', $descval, 'placeholder="Description" class="desc" style="width:200px;" '); ?>
+                                <td style="padding:4px 6px;">
+                                    <?php echo form_input('description[]', $descval, 'placeholder="Description" class="form-control desc" style="width:200px;" '); ?>
                                     <?php echo form_error('description'); ?>
                                 </td>  
 
-                                <td><?php echo form_input('amount[]', $amval, 'placeholder="Amount" class="amt" style="width:92px;" '); ?>
+                                <td><?php echo form_input('amount[]', $amval, 'placeholder="Amount" class="form-control amt" style="width:92px;" '); ?>
                                     <?php echo form_error('amount'); ?></td> 
-                                <td><?php echo form_dropdown('term[]', array('' => ' Term') + $this->terms, $ttval, 'class="xsel validate[required]" '); ?>
+                                <td><?php echo form_dropdown('term[]', array('' => ' Term') + $this->terms, $ttval, 'class="select xsel validate[required]" '); ?>
                                     <?php echo form_error('term'); ?></td> 
                                 <td> <?php
                                     krsort($yrs);
-                                    echo form_dropdown('year[]', array('' => 'Year') + $yrs, $yyval, 'class=" xsel validate[required]" ');
+                                    echo form_dropdown('year[]', array('' => 'Year') + $yrs, $yyval, 'class=" xsel select validate[required]" ');
                                     ?>
                                     <?php echo form_error('year'); ?></td> 
                             </tr>
@@ -107,15 +110,15 @@ else
                     ?>
                     <tr id="entry1" class="tr_clone"> 
                         <td width="25%"><?php
-                            echo form_dropdown('fee[]', array('' => 'Select Fee') + $list, '', ' class="fsel validate[required] fetcher"');
+                            echo form_dropdown('fee[]', array('' => 'Select Fee') + $list, '', ' class="select fsel validate[required] fetcher"');
                             echo form_error('fee');
                             ?>
                         </td>
-                        <td><?php echo form_input('description[]', '', 'placeholder="Description" class="desc" style="width:200px;" '); ?>
+                        <td><?php echo form_input('description[]', '', 'placeholder="Description" class="form-control desc" style="width:200px;" '); ?>
                             <?php echo form_error('description'); ?>
                         </td>  
 
-                        <td><?php echo form_input('amount[]', '', 'placeholder="Amount" class="amt" style="width:92px;" '); ?>
+                        <td><?php echo form_input('amount[]', '', 'placeholder="Amount" class="form-control amt" style="width:92px;" '); ?>
                             <?php echo form_error('amount'); ?>
                         </td> 
                         <td>
@@ -131,30 +134,35 @@ else
                     </tr>
             <?php } ?>
         </table>
-        <div class="actions">
+        <div class="actions text-left">
             <a  id="btnAdd" class="btn btn-success clone">Add New Line</a> 
             <a  id="btnDel" class="btn btn-danger remove">Remove</a>
         </div>
 
-        <div class='form-group'><div class="col-md-2"></div><div class="col-md-10">
+        <div class='form-group col-md-12'>
+            <div class="text-right">
                 <?php echo form_submit('submit', 'Save', "id='submit' class='btn btn-primary' "); ?>
                 <?php echo anchor('admin/fee_structure', 'Cancel', 'class="btn  btn-default"'); ?>
-            </div></div>
+            </div>
+        </div>
         <?php echo form_close(); ?>
     </div>
 </div>
-
+</div>
 <div class="col-md-3">
 
-    <div class="widget">
-        <div class="head dark">
-            <div class="icon"><span class="icosg-newtab"></span></div>
-            <h2>Class</h2>
+  <!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+    <div class="panel-heading">
+        <h4 class="panel-title">Class</h4>
+        <div class="heading-elements">
+        
         </div>
+    </div>
+    
+    <div class="panel-body">            
 
-        <div class="block-fluid">
-
-            <ul class="list tickets">
+            <ul class="list media-list tickets">
                 <?php
                 $i = 0;
                 foreach ($this->classlist as $cid => $cl)
@@ -274,5 +282,7 @@ else
                 }
             });
         });
-
+ $(document).ready(function(){
+    //$('td').css('padding','4px 6px;');
+ });
 </script>

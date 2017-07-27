@@ -1,5 +1,5 @@
 <div class="col-md-12">
-  <div class="panel panel-white">
+  <div class="panel panel-white animated fadeIn">
     <div class="panel-heading">
       <h2 class="panel-title">  Assign Sub Units For <?php echo $sub->name; ?> </h2>
       <div class="heading-elements">

@@ -1,20 +1,20 @@
-<div class="head"> 
-			 <div class="icon"><span class="icosg-target1"></span> </div>
-            <h2>  Payment History For 
-			<?php $data=$this->ion_auth->students_full_details(); echo '<span style="color:#54A1E6">'.$data[$post->reg_no].'</span>';?> 
-			</h2>
-             <div class="right">  
-             <?php echo anchor( 'admin/fee_payment/create/', '<i class="glyphicon glyphicon-plus"></i> '.lang('web_add_t', array(':name' => 'Fee Payment')), 'class="btn btn-primary"');?> 
-			 <?php echo anchor( 'admin/fee_payment/data_edit/'.$post->reg_no, '<i class="glyphicon glyphicon-eye-open"></i> View Payment History', 'class="btn btn-primary"');?>
-			 
-			 <?php echo anchor( 'admin/fee_payment' , '<i class="glyphicon glyphicon-list">
-                </i> '.lang('web_list_all', array(':name' => 'Fee Payment')), 'class="btn btn-primary"');?> 
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+    <div class="panel-heading">
+        <h4 class="panel-title"> Payment History For 
+            <?php $data=$this->ion_auth->students_full_details(); echo '<span style="color:#54A1E6">'.$data[$post->reg_no].'</span>';?></h4>
+        <div class="heading-elements">
+         <?php echo anchor( 'admin/fee_payment/create/', '<i class="glyphicon glyphicon-plus"></i> '.lang('web_add_t', array(':name' => 'Fee Payment')), 'class="btn btn-primary"');?> 
+             <?php echo anchor( 'admin/fee_payment/data_edit/'.$post->reg_no, '<i class="glyphicon glyphicon-eye-open"></i> View Payment History', 'class="btn btn-primary"');?>
              
-                </div>
-                </div>        
-              
-                 <div class="block-fluid">
-                      <table class="fpTable" cellpadding="0" cellspacing="0" width="100%">
+             <?php echo anchor( 'admin/fee_payment' , '<i class="glyphicon glyphicon-list">
+                </i> '.lang('web_list_all', array(':name' => 'Fee Payment')), 'class="btn btn-primary"');?> 
+        </div>
+    </div>
+    
+    <div class="panel-body">
+           
+                      <table class="table table-hover fpTable" cellpadding="0" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
                                     <th width="3%">#</th>

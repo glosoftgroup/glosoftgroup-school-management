@@ -1,14 +1,19 @@
-<div class="head">
-    <div class="icon"><span class="icosg-target1"></span></div>
-    <h2>Fee Arrears Report</h2> 
-    <div class="right">                       
-    </div>    					
-</div>
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+  <div class="panel-heading">
+    <h4 class="panel-title">Fee Arrears Report</h4>
+    <div class="heading-elements">
+    
+    </div>
+  </div>
+  
+  <div class="panel-body">
+    
 
 <div class="toolbar">
     <div class="noof">
          <?php echo form_open(current_url()); ?>
-        Suspended Only<input type="checkbox" name="sus" value="1"/>
+        Suspended Only. <input type="checkbox" name="sus" value="1"/>
         Class
         <?php echo form_dropdown('class', array('' => 'Select Class') + $this->classes, $this->input->post('class'), 'class ="tsel" '); ?>
         Term
@@ -61,7 +66,7 @@
 
     </div>
 
-    <table cellpadding="0" cellspacing="0" width="100%">
+    <table class="table table-hover" cellpadding="0" cellspacing="0" width="100%">
         <thead>
             <tr>
                 <th width="3%">#</th>
@@ -147,13 +152,13 @@
                   $(".tsel").select2({'placeholder': 'Please Select', 'width': '140px'});
                   $(".tsel").on("change", function (e) {
 
-                       notify('Select', 'Value changed: ' + e.added.text);
+                       //notify('Select', 'Value changed: ' + e.added.text);
                   });
 
                   $(".fsel").select2({'placeholder': 'Please Select', 'width': '100px'});
                   $(".fsel").on("change", function (e) {
                        console.log(e);
-                       notify('Select', 'Value changed: ' + e.added.text);
+                       //notify('Select', 'Value changed: ' + e.added.text);
                   });
              });
 </script>

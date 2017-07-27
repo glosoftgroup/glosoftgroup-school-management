@@ -1,19 +1,18 @@
-<div class="head"> 
-			 <div class="icon"><span class="icosg-target1"></span> </div>
-            <h2>  Books  </h2>
-             <div class="right">  
-             <?php echo anchor( 'admin/books/create/'.$page, '<i class="glyphicon glyphicon-plus"></i> '.lang('web_add_t', array(':name' => 'Books')), 'class="btn btn-primary"');?>
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+	<div class="panel-heading">
+		<h4 class="panel-title">Books</h4>
+		<div class="heading-elements">
+			<?php echo anchor( 'admin/books/create/'.$page, '<i class="glyphicon glyphicon-plus"></i> '.lang('web_add_t', array(':name' => 'Books')), 'class="btn btn-primary"');?>
 			 
 			 <?php echo anchor( 'admin/books' , '<i class="glyphicon glyphicon-list">
                 </i> '.lang('web_list_all', array(':name' => 'Books')), 'class="btn btn-primary"');?> 
-             
-                </div>
-                </div>
-         	                    
-              
-                 <?php if ($books): ?>
-                 <div class="block-fluid">
-				<table class="fpTable" cellpadding="0" cellspacing="0" width="100%">
+		</div>
+	</div>
+           
+    <?php if ($books): ?>
+               <div class="panel-body">
+				<table class="table table-hover fpTable" cellpadding="0" cellspacing="0" width="100%">
 	 <thead>
                 <th>#</th>
 				<th>Title</th>
@@ -93,5 +92,5 @@
 </div>
 
 <?php else: ?>
- 	<p class='text'><?php echo lang('web_no_elements');?></p>
+ 	<p class='text-center'><?php echo lang('web_no_elements');?></p>
  <?php endif ?>

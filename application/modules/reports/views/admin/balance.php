@@ -1,12 +1,14 @@
-<div class="head">
-    <div class="icon">
-        <span class="icosg-target1"></span></div>
-    <h2>Fee Status Report</h2>
-    <div class="right">   
-        <a href="" onClick="window.print(); return false" class="btn btn-primary"><i class="icos-printer"></i> Print</a>
-    </div>    					
-</div>
-
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+    <div class="panel-heading">
+        <h4 class="panel-title">Fee Status Report</h4>
+        <div class="heading-elements">
+          <a href="" id="printBtn" onClick="return false;" class="btn btn-primary"><i class="icos-printer"></i> Print</a>
+        </div>
+    </div>
+    
+    <div class="panel-body">
+    
 <div class="toolbar">
     <div class="noof">
         <div class="col-md-1">&nbsp;</div>
@@ -19,7 +21,7 @@
         </div>
     </div>
 </div>
-<div class="block invoice">
+<div class="block invoice" id="printme">
     <h1> </h1>
 
     <div class="row">
@@ -28,7 +30,7 @@
         </div>
     </div>
 
-    <table cellpadding="0" cellspacing="0" width="100%" class="nob">
+    <table cellpadding="0" cellspacing="0" width="100%" class="table table-hover nob">
         <thead>
             <tr>
                 <th width="3%">#</th>

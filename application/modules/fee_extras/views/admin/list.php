@@ -1,18 +1,21 @@
-<div class="head"> 
-    <div class="icon"><span class="icosg-target1"></span> </div>
-    <h2>  Fee Extras  </h2>
-    <div class="right">  
-        <?php echo anchor('admin/fee_extras/create/' . $page, '<i class="glyphicon glyphicon-plus"></i> ' . lang('web_add_t', array(':name' => 'Fee Extras')), 'class="btn btn-primary"'); ?>
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+    <div class="panel-heading">
+        <h4 class="panel-title">Fee Extras</h4>
+        <div class="heading-elements">
+            <?php echo anchor('admin/fee_extras/create/' . $page, '<i class="glyphicon glyphicon-plus"></i> ' . lang('web_add_t', array(':name' => 'Fee Extras')), 'class="btn btn-primary"'); ?>
 
         <?php echo anchor('admin/fee_extras', '<i class="glyphicon glyphicon-list">
                 </i> ' . lang('web_list_all', array(':name' => 'Fee Extras')), 'class="btn btn-primary"'); ?> 
-
+        </div>
     </div>
-</div>
+    
+   
+   
  
 <?php if ($fee_extras): ?>
-        <div class="block-fluid">
-            <table class="fpTable" cellpadding="0" cellspacing="0" width="100%">
+         <div class="panel-body">
+            <table class="table table-hover fpTable" cellpadding="0" cellspacing="0" width="100%">
                 <thead>
                 <th>#</th>
                 <th>Title</th>
@@ -59,5 +62,5 @@
         </div>
 
 <?php else: ?>
-        <p class='text'><?php echo lang('web_no_elements'); ?></p>
+        <p class='text-center'><?php echo lang('web_no_elements'); ?></p>
                              <?php endif ?>

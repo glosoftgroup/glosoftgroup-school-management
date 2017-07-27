@@ -1,18 +1,19 @@
 <div class="col-md-8">
-        <div class="head"> 
-             <div class="icon"><span class="icosg-target1"></span></div>		
-            <h2>  tax_config  </h2>
-             <div class="right"> 
-             <?php echo anchor( 'admin/tax_config/create' , '<i class="glyphicon glyphicon-plus">
+   <!-- Pager -->
+   <div class="panel panel-white animated fadeIn">
+   	<div class="panel-heading">
+   		<h4 class="panel-title"> tax_config </h4>
+   		<div class="heading-elements">
+   		    <?php echo anchor( 'admin/tax_config/create' , '<i class="glyphicon glyphicon-plus">
                 </i> Tax', 'class="btn btn-primary"');?> 
               <?php echo anchor( 'admin/tax_config' , '<i class="glyphicon glyphicon-list">
                 </i> '.lang('web_list_all', array(':name' => 'tax_config')), 'class="btn btn-primary"');?> 
              
-                </div>
-                </div>
-         	                    
-               
-				   <div class="block-fluid">
+   		</div>
+   	</div>
+   	
+   	<div class="panel-body">		
+           
 				   <?php 
 $attributes = array('class' => 'form-horizontal', 'id' => '');
 echo   form_open_multipart(current_url(), $attributes); 
@@ -20,26 +21,24 @@ echo   form_open_multipart(current_url(), $attributes);
 				   	   <!-- END ADVANCED SEARCH EXAMPLE -->
         <!-- BEGIN TABLE DATA -->
         <div id="editable_wrapper" class="dataTables_wrapper form-inline" role="grid">
-		 <table cellpadding="0" cellspacing="0" width="100%">
-		  <!-- BEGIN -->
-            <thead>
-                <tr role="row">
-				
-				
-				<th width="3%">#</th>
-				<th width="50" >Name</th>
-					<th width="50">Percentage(%)</th>
-				
-				</tr>
-            </thead>
-           </table>
+		 
 		   
-		   <div id="entry1" class="clonedInput">
+		   <div >
 							
-							 <table cellpadding="0" cellspacing="0" width="100%">  
+							 <table class='table table-hover' cellpadding="0" cellspacing="0" width="100%">  
+							  <thead>
+								<tr role="row">
+								
+								
+								<th width="3%">#</th>
+								<th width="50" >Name</th>
+									<th width="50">Percentage(%)</th>
+								
+								</tr>
+							</thead>
 										<tbody>
 										
-										<tr >
+										<tr id="entry1" class="clonedInput">
                   
 													 <td width="3%">
 													  <span id="reference" name="reference" class="heading-reference">1</span>
@@ -73,7 +72,7 @@ echo   form_open_multipart(current_url(), $attributes);
 		</div>
 
 
-<div class='form-group'><div class="col-md-10">
+<div class='form-group'><div class="col-md-12 text-right p-10">
     
 
     <?php echo form_submit( 'submit', ($updType == 'edit') ? 'Update' : 'Save', (($updType == 'create') ? "id='submit' class='btn btn-primary''" : "id='submit' class='btn btn-primary'")); ?>

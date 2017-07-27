@@ -1,13 +1,16 @@
 <div class="col-md-6">
-    <div class="head">
-        <div class="icon"><span class="icosg-target1"></span></div>
-        <h2>View Class</h2> 
-        <div class="right">
-            <a href="<?php echo base_url('admin/class_groups/classes'); ?>" class="btn btn-primary"><i class="glyphicon glyphicon-list">
-                </i> List All</a>    
-        </div>    					
-    </div>
-    <div class="block invoice">
+   <!-- Pager -->
+   <div class="panel panel-white animated fadeIn">
+       <div class="panel-heading">
+           <h4 class="panel-title">View Class</h4>
+           <div class="heading-elements">
+             <a href="<?php echo base_url('admin/class_groups/classes'); ?>" class="btn btn-primary"><i class="glyphicon glyphicon-list">
+                </i> List All</a> 
+           </div>
+       </div>
+       
+       <div class="panel-body">
+        
         <h1><?php
             $cc = isset($classes[$class->class]) ? $classes[$class->class] : ' -';
             $ss = isset($streams[$class->stream]) ? $streams[$class->stream] : ' -';
@@ -37,7 +40,7 @@
                         echo form_error('class_teacher');
                         ?>
                     </div></div>
-                <div class='form-group'><div class="col-md-2"></div><div class="col-md-6">
+                <div class='form-group'><div class="col-md-2"></div><div class="col-md-12 text-right">
 
 
                         <?php echo form_submit('submit', ($updType == 'edit') ? 'Update' : 'Save', (($updType == 'create') ? "id='submit' class='btn btn-primary''" : "id='submit' class='btn btn-primary'")); ?>
@@ -52,14 +55,19 @@
         </div>
     </div>
 </div>
+</div>
 <div class="col-md-6">
-    <div class="widget">
-        <div class="head dark">
-            <div class="icon"></div>
-            <h2>Classes</h2>
-        </div>
-
-        <div class="block-fluid">
+   <!-- Pager -->
+   <div class="panel panel-white animated fadeIn">
+       <div class="panel-heading">
+           <h4 class="panel-title">Classes</h4>
+           <div class="heading-elements">
+           
+           </div>
+       </div>
+       
+       <div class="panel-body">
+            
             <table cellpadding="0" cellspacing="0" width="100%">
                 <thead>
                     <tr>

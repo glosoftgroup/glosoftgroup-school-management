@@ -87,7 +87,7 @@ $settings = $this->ion_auth->settings();
                             </div>
 
                             <div class="form-group">
-                                <button type="submit" class="btn bg-pink-400 btn-block">Sign in <i class="icon-circle-right2 position-right"></i></button>
+                                <button type="submit" class="btn bg-indigo btn-block">Sign in <i class="icon-circle-right2 position-right"></i></button>
                             </div>
 
                             <div class="text-center">

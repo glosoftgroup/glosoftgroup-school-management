@@ -25,12 +25,12 @@ $settings = $this->ion_auth->settings();
     <div class="col-md-4"></div>
 </div>
 <div class="col-md-1"></div>
-<div class="slip col-md-10">
-    <div class="slip-content">
+<div class="slip panel col-md-10">
+    <div class="panel-body slip-content">
         <div class="row">
             <div class="col-md-12 view-title ">
-                <span class="center">
-                    <h6 class="center" style="font-size:1.5em;">
+                <span class="text-center">
+                    <h6 class="text-center" style="font-size:1.5em;">
                         <img  src="<?php echo base_url('uploads/files/' . $this->school->document); ?>" class="center"  style="margin-right:10px;" width="80" height="80" /><br>
                         <?php echo $this->school->school; ?><br>
                         Payslip For The Period Of <abbr title="Date"  ><?php echo $post->month . ' ' . $post->year; ?></abbr>

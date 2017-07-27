@@ -1,35 +1,39 @@
-<div class="head">
-    <div class="icon">
-        <span class="icosg-target1"></span></div>
-    <h2>Admission Report</h2>
-    <div class="right">                       
-    </div>    					
-</div>
 
-<div class="toolbar">
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+  <div class="panel-heading">
+    <h4 class="panel-title">Admission Report</h4>
+    <div class="heading-elements">
+    
+    </div>
+  </div>
+  
+  <div class="panel-body">
+   <div class="toolbar col-md-12">
     <div class="noof">
          <?php echo form_open(current_url()); ?>
         <fieldset>
-            Name<input type="checkbox" name="cols[sname]" value="1"/>
-            Class<input type="checkbox" name="cols[class]" value="1"/>
-            Adm.<input type="checkbox" name="cols[adm]" value="1"/>
-            DoB<input type="checkbox" name="cols[dob]" value="1"/>
-            House<input type="checkbox" name="cols[hse]" value="1"/>
-            Parent<input type="checkbox" name="cols[par]" value="1"/>
-            Tel<input type="checkbox" name="cols[tel]" value="1"/>
+             Name. <input type="checkbox" class=" " name="cols[sname]" value="1"/>
+            Class. <input type="checkbox" name="cols[class]" value="1"/>
+            Adm. <input type="checkbox" name="cols[adm]" value="1"/>
+            DoB. <input type="checkbox" name="cols[dob]" value="1"/>
+            House. <input type="checkbox" name="cols[hse]" value="1"/>
+            Parent. <input type="checkbox" name="cols[par]" value="1"/>
+            Tel. <input type="checkbox" name="cols[tel]" value="1"/>
         </fieldset>
-        Class
-        <?php echo form_dropdown('class', array('' => 'Select Class') + $this->classes, $this->input->post('class'), 'class ="tsel" '); ?>
-        Year 
-        <?php echo form_dropdown('year', array('' => 'Select Year') + $yrs, $this->input->post('year'), 'class ="fsel" '); ?>
+        <label> Class. </label>
+        <?php echo form_dropdown('class', array('' => 'Select Class') + $this->classes, $this->input->post('class'), 'class =" col-md-12 tsel" '); ?>
+       <label> Year.</label>
+        <?php echo form_dropdown('year', array('' => 'Select Year') + $yrs, $this->input->post('year'), 'class =" col-md-12 fsel" '); ?>
         <button class="btn btn-primary"  type="submit">View Report</button>
         <div class="pull-right"> 
-            <a href="" onClick="window.print();
-                      return false" class="btn btn-primary"><i class="icos-printer"></i> Print</a>
+            <a href="" id="printBtn" onClick="return false;" class="btn btn-primary"><i class="icos-printer"></i> Print</a>
         </div>
         <?php echo form_close(); ?>
     </div>
 </div>
+
+
 <div class="block invoice">
     <h1> </h1>
 
@@ -55,7 +59,7 @@
         if (!empty($cols))
         {
              ?>
-             <table cellpadding="0" cellspacing="0" width="100%">
+             <table class="table table-hover table-bordered" cellpadding="0" cellspacing="0" width="100%">
                  <thead>
                      <tr>
                          <th width="3%">#</th>
@@ -278,12 +282,12 @@
                   $(".tsel").select2({'placeholder': 'Please Select', 'width': '140px'});
                   $(".tsel").on("change", function (e) {
 
-                       notify('Select', 'Value changed: ' + e.added.text);
+                       //notify('Select', 'Value changed: ' + e.added.text);
                   });
 
                   $(".fsel").select2({'placeholder': 'Please Select', 'width': '100px'});
                   $(".fsel").on("change", function (e) {
-                       notify('Select', 'Value changed: ' + e.added.text);
+                       //notify('Select', 'Value changed: ' + e.added.text);
                   });
              });
 </script>

@@ -1,18 +1,22 @@
-<div class="head">
-    <div class="icon"><span class="icosg-target1"></span></div>
-    <h2>  Expenses </h2> 
-    <div class="right">                            
-         <?php echo anchor('admin/expenses/create/' . $page, '<i class="glyphicon glyphicon-plus"> </i>' . lang('web_add_t', array(':name' => 'Expenses')), 'class="btn btn-primary"'); ?>
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+  <div class="panel-heading">
+    <h4 class="panel-title">Expenses</h4>
+    <div class="heading-elements">
+       <?php echo anchor('admin/expenses/create/' . $page, '<i class="glyphicon glyphicon-plus"> </i>' . lang('web_add_t', array(':name' => 'Expenses')), 'class="btn btn-primary"'); ?>
          <?php echo anchor('admin/expenses/', '<i class="glyphicon glyphicon-list">
                 </i> List All', 'class="btn btn-primary"'); ?>
          <?php echo anchor('admin/expenses/voided', '<i class="glyphicon glyphicon-list">
                 </i> Voided Expenses', 'class="btn btn-warning"'); ?>
-    </div>    					
-</div>
+    </div>
+  </div>
+  
+  <div class="panel-body">
+    
 
-<div class="toolbar-fluid">
-    <div class="information">
-        <div class="item">
+<div class="row">
+    <div class="col-md-12">
+        <div class="col-md-3 well">
             <div class="rates">
                 <div class="title"><?php
                          if (empty($total_exp_day->total))
@@ -23,8 +27,8 @@
                 <div class="description">Total Expenses Today (<?php echo $this->currency; ?>)</div>
             </div>
         </div>
-        <div class="item">
-            <div class="rates">
+        <div class="col-md-3">
+            <div class="rates well">
                 <div class="title">
                      <?php
                          $t = $total_petty_cash->total + $wages + $total_exp_month->total;
@@ -40,8 +44,8 @@
         </div>
 
 
-        <div class="item">
-            <div class="rates">
+        <div class="col-md-3">
+            <div class="rates well">
                 <div class="title">
 
 
@@ -53,10 +57,10 @@
                     ?></div>
                 <div class="description"> Total  Petty Cash This Term (<?php echo $this->currency; ?>)</div>
             </div>
-        </div>	
+        </div>  
 
-        <div class="item">
-            <div class="rates">
+        <div class="col-md-3">
+            <div class="rates well">
                 <div class="title">
                      <?php
                          $t = $wages + $total_exp_year->total + $total_petty_cash->total;
@@ -74,7 +78,7 @@
 
 <div class="block-fluid">
 
-    <table cellpadding="0" cellspacing="0" border="0" class='hover' id="exx_table" width="100%">
+    <table cellpadding="0" cellspacing="0" border="0" class='table table-hover' id="exx_table" width="100%">
         <thead>
         <th>#</th>
         <th>Date</th>

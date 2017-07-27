@@ -1,6 +1,8 @@
-<div class="head"> 
-    <div class="icon"><span class="icosg-target1"></span> </div>
-    <h2>  Salaries  </h2>
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+  <div class="panel-heading">
+    <h4 class="panel-title">Salaries </h4>
+    <div class="heading-elements">
     <?php
         if ($this->ion_auth->is_in_group($this->user->id, 3))
         {
@@ -18,10 +20,15 @@
 
              </div>
         <?php } ?>
-</div>
+    </div>
+  </div>
+  
+  <div class="panel-body">
+   
+
 <?php if ($record_salaries): ?>
          <div class="block-fluid">
-             <table class="fpTable" cellpadding="0" cellspacing="0" width="100%">
+             <table class="table table-hover fpTable" cellpadding="0" cellspacing="0" width="100%">
                  <thead>
                  <th>#</th>
                  <th>Pay Date</th>
@@ -88,5 +95,5 @@
          </div>
 
     <?php else: ?>
-         <p class='text'><?php echo lang('web_no_elements'); ?></p>
+         <p class='text-center text-muted p-10'><?php echo lang('web_no_elements'); ?></p>
                                                                 <?php endif ?>

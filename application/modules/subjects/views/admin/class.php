@@ -79,7 +79,7 @@
             </table>
 
             <div class="row">
-                <div class="panel panel-white">
+                <div class="panel panel-white animated fadeIn">
                 </div>
                 <div class="col-md-3"> <small><?php echo 'Report Generated at:' . date('d M Y H:i:s'); ?></small></div>
             </div>

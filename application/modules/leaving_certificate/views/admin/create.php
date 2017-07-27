@@ -1,6 +1,6 @@
 <div class="col-md-8">
 <!-- Pager -->
-<div class="panel panel-white">
+<div class="panel panel-white animated fadeIn">
   <div class="panel-heading">
     <h1 class="panel-title">Leaving Certificate</h1>
     <div class="heading-elements">

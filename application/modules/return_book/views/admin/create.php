@@ -1,18 +1,17 @@
 <div class="col-md-8">
 <h3><?php $u=$this->ion_auth->list_student($student); echo $u->first_name.' '.$u->last_name;?> Borrowed Book(s)</h3>
-        <div class="head"> 
-             <div class="icon"><span class="icosg-target1"></span></div>		
-            <h2>  Return Book  </h2>
-             <div class="right"> 
-            
-              <?php echo anchor( 'admin/return_book' , '<i class="glyphicon glyphicon-list">
+    <!-- Pager -->
+    <div class="panel panel-white animated fadeIn">
+    	<div class="panel-heading">
+    		<h4 class="panel-title"> Return Book</h4>
+    		<div class="heading-elements">
+    		 <?php echo anchor( 'admin/return_book' , '<i class="glyphicon glyphicon-list">
                 </i> '.lang('web_list_all', array(':name' => 'Borrowed Books')), 'class="btn btn-primary"');?> 
-             
-                </div>
-                </div>
-         	                    
-               
-				   <div class="block-fluid">
+    		</div>
+    	</div>
+    	
+    	<div class="panel-body">		
+          
 
 <?php 
 $attributes = array('class' => 'form-horizontal', 'id' => '');
@@ -113,7 +112,7 @@ echo   form_open_multipart(current_url(), $attributes);
 	</tbody>
 	</table>
 
-<div class='form-group'><div class="col-md-10">
+<div class='form-group'><div class="col-md-12 text-right">
     <br>
 
     <button type="submit" name="btnAction" value="delete" class="btn btn-primary">Update Changes</button>

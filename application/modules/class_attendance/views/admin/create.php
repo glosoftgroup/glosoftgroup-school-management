@@ -1,5 +1,5 @@
 <!-- Pager -->
-<div class="panel panel-white">
+<div class="panel panel-white animated fadeIn">
 	<div class="panel-heading">
 		<h6 class="panel-title">Class Attendance</h6>
 		<div class="heading-elements">

@@ -1,18 +1,18 @@
 <div class="col-md-9">
-        <div class="head"> 
-             <div class="icon"><span class="icosg-target1"></span></div>		
-            <h2>  Give out  Book Fund  </h2>
-             <div class="right"> 
-             <?php echo anchor( 'admin/borrow_book_fund/create' , '<i class="glyphicon glyphicon-plus">
+    <!-- Pager -->
+    <div class="panel panel-white animated fadeIn">
+      <div class="panel-heading">
+        <h4 class="panel-title">Give out  Book Fund </h4>
+        <div class="heading-elements">
+         <?php echo anchor( 'admin/borrow_book_fund/create' , '<i class="glyphicon glyphicon-plus">
                 </i> Give per Student', 'class="btn btn-primary"');?> 
               <?php echo anchor( 'admin/borrow_book_fund' , '<i class="glyphicon glyphicon-list">
                 </i> '.lang('web_list_all', array(':name' => 'Borrowed Books')), 'class="btn btn-primary"');?> 
-             
-                </div>
-                </div>
-         	                    
-               
-				   <div class="block-fluid">
+        </div>
+      </div>
+      
+      <div class="panel-body">		
+           
 
 <?php 
 $attributes = array('class' => 'form-horizontal', 'id' => '');
@@ -40,7 +40,7 @@ echo   form_open_multipart(current_url(), $attributes);
 
   <!-- BEGIN TABLE DATA -->
       
-           <table cellpadding="0" cellspacing="0" border="0" class='hover' id="adm_table" width="100%">
+           <table cellpadding="0" cellspacing="0" border="0" class='table table-hover hover' id="adm_table" width="100%">
                 <!-- BEGIN -->
                 <thead>
                     <tr>
@@ -76,7 +76,7 @@ echo   form_open_multipart(current_url(), $attributes);
   
 
 
-<div class='form-group'><div class="col-md-2"></div><div class="col-md-10">
+<div class='form-group'><div class="col-md-2"></div><div class="col-md-12 text-right p-10">
     
 
     <?php echo form_submit( 'submit', ($updType == 'edit') ? 'Update' : 'Save', (($updType == 'create') ? "id='submit' class='btn btn-primary''" : "id='submit' class='btn btn-primary'")); ?>
@@ -87,19 +87,23 @@ echo   form_open_multipart(current_url(), $attributes);
 <div class="clearfix"></div>
  </div>
             </div>
-			
+			</div>
 			
 			<div class="col-md-3">
 
-     <div class="widget">
-          <div class="head dark">
-               <div class="icon"><span class="icosg-newtab"></span></div>
-               <h2>Give out books per class</h2>
-          </div>
-
-          <div class="block-fluid">
+     <!-- Pager -->
+     <div class="panel panel-white animated fadeIn">
+       <div class="panel-heading">
+         <h4 class="panel-title">Give out books per class</h4>
+         <div class="heading-elements">
+         
+         </div>
+       </div>
+       
+       <div class="panel-body">
+         
 		
-               <ul class="list tickets">
+               <ul class="media-list tickets">
                     <?php
                     $i = 0;
                     foreach ($this->classlist as $cid => $cl)

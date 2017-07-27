@@ -8,12 +8,17 @@ function filter_pos($array)
         });
 }
 ?>
-<div class="head">
-    <div class="icon"><span class="icosg-target1"></span></div>
-    <h2>Fee Status Report</h2> 
-    <div class="right">                       
-    </div>    					
-</div>
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+    <div class="panel-heading">
+        <h4 class="panel-title">Fee Status Report</h4>
+        <div class="heading-elements">
+        
+        </div>
+    </div>
+    
+    <div class="panel-body">
+    
 <div class="toolbar">
     <div class="noof">
         <div class="col-md-2">&nbsp;</div>
@@ -25,12 +30,11 @@ function filter_pos($array)
         </div>
         <div class="col-md-2"><div class="date  right" id="menus">
             </div>
-            <a href="" onClick="window.print();
-                        return false" class="btn btn-primary"><i class="icos-printer"></i> Print</a>
+            <a href="#" id="printBtn" onClick="return false;" class="btn btn-primary"><i class="icos-printer"></i> Print</a>
         </div>
     </div>
 </div>
-<div class="block invoice">
+<div class="block invoice" id="printme">
     <?php
     $tyr = '';
     $term = '';
@@ -52,7 +56,7 @@ function filter_pos($array)
             $atm = $term - 1;
     }
     ?>
-    <div  class="hding">Fee Payment Summary Report  <?php echo $tm . ' ' . $tyr; ?></div>
+    <div  class="hding" >Fee Payment Summary Report  <?php echo $tm . ' ' . $tyr; ?></div>
     <?php
     $i = 0;
 
@@ -68,16 +72,15 @@ function filter_pos($array)
                     ksort($groups);
                     ?>
                     <br> 
-                    <table class="nob" width="100%"> 
+                    <table class="table table-hover nob" width="100%"> 
                         <tbody>
                             <tr>
-                                <td width="59%" style="border:0 !important;"><b>Term <?php echo $trm; ?></b></td> 
-                                <td width="41%" style="border:0 !important;" class="rttx">
+                                <td style="border:0 !important;"><b>Term <?php echo $trm; ?></b></td> 
+                                <td  style="border:0 !important;" class="rttx">
                                 </td>
                             </tr> 
                         </tbody>
-                    </table>
-                    <table cellpadding="0" cellspacing="0" width="100%">
+                   
                         <thead>
                             <tr>
                                 <th width="3%">#</th>

@@ -30,7 +30,7 @@ echo   form_open_multipart(current_url(), $attributes);
         <div class='icon'><i class='icos-pencil'></i></div>
 	<h2>Sms Body <span class='required'>*</span></h2></div>
 	 <div class="block-fluid editor">
-	<textarea id="sms_body"   style="height: 300px;" class=" wysiwyg "  name="sms_body"  /><?php echo set_value('sms_body', (isset($result->sms_body)) ? htmlspecialchars_decode($result->sms_body) : ''); ?></textarea>
+	<textarea id="sms_body"   style="height: 300px;" class=" wysihtml5 wysihtml5-min"  name="sms_body"  /><?php echo set_value('sms_body', (isset($result->sms_body)) ? htmlspecialchars_decode($result->sms_body) : ''); ?></textarea>
 	<?php echo form_error('sms_body'); ?>
 </div>
 </div>
@@ -40,7 +40,7 @@ echo   form_open_multipart(current_url(), $attributes);
         <div class='icon'><i class='icos-pencil'></i></div>
 	<h2>Description </h2></div>
 	 <div class="block-fluid editor">
-	<textarea id="description"   style="height: 300px;" class=" wysiwyg "  name="description"  /><?php echo set_value('description', (isset($result->description)) ? htmlspecialchars_decode($result->description) : ''); ?></textarea>
+	<textarea id="description"   style="height: 300px;" class=" wysihtml5 wysihtml5-min"  name="description"  /><?php echo set_value('description', (isset($result->description)) ? htmlspecialchars_decode($result->description) : ''); ?></textarea>
 	<?php echo form_error('description'); ?>
 </div>
 </div>

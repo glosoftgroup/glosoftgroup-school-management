@@ -13,15 +13,19 @@ else
 }
 ?>
 <div class="col-md-3">
-    <div class="widget">
-        <div class="head dark">
-            <div class="icon"><span class="icosg-newtab"></span></div>
-            <h2>Select a Subject</h2>
-        </div>
+ <!-- Pager -->
+ <div class="panel panel-white animated fadeIn">
+     <div class="panel-heading">
+         <h4 class="panel-title">Select a Subject</h4>
+         <div class="heading-elements">
+         
+         </div>
+     </div>
+     
+     <div class="panel-body">
+           
 
-        <div class="block-fluid">
-
-            <ul class="list tickets">
+            <ul class="media-list tickets">
                 <?php
                 $i = 0;
                 foreach ($subjects as $sj => $dets)
@@ -47,16 +51,20 @@ else
 
 </div>
 
+
 <div class="col-md-9">
-    <div class="head">
-        <div class="icon"><span class="icosg-target1"></span></div>
-        <h2>Exams Management</h2> 
-        <div class="right">                            
-            <?php echo anchor('admin/exams/', '<i class="glyphicon glyphicon-list">
+   <!-- Pager -->
+   <div class="panel panel-white animated fadeIn">
+       <div class="panel-heading">
+           <h4 class="panel-title">Exams Management</h4>
+           <div class="heading-elements">
+              <?php echo anchor('admin/exams/', '<i class="glyphicon glyphicon-list">
                 </i> List All', 'class="btn btn-primary"'); ?>
-        </div>    					
-    </div>
-    <div class="block-fluid">
+           </div>
+       </div>
+       
+       <div class="panel-body">
+      
         <?php
         $attributes = array('class' => 'form-horizontal', 'id' => '');
         echo form_open_multipart(current_url() . '?sb=' . $sb, $attributes);

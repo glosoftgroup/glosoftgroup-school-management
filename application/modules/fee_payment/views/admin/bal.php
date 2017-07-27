@@ -13,17 +13,20 @@ else
 }
 ?>
 <div class="col-md-10">
-    <div class="head"> 
-        <div class="icon"><span class="icosg-target1"></span> </div>
-        <h2>  Fee Payment  </h2>
-        <div class="right">  
+   <!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+    <div class="panel-heading">
+        <h4 class="panel-title">Fee Payment </h4>
+        <div class="heading-elements">
             <?php echo anchor('admin/fee_payment/create/', '<i class="glyphicon glyphicon-plus"></i> Receive Payment', 'class="btn btn-primary"'); ?>
             <?php echo anchor('admin/fee_payment', '<i class="glyphicon glyphicon-list"></i> ' . lang('web_list_all', array(':name' => 'Fee Payment')), 'class="btn btn-primary"'); ?> 
             <?php echo anchor('admin/fee_payment/bulk', '<i class="glyphicon glyphicon-envelope"></i> Bulk SMS Reminder', 'class="btn btn-warning" '); ?>
         </div>
     </div>
-    <div class="block-fluid">
-        <table id="fee_bal" cellpadding="0" cellspacing="0" width="100%">
+    
+    <div class="panel-body">
+       
+        <table class='table table-hover' id="fee_bal" cellpadding="0" cellspacing="0" width="100%">
             <thead>
             <th>#</th>
             <th>Student</th>
@@ -42,18 +45,22 @@ else
         </table> 
     </div>
 </div>
+</div>
 
 <div class="col-md-2">
 
-    <div class="widget">
-        <div class="head dark">
-            <div class="icon"><span class="icosg-newtab"></span></div>
-            <h2>Filter by Class</h2>
+    <!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+    <div class="panel-heading">
+        <h4 class="panel-title">Filter by Class</h4>
+        <div class="heading-elements">
+        
         </div>
+    </div>
+    
+    <div class="panel-body">           
 
-        <div class="block-fluid">
-
-            <ul class="list tickets">
+            <ul class="media-list media-list-linked pb-5">
                 <?php
                 $i = 0;
                 foreach ($this->classlist as $cid => $cl)

@@ -1,15 +1,19 @@
-<div class="head">
-    <div class="icon"><span class="icosg-target1"></span></div>
-    <h2> Fee Structure (Tuition Fee Only) </h2> 
-    <div class="right">                            
-        <?php echo anchor('admin/fee_structure/create/', '<i class="glyphicon glyphicon-plus"></i> Add New', 'class="btn btn-primary"'); ?>
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+    <div class="panel-heading">
+        <h4 class="panel-title">Fee Structure (Tuition Fee Only)</h4>
+        <div class="heading-elements">
+            <?php echo anchor('admin/fee_structure/create/', '<i class="glyphicon glyphicon-plus"></i> Add New', 'class="btn btn-primary"'); ?>
         <?php echo anchor('admin/fee_structure/', '<i class="glyphicon glyphicon-list"></i> List All', 'class="btn btn-primary"'); ?>
         <?php echo anchor('admin/fee_structure/invoice', '<i class="glyphicon glyphicon-export"></i> Fee Structure Report', 'class="btn btn-success"'); ?>
-    </div>    					
-</div>
+        </div>
+    </div>
+    
+   
+   
 <?php if (!empty($fee)): ?>              
-        <div class="block-fluid">
-            <table  cellpadding="0" cellspacing="0" width="100%">
+        <div class="panel-body">
+            <table class="table table-hover" cellpadding="0" cellspacing="0" width="100%">
                 <thead>
                 <th>#</th>
                 <th>Class</th>
@@ -41,7 +45,7 @@
         </div>
 
 <?php else: ?>
-        <p class='text'><?php echo lang('web_no_elements'); ?></p>
+        <p class='text-center'><?php echo lang('web_no_elements'); ?></p>
 <?php endif; ?> 
 <style>
     h3{  line-height: 12px;  color: #42536d; font-size: 16px; } table td {padding:4px;}

@@ -1,18 +1,18 @@
 <div class="col-md-8">
-    <div class="head"> 
-        <div class="icon"><span class="icosg-target1"></span></div>		
-        <h2>  Permissions  </h2>
-        <div class="right"> 
-            <?php echo anchor('admin/permissions/create', '<i class="glyphicon glyphicon-plus  glyphicon glyphicon-white">
+    <!-- Pager -->
+    <div class="panel panel-white animated fadeIn">
+        <div class="panel-heading">
+            <h4 class="panel-title">Permissions</h4>
+            <div class="heading-elements">
+             <?php echo anchor('admin/permissions/create', '<i class="glyphicon glyphicon-plus  glyphicon glyphicon-white">
                 </i> ' . lang('web_add_t', array(':name' => 'Permissions')), 'class="btn btn-primary"'); ?> 
             <?php echo anchor('admin/permissions', '<i class="glyphicon glyphicon-list glyphicon glyphicon-white">
-                </i> ' . lang('web_list_all', array(':name' => 'Permissions')), 'class="btn btn-primary"'); ?> 
-
+                </i> ' . lang('web_list_all', array(':name' => 'Permissions')), 'class="btn btn-primary"'); ?>
+            </div>
         </div>
-    </div>
-
-
-    <div class="block-fluid">
+        
+        <div class="panel-body">		
+        
 
         <?php
         $attributes = array('class' => 'form-horizontal', 'id' => '');
@@ -34,7 +34,7 @@
                 <div class='icon'><i class='icos-pencil'></i></div>
                 <h2>Description </h2></div>
             <div class="block-fluid editor">
-                <textarea id="description"   style="height: 300px;" class=" wysiwyg "  name="description"  /><?php echo set_value('description', (isset($result->description)) ? htmlspecialchars_decode($result->description) : ''); ?></textarea>
+                <textarea id="description"   style="height: 300px;" class=" wysihtml5 wysihtml5-min"  name="description"  /><?php echo set_value('description', (isset($result->description)) ? htmlspecialchars_decode($result->description) : ''); ?></textarea>
                 <?php echo form_error('description'); ?>
             </div>
         </div>

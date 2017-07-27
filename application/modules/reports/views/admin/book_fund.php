@@ -1,17 +1,19 @@
-<div class="head"> 
-			 <div class="icon"><span class="icosg-target1"></span> </div>
-            <h2>  Book Fund  </h2>
-             <div class="right">  
-             <a href="" onClick="window.print();
-                        return false" class="btn btn-primary"><i class="icos-printer"></i> Print The List</a>
-                </div>
-                </div>
-         	                    
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+  <div class="panel-heading">
+    <h4 class="panel-title">Book Fund</h4>
+    <div class="heading-elements">
+        <a href="" id="printBtn" onClick="return false" class="btn btn-primary"><i class="icos-printer"></i> Print The List</a>
+    </div>
+  </div>
+  
+  
+                   
               
                  <?php if ($book_fund): ?>
-                 <div class="block-fluid slip">
+                 <div class="panel-body slip" id="printme">
 				 <h3 class="center"> Book Fund Stock</h3>
-				<table class="" cellpadding="0" cellspacing="0" width="100%">
+				<table class="table table-bordered table-striped table-hover" cellpadding="0" cellspacing="0" width="100%">
 	 <thead>
                 <th>#</th>
 				<th>Title</th>
@@ -77,7 +79,7 @@
 	</table>
 
 	<?php else: ?>
- 	<p class='text'><?php echo lang('web_no_elements');?></p>
+ 	<p class='text-center'><?php echo lang('web_no_elements');?></p>
  <?php endif ?>
 </div>
 

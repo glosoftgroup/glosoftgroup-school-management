@@ -1,14 +1,16 @@
-<div class="head"> 
-    <div class="icon"><span class="icosg-target1"></span> </div>
-    <h2>Fee  Invoices  </h2>
-    <div class="right">  
-         <?php echo anchor('admin/invoices', '<i class="glyphicon glyphicon-list">
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+  <div class="panel-heading">
+    <h4 class="panel-title">Fee  Invoices</h4>
+    <div class="heading-elements">
+       <?php echo anchor('admin/invoices', '<i class="glyphicon glyphicon-list">
                 </i> ' . lang('web_list_all', array(':name' => 'Invoices')), 'class="btn btn-primary"'); ?> 
     </div>
-</div>
-
-<div class="block-fluid">
-    <table cellpadding="0" cellspacing="0" id="ivtable" width="100%">
+  </div>
+  
+  <div class="panel-body">
+    
+    <table class='table table-hover' cellpadding="0" cellspacing="0" id="ivtable" width="100%">
         <thead>
         <th>#</th>
         <th>Student</th>

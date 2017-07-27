@@ -15,6 +15,7 @@
         <?php echo core_css('core/css/core.css'); ?>
         <?php echo core_css('core/css/components.css'); ?>
         <?php echo core_css('core/css/colors.css'); ?>
+        <?=core_css("core/css/extras/animate.min.css");?>
         <style>.error { color:red; }</style>
 	      <!-- /global stylesheets -->
         <!--[if lt IE 10]>
@@ -51,7 +52,8 @@
         <?php echo core_js('core/js/plugins/pickers/pickadate/picker.time.js'); ?>
         <!-- Updated stylesheet url -->
         <?=core_js("core/js/core/libraries/jquery_ui/widgets.min.js");?>
-
+        <?=core_js("core/js/pages/animations_css3.js");?>
+        
         <!-- ./theme scripts -->
 
         <!-- old files -->
@@ -103,15 +105,19 @@
 
         <?php echo theme_js('plugins/validationEngine/languages/jquery.validationEngine-en.js'); ?>
         <?php echo theme_js('plugins/validationEngine/jquery.validationEngine.js'); ?>
-        <?php echo theme_js('plugins/stepywizard/jquery.stepy.js'); ?>
+        
 
         <?php echo theme_js('plugins/scrollup/jquery.scrollUp.min.js'); ?>
         
         <?=core_js('core/js/pages/form_inputs.js');?>
         <?php echo theme_js('ajaxfileupload.js'); ?>
+        <?php echo theme_js('ng/lib-ng.js'); ?> 
+        <?php echo theme_js('ng/ngsc.js'); ?>
         <script src="<?php echo plugin_path('bootstrap.daterangepicker/moment.js'); ?>" ></script>
         <script src="<?php echo plugin_path('bootstrap.daterangepicker/daterangepicker.js'); ?>" ></script>
-        <script src="<?php echo plugin_path('bootstrap.datetimepicker/bootstrap-datetimepicker.min.js'); ?>"></script>	<link rel="shortcut icon" type="image/ico" href="<?php echo image_path('favicon.ico'); ?>" />
+        <script src="<?php echo plugin_path('bootstrap.datetimepicker/bootstrap-datetimepicker.min.js'); ?>"></script>	
+        <?php echo theme_js('include/jquery.ui.timepicker.js'); ?>
+        <link rel="shortcut icon" type="image/ico" href="<?php echo image_path('favicon.ico'); ?>" />
         
         <link rel="shortcut icon" type="image/ico" href="<?php echo image_path('favicon.ico'); ?>" />
     </head>
@@ -138,7 +144,7 @@
                 <?php 
                 if (!preg_match('/^(admin\/leaving_certificate)/i', $this->uri->uri_string())){
                 ?>
-                <!-- breadcrumb -->leaving_certificate
+                <!-- breadcrumb -->
 					<div class="breadcrumb-line">
 						<ul class="breadcrumb">
 							<li>
@@ -274,8 +280,15 @@
     <?=core_js("core/js/plugins/editors/wysihtml5/locales/bootstrap-wysihtml5.ua-UA.js");?>
    <?=core_js("core/js/pages/editor_wysihtml5.js");?> 
    <!-- wysihtml5 wysihtml5-min  -->
+   <?=core_js("core/js/plugins/printThis/printThis.js");?>
+   <?=core_js("core/js/plugins/printThis/printer.js");?>
+     <script type="text/javascript">var sub=1;  var flist = '<?php echo $this->list_size; ?>';</script>
+        <?php echo theme_js('plugins/animatedprogressbar/animated_progressbar.js'); ?>
+        <?php echo theme_js('plugins/hoverintent/jquery.hoverIntent.minified.js'); ?>
     <?php echo theme_js('plugins/cleditor/jquery.cleditor.js'); ?>
+     <!-- echo theme_js('actions.js'); ?> -->
     <?php echo core_js('core/js/plugins.js'); ?>
+    
     <style>
     .uppercase {
     font-family: sans-serif;
@@ -286,6 +299,63 @@
 
 </style>
 
+<script>
+
+                $(document).ready(function ()
+                {
+                    angular.bootstrap(document, ["Calc"]);
+                    $(".boxer").boxer();
+                    $('.timepicker').timepicker({
+                        showPeriod: true,
+                        showLeadingZero: true
+                    });
+                });
+                jQuery.extend({
+                    handleError: function (s, xhr, status, e)
+                    {
+                        // If a local callback was specified, fire it
+                        if (s.error)
+                            s.error(xhr, status, e);
+                        // If we have some XML response text (e.g. from an AJAX call) then log it in the console
+                        else if (xhr.responseText)
+                            console.log(xhr.responseText);
+                    }
+                });
+                $(".datepicker").datepicker({
+                    changeMonth: true,
+                    changeYear: true
+                });
+                $(".datedob").datepicker({
+                    changeMonth: true,
+                    changeYear: true,
+                    yearRange: "-30:-3",
+                });
+                $(".datepicker").datepicker({
+                      format: "dd MM yyyy",
+                     
+                    });
+
+                //DatePicker
+                $(".datetimepicker").datetimepicker({
+                    format: "dd MM yyyy - hh:ii",
+                    autoclose: true,
+                    todayBtn: true,
+                    startDate: "<?php echo date('Y-m-d H:i'); ?>",
+                    minuteStep: 10
+                });
+                $(document.body).delegate('select.ui-datepicker-year', 'mousedown', function ()
+                {
+                    (function (sel)
+                    {
+                        var el = $(sel);
+                        var ops = $(el).children().get();
+                        if (ops.length > 0 && $(ops).first().val() < $(ops).last().val())
+                        {
+                            $(el).html(ops.reverse());
+                        }
+                    })(this);
+                });
+        </script>
 
     </body>
 </html>

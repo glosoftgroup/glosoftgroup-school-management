@@ -1,19 +1,19 @@
 <div class="col-md-8">
-        <div class="head"> 
-             <div class="icon"><span class="icosg-target1"></span></div>		
-            <h2>  Meetings  </h2>
-             <div class="right"> 
-             <?php echo anchor( 'admin/meetings/create' , '<i class="glyphicon glyphicon-plus">
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+	<div class="panel-heading">
+		<h4 class="panel-title">Meetings</h4>
+		<div class="heading-elements">
+		 <?php echo anchor( 'admin/meetings/create' , '<i class="glyphicon glyphicon-plus">
                 </i> '.lang('web_add_t', array(':name' => 'Meetings')), 'class="btn btn-primary"');?> 
 				 <?php echo anchor( 'admin/meetings/calendar' , '<i class="glyphicon glyphicon-calendar"></i> Calendar View', 'class="btn btn-primary"');?> 
               <?php echo anchor( 'admin/meetings' , '<i class="glyphicon glyphicon-list">
                 </i> List View', 'class="btn btn-primary"');?> 
-             
-                </div>
-                </div>
-         	                    
-               
-				   <div class="block-fluid">
+		</div>
+	</div>
+	
+	<div class="panel-body">		
+           
 
 <?php 
 $attributes = array('class' => 'form-horizontal', 'id' => '');
@@ -68,7 +68,7 @@ echo   form_open_multipart(current_url(), $attributes);
 "Medium"=>"Medium",
 "High"=>"High",
 );		
-     echo form_dropdown('importance', $items,  (isset($result->importance)) ? $result->importance : ''     ,   ' class="chzn-select" data-placeholder="Select Options..." ');
+     echo form_dropdown('importance', $items,  (isset($result->importance)) ? $result->importance : ''     ,   ' class="select chzn-select" data-placeholder="Select Options..." ');
      echo form_error('importance'); ?>
 </div></div>
 
@@ -79,7 +79,7 @@ echo   form_open_multipart(current_url(), $attributes);
 "live"=>"Live",
 "draft"=>"Draft",
 );		
-     echo form_dropdown('status', $items,  (isset($result->status)) ? $result->status : ''     ,   ' class="chzn-select" data-placeholder="Select Options..." ');
+     echo form_dropdown('status', $items,  (isset($result->status)) ? $result->status : ''     ,   ' class="select chzn-select" data-placeholder="Select Options..." ');
      echo form_error('status'); ?>
 </div></div>
 <div class="form-group">
@@ -125,17 +125,17 @@ echo   form_open_multipart(current_url(), $attributes);
                     </div>
                 </div> 
 
-<div class='widget'>
+<div class='form-group'>
   <div class='head dark'>
         <div class='icon'><i class='icos-pencil'></i></div>
 	<h2>Description </h2></div>
 	 <div class="block-fluid editor">
-	<textarea id="description"   style="height: 300px;" class=" wysiwyg "  name="description"  /><?php echo set_value('description', (isset($result->description)) ? htmlspecialchars_decode($result->description) : ''); ?></textarea>
+	<textarea id="description"   style="height: 300px;" class=" wysihtml5 wysihtml5-min"  name="description"  /><?php echo set_value('description', (isset($result->description)) ? htmlspecialchars_decode($result->description) : ''); ?></textarea>
 	<?php echo form_error('description'); ?>
 </div>
 </div>
 
-<div class='form-group'><div class="col-md-2"></div><div class="col-md-6">
+<div class='form-group'><div class="col-md-2"></div><div class="col-md-12 text-right p-10">
     
 
     <?php echo form_submit( 'submit', ($updType == 'edit') ? 'Update' : 'Save', (($updType == 'create') ? "id='submit' class='btn btn-primary''" : "id='submit' class='btn btn-primary'")); ?>
@@ -146,7 +146,7 @@ echo   form_open_multipart(current_url(), $attributes);
 <div class="clearfix"></div>
  </div>
 </div>
-
+</div>
 
 <script>
 	function show_field(item){

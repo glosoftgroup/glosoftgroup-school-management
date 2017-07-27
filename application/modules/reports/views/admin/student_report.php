@@ -380,7 +380,7 @@
                                       </table>
 
                                  <?php else: ?>
-                                      <p class='text'><?php echo lang('web_no_elements'); ?></p>
+                                      <p class='text-center'><?php echo lang('web_no_elements'); ?></p>
                                  <?php endif ?>
 
                              </div>
@@ -447,7 +447,7 @@
 
                                       </table>
                                  <?php else: ?>
-                                      <p class='text'><?php echo lang('web_no_elements'); ?></p>
+                                      <p class='text-center'><?php echo lang('web_no_elements'); ?></p>
                                  <?php endif ?>
 
                              </div>
@@ -490,7 +490,7 @@
 
                                       </table>
                                  <?php else: ?>
-                                      <p class='text'><?php echo lang('web_no_elements'); ?></p>
+                                      <p class='text-center'><?php echo lang('web_no_elements'); ?></p>
                                  <?php endif ?>
 
                              </div>
@@ -540,7 +540,7 @@
 
                                       </table>
                                  <?php else: ?>
-                                      <p class='text'><?php echo lang('web_no_elements'); ?></p>
+                                      <p class='text-center'><?php echo lang('web_no_elements'); ?></p>
                                  <?php endif ?>
 
                              </div>
@@ -583,7 +583,7 @@
 
                                       </table>
                                  <?php else: ?>
-                                      <p class='text'>No Bed Assigned at the moment</p>
+                                      <p class='text-center'>No Bed Assigned at the moment</p>
                                  <?php endif ?>
                              </div>
 
@@ -621,7 +621,7 @@
 
                                       </table>
                                  <?php else: ?>
-                                      <p class='text'>No Transport Facility assigned at the moment</p>
+                                      <p class='text-center'>No Transport Facility assigned at the moment</p>
                                  <?php endif ?>
                              </div>
                              <!--- END FLUID--->

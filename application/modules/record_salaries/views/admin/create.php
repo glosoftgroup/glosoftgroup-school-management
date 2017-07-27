@@ -1,15 +1,18 @@
 <div class="col-md-8">
-    <div class="head"> 
-        <div class="icon"><span class="icosg-target1"></span></div>		
-        <h2>  Record Salaries  </h2>
-        <div class="right"> 
-            <?php echo anchor('admin/record_salaries/create/' . $page, '<i class="glyphicon glyphicon-plus"></i> Process Salary', 'class="btn btn-primary"'); ?>
+   <!-- Pager -->
+   <div class="panel panel-white animated fadeIn">
+       <div class="panel-heading">
+           <h4 class="panel-title"> Record Salaries</h4>
+           <div class="heading-elements">
+              <?php echo anchor('admin/record_salaries/create/' . $page, '<i class="glyphicon glyphicon-plus"></i> Process Salary', 'class="btn btn-primary"'); ?>
 
             <?php echo anchor('admin/record_salaries', '<i class="glyphicon glyphicon-list">
-                </i> ' . lang('web_list_all', array(':name' => ' Salary Records')), 'class="btn btn-primary"'); ?> 
-        </div>
-    </div> 
-    <div class="block-fluid">
+                </i> ' . lang('web_list_all', array(':name' => ' Salary Records')), 'class="btn btn-primary"'); ?>
+           </div>
+       </div>
+       
+       <div class="panel-body">	
+        
 
         <?php
         $attributes = array('class' => 'form-horizontal', 'id' => '');
@@ -84,17 +87,17 @@
                 ?>
             </div></div>
 
-        <div class='widget'>
+        <div class='form-group'>
             <div class='head dark'>
                 <div class='icon'><i class='icos-pencil'></i></div>
                 <h2>Comment </h2></div>
             <div class="block-fluid editor">
-                <textarea id="comment"   style="height: 300px;" class=" wysiwyg "  name="comment"  /><?php echo set_value('comment', (isset($result->comment)) ? htmlspecialchars_decode($result->comment) : ''); ?></textarea>
+                <textarea id="comment"   style="height: 300px;" class=" wysihtml5 wysihtml5-min"  name="comment"  /><?php echo set_value('comment', (isset($result->comment)) ? htmlspecialchars_decode($result->comment) : ''); ?></textarea>
                 <?php echo form_error('comment'); ?>
             </div>
         </div>
 
-        <div class='form-group'><div class="col-md-2"></div><div class="col-md-10">
+        <div class='form-group'><div class="col-md-2"></div><div class="col-md-12 text-right p-10">
 
 
                 <?php echo form_submit('submit', ($updType == 'edit') ? 'Update' : 'Process', (($updType == 'create') ? "id='submit' class='btn btn-primary''" : "id='submit' class='btn btn-primary'")); ?>

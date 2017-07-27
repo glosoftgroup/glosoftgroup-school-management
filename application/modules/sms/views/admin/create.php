@@ -1,39 +1,84 @@
-<div class="middle">
-    <div class="button tip" title="New Message">
+<style type="text/css">
+    .tip {height:200px;}
+</style>
+<div class="text-center  ">
+    <div class="button tip col-lg-2" title="New Message">
         <a href="#" id="openMailModal">
-            <span class="icomg-mail"></span>
-            <span class="text">New Message</span>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                <h1 class="no-margin">
+                  <i class=' icon-compose'></i>
+                </h1>
+                <span class="text">New Message</span>
+                </div>
+                </div>
         </a>
     </div>
-    <div class="button tip" title="Inbox">
+    <div class="button tip col-lg-2" title="Inbox">
         <a href="#">
-            <span class="icomg-box-add"></span>
-            <span class="text">All SMS's<br/><?php echo $inbox; ?></span>                       
+          <div class="panel panel-default">
+                <div class="panel-body">
+                <h1 class="no-margin">
+                  <i class='icon-file-download'></i>
+                </h1>
+                <span class="text">All SMS's<br/><?php echo $inbox; ?></span>  
+                </div>
+            </div>                     
         </a>
     </div>
-    <div class="button tip" title="Outbox">
+    <div class="button tip col-lg-2" title="Outbox">
         <a href="#">
-            <span class="icomg-box-remove"></span>
+        <div class="panel panel-default">
+          <div class="panel-body">
+
+            <h1 class="no-margin">
+              <i class='icon-envelope'></i>
+            </h1>
             <span class="text">Sent<br/><?php echo $sent; ?></span>
+            </div>
+            </div>
         </a>                    
     </div> 
-    <div class="button tip" title="Draft">
+    <div class="button tip col-lg-2" title="Draft">
         <a href="#">
-            <span class="icomg-box-remove"></span>
-            <span class="text">Draft<br/><?php echo $draft; ?></span>
+            <div class="panel panel-default">
+              <div class="panel-body">
+
+                <h1 class="no-margin">
+                  <i class=' icon-drawer'></i>
+                </h1>
+               <span class="text">Draft<br/><?php echo $draft; ?></span>
+               </div>
+               </div>
         </a>                    
     </div>                        
-    <div class="button tip" title="Custom">
+    <div class="button tip col-lg-2" title="Custom">
         <a href="<?php echo base_url('admin/sms/custom'); ?>">
+        <div class="panel panel-default">
+          <div class="panel-body">
+
+            <h1 class="no-margin">
+              <i class='icon-file-download'></i>
+            </h1>
             <span class="icomg-comments3"></span>
             <span class="text">Custom</span>
+            </div>
+            </div>
         </a>                    
     </div>                        
 
-    <div class="button tip" title="Check SMS Balance">
+    <div class="button tip col-lg-2" title="Check SMS Balance">
         <a href="<?php echo base_url('admin/sms/balance'); ?>">
+        <div class="panel panel-default">
+          <div class="panel-body">
+
+            <h1 class="no-margin">
+              <i class='icon-file-download'></i>
+            </h1>
             <span class="icomg-info"></span>
             <span class="text">Balance<br/> </span>
+            </div>
+            </div>
         </a>                    
     </div>          
 
@@ -136,13 +181,17 @@
 
     <div class="col-md-12">
 
-        <div class="widget">                    
-            <div class="head dark">
-                <div class="icon"><span class="icos-box-add"></span></div>
-                <h2>Inbox</h2>
-            </div>                                                 
-
-            <div class="block-fluid">
+       <!-- Pager -->
+       <div class="panel panel-white animated fadeIn">
+           <div class="panel-heading">
+               <h4 class="panel-title">Inbox</h4>
+               <div class="heading-elements">
+               
+               </div>
+           </div>
+           
+           <div class="panel-body">
+               
                 <?php if ($sms): ?>
 
                         <table class="table-hover mailbox" cellpadding="0" cellspacing="0">
@@ -213,7 +262,7 @@
 
                         </div>
                 <?php else: ?>
-                        <p class='text'><?php echo lang('web_no_elements'); ?></p>
+                        <p class='text-center'><?php echo lang('web_no_elements'); ?></p>
                 <?php endif ?> 
             </div>
 

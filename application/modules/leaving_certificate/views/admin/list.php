@@ -1,5 +1,5 @@
 <!-- Pager -->
-<div class="panel panel-white">
+<div class="panel panel-white animated fadeIn">
 	<div class="panel-heading">
 		<h1 class="panel-title"> Leaving Certificate </h1>
 		<div class="heading-elements">
@@ -13,7 +13,7 @@
 	<div class="panel-body">
 	<?php if ($leaving_certificate): ?>
                  <div class="block-fluid">
-				<table class="fpTable" cellpadding="0" cellspacing="0" width="100%">
+				<table class="table table-hover fpTable" cellpadding="0" cellspacing="0" width="100%">
 	 <thead>
                 <th>#</th>
 				<th>Leaving Date</th>
@@ -60,7 +60,7 @@
 </div>
 
 <?php else: ?>
- 	<p class='text'><?php echo lang('web_no_elements');?></p>
+ 	<p class='text-center'><?php echo lang('web_no_elements');?></p>
  <?php endif ?>
 	</div>
 </div>

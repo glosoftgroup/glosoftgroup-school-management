@@ -139,7 +139,7 @@
                       <li <?php if (preg_match('/^(admin\/fee_arrears)/i', $this->uri->uri_string())) echo 'class="active"'; ?>><a href="<?php echo base_url('admin/fee_arrears'); ?>">Fee Arrears</a></li>
           						<li <?php if (preg_match('/^(admin\/fee_pledge)/i', $this->uri->uri_string())) echo 'class="active"'; ?>><a href="<?php echo base_url('admin/fee_pledge'); ?>">Fee Pledges</a></li>
                       <li <?php if (preg_match('/^(admin\/expenses)/i', $this->uri->uri_string())) echo 'class="active"'; ?>><a href="<?php echo base_url('admin/expenses'); ?>">Expenses</a></li>
-                      <li <?php if (preg_match('/^(admin\/expenses\/requisitions)/i', $this->uri->uri_string())) echo 'class="active"'; ?>><a href="<?php echo base_url('admin/expenses/requisitions'); ?>">Requisitioins</a></li>
+                      <li <?php if (preg_match('/^(admin\/expenses\/requisitions)/i', $this->uri->uri_string())) echo 'class="active"'; ?>><a href="<?php echo base_url('admin/expenses/requisitions'); ?>">Requisition</a></li>
                       <li <?php if (preg_match('/^(admin\/petty_cash)/i', $this->uri->uri_string())) echo 'class="active"'; ?>><a href="<?php echo base_url('admin/petty_cash'); ?>">Petty Cash</a></li>
                       <li <?php if (preg_match('/^(admin\/purchase_order)/i', $this->uri->uri_string())) echo 'class="active"'; ?>><a href="<?php echo base_url('admin/purchase_order'); ?>">Purchase Orders</a></li>
                       <li <?php if (preg_match('/^(admin\/bank_accounts)/i', $this->uri->uri_string())) echo 'class="active"'; ?>><a href="<?php echo base_url('admin/bank_accounts'); ?>">Bank Accounts</a></li>
@@ -224,6 +224,60 @@
 									</ul>
 								</li>
 								<!-- ./inventory -->
+                <!-- communtions -->
+                <li
+                class="  <?php
+               if (preg_match('/^(admin\/emails)/i', $this->uri->uri_string()) ||
+                            (preg_match('/^(admin\/meetings)/i', $this->uri->uri_string())) ||
+                            (preg_match('/^(admin\/address_book_category)/i', $this->uri->uri_string())) ||
+                            (preg_match('/^(admin\/address_book)/i', $this->uri->uri_string())) ||
+                            (preg_match('/^(admin\/email_templates)/i', $this->uri->uri_string())) ||
+                            (preg_match('/^(admin\/sms_templates)/i', $this->uri->uri_string())) ||
+                            (preg_match('/^(admin\/sms)/i', $this->uri->uri_string()))
+               )
+                       echo 'active';
+               ?>">
+                
+                  <a href="#"><i class="icon-stack"></i> <span>Communication</span></a>
+                  <ul>
+                    <li
+                    <?php if (preg_match('/^(admin\/meetings)/i', $this->uri->uri_string())) echo 'class="active"'; ?>
+                    ><a href="<?php echo base_url('admin/meetings'); ?>">Meetings</a></li>
+                    <li
+                     <?php if (preg_match('/^(admin\/emails)/i', $this->uri->uri_string())) echo 'class="active"'; ?>
+                    ><a href="<?php echo base_url('admin/emails/create'); ?>">Emails</a></li>
+                    <li
+                    <?php if (preg_match('/^(admin\/sms)$/i', $this->uri->uri_string())) echo 'class="active"'; ?>
+                    ><a href="<?php echo base_url('admin/sms'); ?>">SMS Messaging</a></li>
+                    <li
+                    <?php if (preg_match('/^(admin\/sms_templates)/i', $this->uri->uri_string())) echo 'class="active"'; ?>
+                    ><a href="<?php echo base_url('admin/sms_templates'); ?>">SMS Templates</a></li>
+                    <li class="navigation-header 
+                    <?php
+                        if (preg_match('/^(admin\/address_book)/i', $this->uri->uri_string()) ||
+                                     (preg_match('/^(admin\/address_book_category)/i', $this->uri->uri_string()))
+                        )
+                                echo ' active ';
+                        ?>
+                    "><span>Contacts Directory</span> <i class="icon-menu" title="Main pages"></i></li>
+                    <li
+                    <?php if (preg_match('/^(admin\/address_book)/i', $this->uri->uri_string())) echo 'class="active"'; ?>
+                    ><a href="<?php echo base_url('admin/address_book'); ?>">Address Book</a></li>
+                    <li
+                    <?php if (preg_match('/^(admin\/address_book\/customers)/i', $this->uri->uri_string())) echo 'class="active"'; ?>
+                    ><a href="<?php echo base_url('admin/address_book/customers'); ?>">Customers</a></li>
+                    <li
+                    <?php if (preg_match('/^(admin\/address_book\/suppliers)/i', $this->uri->uri_string())) echo 'class="active"'; ?>
+                    ><a href="<?php echo base_url('admin/address_book/suppliers'); ?>">Suppliers</a></li>
+                    <li
+                    <?php if (preg_match('/^(admin\/others)/i', $this->uri->uri_string())) echo 'class="active"'; ?>
+                    ><a href="<?php echo base_url('admin/address_book/others'); ?>">Others</a></li>
+                    <li
+                    <?php if (preg_match('/^(admin\/address_book_category)/i', $this->uri->uri_string())) echo 'class="active"'; ?>
+                    ><a href="<?php echo base_url('admin/address_book_category'); ?>"> Manage Categories</a></li>                    
+                  </ul>
+                </li>
+                <!-- ./communications -->
 								<!--******************************LIBRARY MENU******************************************-->
 								<li
 								<?php
@@ -285,6 +339,64 @@
 									</ul>
 								</li>
 								<!-- ./library -->
+
+                <!-- reports -->
+                <li
+                <?php
+                if (preg_match('/^(admin\/reports)/i', $this->uri->uri_string()))
+                {
+                        echo 'class="active"';
+                }
+                ?>
+                >
+                  <a href="#"><i class="icon-stack"></i> <span>Reports</span></a>
+                  <ul>
+                    <li 
+                    <?php echo (preg_match('/^(admin\/reports\/student_report)/i', $this->uri->uri_string())) ? 'class="active"' : ' ' ?> 
+                    ><a href="<?php echo base_url('admin/reports/student_report'); ?>">Student History Report</a></li>
+                    <li
+                    <?php echo (preg_match('/^(admin\/reports\/fee)/i', $this->uri->uri_string())) ? 'class="active"' : ' ' ?>
+                    ><a href="<?php echo base_url('admin/reports/fee'); ?>">Fee Payment Summary</a></li>
+                    <li
+                    <?php echo (preg_match('/^(admin\/reports\/admission)/i', $this->uri->uri_string())) ? 'class="active"' : ' ' ?>
+                    ><a href="<?php echo base_url('admin/reports/admission'); ?>">Admission Report</a></li>
+                    <li
+                    <?php echo (preg_match('/^(admin\/reports\/fee_status)/i', $this->uri->uri_string())) ? 'class="active"' : ' ' ?>
+                    ><a href="<?php echo base_url('admin/reports/fee_status'); ?>">Fee Status Report</a></li>                
+
+                    <li
+                    <?php echo (preg_match('/^(admin\/reports\/arrears)/i', $this->uri->uri_string())) ? 'class="active"' : ' ' ?>
+                    ><a href="<?php echo base_url('admin/reports/arrears'); ?>">Arrears Report</a></li>
+                    <li
+                    <?php echo (preg_match('/^(admin\/reports\/fee_extras)/i', $this->uri->uri_string())) ? 'class="active"' : ' ' ?>
+                    ><a href="<?php echo base_url('admin/reports/fee_extras'); ?>">Fee Extras Report</a></li>
+                    <li
+                    <?php echo (preg_match('/^(admin\/reports\/paid)/i', $this->uri->uri_string())) ? 'class="active"' : ' ' ?> 
+                    ><a href="<?php echo base_url('admin/reports/paid'); ?>">Fee Payments Report</a></li>
+                    <li
+                    <?php echo (preg_match('/^(admin\/reports\/exam)/i', $this->uri->uri_string())) ? 'class="active"' : ' ' ?>
+                    ><a href="<?php echo base_url('admin/reports/exam'); ?>">Exam Results Report</a></li>
+                    <li
+                    <?php echo (preg_match('/^(admin\/reports\/expenses)/i', $this->uri->uri_string())) ? 'class="active"' : ' ' ?>
+                    ><a href="<?php echo base_url('admin/reports/expenses'); ?>">Expenses Summary Report</a></li>
+                    <li
+                    <?php echo (preg_match('/^(admin\/reports\/expense_trend)/i', $this->uri->uri_string())) ? 'class="active"' : ' ' ?>
+                    ><a href="<?php echo base_url('admin/reports/expense_trend'); ?>">Detailed  Expenses Report</a></li>
+                    <li
+                     <?php echo (preg_match('/^(admin\/reports\/wages)/i', $this->uri->uri_string())) ? 'class="active"' : ' ' ?>
+                    ><a href="<?php echo base_url('admin/reports/wages'); ?>">Wages Report</a></li>
+                    <li
+                    <?php echo (preg_match('/^(admin\/reports\/assets)/i', $this->uri->uri_string())) ? 'class="active"' : ' ' ?> 
+                    ><a href="<?php echo base_url('admin/reports/assets'); ?>">Assets Report</a></li>
+                    <li
+                    <?php echo (preg_match('/^(admin\/reports\/book_fund)/i', $this->uri->uri_string())) ? 'class="active"' : ' ' ?>
+                    ><a href="<?php echo base_url('admin/reports/book_fund'); ?>">Book Funds Reports</a></li>
+                    
+
+                                       
+                  </ul>
+                </li>
+                <!-- ./reports -->
 								<!-- users -->
 								<li>
 									<a href="#"><i class="icon-users"></i> <span>Users</span></a>
@@ -295,9 +407,52 @@
 										<li
 										<?php echo (preg_match('/^(admin\/teachers)/i', $this->uri->uri_string())) ? 'class="active"' : ' ' ?>
 										><a href="<?php echo base_url('admin/teachers'); ?>">Teachers</a></li>
+                    <li
+                    <?php echo (preg_match('/^(admin\/parents)/i', $this->uri->uri_string())) ? 'class="active"' : ' ' ?> 
+                    ><a href="<?php echo base_url('admin/parents'); ?>">Parents</a></li>
+                    <li
+                     <?php echo (preg_match('/^(admin\/admission)/i', $this->uri->uri_string())) ? 'class="active"' : ' ' ?>
+                    ><a href="<?php echo base_url('admin/admission'); ?>">Students</a></li>
+                    <li
+                    <?php echo (preg_match('/^(admin\/users\/create)/i', $this->uri->uri_string())) ? 'class="active"' : ' ' ?> 
+                    ><i class="icon-plus"></i><a href="<?php echo base_url('admin/users/create'); ?>">Add Staff</a></li>
+                    <li
+                    <?php echo (preg_match('/^(admin\/users)$/i', $this->uri->uri_string())) ? 'class="active"' : ' ' ?>
+                    ><a href="<?php echo base_url('admin/users'); ?>">List all Users</a></li>
+                    <li
+                    <?php echo (preg_match('/^(admin\/groups)/i', $this->uri->uri_string())) ? 'class="active"' : ' ' ?>
+                    ><a href="<?php echo base_url('admin/groups'); ?>">User Groups</a></li>
 									</ul>
 								</li>
 								<!-- ./users -->
+
+                <!-- settings -->
+                <li
+                 class = " <?php
+            if (preg_match('/^(admin\/settings)/i', $this->uri->uri_string()) ||
+                         preg_match('/^(admin\/class_groups)/i', $this->uri->uri_string()) ||
+                         preg_match('/^(admin\/permissions)/i', $this->uri->uri_string()) ||
+                         preg_match('/^(admin\/license)/i', $this->uri->uri_string()) ||
+                         preg_match('/^(admin\/uploads)/i', $this->uri->uri_string()) ||
+                         preg_match('/^(admin\/setup)/i', $this->uri->uri_string()))
+                    echo 'active';
+            ?>"
+                >
+                  <a href="#"><i class="icon-stack"></i> <span>Settings</span></a>
+                  <ul>
+                  
+                    <li class="navigation-header"><span><?php
+                    $user = $this->ion_auth->get_user();
+                    echo trim($user->first_name . ' ' . $user->last_name);
+                    ?></span> <i class="icon-menu" title="Main pages"></i></li>
+                    <li><a href="<?php echo base_url('admin/settings'); ?>">Settings</a></li>
+                    <li><a href="<?php echo base_url('admin/sms'); ?>">Messaging</a></li>
+                    <li><a href="<?php echo base_url('admin/help'); ?>">Help</a></li>
+                    <li><a href="<?php echo base_url('admin/logout'); ?>">Logout</a></li>
+
+                  </ul>
+                </li>
+                <!-- ./settings -->
 								<!-- /main -->
 
 							</ul>

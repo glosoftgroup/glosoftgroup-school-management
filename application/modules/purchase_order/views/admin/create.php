@@ -1,21 +1,24 @@
-
-                <div class="head">
-                    <div class="icon"><span class="icosg-target1"></span></div>
-                    <h2>Purchase Order</h2> 
-                     <div class="right">                            
-                       
-             <?php echo anchor( 'admin/purchase_order/create/'.$page, '<i class="glyphicon glyphicon-plus"></i> New Order ', 'class="btn btn-primary"');?>
+<!-- Pager -->
+<div class='row'>
+<div class="panel panel-white animated fadeIn">
+	<div class="panel-heading">
+		<h4 class="panel-title">Purchase Order</h4>
+		<div class="heading-elements">
+		    <?php echo anchor( 'admin/purchase_order/create/'.$page, '<i class="glyphicon glyphicon-plus"></i> New Order ', 'class="btn btn-primary"');?>
 			    <?php echo anchor( 'admin/purchase_order/' , '<i class="glyphicon glyphicon-list">
                 </i> List All', 'class="btn btn-primary"');?>
 				<?php echo anchor( 'admin/purchase_order/voided' , '<i class="glyphicon glyphicon-list">
                 </i> Voided Purchase Orders', 'class="btn btn-warning"');?>
-                     </div>    					
-                </div>
-				 <div class="block-fluid">
+		</div>
+	</div>
+	
+	<div class="panel-body">
+                    
 <?php 
 $attributes = array('class' => 'form-horizontal', 'id' => '');
 echo   form_open_multipart(current_url(), $attributes); 
 ?>
+<div class='row'>
 <div class='form-group'>
 	 <div class="col-md-2" for='purchase_date'>Purchase Date </div>
 	 <div class="col-md-3">
@@ -23,10 +26,12 @@ echo   form_open_multipart(current_url(), $attributes);
 	<input id='purchase_date' type='text' name='purchase_date' maxlength='' class='form-control datepicker' value="<?php echo set_value('purchase_date', (isset($result->purchase_date)) ? $result->purchase_date : ''); ?>"  />
 	<span class="input-group-addon "><i class="glyphicon glyphicon-calendar "></i></span>
  	
-</div>
+    </div>
  	<?php echo form_error('purchase_date'); ?>
 	
+    </div>
 </div>
+<div class='form-group'>
  <div class="col-md-1" for='due_date'>Due Date </div>
 	 <div class="col-md-3">
 	  <div id="datetimepicker1" class="input-group date form_datetime">
@@ -44,7 +49,7 @@ echo   form_open_multipart(current_url(), $attributes);
     <?php echo form_dropdown('supplier',array(''=>'Select Supplier')+ $address_book,  (isset($result->supplier)) ? $result->supplier : ''     ,   ' class="select" data-placeholder="Select  Options..." ');
                             ?>		
  	<?php echo form_error('supplier'); ?>
-</div>
+   </div>
 </div>
  <div class="widget">
                 <div class="head dark">
@@ -52,9 +57,12 @@ echo   form_open_multipart(current_url(), $attributes);
                     <h2>Purchase Details</h2>                    
                 </div>                
                 <div class="block-fluid">
-                    <table cellpadding="0" cellspacing="0" width="100%">
-                        <thead>
-                            <tr>
+
+						<div >
+							
+							 <table class="table table-hover" cellpadding="0" cellspacing="0" width="100%"> 
+							<thead>
+                            <tr >
                                 <th width="3%">
                                    #
                                 </th>
@@ -74,30 +82,26 @@ echo   form_open_multipart(current_url(), $attributes);
                              
                                
                             </tr>
-                        </thead>
-                        </table>
-						<div id="entry1" class="clonedInput">
-							
-							 <table cellpadding="0" cellspacing="0" width="100%">  
+                        </thead>							 
 										<tbody>
 										
-											<tr>
+											<tr id="entry1" class="clonedInput">
 											<td width="3%">
 											<span id="reference" name="reference" class="heading-reference">1</span>
 											</td>
 											
-											<td width="60%">
+											<td width="10%">
 												<input type="text" name="description[]" id="description" class="description">
 													
 													<?php echo form_error('description'); ?>
 											</td>
 											<td width="10%">
-												<input type="text" name="quantity[]" onblur="totals()" id="quantity" class="quantity">
+												<input type="text" name="quantity[]" onblur="totals()" id="quantity" class="form-control quantity">
 													
 												   <?php echo form_error('quantity'); ?>
 											</td>
 											<td width="12%">
-												<input type="text" name="unit_price[]" onblur="totals()" id="unit_price" class="unit_price">
+												<input type="text" name="unit_price[]" onblur="totals()" id="unit_price" class="form-control unit_price">
 													
 												<?php echo form_error('unit_price'); ?>
 											</td>
@@ -109,36 +113,54 @@ echo   form_open_multipart(current_url(), $attributes);
 										</tbody>
 								</table>
 							</div>
-							<div class="actions">
+							<div class="actions text-left p-10">
 								<a href="#" id="btnAdd" class="btn btn-success clone">Add New Line</a> 
 								<a href="#" id="btnDel" class="btn btn-danger remove">Remove</a>
-							</div>  
-						<div class="left">
-							<div class='form-group' style="border:none !important">
-							 <textarea name="comment" cols="100" rows="5" class="" placeholder="Comment here..." style="resize:vertical;" id="comment"></textarea>
-								<?php echo form_error('comment'); ?>
-							</div>
-						</div>
-						<div class="right">
-						<div class='form-group' style="border:none !important">
-							 <div class="col-md-3" for='vat'>VAT </div><div class="col-md-9">
-							 <input id='vat' type='radio' name='vat' checked="checked" value='1'  class="form-control" <?php echo preset_radio('vat', '1', (isset($result->vat)) ? $result->vat : ''  )?> />	<?php echo form_error('vat'); ?> Yes 
-							 <input id='vat' type='radio' name='vat' value='2'  class="form-control" <?php echo preset_radio('vat', '2', (isset($result->vat)) ? $result->vat : ''  )?> />	<?php echo form_error('vat'); ?> No
-							
-							<?php echo form_error('vat'); ?>
-						</div>
-						</div>
-						<div class='form-group' style="border:none !important">
-							 <div class="col-md-3" for='total'>TOTAL  </div><div class="col-md-9">
-								
-							<?php echo form_input('total' ,$result->total , 'id="total_" readonly class="total" style="border:none !important" ' );?>
-							<?php echo form_error('total'); ?>
-						</div>
-						</div>
-						</div>
+							</div> 
+<div class="row">							
+	<div class="col-md-6 text-left">
+		<div class='form-group' style="border:none !important">
+		 <textarea name="comment"  class="" placeholder="Comment here..." style="resize:vertical;" id="comment"></textarea>
+			<?php echo form_error('comment'); ?>
+		</div>
+	</div>
+	<div class="col-md-12">
+		<div class='form-group' style="border:none !important">
+			<label for='vat'>VAT</label>
+            <div class='checked'>
+			 <label>
+			 <input id='vat' type='radio' name='vat' checked="checked" value='1'  class="form-control" 
+			 <?php echo preset_radio('vat', '1', (isset($result->vat)) ? $result->vat : ''  )?> />	
+			 <?php echo form_error('vat'); ?>
+             			 Yes 
+				</label>
+			 </div>
+			 <div class='checked'>
+			 <label>
+			 <input id='vat' type='radio' name='vat' value='2'  class="form-control"
+			 <?php echo preset_radio('vat', '2', (isset($result->vat)) ? $result->vat : ''  )?> />	
+			 <?php echo form_error('vat'); ?> No
+			 </label>
+			 </div>
+			
+			<?php echo form_error('vat'); ?>
+		  </label>
+		</div>
+	</div>
+	<div class='col-md-12 text-right'>
+	<div class='form-group' style="border:none !important">
+		<div class="col-md-3" for='total'>TOTAL  </div>
+			<div class="col-md-9">
+					
+				<?php echo form_input('total' ,$result->total , 'id="total_" readonly class="total" style="border:none !important" ' );?>
+				<?php echo form_error('total'); ?>
+			</div>
+		</div>
+	</div>
+</div>
 						
 				
-<div class='form-group'><label class="control-label"></div><div class="col-md-10">
+<div class='form-group'><label class="control-label"></div><div class="col-md-12 text-right p-10">
    <?php echo form_submit( 'submit', ($updType == 'edit') ? 'Update' : 'Save', (($updType == 'create') ? "id='submit' class='btn btn-primary''" : "id='submit' class='btn btn-primary'")); ?>
 	<?php echo anchor('admin/purchase_order','Cancel','class="btn btn-default"');?>
 
@@ -150,6 +172,9 @@ echo   form_open_multipart(current_url(), $attributes);
 
 
 <?php echo form_close(); ?>
+</div>
+</div>
+</div>
 
 
  

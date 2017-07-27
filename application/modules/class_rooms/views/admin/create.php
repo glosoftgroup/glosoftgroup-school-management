@@ -1,17 +1,17 @@
 <div class="col-md-8">
-<div class="head">
-                    <div class="icon"><span class="icosg-target1"></span></div>
-                    <h2>  Class Rooms </h2> 
-                     <div class="right">                            
-                       
-             <?php echo anchor( 'admin/class_rooms/create/'.$page, '<i class="glyphicon glyphicon-plus">                </i>'.lang('web_add_t', array(':name' => 'Class Room')), 'class="btn btn-primary"');?>
-                <?php echo anchor( 'admin/class_rooms/' , '<i class="glyphicon glyphicon-list">
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+    <div class="panel-heading">
+        <h4 class="panel-title">Class Rooms</h4>
+        <div class="heading-elements">
+         <?php echo anchor( 'admin/class_rooms/create/'.$page, '<i class="glyphicon glyphicon-plus">                </i>'.lang('web_add_t', array(':name' => 'Class Room')), 'class="btn btn-primary"');?>
+        <?php echo anchor( 'admin/class_rooms/' , '<i class="glyphicon glyphicon-list">
                 </i> List All', 'class="btn btn-primary"');?>
-			
-                     </div>    					
-                </div>
-         	                  
-               <div class="block-fluid">
+        </div>
+    </div>
+    
+    <div class="panel-body">
+         
 
 
 <?php 
@@ -32,14 +32,14 @@ echo   form_open_multipart(current_url(), $attributes);
 </div>
 </div>
 
-<div class="widget">
+<div class="form-group">
                     <div class="head dark">
                         <div class="icon"><i class="icos-pencil"></i></div>
                         <h2>Description</h2>
                     </div>
                     <div class="block-fluid editor">
                         
-                        <textarea id="wysiwyg"  name="description" style="height: 300px;">
+                        <textarea id="" class="wysihtml5 wysihtml5-min"  name="description" style="height: 300px;">
                           <?php echo set_value('description', (isset($result->description)) ? htmlspecialchars_decode($result->description) : ''); ?></textarea>
 	<?php echo form_error('description'); ?>
                         
@@ -48,7 +48,7 @@ echo   form_open_multipart(current_url(), $attributes);
                 </div> 
 
 <div class='form-group'><div class="control-div"></div>
-<div class="col-md-10">
+<div class="col-md-12 text-right">
     
 
     <?php echo form_submit( 'submit', ($updType == 'edit') ? 'Update' : 'Save', (($updType == 'create') ? "id='submit' class='btn btn-primary''" : "id='submit' class='btn btn-primary'")); ?>

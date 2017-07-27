@@ -36,7 +36,7 @@ class Book_fund_stock_m extends MY_Model{
          return  $this->db->where('id', $id) ->update('book_fund_stock', $data);
     }
 
-function populate($table,$option_val,$option_text)
+function populate($table,$option_val=None,$option_text)
 {
     $query = $this->db->select('*')->order_by($option_text)->get($table);
      $dropdowns = $query->result();

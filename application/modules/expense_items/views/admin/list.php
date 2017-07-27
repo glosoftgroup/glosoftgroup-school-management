@@ -1,17 +1,18 @@
-<div class="head"> 
-    <div class="icon"><span class="icosg-target1"></span> </div>
-    <h2>  Expense Items  </h2>
-    <div class="right">  
-        <?php echo anchor('admin/expense_items/create/' . $page, '<i class="glyphicon glyphicon-plus"></i> ' . lang('web_add_t', array(':name' => 'Expense Items')), 'class="btn btn-primary"'); ?>
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+    <div class="panel-heading">
+        <h4 class="panel-title">  Expense Items</h4>
+        <div class="heading-elements">
+         <?php echo anchor('admin/expense_items/create/' . $page, '<i class="glyphicon glyphicon-plus"></i> ' . lang('web_add_t', array(':name' => 'Expense Items')), 'class="btn btn-primary"'); ?>
          <?php echo anchor('admin/expense_items', '<i class="glyphicon glyphicon-list">
-                </i> ' . lang('web_list_all', array(':name' => 'Expense Items')), 'class="btn btn-primary"'); ?> 
-
+                </i> ' . lang('web_list_all', array(':name' => 'Expense Items')), 'class="btn btn-primary"'); ?>
+        </div>
     </div>
-</div>
+    
+    <div class="panel-body">
+    
 
-<div class="block-fluid">
-
-    <table cellpadding="0" cellspacing="0" border="0" class='hover' id="ex_table" width="100%">
+    <table cellpadding="0" cellspacing="0" border="0" class='table table-hover hover' id="ex_table" width="100%">
         <thead>
             <tr>
                 <th>#</th>

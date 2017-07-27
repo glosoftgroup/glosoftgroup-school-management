@@ -1,14 +1,19 @@
     <?php echo $template['partials']['perms']; ?>
  
- <div class="head"> 
-    <div class="icon"><span class="icosg-target1"></span> </div>
-    <h2>  Assign Permissions </h2>
-    <div class="right">  
-    </div>
-</div>
+ <!-- Pager -->
+ <div class="panel panel-white animated fadeIn">
+     <div class="panel-heading">
+         <h4 class="panel-title"> Assign Permissions</h4>
+         <div class="heading-elements">
+         
+         </div>
+     </div>
+     
+     
+    
 <div class="row">
     <div class="col-md-9">
-        <div class="block-fluid">
+      <div class="panel-body">
             <?php echo form_open(current_url(), 'class="form-inline" id="fextra"'); ?>
             <div class="panel-body panel-scroll" style="min-height:400px">
                 <table cellpadding="0" cellspacing="0" width="100%" id="lis_table">

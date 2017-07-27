@@ -1,8 +1,9 @@
-<div class="head">
-                    <div class="icon"><span class="icosg-target1"></span></div>
-                    <h2> Items Category</h2> 
-                     <div class="right">                            
-						   <?php echo anchor( 'admin/items_category/create/'.$page, '<i class="glyphicon glyphicon-plus">                </i>'.lang('web_add_t', array(':name' => 'Items Category')), 'class="btn btn-primary"');?>
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+	<div class="panel-heading">
+		<h4 class="panel-title">Items Category</h4>
+		<div class="heading-elements">
+		   <?php echo anchor( 'admin/items_category/create/'.$page, '<i class="glyphicon glyphicon-plus">                </i>'.lang('web_add_t', array(':name' => 'Items Category')), 'class="btn btn-primary"');?>
 			    <?php echo anchor( 'admin/items/' , '<i class="glyphicon glyphicon-list">
                 </i> List All', 'class="btn btn-primary"');?>
 			  <div class="btn-group">
@@ -20,12 +21,14 @@
 					  <li><a href="<?php echo base_url('admin/inventory'); ?>"><i class="glyphicon glyphicon-folder-open"></i> Inventory Listing</a></li>
 					</ul>
 				</div>
-			
-                     </div>    					
-                </div>
+		</div>
+	</div>
+	
+	
+                    
          	        <?php if ($items_category): ?>              
-               <div class="block-fluid">
-				<table class="fpTable" cellpadding="0" cellspacing="0" width="100%">
+            <div class="panel-body">
+				<table class="table table-hover fpTable" cellpadding="0" cellspacing="0" width="100%">
 
          
 	 <thead>
@@ -71,5 +74,5 @@
 </div>
 
 <?php else: ?>
- 	<p class='text'><?php echo lang('web_no_elements');?></p>
+ 	<p class='text-center'><?php echo lang('web_no_elements');?></p>
  <?php endif ?>

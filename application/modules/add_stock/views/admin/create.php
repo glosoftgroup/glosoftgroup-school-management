@@ -9,11 +9,12 @@
   </script>
   
     <div class="col-md-8">
- <div class="head">
-                    <div class="icon"><span class="icosg-target1"></span></div>
-                    <h2> Stocks Management</h2> 
-                     <div class="right">                            
-						 <?php echo anchor( 'admin/add_stock/create/' , '<i class="glyphicon glyphicon-plus">
+ <!-- Pager -->
+ <div class="panel panel-white animated fadeIn">
+ 	<div class="panel-heading">
+ 		<h4 class="panel-title">Stocks Management</h4>
+ 		<div class="heading-elements">
+ 		  <?php echo anchor( 'admin/add_stock/create/' , '<i class="glyphicon glyphicon-plus">
                 </i> Add Stock ', 'class="btn btn-primary"');?> 
 			    <?php echo anchor( 'admin/add_stock/' , '<i class="glyphicon glyphicon-list">
                 </i> List All', 'class="btn btn-primary"');?>
@@ -32,10 +33,11 @@
 					  <li><a href="<?php echo base_url('admin/inventory'); ?>"><i class="glyphicon glyphicon-folder-open"></i> Inventory Listing</a></li>
 					</ul>
 				</div>
-			
-                     </div>    					
-                </div>             
-               <div class="block-fluid">
+ 		</div>
+ 	</div>
+ 	
+ 	<div class="panel-body">
+ 	 
   
  <?php if(empty($product)):?> 
  <h4>No Item Added, kindly add Item first <a href="<?php echo base_url('admin/items/create'); ?>">Add Here</a></h4>
@@ -72,7 +74,7 @@ echo   form_open_multipart(current_url(), $attributes);
 <div class='form-group'>
 	<div class=' col-md-3' for='quantity'>Quantity <span class='required'>*</span></div>
         <div class="col-md-6">
-	<?php echo form_input('quantity' ,$add_stock_m->quantity , 'id="quantity"  class="" id="focusedinput" onblur="totals()"' );?>
+	<?php echo form_input('quantity' ,$add_stock_m->quantity , 'id="quantity"  class="form-control" id="focusedinput" onblur="totals()"' );?>
  	<?php echo form_error('quantity'); ?>
 </div>
 </div>
@@ -80,7 +82,7 @@ echo   form_open_multipart(current_url(), $attributes);
 <div class='form-group'>
 	<div class=' col-md-3' for='unit_price'>Unit Price <span class='required'>*</span></div>
         <div class="col-md-6">
-	<?php echo form_input('unit_price' ,$add_stock_m->unit_price , 'id="unit_price"  class="" id="focusedinput" onblur="totals()"' );?>
+	<?php echo form_input('unit_price' ,$add_stock_m->unit_price , 'id="unit_price"  class="form-control" id="focusedinput" onblur="totals()"' );?>
  	<?php echo form_error('unit_price'); ?>
 </div>
 </div>
@@ -88,7 +90,7 @@ echo   form_open_multipart(current_url(), $attributes);
 <div class='form-group'>
 	<div class=' col-md-3' for='total'>Total ( Buying Price ) </div>
         <div class="col-md-6">
-	<?php echo form_input('total' ,$add_stock_m->total , 'id="total"  class="" id="focusedinput" ' );?>
+	<?php echo form_input('total' ,$add_stock_m->total , 'id="total"  class="form-control" id="focusedinput" ' );?>
  	<?php echo form_error('total'); ?>
 </div>
 </div>
@@ -109,7 +111,7 @@ echo   form_open_multipart(current_url(), $attributes);
 <div class='form-group'>
 	<div class=' col-md-3' for='receipt'><?php echo lang( ($updType == 'edit')  ? "web_file_edit" : "web_file_create" )?> (receipt) </div>
  <div class="col-md-6">
-	<input id='receipt' type='file' name='receipt' />
+	<input id='receipt' class="file-styled-primary" type='file' name='receipt' />
 
 	<?php if ($updType == 'edit'): ?>
 	<a href='/public/uploads/add_stock/files/<?php echo $add_stock_m->receipt?>' />Download actual file (receipt)</a>
@@ -119,14 +121,14 @@ echo   form_open_multipart(current_url(), $attributes);
 	<?php  echo ( isset($upload_error['receipt'])) ?  $upload_error['receipt']  : ""; ?>
 </div>
 </div>
-<div class="widget">
+<div class="form-group">
                     <div class="head dark">
                         <div class="icon"><i class="icos-pencil"></i></div>
                         <h2>Description</h2>
                     </div>
                     <div class="block-fluid editor">
                         
-                        <textarea id="wysiwyg"  name="description" style="height: 300px;">
+                        <textarea id="" class="wysihtml5 wysihtml5-min " name="description" style="height: 300px;">
                           <?php echo set_value('description', (isset($result->description)) ? htmlspecialchars_decode($result->description) : ''); ?></textarea>
 	<?php echo form_error('description'); ?>
                         
@@ -134,8 +136,8 @@ echo   form_open_multipart(current_url(), $attributes);
                    
                 </div> 
 	
-<div class='form-group'>
-	<div class="col-md-6">
+<div class='form-group col-md-12'>
+	<div class="col-md-12 text-right p-10">
 		
 
 		<?php echo form_submit( 'submit', ($updType == 'edit') ? 'Update' : 'Save', (($updType == 'create') ? "id='submit' class='btn btn-primary''" : "id='submit' class='btn btn-primary'")); ?>

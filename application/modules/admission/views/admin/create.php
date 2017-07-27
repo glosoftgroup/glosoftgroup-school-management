@@ -33,7 +33,7 @@
 
         <div class='form-group'>
             <div class="col-md-2" for='dob'>Dob <span class='required'>*</span></div><div class="col-md-10">
-                <input id='dob datetimepicker1' type='text' name='dob' maxlength='' class='form-control datepicker' value="<?php echo set_value('dob', (isset($result->dob)) ? $result->dob : ''); ?>"  />
+                <input id='dob ' type='text' name='dob' maxlength='' class='form-control datepicker' value="<?php echo set_value('dob', (isset($result->dob)) ? $result->dob : ''); ?>"  />
                 <?php echo form_error('dob'); ?>
             </div>
         </div>

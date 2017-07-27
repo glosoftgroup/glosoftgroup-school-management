@@ -1,18 +1,18 @@
 <div class="col-md-8">
-        <div class="head"> 
-             <div class="icon"><span class="icosg-target1"></span></div>		
-            <h2>  tax_config  </h2>
-             <div class="right"> 
-             <?php echo anchor( 'admin/tax_config/create' , '<i class="glyphicon glyphicon-plus">
+   <!-- Pager -->
+   <div class="panel panel-white animated fadeIn">
+   	<div class="panel-heading">
+   		<h4 class="panel-title"> tax_config </h4>
+   		<div class="heading-elements">
+   		   <?php echo anchor( 'admin/tax_config/create' , '<i class="glyphicon glyphicon-plus">
                 </i> Tax', 'class="btn btn-primary"');?> 
               <?php echo anchor( 'admin/tax_config' , '<i class="glyphicon glyphicon-list">
                 </i> '.lang('web_list_all', array(':name' => 'tax_config')), 'class="btn btn-primary"');?> 
-             
-                </div>
-                </div>
-         	                    
-               
-				   <div class="block-fluid">
+   		</div>
+   	</div>
+   	
+   	<div class="panel-body">		
+          
 				   <?php 
 $attributes = array('class' => 'form-horizontal', 'id' => '');
 echo   form_open_multipart(current_url(), $attributes); 
@@ -20,9 +20,12 @@ echo   form_open_multipart(current_url(), $attributes);
 				   	   <!-- END ADVANCED SEARCH EXAMPLE -->
         <!-- BEGIN TABLE DATA -->
         <div id="editable_wrapper" class="dataTables_wrapper form-inline" role="grid">
-		 <table cellpadding="0" cellspacing="0" width="100%">
-		  <!-- BEGIN -->
-            <thead>
+		
+		   
+		   <div >
+							
+			 <table cellpadding="0" cellspacing="0" width="100%"> 
+				<thead>
                 <tr role="row">
 				
 				
@@ -31,53 +34,48 @@ echo   form_open_multipart(current_url(), $attributes);
 				<th width="50">Percentage(%)</th>
 				
 				</tr>
-            </thead>
-           </table>
-		   
-		   <div id="entry1" class="clonedInput">
+            </thead>			 
+						<tbody>
+						
+						<tr id="entry1" class="clonedInput">
+  
+									 <td width="3%">
+									  <span id="reference" name="reference" class="heading-reference">1</span>
+									</td>
+									<td width="50">
+									<input type="text" name="name[]" id="name" class="form-control name" value="<?php 
+											if(!empty($result->name)){
+													echo $result->name;}
+											?>">
+									<?php echo form_error('name'); ?>
+									</td> 
+									
+									<td width="50">
+									<input type="text" name="amount[]" id="amount" placeholder="E.g 16" class="form-control amount" value="<?php 
+											if(!empty($result->amount)){
+													echo $result->amount;}
+											?>">
+										<?php echo form_error('amount'); ?>
+									
+									</td>
 							
-							 <table cellpadding="0" cellspacing="0" width="100%">  
-										<tbody>
-										
-										<tr >
-                  
-													 <td width="3%">
-													  <span id="reference" name="reference" class="heading-reference">1</span>
-													</td>
-													<td width="50">
-													<input type="text" name="name[]" id="name" class="name" value="<?php 
-															if(!empty($result->name)){
-																	echo $result->name;}
-															?>">
-													<?php echo form_error('name'); ?>
-													</td> 
-													
-													<td width="50">
-													<input type="text" name="amount[]" id="amount" placeholder="E.g 16" class="amount" value="<?php 
-															if(!empty($result->amount)){
-																	echo $result->amount;}
-															?>">
-														<?php echo form_error('amount'); ?>
-													
-													</td>
-											
-													
-												</tr>
-										
-										</tbody>
-								</table>
-							</div>
-		   
+									
+								</tr>
+						
+						</tbody>
+				</table>
+			</div>
+
 		   
 				
-					<div class="actions">
+					<div class="actions text-left p-10">
 						<a href="#" id="btnAdd" class="btn btn-success clone">Add New Line</a> 
 						<a href="#" id="btnDel" class="btn btn-danger remove">Remove</a>
 					</div>
 		</div>
 
 
-<div class='form-group'><div class="col-md-2"></div><div class="col-md-10">
+<div class='form-group'><div class="col-md-2"></div><div class="col-md-12 p-10 text-right" >
     
 
     <?php echo form_submit( 'submit', ($updType == 'edit') ? 'Update' : 'Save', (($updType == 'create') ? "id='submit' class='btn btn-primary''" : "id='submit' class='btn btn-primary'")); ?>

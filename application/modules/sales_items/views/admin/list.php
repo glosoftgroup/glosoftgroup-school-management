@@ -1,19 +1,20 @@
-<div class="head"> 
-			 <div class="icon"><span class="icosg-target1"></span> </div>
-            <h2>  Sales Items  </h2>
-             <div class="right">  
-             <?php echo anchor( 'admin/sales_items/create/'.$page, '<i class="glyphicon glyphicon-plus"></i> '.lang('web_add_t', array(':name' => 'Sales Items')), 'class="btn btn-primary"');?>
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+	<div class="panel-heading">
+		<h4 class="panel-title">Sales Items</h4>
+		<div class="heading-elements">
+			<?php echo anchor( 'admin/sales_items/create/'.$page, '<i class="glyphicon glyphicon-plus"></i> '.lang('web_add_t', array(':name' => 'Sales Items')), 'class="btn btn-primary"');?>
 			 
 			 <?php echo anchor( 'admin/sales_items' , '<i class="glyphicon glyphicon-list">
-                </i> '.lang('web_list_all', array(':name' => 'Sales Items')), 'class="btn btn-primary"');?> 
-             
-                </div>
-                </div>
-         	                    
-              
+                </i> '.lang('web_list_all', array(':name' => 'Sales Items')), 'class="btn btn-primary"');?>
+		</div>
+	</div>
+	
+	
+            
                  <?php if ($sales_items): ?>
-                 <div class="block-fluid">
-				<table class="fpTable" cellpadding="0" cellspacing="0" width="100%">
+           <div class="panel-body">
+				<table class="table table-hover fpTable" cellpadding="0" cellspacing="0" width="100%">
 	 <thead>
                 <th>#</th>
 				<th>Item Name</th>
@@ -48,8 +49,8 @@
 
 			 <td width='20%'>
 						 <div class='btn-group'>
-						 <a class='btn btn-primary' href='<?php echo site_url('admin/sales_items/edit/'.$p->id.'/'.$page);?>'><i class='glyphicon glyphicon-edit'></i> Edit</a>
-						 <a class='btn btn-success' href='<?php echo site_url('admin/sales_items_stock/create/'.$p->id.'/'.$page);?>'><i class='glyphicon glyphicon-plus'></i> Add Stock</a>
+						 <a class='btn btn-primary' href='<?php echo site_url('admin/sales_items/edit/'.$p->id.'/'.$page);?>'><i class='glyphicon glyphicon-edit'></i> </a>
+						 <a class='btn btn-success' href='<?php echo site_url('admin/sales_items_stock/create/'.$p->id.'/'.$page);?>'><i class='glyphicon glyphicon-plus'></i> </a>
 							
 						</div>
 					</td>
@@ -63,5 +64,5 @@
 </div>
 
 <?php else: ?>
- 	<p class='text'><?php echo lang('web_no_elements');?></p>
+ 	<p class='text-center text-muted p-10'><?php echo lang('web_no_elements');?></p>
  <?php endif ?>

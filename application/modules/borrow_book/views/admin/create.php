@@ -1,18 +1,18 @@
 <div class="col-md-8">
-        <div class="head"> 
-             <div class="icon"><span class="icosg-target1"></span></div>		
-            <h2>  Borrow Book  </h2>
-             <div class="right"> 
+ <!-- Pager -->
+ <div class="panel panel-white animated fadeIn">
+     <div class="panel-heading">
+         <h4 class="panel-title">Borrow Book </h4>
+         <div class="heading-elements">
              <?php echo anchor( 'admin/borrow_book/create' , '<i class="glyphicon glyphicon-plus">
                 </i> Borrow Book', 'class="btn btn-primary"');?> 
               <?php echo anchor( 'admin/borrow_book' , '<i class="glyphicon glyphicon-list">
                 </i> '.lang('web_list_all', array(':name' => 'Borrowed Books')), 'class="btn btn-primary"');?> 
-             
-                </div>
-                </div>
-         	                    
-               
-				   <div class="block-fluid">
+         </div>
+     </div>
+     
+     <div class="panel-body">		
+            
 
 <?php 
 $attributes = array('class' => 'form-horizontal', 'id' => '');
@@ -43,32 +43,34 @@ echo   form_open_multipart(current_url(), $attributes);
         <div id="editable_wrapper" class="dataTables_wrapper form-inline" role="grid">
             <table cellpadding="0" cellspacing="0" width="100%">
                 <!-- BEGIN -->
+                
+            </table>
+
+            <div>
+
+                <table class="table table-hover" cellpadding="0" cellspacing="0" width="100%"> 
                 <thead>
                     <tr role="row">
                         <th width="3%">#</th>
                         <th width="30%">Book</th>
                         <th width="67%">Remarks</th>
                     </tr>
-                </thead>
-            </table>
-
-            <div id="entry1" class="clonedInput">
-
-                <table cellpadding="0" cellspacing="0" width="100%">  
+                </thead> 
                     <tbody>
 
-                        <tr >
+                        <tr  id="entry1" class="clonedInput">
 
                             <td width="3%">
                                 <span id="reference" name="reference" class="heading-reference">1</span>
                             </td>
 
                             <td width="30%">
-
+                              <div class="form-group">
                                <?php
-                               echo form_dropdown('book[]', $books, (isset($result->book)) ? $result->book : '', ' class="book" id="book" data-placeholder="Select Options..." ');
+                               echo form_dropdown('book[]', $books, (isset($result->book)) ? $result->book : '', ' class="form-control book" id="book" data-placeholder="Select Options..." style="padding-right: 60px;"');
                                 ?>
                                        <?php echo form_error('book'); ?>
+                                    </div>
                             </td>
                        
                             <td width="67%">
@@ -84,14 +86,14 @@ echo   form_open_multipart(current_url(), $attributes);
 
 
 
-            <div class="actions">
-                <a href="#" id="btnAdd" class="btn btn-success clone">Add New Line</a> 
+            <div class="actions p-10 text-left">
+                <a href="javascript:;" id="btnAdd" class="btn btn-success clone">Add New Line</a> 
                 <a href="#" id="btnDel" class="btn btn-danger remove">Remove</a>
             </div>
         </div>
 
 
-<div class='form-group'><div class="col-md-2"></div><div class="col-md-10">
+<div class='form-group'><div class="col-md-2"></div><div class="col-md-12 text-right">
     
 
     <?php echo form_submit( 'submit', ($updType == 'edit') ? 'Update' : 'Save', (($updType == 'create') ? "id='submit' class='btn btn-primary''" : "id='submit' class='btn btn-primary'")); ?>

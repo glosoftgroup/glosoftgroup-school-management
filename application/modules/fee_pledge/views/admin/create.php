@@ -1,18 +1,18 @@
 <div class="col-md-8">
-    <div class="head"> 
-        <div class="icon"><span class="icosg-target1"></span></div>		
-        <h2>  Fee Pledge  </h2>
-        <div class="right"> 
-            <?php echo anchor('admin/fee_pledge/create', '<i class="glyphicon glyphicon-plus">
+   <!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+    <div class="panel-heading">
+        <h4 class="panel-title">Fee Pledge</h4>
+        <div class="heading-elements">
+          <?php echo anchor('admin/fee_pledge/create', '<i class="glyphicon glyphicon-plus">
                 </i> ' . lang('web_add_t', array(':name' => 'Fee Pledge')), 'class="btn btn-primary"'); ?> 
             <?php echo anchor('admin/fee_pledge', '<i class="glyphicon glyphicon-list">
-                </i> ' . lang('web_list_all', array(':name' => 'Fee Pledge')), 'class="btn btn-primary"'); ?> 
-
+                </i> ' . lang('web_list_all', array(':name' => 'Fee Pledge')), 'class="btn btn-primary"'); ?>
         </div>
     </div>
-
-
-    <div class="block-fluid">
+    
+    <div class="panel-body">	
+        
 
         <?php
         $attributes = array('class' => 'form-horizontal', 'id' => '');
@@ -59,17 +59,17 @@
             </div>
         </div>
 
-        <div class='widget'>
+        <div class='form-group'>
             <div class='head dark'>
                 <div class='icon'><i class='icos-pencil'></i></div>
                 <h2>Remark </h2></div>
             <div class="block-fluid editor">
-                <textarea id="remark"   style="height: 300px;" class=" wysiwyg "  name="remark"  /><?php echo set_value('remark', (isset($result->remark)) ? htmlspecialchars_decode($result->remark) : ''); ?></textarea>
+                <textarea id="remark"   style="height: 300px;" class=" wysihtml5 wysihtml5-min"  name="remark"  /><?php echo set_value('remark', (isset($result->remark)) ? htmlspecialchars_decode($result->remark) : ''); ?></textarea>
 <?php echo form_error('remark'); ?>
             </div>
         </div>
 
-        <div class='form-group'><div class="col-md-3"></div><div class="col-md-6">
+        <div class='form-group'><div class="col-md-3"></div><div class="col-md-12 text-right">
 
 
                 <?php echo form_submit('submit', ($updType == 'edit') ? 'Update' : 'Save', (($updType == 'create') ? "id='submit' class='btn btn-primary''" : "id='submit' class='btn btn-primary'")); ?>

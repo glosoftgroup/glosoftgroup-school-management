@@ -1,5 +1,5 @@
 <div class="col-md-8">
-<div class="panel panel-white">
+<div class="panel panel-white animated fadeIn">
     <div class="panel-heading">
 
         <h2 class="panel-title"> Subjects </h2>

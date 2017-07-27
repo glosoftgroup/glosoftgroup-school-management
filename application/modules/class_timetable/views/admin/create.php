@@ -1,16 +1,16 @@
-<div class="head">
-    <div class="icon"><span class="icosg-target1"></span></div>
-    <h2> Class Timetable</h2> 
-    <div class="right">                            
-
-        <?php echo anchor('admin/class_timetable/create/' . $page, '<i class="glyphicon glyphicon-plus"></i> ' . lang('web_add_t', array(':name' => ' New Class Timetable')), 'class="btn btn-primary"'); ?>
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+    <div class="panel-heading">
+        <h4 class="panel-title">Class Timetable</h4>
+        <div class="heading-elements">
+          <?php echo anchor('admin/class_timetable/create/' . $page, '<i class="glyphicon glyphicon-plus"></i> ' . lang('web_add_t', array(':name' => ' New Class Timetable')), 'class="btn btn-primary"'); ?>
         <?php echo anchor('admin/class_timetable/', '<i class="glyphicon glyphicon-list">
                 </i> List All', 'class="btn btn-primary"'); ?>
-
-    </div>    					
-</div>
-
-<div class="block-fluid">
+        </div>
+    </div>
+    
+    <div class="panel-body">
+    
     <!-- BEGIN TABS CONTAINER WIZARD -->
 
     <?php

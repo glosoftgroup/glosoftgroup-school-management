@@ -9,11 +9,12 @@
   </script>
   
      <div class="col-md-8">
-<div class="head">
-                    <div class="icon"><span class="icosg-target1"></span></div>
-                    <h2> Stocks Management</h2> 
-                     <div class="right">                            
-						 <?php echo anchor( 'admin/add_stock/create/' , '<i class="glyphicon glyphicon-plus">
+  <!-- Pager -->
+  <div class="panel panel-white animated fadeIn">
+  	<div class="panel-heading">
+  		<h4 class="panel-title">Stocks Management</h4>
+  		<div class="heading-elements">
+  		 <?php echo anchor( 'admin/add_stock/create/' , '<i class="glyphicon glyphicon-plus">
                 </i> Add Stock ', 'class="btn btn-primary"');?> 
 			    <?php echo anchor( 'admin/add_stock/' , '<i class="glyphicon glyphicon-list">
                 </i> List All', 'class="btn btn-primary"');?>
@@ -32,10 +33,11 @@
 					  <li><a href="<?php echo base_url('admin/inventory'); ?>"><i class="glyphicon glyphicon-folder-open"></i> Inventory Listing</a></li>
 					</ul>
 				</div>
-			
-                     </div>    					
-                </div>            
-               <div class="block-fluid">
+  		</div>
+  	</div>
+  	
+  	<div class="panel-body">
+                   
   
   <?php 
 $attributes = array('class' => 'form-horizontal', 'id' => '');

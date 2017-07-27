@@ -14,15 +14,15 @@
     </div>
     <div class="clear"></div>
     <div class="col-md-2"></div>
-    <div class="slip col-md-8">
-      <div class="slip-content">
+    <div class="panel slip col-md-8">
+      <div class="panel-body slip-content">
         <div class="row">
 
             <div class="col-md-12 view-title ">
-			   <span class="left">
+			   <span class="text-center ">
 			     <h1 ><img  src="<?php echo base_url('uploads/files/' . $settings->document); ?>" width="80" height="80" /></h1>
 			</span>
-                <span class="center">
+                <span class="text-center">
                     <h6>OFFICIAL RECEIPT</h6>
                   
                 </span>

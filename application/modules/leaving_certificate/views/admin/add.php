@@ -1,18 +1,18 @@
 <div class="col-md-8">
-        <div class="head"> 
-             <div class="icon"><span class="icosg-target1"></span></div>		
-            <h2>  Leaving Certificate  </h2>
-             <div class="right"> 
-             <?php echo anchor( 'admin/leaving_certificate/create' , '<i class="glyphicon glyphicon-plus">
+      <!-- Pager -->
+      <div class="panel panel-white animated fadeIn">
+        <div class="panel-heading">
+          <h4 class="panel-title">Leaving Certificate</h4>
+          <div class="heading-elements">
+            <?php echo anchor( 'admin/leaving_certificate/create' , '<i class="glyphicon glyphicon-plus">
                 </i> '.lang('web_add_t', array(':name' => 'Leaving Certificate')), 'class="btn btn-primary"');?> 
               <?php echo anchor( 'admin/leaving_certificate' , '<i class="glyphicon glyphicon-list">
-                </i> '.lang('web_list_all', array(':name' => 'Leaving Certificate')), 'class="btn btn-primary"');?> 
-             
-                </div>
-                </div>
-         	                    
-               
-				   <div class="block-fluid">
+                </i> '.lang('web_list_all', array(':name' => 'Leaving Certificate')), 'class="btn btn-primary"');?>
+          </div>
+        </div>
+        
+        <div class="panel-body">		
+            
 
 <?php 
 $attributes = array('class' => 'form-horizontal', 'id' => '');
@@ -38,7 +38,7 @@ echo   form_open_multipart(current_url(), $attributes);
         <div class='icon'><i class='icos-pencil'></i></div>
 	<h2>Headteacher Remarks </h2></div>
 	 <div class="block-fluid editor">
-	<textarea id="ht_remarks"   style="height: 300px;" class=" wysiwyg "  name="ht_remarks"  /><?php echo set_value('ht_remarks', (isset($result->ht_remarks)) ? htmlspecialchars_decode($result->ht_remarks) : ''); ?></textarea>
+	<textarea id="ht_remarks"   style="height: 300px;" class=" wysihtml5 wysihtml5-min"  name="ht_remarks"  /><?php echo set_value('ht_remarks', (isset($result->ht_remarks)) ? htmlspecialchars_decode($result->ht_remarks) : ''); ?></textarea>
 	<?php echo form_error('ht_remarks'); ?>
 </div>
 </div>
@@ -48,7 +48,7 @@ echo   form_open_multipart(current_url(), $attributes);
         <div class='icon'><i class='icos-pencil'></i></div>
 	<h2>Co-Curricular Activities</h2></div>
 	 <div class="block-fluid editor">
-	<textarea id="co_curricular"   style="height: 300px;" class=" wysiwyg "  name="co_curricular"  /><?php echo set_value('co_curricular', (isset($result->co_curricular)) ? htmlspecialchars_decode($result->co_curricular) : ''); ?></textarea>
+	<textarea id="co_curricular"   style="height: 300px;" class=" wysihtml5 wysihtml5-min"  name="co_curricular"  /><?php echo set_value('co_curricular', (isset($result->co_curricular)) ? htmlspecialchars_decode($result->co_curricular) : ''); ?></textarea>
 	<?php echo form_error('co_curricular'); ?>
 </div>
 </div>

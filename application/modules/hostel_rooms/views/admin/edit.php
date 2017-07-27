@@ -1,28 +1,29 @@
 <div class="col-md-8">
-<div class="head">
-                    <div class="icon"><span class="icosg-target1"></span></div>
-                    <h2> Hostel Rooms </h2> 
-                     <div class="right">                            
-                <?php echo anchor( 'admin/hostel_rooms/create/'.$page, '<i class="glyphicon glyphicon-plus"></i> '.lang('web_add_t', array(':name' => 'Hostel Rooms')), 'class="btn btn-primary"');?>
-			 <a class="btn btn-primary"  href="<?php echo base_url('admin/hostel_rooms'); ?>"><i class="glyphicon glyphicon-list"></i> Hostel Rooms</a>
-			
-			 <div class="btn-group">
-					<button class="btn dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-cog"></i> Options</button>
-					
-					<ul class="dropdown-menu pull-right">
-					  <li><a class=""  href="<?php echo base_url('admin/hostel_rooms'); ?>"><i class="glyphicon glyphicon-check"></i> Manage Hostel Rooms</a></li>
-					
-					  <li><a href="<?php echo base_url('admin/hostel_beds'); ?>"><i class="glyphicon glyphicon-share"></i> Manage Hostel Beds</a></li>
-					<li class="divider"></li>
-					  <li><a href="<?php echo base_url('admin/hostels'); ?>"><i class="glyphicon glyphicon-home"></i> Back to Hostels</a></li>
-					   
-					</ul>
-				</div>
-			
-                     </div>    					
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+    <div class="panel-heading">
+        <h4 class="panel-title">Hostel Rooms</h4>
+        <div class="heading-elements">
+           <?php echo anchor( 'admin/hostel_rooms/create/'.$page, '<i class="glyphicon glyphicon-plus"></i> '.lang('web_add_t', array(':name' => 'Hostel Rooms')), 'class="btn btn-primary"');?>
+             <a class="btn btn-primary"  href="<?php echo base_url('admin/hostel_rooms'); ?>"><i class="glyphicon glyphicon-list"></i> Hostel Rooms</a>
+            
+             <div class="btn-group">
+                    <button class="btn dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-cog"></i> Options</button>
+                    
+                    <ul class="dropdown-menu pull-right">
+                      <li><a class=""  href="<?php echo base_url('admin/hostel_rooms'); ?>"><i class="glyphicon glyphicon-check"></i> Manage Hostel Rooms</a></li>
+                    
+                      <li><a href="<?php echo base_url('admin/hostel_beds'); ?>"><i class="glyphicon glyphicon-share"></i> Manage Hostel Beds</a></li>
+                    <li class="divider"></li>
+                      <li><a href="<?php echo base_url('admin/hostels'); ?>"><i class="glyphicon glyphicon-home"></i> Back to Hostels</a></li>
+                       
+                    </ul>
                 </div>
-         	                 
-               <div class="block-fluid">
+        </div>
+    </div>
+    
+    <div class="panel-body">
+                 
 	
 
 <?php 
@@ -59,7 +60,7 @@ echo   form_open_multipart(current_url(), $attributes);
                    
                 </div> 
 
-<div class='form-group'><div class="control-div"></div><div class="col-md-10">
+<div class='form-group'><div class="control-div"></div><div class="col-md-12 text-right p-10">
     
 
     <?php echo form_submit( 'submit', ($updType == 'edit') ? 'Update' : 'Save', (($updType == 'create') ? "id='submit' class='btn btn-primary''" : "id='submit' class='btn btn-primary'")); ?>

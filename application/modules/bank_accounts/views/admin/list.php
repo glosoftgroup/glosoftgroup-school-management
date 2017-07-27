@@ -1,19 +1,20 @@
-<div class="head"> 
-			 <div class="icon"><span class="icosg-target1"></span> </div>
-            <h2>  Bank Accounts  </h2>
-             <div class="right">  
-             <?php echo anchor( 'admin/bank_accounts/create/'.$page, '<i class="glyphicon glyphicon-plus"></i> '.lang('web_add_t', array(':name' => 'Bank Accounts')), 'class="btn btn-primary"');?>
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+	<div class="panel-heading">
+		<h4 class="panel-title">Bank Accounts</h4>
+		<div class="heading-elements">
+		 <?php echo anchor( 'admin/bank_accounts/create/'.$page, '<i class="glyphicon glyphicon-plus"></i> '.lang('web_add_t', array(':name' => 'Bank Accounts')), 'class="btn btn-primary"');?>
 			 
 			 <?php echo anchor( 'admin/bank_accounts' , '<i class="glyphicon glyphicon-list">
-                </i> '.lang('web_list_all', array(':name' => 'Bank Accounts')), 'class="btn btn-primary"');?> 
-             
-                </div>
-                </div>
-         	                    
+                </i> '.lang('web_list_all', array(':name' => 'Bank Accounts')), 'class="btn btn-primary"');?>
+		</div>
+	</div>
+	
+     	                    
               
                  <?php if ($bank_accounts): ?>
-                 <div class="block-fluid">
-				<table class="fpTable" cellpadding="0" cellspacing="0" width="100%">
+               	<div class="panel-body">
+				<table class="table table-hover fpTable" cellpadding="0" cellspacing="0" width="100%">
 	 <thead>
                 <th>#</th>
 				<th>Bank</th>
@@ -43,7 +44,7 @@
 					<td><?php echo $p->description;?></td>
 
 			 <td width='20%'>
-						 <div class='btn-group'>
+						 <div class='btn-group'
 							 class='dropdown-menu pull-right'>
 							<a class='btn btn-primary' href='<?php echo site_url('admin/bank_accounts/edit/'.$p->id.'/'.$page);?>'><i class='glyphicon glyphicon-edit'></i> Edit</a>
 							 <a class='btn btn-danger' onClick="return confirm('<?php echo lang('web_confirm_delete')?>')" href='<?php echo site_url('admin/bank_accounts/delete/'.$p->id.'/'.$page);?>'><i class='glyphicon glyphicon-trash'></i> Trash</a>
@@ -59,5 +60,5 @@
 </div>
 
 <?php else: ?>
- 	<p class='text'><?php echo lang('web_no_elements');?></p>
+ 	<p class='text-center text-muted p-10'><?php echo lang('web_no_elements');?></p>
  <?php endif ?>
