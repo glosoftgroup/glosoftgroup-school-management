@@ -1,9 +1,15 @@
 
-<div class="head">
-    <div class="icon"><span class="icosg-target1"></span></div>
-    <h2>Wages Report</h2> 
-</div>
-<div class="block invoice">
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+    <div class="panel-heading">
+        <h4 class="panel-title">Wages Report</h4>
+        <div class="heading-elements">
+        
+        </div>
+    </div>
+
+    
+<div class="block invoice panel-body">
 
     <?php if (!empty($post)): ?>
             <table cellpadding="0" cellspacing="0" width="100%">

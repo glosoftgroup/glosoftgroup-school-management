@@ -1,12 +1,15 @@
-<div class="head"> 
-    <div class="icon"><span class="icosg-target1"></span> </div>
-    <h2> Students  </h2>
-    <div class="right">  
-         <?php echo anchor('admin/quickbooks/payments', '<i class="glyphicon glyphicon-list glyphicon glyphicon-white">
-                </i>Quick Payments', 'class="btn btn-primary"'); ?> 
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+  <div class="panel-heading">
+    <h4 class="panel-title">Students</h4>
+    <div class="heading-elements">
+      <?php echo anchor('admin/quickbooks/payments', '<i class="glyphicon glyphicon-list glyphicon glyphicon-white">
+                </i>Quick Payments', 'class="btn btn-primary"'); ?>
     </div>
-</div>
-<div class="toolbar-fluid">
+  </div>
+  
+  <div class="panel-body">
+   
     <div class="information">
         <div class="item">
             <div class="rates">

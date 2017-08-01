@@ -1,16 +1,20 @@
-<div class="head"> 
-    <style>
+<!-- Pager -->
+ <style>
         p {white-space: pre-line;}
     </style>
-    <div class="icon"><span class="icosg-target1"></span> </div>
-    <h2>  Quickbooks  </h2>
-    <div class="right">  
-         <?php echo anchor('quickbooks/clear/', '<i class="glyphicon glyphicon-trash glyphicon glyphicon-white"></i> Clear Log', 'class="btn btn-primary"'); ?>
+<div class="panel panel-white animated fadeIn">
+  <div class="panel-heading">
+    <h4 class="panel-title">Quickbooks</h4>
+    <div class="heading-elements">
+      <?php echo anchor('quickbooks/clear/', '<i class="glyphicon glyphicon-trash glyphicon glyphicon-white"></i> Clear Log', 'class="btn btn-primary"'); ?>
     </div>
-</div>
+  </div>
+  
+ 
+   
 
 <?php if ($quickbooks): ?>
-         <div class="block-fluid">
+        <div class="panel-body">
 
              <div class="timeline">
                   <?php

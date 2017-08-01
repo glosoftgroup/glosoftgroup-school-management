@@ -1,11 +1,13 @@
-<div class="head"> 
-    <div class="icon"><span class="icosg-target1"></span> </div>
-    <h2>  Unlinked Students  </h2>
-    <div class="right">
-        <div class='btn-group'>	
-        </div>
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+  <div class="panel-heading">
+    <h4 class="panel-title"> Unlinked Students</h4>
+    <div class="heading-elements">
+    
     </div>
-</div>
+  </div>
+  
+  <div class="panel-body">    
 
 <div class="block-fluid">
     <table cellpadding="0" cellspacing="0" border="0" class='hover' id="adm_table" width="100%">

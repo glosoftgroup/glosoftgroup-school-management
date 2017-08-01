@@ -1,13 +1,15 @@
 <div class="col-md-12">
-    <div class="head"> 
-        <div class="icon"><span class="icosg-target1"></span></div>		
-        <h2>  Fee Arrears  </h2>
-        <div class="right"> 
-
-        </div>
-    </div>
-
-    <div class="block-fluid">
+   <!-- Pager -->
+   <div class="panel panel-white animated fadeIn">
+       <div class="panel-heading">
+           <h4 class="panel-title"> Fee Arrears</h4>
+           <div class="heading-elements">
+           
+           </div>
+       </div>
+       
+       <div class="panel-body">	
+        <
         <?php
         $attributes = array('class' => 'form-horizontal', 'id' => '');
         echo form_open_multipart(current_url(), $attributes);

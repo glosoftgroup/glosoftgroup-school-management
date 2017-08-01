@@ -1,6 +1,9 @@
-<div class="head">
-    <div class="  right" id="menus">
-         <?php echo form_open('admin/reports/student_report/'); ?> 
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+  <div class="panel-heading">
+    <h4 class="panel-title">erwerfwewdq</h4>
+    <div class="heading-elements">
+      <?php echo form_open('admin/reports/student_report/'); ?> 
         <select name="student" class="select" tabindex="-1">
             <option value="">Select Student</option>
             <?php
@@ -11,14 +14,14 @@
                 <?php endforeach; ?>
         </select>
         <button class="btn btn-warning"  style="height:30px;" type="submit">View Report</button>
-        <a href="" onClick="window.print();
-                  return false" class="btn btn-primary"><i class="icos-printer"></i> Print</a>
+        <a href="" onClick="return false;" id="printBtn" class="btn btn-primary"><i class="icos-printer"></i> Print</a>
            <?php echo form_close(); ?>
     </div>
-</div>
+  </div>
+  
+  <div class="panel-body">
 
-<div class="widget">
-    <div class="col-md-12 slip">
+    <div class="col-md-12 slip" id="printme">
 
 
         <div class="statement">

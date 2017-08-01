@@ -1,9 +1,14 @@
-<div class="head">
-    <div class="icon"><span class="icosg-target1"></span></div>
-    <h2>Fee Arrears Breakdown Report</h2> 
-    <div class="right">                       
-    </div>    					
-</div>
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+    <div class="panel-heading">
+        <h4 class="panel-title">Fee Arrears Breakdown Report</h4>
+        <div class="heading-elements">
+        
+        </div>
+    </div>
+    
+    <div class="panel-body">
+    
 <style>
     a{color:#000;}
 </style>

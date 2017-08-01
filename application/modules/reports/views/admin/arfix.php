@@ -1,17 +1,18 @@
 <div class="col-md-12">
-    <div class="head">
-        <div class="icon"><span class="icosg-target1"></span></div>
-
-        <h2>Fix Starting Balances </h2> 
-        <div class="right">                            
-            <button onClick="window.print();
-                        return false" class="btn btn-primary" type="button"><span class="glyphicon glyphicon-print"></span>
+  <!-- Pager -->
+  <div class="panel panel-white animated fadeIn">
+      <div class="panel-heading">
+          <h4 class="panel-title">Fix Starting Balances</h4>
+          <div class="heading-elements">
+           <button id="printBtn" onClick="return false;" class="btn btn-primary" type="button"><span class="glyphicon glyphicon-print"></span>
                 Print </button>
-        </div>    					
-    </div>
-    <div class="block-fluid invoice">
+          </div>
+      </div>
+      
+      <div class="panel-body" id="printme">
+
         <div class="col-md-9">
-            <h3 align="center"> <?php echo $this->school->school; ?></h3> 
+            <h3 align="text-center"> <?php echo $this->school->school; ?></h3> 
             <h4 align="center"> Fix </h4> 
             <span class="right">
                 <b>Year :</b>

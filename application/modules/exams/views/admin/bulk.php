@@ -32,8 +32,7 @@
 			 Show Positions<input type="checkbox" class="checker" checked="styled" name="pos" value="1"/>
 
            <button class="btn btn-warning"  type="submit">View Report Forms</button>
-         <a href="" onClick="window.print();
-                    return false" class="btn btn-primary"><i class="icos-printer"></i> Print
+         <a href="" id="printBtn" onClick="return false" class="btn btn-primary"><i class="icos-printer"></i> Print
         </a>
         <?php echo form_close(); ?>
 	   </div>
@@ -41,7 +40,7 @@
 
     </div>
 </div>
-<div class="widget">
+<div class="widget" id="printme">
     <?php
     $haspos = $this->input->post('pos');
     $this->load->library('Dates');
@@ -58,7 +57,7 @@
                     $student_id = $rw->student->id;
                     ?>
                     <div class="slip">
-                        <div class="row center">
+                        <div class="row text-center">
                             <table class="lethead" style="border:none !important">
                                 <?php
                                 $file = FCPATH . '/uploads/report.png';

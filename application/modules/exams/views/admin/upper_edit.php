@@ -14,7 +14,7 @@ else
 ?>
 <div class="col-md-3">
  <!-- Pager -->
- <div class="panel panel-white animated fadeIn">
+ <div class="panel panel-white border-left-lg border-left-danger animated zoomIn">
      <div class="panel-heading">
          <h4 class="panel-title">Select a Subject</h4>
          <div class="heading-elements">
@@ -54,7 +54,7 @@ else
 
 <div class="col-md-9">
    <!-- Pager -->
-   <div class="panel panel-white animated fadeIn">
+   <div class="panel panel-white panel-white border-left-lg border-left-primary animated fadeIn">
        <div class="panel-heading">
            <h4 class="panel-title">Exams Management</h4>
            <div class="heading-elements">

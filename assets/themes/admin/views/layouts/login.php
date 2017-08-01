@@ -23,7 +23,7 @@
         <link rel="shortcut icon" type="image/ico" href="<?php echo image_path('favicon.ico'); ?>" />
 
     </head>
-    <body class="login-container <?php echo $settings->theme_color . ' ' . $settings->background; ?>">
+    <body class="login-container <?php echo @$settings->theme_color . ' ' . $settings->background; ?>">
         <div class="header">
             <a href="#" class=" centralize"></a>
         </div>

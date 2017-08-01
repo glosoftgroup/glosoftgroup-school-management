@@ -1,18 +1,17 @@
 <div class="col-md-8">
-        <div class="head"> 
-             <div class="icon"><span class="icosg-target1"></span></div>		
-            <h2>  Return Book  </h2>
-             <div class="right"> 
+  <!-- Pager -->
+  <div class="panel panel-white animated fadeIn">
+      <div class="panel-heading">
+          <h4 class="panel-title"> Return Book</h4>
+          <div class="heading-elements">
              <?php echo anchor( 'admin/return_book/create' , '<i class="glyphicon glyphicon-plus">
                 </i> '.lang('web_add_t', array(':name' => 'Return Book')), 'class="btn btn-primary"');?> 
               <?php echo anchor( 'admin/return_book' , '<i class="glyphicon glyphicon-list">
                 </i> '.lang('web_list_all', array(':name' => 'Return Book')), 'class="btn btn-primary"');?> 
-             
-                </div>
-                </div>
-         	                    
-               
-				   <div class="block-fluid">
+          </div>
+      </div>
+      
+  
 
 <?php 
 $attributes = array('class' => 'form-horizontal', 'id' => '');

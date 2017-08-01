@@ -1,22 +1,22 @@
-
-
-<div class="head">
-    <div class="icon"><span class="icosg-target1"></span></div>
-    <h2> Event Details </h2> 
-    <div class="right">
-        <button onClick="window.print();
-                    return false" class="btn btn-primary" type="button"><span class="glyphicon glyphicon-print"></span> Print </button>
+<div class="col-md-10">
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+    <div class="panel-heading">
+        <h4 class="panel-title"> Event Details</h4>
+        <div class="heading-elements">
+          <button onClick="return false" id="printBtn" class="btn btn-primary" type="button"><span class="glyphicon glyphicon-print"></span> Print </button>
                 <?php echo anchor('admin/school_events/list_view/', '<i class="glyphicon glyphicon-list">
                 </i> List All', 'class="btn btn-primary"'); ?>
+        </div>
     </div>
+    
+    <div class="panel-body">
+    
 
-</div>
-<div class="widget">
-
-    <div class="block invoice1">
+    <div class="block invoice1" id="printme">
 
         <div class="clearfix"></div>
-        <div class="col-md-11 view-title center">
+        <div class="col-md-11 view-title text-center">
             <h1><img src="<?php echo base_url('assets/themes/admin/img/logo-sm.png'); ?>" />
                 <h5><?php $settings = $this->ion_auth->settings();
                 echo ucwords($settings->motto);
@@ -30,15 +30,13 @@
         <div class="clearfix"></div>
 
         <div class="col-md-2 dates">
-            <div class="widget">
-                <div class="head dark">
+            <div class="pane">
+                <div class="panelbody dark">
                     <div class="icon"><i class="icos-user3"></i></div>
-                    <h2>Events Dates</h2>
-                    <ul class="buttons">                                                        
-                        <li><a href="#"><span class="icos-calendar"></span></a></li>
-                    </ul>                                                  
+                    <h2 class='border-lg'>Events Dates</h2>
+                                                                     
                 </div>                    
-                <div class="block-fluid events">
+                <div class="panel-body events">
                     <div class="item" style="min-height:80px;">
                         <div class="date ">
                             <div class="caption"><span class="glyphicon glyphicon-tags glyphicon glyphicon-calendar"></span></div>
@@ -65,25 +63,43 @@
                 <div class="head dark">
                     <div class="icon"><i class="icos-user3"></i></div>
                     <h2>Events Details</h2>
-                    <ul class="buttons">                                                        
-                        <li><a href="#"><span class="icos-calendar"></span></a></li>
-                    </ul>                                                  
+                    <div class="heading-elements">
+                        
+                    </div>                                               
                 </div>                    
                 <div class="block-fluid events">
 
-                    <ul class="sList ui-sortable" id="sort_1">
+                    <table class="table table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="strong">Title:</td>
+                                <td><?php echo $post->title; ?></td>
+                            </tr>
+                             <tr>
+                                <td class="strong">Start Date:</td>
+                                <td><?php echo date('d M Y', $post->start_date); ?></td>
+                            </tr>
+                             <tr>
+                                <td class="strong">End Date:</td>
+                                <td><?php echo date('d M Y', $post->end_date); ?></td>
+                            </tr>
+                             <tr>
+                                <td class="strong">Venue:</td>
+                                <td><?php echo $post->venue; ?></td>
+                            </tr>
+                             <tr>
+                                <td class="strong">Guests:</td>
+                                <td><?php echo $post->visibility; ?></td>
+                            </tr>
+                            <tr>
+                                <td class="strong">Description</td>
+                                <td><?php echo $post->description; ?></td>
+                            </tr>
 
-                        <li><b>Title:</b> <span style="margin-left:20px;"><?php echo $post->title; ?></span></li>
-                        <li><b>Start Date:</b> <span style="margin-left:20px;"><?php echo date('d M Y', $post->start_date); ?></span></li>
-                        <li><b>End Date:</b> <span style="margin-left:20px;"><?php echo date('d M Y', $post->end_date); ?></span></li>
-                        <li><b>Venue:</b> <span style="margin-left:20px;"><?php echo $post->venue; ?></span></li>
-                        <li><b>Guests:</b> <span style="margin-left:20px;"><?php echo $post->visibility; ?></span></li>
-                        <li><b>Description:</b>
-                            <br>
-                            <span style="margin-left:20px;"><?php echo $post->description; ?></span>
-                        </li>
+                        </tbody>
+                    </table> 
 
-                    </ul>                       
+                                          
 
                 </div>
             </div>
@@ -92,7 +108,7 @@
     </div>
 
 </div>
-
+</div>
 <style>
     @media print{
 

@@ -18,8 +18,7 @@
         <input type="radio" name="opt" value="1" checked="checked" class="radio-inline">Option 1
         <input type="radio" name="opt" value="2" class="radio-inline">Option 2
         <button class="btn btn-warning"  style="height:30px;" type="submit">View Report Forms</button>
-        <a href="" onClick="window.print();
-                  return false" class="btn btn-primary"><i class="icos-printer"></i> Print
+        <a href="" id="printBtn" onClick="return false" class="btn btn-primary"><i class="icos-printer"></i> Print
         </a>
         <?php echo form_close(); ?>
         <br>
@@ -27,7 +26,7 @@
     </div>
 </div>
 
-<div class="widget">
+<div class="widget" id="printme">
      <?php
          $opt = $this->input->post('opt');
          $this->load->library('Dates');

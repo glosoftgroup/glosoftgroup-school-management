@@ -1,15 +1,18 @@
-<div class="head"> 
-    <div class="icon"><span class="icosg-target1"></span> </div>
-    <h2>  Sub Cats  </h2>
-    <div class="right">  
-        <?php echo anchor('admin/sub_cats/create/' . $page, '<i class="glyphicon glyphicon-plus"></i> ' . lang('web_add_t', array(':name' => 'Sub Cats')), 'class="btn btn-primary"'); ?>
+<!-- Pager -->
+<div class="panel panel-white animated fadeIn">
+    <div class="panel-heading">
+        <h4 class="panel-title">  Sub Cats </h4>
+        <div class="heading-elements">
+          <?php echo anchor('admin/sub_cats/create/' . $page, '<i class="glyphicon glyphicon-plus"></i> ' . lang('web_add_t', array(':name' => 'Sub Cats')), 'class="btn btn-primary"'); ?>
         <?php echo anchor('admin/sub_cats', '<i class="glyphicon glyphicon-list">
                 </i> ' . lang('web_list_all', array(':name' => 'Sub Cats')), 'class="btn btn-primary"'); ?> 
+        </div>
     </div>
-</div>
-
+    
+    
+   
 <?php if ($sub_cats): ?>
-    <div class="block-fluid">
+<div class="panel-body">
         <table class="table table-hover fpTable" cellpadding="0" cellspacing="0" width="100%">
             <thead>
             <th>#</th>
