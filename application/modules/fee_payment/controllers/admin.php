@@ -341,6 +341,10 @@ class Admin extends Admin_Controller
                 $data['banks'] = $this->fee_payment_m->banks();
                 $data['post'] = $post;
                 $data['class'] = $this->portal_m->fetch_class($post->class);
+                
+                // get student class
+                //echo $data['class']->class;
+                //echo get_term(date('m'));
                 $data['cl'] = $this->portal_m->get_class_options();
                 $data['arrs'] = $this->fee_payment_m->fetch_total_arrears($id);
                 $data['extras'] = $this->fee_payment_m->all_fee_extras();

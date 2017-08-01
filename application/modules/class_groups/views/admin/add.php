@@ -40,24 +40,30 @@
         <div class="clearfix"></div>
     </div>
 </div>
+</div>
 <div class="col-md-4">
-    <div class="widget">
-        <div class="head dark">
-            <div class="icon"></div>
-            <h2>Add Class Stream</h2>
-        </div>
-        <div class="block-fluid">
+   <!-- Pager -->
+   <div class="panel panel-white animated fadeIn">
+       <div class="panel-heading">
+           <h4 class="panel-title">Add Class Stream</h4>
+           <div class="heading-elements">
+           
+           </div>
+       </div>
+       
+       <div class="panel-body">
+            
             <?php echo form_open('admin/class_stream/quick_add/'.$group, 'class=""'); ?> 
             <div class="form-group">
                 <div class="col-md-3">Name:</div>
                 <div class="col-md-9">                                      
-                    <?php echo form_input('name', '', 'id="title_"  placeholder=" e.g Red"'); ?>
+                    <?php echo form_input('name', '', 'id="title_" class="form-control" placeholder=" e.g Red"'); ?>
                     <?php echo form_error('name'); ?>
                 </div>
             </div>
 
 
-            <div class="toolbar TAR">
+            <div class="toolbar TAR col-md-12 p-10">
                 <button class="btn btn-primary">Add</button>
             </div>
             <?php echo form_close(); ?> 

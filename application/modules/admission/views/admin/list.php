@@ -57,10 +57,10 @@
                     var oSettings = oTable.fnSettings();
                     var preff = oSettings._iDisplayStart + iDisplayIndex + 1;
                     $("td:first", nRow).html(preff + '. ');
-                    $("td:last", nRow).html("  <div class='btn-group'><a class='btn btn-success' href ='<?php echo base_url('admin/admission/view/'); ?>" + "/" + aData[0] + "' >Profile</a><?php
+                    $("td:last", nRow).html("  <div class='btn-group'><button class='btn dropdown-toggle' data-toggle='dropdown'>Action <i class='glyphicon glyphicon-caret-down'></i></button><ul class='dropdown-menu pull-right'><li><a class='' href ='<?php echo base_url('admin/admission/view/'); ?>" + "/" + aData[0] + "' ><i class='icon-user'></i>Profile</a></li><?php
         if ($this->ion_auth->is_admin())
         {
-                ?> <a class='btn btn-primary' href ='<?php echo base_url('admin/admission/edit/'); ?>" + "/" + aData[0] + "' >Edit</a> <a class='kftt btn btn-danger' href ='<?php echo base_url('admin/suspended/create/'); ?>" + "/" + aData[0] + "' ' >Suspend</a><?php } ?>" + '</div>');
+                ?><li> <a class='' href ='<?php echo base_url('admin/admission/edit/'); ?>" + "/" + aData[0] + "' ><i class='icon-pencil7'></i>Edit</a></li><li> <a class='kftt' href ='<?php echo base_url('admin/suspended/create/'); ?>" + "/" + aData[0] + "' ' ><i class='icon-pen-minus'></i>Suspend</a></li><?php } ?>" + '</ul></div>');
                     return nRow;
                 },
                 "oLanguage": {

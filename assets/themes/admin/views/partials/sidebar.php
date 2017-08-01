@@ -46,8 +46,23 @@
                     <span>Academics</span>
                   </a>
 									<ul>
-										<li <?php if (preg_match('/^(admin\/class_stream)/i', $this->uri->uri_string()) || preg_match('/^(admin\/class_groups\/classes)/i', $this->uri->uri_string())) echo 'class="active"'; ?> ><a href="<?php echo base_url('admin/class_groups/classes'); ?>">All Classes</a></li>
-										<li <?php if (preg_match('/^(admin\/class_rooms)/i', $this->uri->uri_string())) echo 'class="active"'; ?>><a href="<?php echo base_url('admin/class_rooms'); ?>">Class Rooms</a></li>
+                    <li>
+                      <a href="#">Manage Classes</a>
+                      <ul>
+                        <li
+                        <?php if (preg_match('/^(admin\/class_groups\/create)/i', $this->uri->uri_string()) || preg_match('/^(admin\/class_groups)/i', $this->uri->uri_string())) echo 'class="active"'; ?>
+                        ><a href="<?php echo base_url('admin/class_groups'); ?>">Classes</a></li>
+                        <li
+                         <?php if (preg_match('/^(admin\/class_stream\/create)/i', $this->uri->uri_string()) || preg_match('/^(admin\/class_stream)/i', $this->uri->uri_string())) echo 'class="active"'; ?>
+                        ><a href="<?php echo base_url('admin/class_stream'); ?>">Streams</a></li>
+                        <li
+                        <?php if (preg_match('/^(admin\/class_stream)/i', $this->uri->uri_string()) || preg_match('/^(admin\/class_groups\/classes)/i', $this->uri->uri_string())) echo 'class="active"'; ?> 
+                        ><a href="<?php echo base_url('admin/class_groups/classes'); ?>">Class Details</a></li>
+                        <li
+                        <?php if (preg_match('/^(admin\/class_rooms)/i', $this->uri->uri_string())) echo 'class="active"'; ?>
+                        ><a href="<?php echo base_url('admin/class_rooms'); ?>">Class Rooms</a></li>
+                      </ul>
+                    </li>										
                     <li <?php if (preg_match('/^(admin\/subjects)/i', $this->uri->uri_string())) echo 'class="active"'; ?> ><a href="<?php echo base_url('admin/subjects'); ?>">Subjects</a></li>
                     <li <?php if (preg_match('/^(admin\/grading)$/i', $this->uri->uri_string()) || preg_match('/^(admin\/grading\/view)/i', $this->uri->uri_string()) || preg_match('/^(admin\/grades)/i', $this->uri->uri_string()) || preg_match('/^(admin\/grading\/edit)/i', $this->uri->uri_string()) || preg_match('/^(admin\/grading\/create)/i', $this->uri->uri_string())) echo 'class="active"'; ?>><a href="<?php echo base_url('admin/grading'); ?>">Grading</a></li>
                     <li <?php if (preg_match('/^(admin\/grading_system)/i', $this->uri->uri_string())) echo 'class="active"'; ?>><a href="<?php echo base_url('admin/grading_system'); ?>">Grading System</a></li>
