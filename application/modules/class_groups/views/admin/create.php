@@ -24,14 +24,14 @@
             </div>
         </div>
 
-        <div class='widget'>
+        <div class='form-group'>
 
             <div class="form-group  editor">
               <div class="col-md-2" for='name'>
                 <label>Description</label>
               </div>
               <div class="col-md-10">
-                <textarea id="description"    class="form-control wysiwyg "  name="description"  /><?php echo set_value('description', (isset($result->description)) ? htmlspecialchars_decode($result->description) : ''); ?></textarea>
+                <textarea id="description"    class=" wysihtml5 wysihtml5-min  "  name="description"  /><?php echo set_value('description', (isset($result->description)) ? htmlspecialchars_decode($result->description) : ''); ?></textarea>
                 <?php echo form_error('description'); ?>
               </div>
             </div>

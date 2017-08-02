@@ -1,0 +1,45 @@
+/* table * /  
+    table thead th.sorting, table thead td.sorting{background: url('../img/backgrounds/dropdown_arrow.png') right center no-repeat;}
+    table thead th.sorting_asc, table thead td.sorting_asc{background: url('../img/backgrounds/dropdown_arrow_up.png') right center no-repeat;}
+    table thead th.sorting_desc, table thead td.sorting_desc{background: url('../img/backgrounds/dropdown_arrow_down.png') right center no-repeat;}
+
+    table{border: 0px; position: relative; padding: 0px; margin: 0px; border: 1px solid #DDD;}
+        table td, table th{border-right: 1px solid #DDD; border-bottom: 1px solid #DDD; padding: 8px;}
+    table td:last-child{border-right: 0px;}
+        table thead td, table thead th{background: #F1F1F1; color: #333; font-weight: bold;}
+        table tbody tr:nth-child(2n+1) td{background: #FCFCFC;}
+
+    .table-hover tbody tr:hover td, table tbody tr.active td{background: #ffffcb;}       
+    .table{margin-bottom: 0px;}
+
+        
+/* eof table */
+table thead th.sorting, table thead td.sorting{background: url('../img/backgrounds/dropdown_arrow.png') right center no-repeat;}
+table thead th.sorting_asc, table thead td.sorting_asc{background: url('../img/backgrounds/dropdown_arrow_up.png') right center no-repeat;}
+table thead th.sorting_desc, table thead td.sorting_desc{background: url('../img/backgrounds/dropdown_arrow_down.png') right center no-repeat;}
+
+table{border: 0px; position: relative; padding: 0px; margin: 0px; border: 1px solid #DDD;}
+table td, table th{border-right: 1px solid #DDD; border-bottom: 1px solid #DDD; padding: 8px;}
+table thead td, table thead th{background: #F1F1F1; color: #333; font-weight: bold;}
+table tbody tr:nth-child(2n+1) td{background: #FCFCFC;}
+
+.table-hover tbody tr:hover td, table tbody tr.active td{background: #ffffcb;}       
+.table{margin-bottom: 0px;}
+/* datatables */
+.dataTables_length, .dataTables_info{float: left;}
+.dataTables_filter, .dataTables_paginate{float: right;}
+
+.dataTables_length{position: relative; padding: 5px;}
+.dataTables_length label{font-size: 11px; margin-bottom: 0px;}
+.dataTables_length select{display: inline-block; width: auto; height: 26px; border: 1px solid #DDD; font-size: 11px; padding: 2px 5px;}
+
+.dataTables_filter{position: relative; padding: 5px;}
+.dataTables_filter label{font-size: 11px; margin-bottom: 0px;}
+.dataTables_filter input[type='text']{display: inline-block; width: auto; height: 26px; line-height: 14px; border: 1px solid #DDD; font-size: 11px; padding: 2px 5px;}
+
+.dataTables_info{font-size: 11px; color: #333; line-height: 26px; padding: 5px;}
+
+
+.dataTables_wrapper table{float: left;}
+
+/* eof datatables */

@@ -237,7 +237,7 @@
                     <div class="tab-content">
                         <div class="tab-pane " id="tab1">
                             <?php if (!empty($p)): ?>
-                                    <table cellpadding="0" cellspacing="0" width="100%">
+                                    <table class='table table-hover table-bordered' cellpadding="0" cellspacing="0" width="100%">
                                         <thead>
                                             <tr>
                                                 <th width="3%">#</th>
@@ -310,7 +310,7 @@
                         <!--TAB2-->
                         <div class="tab-pane " id="tab2">
                             <?php if (!empty($exams)): ?>
-                                    <table cellpadding="0" cellspacing="0" width="100%">
+                                    <table class='table table-hover table-bordered' cellpadding="0" cellspacing="0" width="100%">
                                         <thead>
                                             <tr>
                                                 <th width="3%">#</th>
@@ -362,7 +362,7 @@
                         <div class="tab-pane " id="tab3">
                             <?php if ($bed): ?>
 
-                                    <table class="" cellpadding="0" cellspacing="0" width="100%">
+                                    <table class='table table-hover table-bordered' cellpadding="0" cellspacing="0" width="100%">
                                         <thead>
                                         <th>#</th>
                                         <th>Date Assigned</th>
@@ -401,7 +401,7 @@
                         <div class="tab-pane " id="tab4">
                             <?php if ($position): ?>
 
-                                    <table cellpadding="0" cellspacing="0" width="100%">
+                                    <table class='table table-hover table-bordered' cellpadding="0" cellspacing="0" width="100%">
                                         <thead>
                                         <th>#</th>
                                         <th>Position</th>
@@ -449,7 +449,7 @@
                         <div class="tab-pane " id="tab5">
                             <?php if ($disciplinary): ?>
 
-                                    <table  cellpadding="0" cellspacing="0" width="100%">
+                                    <table class='table table-hover table-bordered' cellpadding="0" cellspacing="0" width="100%">
                                         <thead>
                                         <th>#</th>
                                         <th>Reported on</th>
@@ -515,7 +515,7 @@
                                         <div class="profile clearfix">
                                             <div class="info-s">
                                                 <h2><?php echo $paro->first_name . ' ' . $paro->last_name ?></h2>
-                                                <table border="0" width="300">
+                                                <table class='table table-hover table-bordered' border="0" width="300">
                                                     <tr> <td><strong>Email:</strong></td><td> <?php echo $paro->email ?></td></tr>
                                                     <tr> <td><strong>Cell Phone:</strong></td><td> <?php echo $paro->phone ?></td></tr>
                                                     <tr> <td><strong>Other Phone:</strong></td><td> <?php echo $paro->phone2 ?></td></tr>
@@ -533,7 +533,7 @@
                                         <div class="profile clearfix">
                                             <div class="info-s">
                                                 <h2><?php echo $paro->mother_fname . ' ' . $paro->mother_lname ?></h2>
-                                                <table border="0" width="300">
+                                                <table class='table table-hover table-bordered' border="0" width="300">
                                                     <tr> <td><strong>Email:</strong></td><td> <?php echo $paro->mother_email ?></td></tr>
                                                     <tr> <td><strong>Cell Phone:</strong></td><td> <?php echo $paro->mother_phone ?></td></tr>
                                                     <tr> <td><strong>Other Phone:</strong></td><td> <?php echo $paro->mother_phone2 ?></td></tr>

@@ -115,7 +115,7 @@
             $ccls = 'ssGreen';
     }
     ?>
-    < class="navbar-top " >
+    <body class="navbar-top " >
         <?php echo $template['partials']['top']; ?>
         <!-- Page container -->
       	<div class="page-container">

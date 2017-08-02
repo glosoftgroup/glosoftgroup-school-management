@@ -452,7 +452,8 @@ class Admin extends Admin_Controller
                 }
                 else
                 {
-                        $this->template->title(' Admission ')->build('admin/list', $data);
+                        $this->template->title(' Admission ')
+                             ->build('admin/list', $data);
                 }
         }
 

@@ -1,35 +1,46 @@
+<?php echo theme_css('sett.css'); ?>
+        <?php echo theme_css('jquery.dataTables.css'); ?>   
+        <?php echo theme_css('tableTools.css'); ?>   
+        <?php echo theme_css('dataTables.colVis.min.css'); ?>
+        <?php echo theme_css('select2/select2.css'); ?>
+        <?php echo theme_css('themes/default.css'); ?>
+        <?php echo theme_css('themes/default.date.css'); ?>
+        <?php echo theme_css('stylesheets.css'); ?>     
+        <?php echo theme_css('custom.css'); ?>
+        <?php echo theme_css('output.css'); ?>
+        <link href="<?php echo js_path('plugins/jeditable/bootstrap-editable.css'); ?>" rel="stylesheet">
 <div class="panel panel-flat">
     <div class="panel-heading">
       <h5 class="panel-title">All Classes</h5>
       <div class="heading-elements">
         <div class="heading-btn">
 
-		     <?php echo anchor('admin/class_groups/promotion', '<i class="glyphicon glyphicon-thumbs-up">
+             <?php echo anchor('admin/class_groups/promotion', '<i class="glyphicon glyphicon-thumbs-up">
                 </i> Promote Students to next class', 'class="btn heading-btn btn-warning"'); ?>
 
         </div>
       </div>
     </div>
     <div class="panel-body">
-		<div class="row">
-		  <table class='table datatable-showall' id="fee_bal" width="100%">
-			<thead>
-			 <tr>
-				<th>#</th>
-				<th>Class </th>
-				<th>Class Teacher</th>
-				<th>No. of Students</th>
-				<th>Status</th>
-				<th width="20%"><?php echo lang('web_options'); ?></th>
-			 </tr>
-			</thead>
-			<tbody>
-			</tbody>
-			<tfoot>
-			</tfoot>
+        <div class="row">
+          <table class='table datatable-showall' id="fee_bal" width="100%">
+            <thead>
+             <tr>
+                <th>#</th>
+                <th>Class </th>
+                <th>Class Teacher</th>
+                <th>No. of Students</th>
+                <th>Status</th>
+                <th width="20%"><?php echo lang('web_options'); ?></th>
+             </tr>
+            </thead>
+            <tbody>
+            </tbody>
+            <tfoot>
+            </tfoot>
       </table>
-		</div>
-	</div>
+        </div>
+    </div>
 </div>
 
 
@@ -52,7 +63,7 @@
                     var oSettings = oTable.fnSettings();
                     var preff = oSettings._iDisplayStart + iDisplayIndex + 1;
                     $("td:first", nRow).html(preff + '. ');
-                    $("td:last", nRow).html(" <div class='btn-group'><a class='btn btn-success' href ='<?php echo base_url('admin/class_groups/view/'); ?>" + "/" + aData[0] + "' ><i class='glyphicon glyphicon-eye-open'></i> View</a><a class='btn btn-primary' href ='<?php echo base_url('admin/class_groups/class_teacher/'); ?>" + "/" + aData[0] + "' >Class Teacher</a>  " + '</div>');
+                    $("td:last", nRow).html(" <div class='btn-group'><button class='btn dropdown-toggle' data-toggle='dropdown'>Action <i class='glyphicon glyphicon-caret-down'></i></button><ul class='dropdown-menu pull-right'><li><a class='' href ='<?php echo base_url('admin/class_groups/view/'); ?>" + "/" + aData[0] + "' ><i class='glyphicon glyphicon-eye-open'></i> View</a></li><li><a class='' href ='<?php echo base_url('admin/class_groups/class_teacher/'); ?>" + "/" + aData[0] + "' ><i class='icon-user'></i>Class Teacher</a></li></ul>  " + '</div>');
                     $("td:nth-child(5)", nRow).addClass('rttb');
                     $("td:nth-child(6)", nRow).addClass('rttb');
                     $("td:nth-child(7)", nRow).addClass('rttb');

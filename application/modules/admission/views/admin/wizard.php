@@ -666,5 +666,7 @@ body[dir="rtl"] .formError .formErrorArrow, body.rtl .formError .formErrorArrow 
 <script type="text/javascript">
     $(document).ready(function(){
         $('.button-next').addClass('btn btn-primary');
+        $('.bottom').addClass('text-muted');
+        $('label').addClass('text-semibold');
     });
 </script>
