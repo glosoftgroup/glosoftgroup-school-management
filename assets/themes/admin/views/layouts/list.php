@@ -40,83 +40,25 @@
         <?php echo core_js('core/js/plugins/ui/ripple.min.js'); ?>
       	<!-- /theme JS files -->
         <!-- datatables -->
-        <?php echo core_js('core/js/plugins/tables/datatables/datatables.min.js'); ?>
-        <?php echo core_js('core/js/pages/datatables_advanced.js'); ?>
-        <!-- ./datatables -->
-
-        <!-- theme scripts -->
-        <?php echo core_js('core/js/plugins/pickers/pickadate/picker.js'); ?>
-
-        <?php echo core_js('core/js/plugins/pickers/pickadate/picker.date.js'); ?>
-
-        <?php echo core_js('core/js/plugins/pickers/pickadate/picker.time.js'); ?>
-        <!-- Updated stylesheet url -->
+        
         <?=core_js("core/js/core/libraries/jquery_ui/widgets.min.js");?>
         <?=core_js("core/js/pages/animations_css3.js");?>
         
         <!-- ./theme scripts -->
 
         <!-- old files -->
-
-       <!-- echo theme_css('sett.css'); ?> -->
-        <?php echo theme_css('jquery.dataTables.css'); ?>
-        <?php echo theme_css('tableTools.css'); ?>
+         <?php echo theme_css('sett.css'); ?>
+        <?php echo theme_css('jquery.dataTables.css'); ?>   
+        <?php echo theme_css('tableTools.css'); ?>   
         <?php echo theme_css('dataTables.colVis.min.css'); ?>
-
-
-          <!-- echo theme_css('select2/select2.css'); -->
+        <?php echo theme_css('select2/select2.css'); ?>
+        <?php echo theme_css('themes/default.css'); ?>
+        <?php echo theme_css('themes/default.date.css'); ?>
+         <?php echo theme_css('school.css'); ?>  
+        <?php echo theme_css('custom.css'); ?>
+        <?php echo theme_css('output.css'); ?>
         <link href="<?php echo js_path('plugins/jeditable/bootstrap-editable.css'); ?>" rel="stylesheet">
 
-        <script> var BASE_URL = '<?php echo base_url(); ?>';</script>
-        <?php echo theme_js('plugins/jquery/globalize.js'); ?>
-        <?php echo theme_js('plugins/other/excanvas.js'); ?>
-        <script type="text/javascript" src="<?php echo plugin_path('boxer/jquery.fs.boxer.js'); ?>"></script>
-        <?php echo theme_js('plugins/switch/js/switch.js'); ?>
-        <?php echo theme_js('plugins/other/jquery.mousewheel.min.js'); ?>
-
-        <?php echo theme_js('plugins/cookies/jquery.cookies.2.2.0.min.js'); ?>
-        <?php echo theme_js('plugins/pnotify/jquery.pnotify.min.js'); ?>
-        <?php echo theme_js('plugins/fullcalendar/fullcalendar.min.js'); ?>
-        <!-- limit calender -->
-       <?php echo core_js('core/js/plugins/ui/moment/moment.min.js'); ?>
-       <?php echo core_js('core/js/plugins/ui/fullcalendar/fullcalendar.min.js'); ?>
-       <?php echo core_js('core/js/plugins/visualization/echarts/echarts.js'); ?>
-        <!-- ./limit  calendar -->
-        <?php echo theme_js('plugins/datatables/media/js/jquery.dataTables.min.js'); ?>
-        <?php echo theme_js('plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js'); ?>
-        <?php echo theme_js('plugins/datatables/extensions/ColVis/js/dataTables.colVis.min.js'); ?>
-        <?php echo theme_js('jquery.dataTables.delay.min.js'); ?>
-        <?php echo theme_js('amct/amcharts.js'); ?>
-        <?php echo theme_js('amct/pie.js'); ?>
-        <?php echo theme_js('amct/serial.js'); ?>
-        <?php echo theme_js('amct/exporting/amexport.js'); ?>
-        <?php echo theme_js('amct/exporting/rgbcolor.js'); ?>
-        <?php echo theme_js('amct/exporting/canvg.js'); ?>
-        <?php echo theme_js('amct/exporting/jspdf.js'); ?>
-        <?php echo theme_js('amct/exporting/filesaver.js'); ?>
-        <?php echo theme_js('amct/exporting/jspdf.plugin.addimage.js'); ?>
-
-        <?php echo theme_js('plugins/underscore/underscore-min.js'); ?>
-        <?php echo theme_js('plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js'); ?>
-        <?php echo theme_js('plugins/uniform/jquery.uniform.min.js'); ?>
-        
-        <?php echo theme_js('plugins/maskedinput/jquery.maskedinput-1.3.min.js'); ?>
-        <?php echo theme_js('plugins/multiselect/jquery.multi-select.min.js'); ?>
-
-        <?php echo theme_js('plugins/validationEngine/languages/jquery.validationEngine-en.js'); ?>
-        <?php echo theme_js('plugins/validationEngine/jquery.validationEngine.js'); ?>
-        
-
-        <?php echo theme_js('plugins/scrollup/jquery.scrollUp.min.js'); ?>
-        
-        <?=core_js('core/js/pages/form_inputs.js');?>
-        <?php echo theme_js('ajaxfileupload.js'); ?>
-        <?php echo theme_js('ng/lib-ng.js'); ?> 
-        <?php echo theme_js('ng/ngsc.js'); ?>
-        <script src="<?php echo plugin_path('bootstrap.daterangepicker/moment.js'); ?>" ></script>
-        <script src="<?php echo plugin_path('bootstrap.daterangepicker/daterangepicker.js'); ?>" ></script>
-        <script src="<?php echo plugin_path('bootstrap.datetimepicker/bootstrap-datetimepicker.min.js'); ?>"></script>	
-        <?php echo theme_js('include/jquery.ui.timepicker.js'); ?>
         <link rel="shortcut icon" type="image/ico" href="<?php echo image_path('favicon.ico'); ?>" />
         
         <link rel="shortcut icon" type="image/ico" href="<?php echo image_path('favicon.ico'); ?>" />
@@ -254,108 +196,53 @@
     <!-- /page container -->
     <!-- scripts -->
 
-    <?php echo core_js('core/js/plugins/ui/moment/moment.min.js'); ?>
-    <?php echo core_js('core/js/plugins/ui/fullcalendar/fullcalendar.min.js'); ?>
-    <?php echo core_js('core/js/plugins/visualization/echarts/echarts.js'); ?>
-    <?php echo core_js('core/js/plugins/forms/selects/bootstrap_multiselect.js'); ?>
-    <script>
-     // Default initialization
-     $('.select').select2({
-         minimumResultsForSearch: Infinity
-     });
-     $('.multiselect').multiselect({
-        onChange: function() {
-            $.uniform.update();
-        }
-    });
-    $(".datepicker").datepicker({
-      format: "dd MM yyyy",
-     
-    });
-    </script>
-    <?=core_js("core/js/plugins/editors/wysihtml5/wysihtml5.min.js");?>
-    <?=core_js("core/js/plugins/editors/wysihtml5/toolbar.js");?>
-    <?=core_js("core/js/plugins/editors/wysihtml5/parsers.js");?>
-
-    <?=core_js("core/js/plugins/editors/wysihtml5/locales/bootstrap-wysihtml5.ua-UA.js");?>
-   <?=core_js("core/js/pages/editor_wysihtml5.js");?> 
+    
    <!-- wysihtml5 wysihtml5-min  -->
    <?=core_js("core/js/plugins/printThis/printThis.js");?>
    <?=core_js("core/js/plugins/printThis/printer.js");?>
-     <script type="text/javascript">var sub=1;  var flist = '<?php echo $this->list_size; ?>';</script>
-        <?php echo theme_js('plugins/animatedprogressbar/animated_progressbar.js'); ?>
-        <?php echo theme_js('plugins/hoverintent/jquery.hoverIntent.minified.js'); ?>
-    <?php echo theme_js('plugins/cleditor/jquery.cleditor.js'); ?>
-     <!-- echo theme_js('actions.js'); ?> -->
-    <?php echo core_js('core/js/plugins.js'); ?>
     
-    <style>
-    .uppercase {
-    font-family: sans-serif;
-    line-height: 250%;
-    word-spacing: 3px;
-    font-size: 1.3em;
-}
+   <!-- theme js -->
+   <?php echo theme_js('plugins/jquery/globalize.js'); ?>
+        <?php echo theme_js('plugins/other/excanvas.js'); ?>
+        <script type="text/javascript" src="<?php echo plugin_path('boxer/jquery.fs.boxer.js'); ?>"></script>
+        <?php echo theme_js('plugins/switch/js/switch.js'); ?> 
+        <?php echo theme_js('plugins/other/jquery.mousewheel.min.js'); ?>
+                   
+        <?php echo theme_js('plugins/cookies/jquery.cookies.2.2.0.min.js'); ?>
+        <?php echo theme_js('plugins/pnotify/jquery.pnotify.min.js'); ?>
+        <?php echo theme_js('plugins/fullcalendar/fullcalendar.min.js'); ?>        
+        <?php echo theme_js('plugins/datatables/media/js/jquery.dataTables.min.js'); ?>    
+        <?php echo theme_js('plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js'); ?>    
+        <?php echo theme_js('plugins/datatables/extensions/ColVis/js/dataTables.colVis.min.js'); ?>    
+        <?php echo theme_js('jquery.dataTables.delay.min.js'); ?>
+        <?php echo theme_js('amct/amcharts.js'); ?>
+        <?php echo theme_js('amct/pie.js'); ?>
+        <?php echo theme_js('amct/serial.js'); ?>
+        <?php echo theme_js('amct/exporting/amexport.js'); ?>
+        <?php echo theme_js('amct/exporting/rgbcolor.js'); ?>
+        <?php echo theme_js('amct/exporting/canvg.js'); ?>
+        <?php echo theme_js('amct/exporting/jspdf.js'); ?>
+        <?php echo theme_js('amct/exporting/filesaver.js'); ?>
+        <?php echo theme_js('amct/exporting/jspdf.plugin.addimage.js'); ?>
 
-</style>
+        <?php echo theme_js('plugins/underscore/underscore-min.js'); ?>
+        <?php echo theme_js('plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js'); ?>
+        <?php echo theme_js('plugins/uniform/jquery.uniform.min.js'); ?>
 
-<script>
+        <?php echo theme_js('plugins/maskedinput/jquery.maskedinput-1.3.min.js'); ?>
+        <?php echo theme_js('plugins/multiselect/jquery.multi-select.min.js'); ?>    
 
-                $(document).ready(function ()
-                {
-                    angular.bootstrap(document, ["Calc"]);
-                    $(".boxer").boxer();
-                    $('.timepicker').timepicker({
-                        showPeriod: true,
-                        showLeadingZero: true
-                    });
-                });
-                jQuery.extend({
-                    handleError: function (s, xhr, status, e)
-                    {
-                        // If a local callback was specified, fire it
-                        if (s.error)
-                            s.error(xhr, status, e);
-                        // If we have some XML response text (e.g. from an AJAX call) then log it in the console
-                        else if (xhr.responseText)
-                            console.log(xhr.responseText);
-                    }
-                });
-                $(".datepicker").datepicker({
-                    changeMonth: true,
-                    changeYear: true
-                });
-                $(".datedob").datepicker({
-                    changeMonth: true,
-                    changeYear: true,
-                    yearRange: "-30:-3",
-                });
-                $(".datepicker").datepicker({
-                      format: "dd MM yyyy",
-                     
-                    });
+        <?php echo theme_js('plugins/validationEngine/languages/jquery.validationEngine-en.js'); ?>
+        <?php echo theme_js('plugins/validationEngine/jquery.validationEngine.js'); ?>        
+        <?php echo theme_js('plugins/stepywizard/jquery.stepy.js'); ?>
 
-                //DatePicker
-                $(".datetimepicker").datetimepicker({
-                    format: "dd MM yyyy - hh:ii",
-                    autoclose: true,
-                    todayBtn: true,
-                    startDate: "<?php echo date('Y-m-d H:i'); ?>",
-                    minuteStep: 10
-                });
-                $(document.body).delegate('select.ui-datepicker-year', 'mousedown', function ()
-                {
-                    (function (sel)
-                    {
-                        var el = $(sel);
-                        var ops = $(el).children().get();
-                        if (ops.length > 0 && $(ops).first().val() < $(ops).last().val())
-                        {
-                            $(el).html(ops.reverse());
-                        }
-                    })(this);
-                });
-        </script>
+        <?php echo theme_js('plugins/scrollup/jquery.scrollUp.min.js'); ?>  
+        <?php echo theme_js('plugins/SmartWizard/jquery.smartWizard.js'); ?>  
+
+        <script src="<?php echo plugin_path('bootstrap.daterangepicker/moment.js'); ?>" ></script>
+        <script src="<?php echo plugin_path('bootstrap.daterangepicker/daterangepicker.js'); ?>" ></script> 
+        <script src="<?php echo plugin_path('bootstrap.datetimepicker/bootstrap-datetimepicker.min.js'); ?>"></script>   
+   <!-- ./theme js -->
 
     </body>
 </html>

@@ -15,6 +15,7 @@
         <?php echo core_css('core/css/core.css'); ?>
         <?php echo core_css('core/css/components.css'); ?>
         <?php echo core_css('core/css/colors.css'); ?>
+        <?php echo theme_css('school.css'); ?>
         <?=core_css("core/css/extras/animate.min.css");?>
         <style>.error { color:red; }</style>
 	      <!-- /global stylesheets -->

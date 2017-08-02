@@ -18,7 +18,7 @@
     </div>
     
     <div class="panel-body">
-      <table cellpadding="0" cellspacing="0" border="0" class='table table-hover' id="adm_table" width="100%">
+      <table cellpadding="0" cellspacing="0" border="0" class='table table-hover datatable-basic' id="adm_table" width="100%">
         <thead>
             <tr>
                 <th>#</th>
